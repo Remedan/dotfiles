@@ -19,6 +19,7 @@ URxvt.matcher.button: 1
 
 ! Rofi settings
 rofi.color-enabled: true
+rofi.terminal: st
 rofi.color-window: #002b37, #002b37, #003642
 rofi.color-normal: #002b37, #819396, #002b37, #003642, #819396
 rofi.color-active: #002b37, #008ed4, #002b37, #003642, #008ed4
