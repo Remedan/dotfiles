@@ -230,6 +230,7 @@ exec --no-startup-id polybar b1
 exec --no-startup-id polybar b2
 
 exec --no-startup-id unclutter
+exec --no-startup-id xautolock -time 30 -locker ~/.i3/lock.sh
 
 # Applets
 exec --no-startup-id nm-applet # network manager
