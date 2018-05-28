@@ -183,7 +183,7 @@ bindsym XF86AudioPrev exec ~/.i3/player-control.sh prev   && pkill -SIGRTMIN+3 i
 bindsym XF86AudioStop exec ~/.i3/player-control.sh stop   && pkill -SIGRTMIN+3 i3blocks
 
 # Applications
-bindsym $mod+i exec firefox-beta
+bindsym $mod+i exec firefox-developer-edition
 
 # Borders
 new_window pixel 2
