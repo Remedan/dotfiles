@@ -1,0 +1,26 @@
+{
+    'extends': 'eslint:recommended',
+    'env': {
+        'browser': true,
+        'jquery': true
+    },
+    'parserOptions': {
+        'ecmaVersion': 6
+    },
+    'rules': {
+        'no-console': 'off',
+        'no-fallthrough': 'off',
+        'no-tabs': 'error',
+        'indent': 'error',
+        'curly': 'error',
+        'linebreak-style': 'error',
+        'semi': 'warn',
+        'brace-style': 'warn',
+        'no-trailing-spaces': 'warn',
+        'valid-jsdoc': 'warn',
+        'no-multi-spaces': 'warn',
+        'no-whitespace-before-property': 'warn',
+        'space-before-blocks': 'warn',
+        'space-before-function-paren': ['warn', 'never']
+    }
+}
