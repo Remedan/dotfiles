@@ -1,6 +1,15 @@
-set -x EDITOR nvim
-set -x PATH $PATH ~/scripts (ruby -e 'print Gem.user_dir')/bin
+if test -d ~/scripts
+    set -x PATH $PATH ~/scripts
+end
+if command --search ruby > /dev/null
+    set -x PATH $PATH (ruby -e 'print Gem.user_dir')/bin
+end
 
+if command --search nvim > /dev/null
+    set -x EDITOR nvim
+end
+
+# enable colours in man pages
 set -x LESS_TERMCAP_mb \e'[01;31m'
 set -x LESS_TERMCAP_md \e'[01;31m'
 set -x LESS_TERMCAP_me \e'[0m'
@@ -9,10 +18,12 @@ set -x LESS_TERMCAP_so \e'[01;44;33m'
 set -x LESS_TERMCAP_ue \e'[0m'
 set -x LESS_TERMCAP_us \e'[01;32m'
 
-set -x GTK_IM_MODULE "ibus"
-set -x XMODIFIERS "@im=ibus"
-set -x QT_IM_MODULE "ibus"
-ibus-daemon -drx
+if command --search ibus-daemon > /dev/null
+    set -x GTK_IM_MODULE "ibus"
+    set -x XMODIFIERS "@im=ibus"
+    set -x QT_IM_MODULE "ibus"
+    ibus-daemon -drx
+end
 
 set fish_greeting
 
