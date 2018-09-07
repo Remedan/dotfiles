@@ -28,6 +28,7 @@ I use st with a couple of patches. It can be found [here](https://github.com/Rem
 ## Vim plugins included
 
 * [ack.vim](https://github.com/mileszs/ack.vim)
+* [ALE](https://github.com/w0rp/ale)
 * [Colorizer](https://github.com/chrisbra/Colorizer)
 * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 * [delimitMate](https://github.com/Raimondi/delimitMate)
@@ -42,7 +43,6 @@ I use st with a couple of patches. It can be found [here](https://github.com/Rem
 * [Previm](https://github.com/kannokanno/previm)
 * [SnipMate](https://github.com/garbas/vim-snipmate)
 * [surround.vim](https://github.com/tpope/vim-surround)
-* [syntastic](https://github.com/vim-syntastic/syntastic)
 * [Tag List](https://github.com/vim-scripts/taglist.vim)
 * [tlib](https://github.com/tomtom/tlib_vim) (dependency for SnipMate)
 * [undotree.vim](https://github.com/mbbill/undotree)
@@ -55,6 +55,7 @@ I use st with a couple of patches. It can be found [here](https://github.com/Rem
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [vim-glsl](https://github.com/tikhomirov/vim-glsl)
 * [Vim-php-cs-fixer](https://github.com/stephpy/vim-php-cs-fixer)
+* [vim-twig](https://github.com/lumiliet/vim-twig)
 * [vimtex](https://github.com/lervag/vimtex)
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
