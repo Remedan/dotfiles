@@ -20,6 +20,7 @@ bindsym $mod+Shift+q kill
 
 # start a program launcher
 bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec rofi -show drun -run-command 'gksudo {cmd}'
 
 # change focus
 bindsym $mod+h focus left
