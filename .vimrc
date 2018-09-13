@@ -183,9 +183,10 @@ nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
 "        Colours and GUI    "
 """""""""""""""""""""""""""""
 set background=dark     " Use dark background
-colorscheme solarized8  " Use nicer colourscheme
+colorscheme solarized   " Use nicer colourscheme
 
 if (has("nvim"))
+    colorscheme solarized8
     set termguicolors
 endif
 
