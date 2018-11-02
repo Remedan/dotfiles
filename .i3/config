@@ -7,13 +7,13 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Inconsolata 9
+font pango:DejaVu Sans 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -184,7 +184,7 @@ bindsym XF86AudioPrev exec ~/.i3/player-control.sh prev   && pkill -SIGRTMIN+3 i
 bindsym XF86AudioStop exec ~/.i3/player-control.sh stop   && pkill -SIGRTMIN+3 i3blocks
 
 # Applications
-bindsym $mod+i exec firefox-beta
+bindsym $mod+i exec firefox-developer-edition
 
 # Borders
 new_window pixel 2

@@ -11,7 +11,7 @@ The repo has different branches for the different computers I use. There's some 
 ## Key Components and Software
 
 * [i3-gaps](https://github.com/Airblader/i3) + Polybar + Compton
-* termite + fish
+* st + fish
 * Neovim
 * Ranger
 * Rofi
@@ -20,6 +20,10 @@ The repo has different branches for the different computers I use. There's some 
 * sxiv, mpv, zathura
 * redshift
 * WeeChat
+
+### st
+
+I use st with a couple of patches. It can be found [here](https://github.com/Remedan/st/tree/solarized).
 
 ## Vim plugins included
 

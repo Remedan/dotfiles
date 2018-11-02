@@ -1,5 +1,5 @@
 ! Font settings
-URxvt.font: xft:Inconsolata for Powerline:Medium:pixelsize=14
+URxvt.font: xft:Iosevka Term:pixelsize=16
 !URxvt.letterSpace: -1
 
 ! Cursor
@@ -10,7 +10,7 @@ Xcursor.size: 16
 URxvt.scrollBar: true
 URxvt.scrollBar_right: true
 URxvt.scrollstyle: plain
-URxvt.scrollColor: #ebdbb2
+URxvt.scrollColor: #093748
 
 ! Clickable links
 URxvt.perl-ext-common: default,matcher

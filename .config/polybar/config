@@ -25,7 +25,7 @@ alert = #bd2c40
 
 [bar/b0]
 width = 100%
-height = 24
+height = 27
 fixed-center = true
 
 background = ${colors.background}
@@ -39,9 +39,9 @@ padding-right = 2
 
 module-margin = 1
 
-font-0 = Inconsolata\ for\ Powerline:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=10;1
-font-2 = Source\ Han\ Sans\ JP:pixelsize=10;1
+font-0 = FontAwesome:pixelsize=10;1
+font-1 = DejaVu Sans:pixelsize=11;2
+font-2 = Source\ Han\ Sans JP:pixelsize=10;2
 
 modules-left = i3 player-mpris-tail mpd volume
 modules-center = xwindow

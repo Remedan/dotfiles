@@ -94,15 +94,12 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_key_list_select_completion   = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
-" Nicer Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+" Open ale location list on save
+let g:ale_open_list = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+" ale-airline integration
+let g:airline#extensions#ale#enabled = 1
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
