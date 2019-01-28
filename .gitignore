@@ -7,6 +7,7 @@
 .config/ranger/tagged
 .ncmpcpp/error.log
 .vim/backup/
+.vim/plugged/
 .vim/spell
 .vim/swap/
 .vim/undo/

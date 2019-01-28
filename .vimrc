@@ -64,9 +64,47 @@ let php_folding = 1 " Enable syntax-based folding
 """""""""""""""""""""""""""""
 "        Plugins            "
 """""""""""""""""""""""""""""
-" Pathogen takes care of loading the plugins
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+" vim-plug takes care of loading the plugins
+call plug#begin()
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'chrisbra/Colorizer'
+Plug 'ciaranm/inkpot'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dag/vim-fish'
+Plug 'easymotion/vim-easymotion'
+Plug 'eugen0329/vim-esearch'
+Plug 'garbas/vim-snipmate'
+Plug 'gregsexton/MatchTag'
+Plug 'junegunn/vim-easy-align'
+Plug 'kannokanno/previm'
+Plug 'lervag/vimtex'
+Plug 'lifepillar/vim-solarized8'
+Plug 'lumiliet/vim-twig'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'mattn/emmet-vim'
+Plug 'mbbill/undotree'
+Plug 'mileszs/ack.vim'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdtree'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'sjl/badwolf'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'tikhomirov/vim-glsl'
+Plug 'tomasr/molokai'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/taglist.vim'
+Plug 'w0rp/ale'
+Plug 'whatyouhide/vim-gotham'
+call plug#end()
 
 " Enable nice tabline
 let g:airline#extensions#tabline#enabled = 1
