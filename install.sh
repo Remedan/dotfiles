@@ -20,4 +20,4 @@ do
     ln -s ~/dotfiles/.config/$file ~/.config/$file
 done
 
-git submodule update --init --recursive
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
