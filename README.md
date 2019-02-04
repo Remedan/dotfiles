@@ -11,7 +11,7 @@ The repo has different branches for the different computers I use. There's some 
 ## Key Components and Software
 
 * [i3-gaps](https://github.com/Airblader/i3) + Polybar + Compton
-* st + fish
+* kitty + zsh
 * Neovim
 * Ranger
 * Rofi
@@ -21,9 +21,10 @@ The repo has different branches for the different computers I use. There's some 
 * redshift
 * WeeChat
 
-### st
+### Zsh config
 
-I use st with a couple of patches. It can be found [here](https://github.com/Remedan/st/tree/solarized).
+I usually have the [grml zsh config](https://grml.org/zsh/) installed in /etc,
+which is why my .zshrc is rather short.
 
 ## Vim plugins included
 
