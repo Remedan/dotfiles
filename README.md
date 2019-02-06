@@ -21,6 +21,10 @@ The repo has different branches for the different computers I use. There's some 
 * redshift
 * WeeChat
 
+### Fonts
+
+My two favourite programming fonts are Iosevka and Terminus. I also use Font Awesome for a few icons in Polybar.
+
 ### Zsh config
 
 I usually have the [grml zsh config](https://grml.org/zsh/) installed in /etc,
