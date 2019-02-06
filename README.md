@@ -26,7 +26,9 @@ The repo has different branches for the different computers I use. There's some 
 I usually have the [grml zsh config](https://grml.org/zsh/) installed in /etc,
 which is why my .zshrc is rather short.
 
-## Vim plugins included
+## Vim plugins
+
+Plugins are managed via vim-plug. The install cripts sets this up.
 
 * [ack.vim](https://github.com/mileszs/ack.vim)
 * [ALE](https://github.com/w0rp/ale)
