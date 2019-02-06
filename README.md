@@ -25,7 +25,9 @@ The repo has different branches for the different computers I use. There's some 
 
 I use st with a couple of patches. It can be found [here](https://github.com/Remedan/st/tree/gruvbox).
 
-## Vim plugins included
+## Vim plugins
+
+Plugins are managed via vim-plug. The install cripts sets this up.
 
 * [ack.vim](https://github.com/mileszs/ack.vim)
 * [ALE](https://github.com/w0rp/ale)
