@@ -6,6 +6,7 @@
 .config/ranger/history
 .config/ranger/tagged
 .ncmpcpp/error.log
+.vim/autoload/plug.vim
 .vim/backup/
 .vim/plugged/
 .vim/spell
