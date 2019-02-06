@@ -65,16 +65,10 @@ Plugins are managed via vim-plug. The install cripts sets this up.
 ## Vim colourschemes
 
 * [Bad Wolf](https://github.com/sjl/badwolf)
-* [CodeSchool](http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/)*
 * [Gotham](https://github.com/whatyouhide/vim-gotham)
 * [Gruvbox](https://github.com/morhetz/gruvbox)
 * [Inkpot](https://github.com/ciaranm/inkpot)
 * [Jellybeans](https://github.com/nanotech/jellybeans.vim)
 * [Molokai](https://github.com/tomasr/molokai)
-* [Mustang](http://hcalves.deviantart.com/art/Mustang-Vim-Colorscheme-98974484)*
-* [Solarized](https://github.com/altercation/vim-colors-solarized)*
+* [Solarized](https://github.com/altercation/vim-colors-solarized)
 * [Solarized 8](https://github.com/lifepillar/vim-solarized8)
-* [wombat](http://www.vim.org/scripts/script.php?script_id=2140)*
-* [xoria256](http://www.vim.org/scripts/script.php?script_id=2140)*
-
-_*These don't have an official git repo AFAIK._
