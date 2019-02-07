@@ -43,7 +43,7 @@ font-0 = FontAwesome:pixelsize=10;1
 font-1 = DejaVu Sans:pixelsize=11;2
 font-2 = Source\ Han\ Sans JP:pixelsize=10;2
 
-modules-left = i3 player-mpris-tail mpd volume
+modules-left = i3 player-mpris-tail mpd pulseaudio
 modules-center = xwindow
 modules-right = filesystem xkeyboard cpu memory date powermenu
 
@@ -201,8 +201,8 @@ format-prefix-foreground = ${colors.color4}
 
 label = %date% - %time%
 
-[module/volume]
-type = internal/volume
+[module/pulseaudio]
+type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
 label-volume = 
