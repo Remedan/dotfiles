@@ -11,7 +11,7 @@ The repo has different branches for the different computers I use. There's some 
 ## Key Components and Software
 
 * [i3-gaps](https://github.com/Airblader/i3) + Polybar + Compton
-* kitty + zsh
+* alacritty + zsh
 * Neovim
 * Ranger
 * Rofi
