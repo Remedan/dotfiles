@@ -13,7 +13,7 @@
     "percent": 0.5,
     "swallows": [
        {
-          "instance": "^term1$",
+          "title": "^term1$",
           "transient_for": "^$"
        }
     ],
@@ -34,7 +34,7 @@
     "percent": 0.5,
     "swallows": [
        {
-          "instance": "^term2$",
+          "title": "^term2$",
           "transient_for": "^$"
        }
     ],
