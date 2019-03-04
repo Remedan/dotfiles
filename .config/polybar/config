@@ -151,7 +151,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 
 [module/player-mpris-tail]
 type = custom/script
-exec = ~/.config/polybar/player-mpris-tail.py
+exec = ~/.config/polybar/player-mpris-tail.py --icon-playing  --icon-paused 
 tail = true
 click-left = playerctl previous
 click-right = playerctl next
