@@ -62,13 +62,13 @@ cursor-click = pointer
 
 [bar/b1]
 inherit = bar/b0
-monitor = ${env:MONITOR:DVI-D-1}
+monitor = ${env:MONITOR:DVI-D-0}
 modules-left = i3
 tray-position =
 
 [bar/b2]
 inherit = bar/b0
-monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:HDMI-0}
 tray-position =
 
 [module/xwindow]
@@ -163,7 +163,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 
 [module/player-mpris-tail]
 type = custom/script
-exec = ~/.config/polybar/player-mpris-tail.py
+exec = ~/.config/polybar/player-mpris-tail.py --icon-playing  --icon-paused 
 tail = true
 click-left = playerctl previous
 click-right = playerctl next
