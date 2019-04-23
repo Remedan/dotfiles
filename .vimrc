@@ -93,7 +93,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'sjl/badwolf'
-Plug 'stephpy/vim-php-cs-fixer'
 Plug 'tikhomirov/vim-glsl'
 Plug 'tomasr/molokai'
 Plug 'tomtom/tlib_vim'
@@ -213,6 +212,8 @@ nnoremap <silent> <F5> :TlistToggle<CR>
 
 " leader r to save as root
 nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
+
+nnoremap <leader>pcf :w <bar> execute "!php-cs-fixer fix %" <bar> :e<CR>
 
 """""""""""""""""""""""""""""
 "        Colours and GUI    "
