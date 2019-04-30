@@ -176,6 +176,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -SIGRTMIN+2 i3bloc
 # Printscreen saves screenshot (with shift only focused window)
 bindsym --release Print       exec scrot
 bindsym --release Shift+Print exec scrot -u
+bindsym --release Ctrl+Print  exec scrot -s
 
 # Media keys
 bindsym XF86AudioPlay exec ~/.i3/player-control.sh toggle && pkill -SIGRTMIN+3 i3blocks
