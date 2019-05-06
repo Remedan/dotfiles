@@ -1,7 +1,22 @@
 eval `dircolors ~/.dir_colors`
 
-EDITOR=nvim
-PATH=$PATH:~/scripts
+if [ -d ~/scripts ]
+then
+    export PATH="$PATH:~/scripts"
+fi
+
+if command -v nvim > /dev/null
+then
+    export EDITOR=nvim
+fi
+
+if command -v ibus-daemon > /dev/null
+then
+    export GTK_IM_MODULE="ibus"
+    export XMODIFIERS="@im=ibus"
+    export QT_IM_MODULE="ibus"
+    ibus-daemon -drx
+fi
 
 alias sxiv='sxiv -a'
 alias sudo='sudo -E'
