@@ -1,26 +1,25 @@
-[user]
-	email = vojtech.balak@internet-handel.cz
-	name = Vojtech Balak
+[include]
+    path = ~/.gituser
 [push]
-	default = current
+    default = current
 [credential]
-	helper = cache
+    helper = cache
 [diff]
-	tool = vimdiff3
-	renames = copies
-	mnemonicprefix = true
+    tool = vimdiff3
+    renames = copies
+    mnemonicprefix = true
 [merge]
-	conflictstyle = diff3
-	tool = vimdiff3
+    conflictstyle = diff3
+    tool = vimdiff3
 [advice]
-	statusHints = false
-	pushNonFastForward = false
+    statusHints = false
+    pushNonFastForward = false
 [branch]
-	autosetupmerge = true
+    autosetupmerge = true
 [alias]
-	hist = log --graph --oneline --all
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	cp = cherry-pick
+    hist = log --graph --oneline --all
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    cp = cherry-pick
