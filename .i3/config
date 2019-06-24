@@ -208,7 +208,11 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 # Keyboard layouts, alt+shift to switch
 exec setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
 
+# Multiple monitors
+exec xrandr --output DP-0 --auto --primary --output DP-4 --auto --left-of DP-0
+
 exec --no-startup-id polybar b0
+exec --no-startup-id polybar b1
 
 exec --no-startup-id unclutter
 

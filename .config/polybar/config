@@ -24,6 +24,7 @@ primary = ${colors.color3}
 alert = #bd2c40
 
 [bar/b0]
+monitor = ${env:MONITOR:DP-0}
 width = 100%
 height = 27
 fixed-center = true
@@ -58,6 +59,11 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 cursor-click = pointer
+
+[bar/b1]
+inherit = bar/b0
+monitor = ${env:MONITOR:DP-4}
+tray-position =
 
 [module/xwindow]
 type = internal/xwindow
