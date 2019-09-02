@@ -222,8 +222,8 @@ set background=dark     " Use dark background
 colorscheme solarized   " Use nicer colourscheme
 
 if (has("nvim"))
-    colorscheme solarized8
     set termguicolors
+    colorscheme solarized8
 endif
 
 if has("gui_running")
