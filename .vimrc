@@ -110,7 +110,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Use dark solarized variant for airline
 let g:airline_solarized_bg='dark'
 " Enable nice font only on my machines
-let nice_powerline = index(['helios', 'hermes', 'hedgehog'], hostname()) >= 0
+let nice_powerline = index(['helios', 'hermes', 'hedgehog', 'athena'], hostname()) >= 0
 if nice_powerline
     let g:airline_powerline_fonts = 1
 else
