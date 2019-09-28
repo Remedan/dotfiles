@@ -223,7 +223,6 @@ colorscheme gruvbox     " Use nicer colourscheme
 
 if (has("nvim"))
     set termguicolors
-    colorscheme solarized8
 endif
 
 if has("gui_running")
