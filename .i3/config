@@ -199,11 +199,11 @@ bindsym $mod+u       gaps inner current plus 6
 bindsym $mod+Shift+y gaps outer current minus 6
 bindsym $mod+Shift+u gaps outer current plus 6
 
-# class                 border  backgr. text    indicator
-client.focused          #676d3d #676d3d #ebdbb2 #676d3d
-client.unfocused        #323232 #323232 #ebdbb2 #323232
-client.focused_inactive #323232 #333333 #ebdbb2 #323232
-client.urgent           #383a3b #383a3b #ee0000 #383a3b
+# class                 border  backgr. text    indicator child_border
+client.focused          #676d3d #676d3d #ebdbb2 #676d3d   #676d3d
+client.unfocused        #323232 #323232 #ebdbb2 #323232   #323232
+client.focused_inactive #323232 #333333 #ebdbb2 #323232   #333333
+client.urgent           #383a3b #383a3b #ee0000 #383a3b   #383a3b
 
 # Keyboard layouts, alt+shift to switch
 exec setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
