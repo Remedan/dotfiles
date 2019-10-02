@@ -1,4 +1,4 @@
-# i3 config file
+# i3 config file (v4)
 #
 # User guide: http://i3wm.org/docs/userguide.html
 
@@ -137,9 +137,9 @@ mode "resize" {
     bindsym Up    resize shrink height 10 px or 10 ppt
     bindsym Right resize grow   width  10 px or 10 ppt
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
+    # back to normal: Escape or Mod+r
     bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -153,8 +153,8 @@ mode  $power_control {
     bindsym r exec systemctl reboot; mode "default"
     bindsym p exec systemctl poweroff; mode "default"
 
-    bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+n mode "default"
 }
 bindsym $mod+n mode $power_control
 
@@ -165,13 +165,13 @@ mode "ignore i3" {
 bindsym $mod+m mode "ignore i3"
 
 # Audio controls (volume up, volume down, toggle mute)
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+    && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-    && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioMute        exec amixer -q set Master toggle && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym XF86AudioMute        exec amixer -q set Master toggle
 
 # Sreen brightness controls (brightness up, brightness down)
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -SIGRTMIN+2 i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -SIGRTMIN+2 i3blocks
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Printscreen saves screenshot (with shift only focused window)
 bindsym --release Print       exec scrot
@@ -179,16 +179,16 @@ bindsym --release Shift+Print exec scrot -u
 bindsym --release Ctrl+Print  exec scrot -s
 
 # Media keys
-bindsym XF86AudioPlay exec ~/.i3/player-control.sh toggle && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioNext exec ~/.i3/player-control.sh next   && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioPrev exec ~/.i3/player-control.sh prev   && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioStop exec ~/.i3/player-control.sh stop   && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioPlay exec ~/.i3/player-control.sh toggle
+bindsym XF86AudioNext exec ~/.i3/player-control.sh next
+bindsym XF86AudioPrev exec ~/.i3/player-control.sh prev
+bindsym XF86AudioStop exec ~/.i3/player-control.sh stop
 
 # Applications
 bindsym $mod+i exec firefox-developer-edition
 
 # Borders
-new_window pixel 2
+default_border pixel 2
 
 # Gaps
 gaps inner 12
