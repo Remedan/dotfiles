@@ -176,10 +176,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
-# Printscreen saves screenshot (with shift only focused window)
+# Printscreen saves screenshot (focused window only with shift, custom selection with ctrl)
 bindsym --release Print       exec grim `date "+screenshot_%Y-%m-%d_%H:%M:%S.png"`
-#bindsym --release Shift+Print exec scrot -u
-#bindsym --release Ctrl+Print  exec scrot -s
+bindsym --release Shift+Print exec swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - `date "+screenshot_%Y-%m-%d_%H:%M:%S.png"`
+bindsym --release Ctrl+Print  exec slurp | grim -g - `date "+screenshot_%Y-%m-%d_%H:%M:%S.png"`
 
 # Media keys
 bindsym XF86AudioPlay exec ~/.i3/player-control.sh toggle
