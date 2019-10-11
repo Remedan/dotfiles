@@ -213,6 +213,11 @@ bar {
     swaybar_command waybar
 }
 
+# Touchpad tap to click
+input "2:14:ETPS/2_Elantech_Touchpad" {
+    tap enabled
+}
+
 # Keyboard layouts, alt+shift to switch
 
 # Applets
