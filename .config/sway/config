@@ -219,6 +219,8 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 }
 
 # Keyboard layouts, alt+shift to switch
+input * xkb_layout "us,cz(qwerty)"
+input * xkb_options "grp:alt_shift_toggle"
 
 # Applets
 #exec --no-startup-id nm-applet # network manager

@@ -3,9 +3,9 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "mpd", "pulseaudio"],
     "modules-center": ["sway/window"],
-    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "custom/keyboard", "network", "cpu", "memory", "backlight", "battery", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": false
@@ -129,5 +129,10 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/keyboard": {
+        "exec": "swaymsg -t get_inputs | jq -r '.[3].xkb_active_layout_name'",
+        "interval": 1,
+        "format": " {}"
     }
 }
