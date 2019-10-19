@@ -216,6 +216,7 @@ bar {
 # Touchpad tap to click
 input "2:14:ETPS/2_Elantech_Touchpad" {
     tap enabled
+    natural_scroll enabled
 }
 
 # Keyboard layouts, alt+shift to switch
