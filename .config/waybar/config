@@ -3,9 +3,9 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "mpd", "pulseaudio"],
+    "modules-left": ["sway/workspaces", "sway/mode", "pulseaudio", "custom/media", "mpd"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "custom/keyboard", "network", "cpu", "memory", "backlight", "battery", "clock", "tray"],
+    "modules-right": ["custom/keyboard", "network", "cpu", "memory", "backlight", "battery", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": false
@@ -81,7 +81,7 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
@@ -104,7 +104,7 @@
         "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{icon} {volume}% {format_source}",
         "format-bluetooth-muted": "{icon}  {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": " {format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
@@ -114,7 +114,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", ""]
         },
         "on-click": "pavucontrol"
     },

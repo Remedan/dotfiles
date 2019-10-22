@@ -3,7 +3,7 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -21,7 +21,7 @@ window#waybar.hidden {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #ebdbb2;
     border-bottom: 3px solid transparent;
 }
 
