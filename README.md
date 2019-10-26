@@ -25,6 +25,17 @@ The repo has different branches for the different computers I use. There's some 
 
 My two favourite programming fonts are Iosevka and Terminus. I also use Font Awesome for a few icons in Polybar.
 
+### Git user config
+
+To keep my git user info from this repo I source it from `~/.gituser`. Git will complain if it doesn't exist. Example contents:
+
+```
+[user]
+    name = "John Doe"
+    email = "jd@example.org"
+    signingkey = "ABC123DEF456"
+```
+
 ### Zsh config
 
 I usually have the [grml zsh config](https://grml.org/zsh/) installed in /etc,
