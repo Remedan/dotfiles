@@ -87,31 +87,36 @@ set $w9 9
 set $w10 10
 
 # switch to workspace
-bindsym $mod+1 workspace $w1
-bindsym $mod+2 workspace $w2
-bindsym $mod+3 workspace $w3
-bindsym $mod+4 workspace $w4
-bindsym $mod+5 workspace $w5
-bindsym $mod+6 workspace $w6
-bindsym $mod+7 workspace $w7
-bindsym $mod+8 workspace $w8
-bindsym $mod+9 workspace $w9
-bindsym $mod+0 workspace $w10
+bindsym --to-code {
+    $mod+1 workspace $w1
+    $mod+2 workspace $w2
+    $mod+3 workspace $w3
+    $mod+4 workspace $w4
+    $mod+5 workspace $w5
+    $mod+6 workspace $w6
+    $mod+7 workspace $w7
+    $mod+8 workspace $w8
+    $mod+9 workspace $w9
+    $mod+0 workspace $w10
 
-bindsym $mod+comma workspace prev
-bindsym $mod+period workspace next
+    $mod+comma workspace prev
+    $mod+period workspace next
+}
+
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $w1
-bindsym $mod+Shift+2 move container to workspace $w2
-bindsym $mod+Shift+3 move container to workspace $w3
-bindsym $mod+Shift+4 move container to workspace $w4
-bindsym $mod+Shift+5 move container to workspace $w5
-bindsym $mod+Shift+6 move container to workspace $w6
-bindsym $mod+Shift+7 move container to workspace $w7
-bindsym $mod+Shift+8 move container to workspace $w8
-bindsym $mod+Shift+9 move container to workspace $w9
-bindsym $mod+Shift+0 move container to workspace $w10
+bindsym --to-code {
+    $mod+Shift+1 move container to workspace $w1
+    $mod+Shift+2 move container to workspace $w2
+    $mod+Shift+3 move container to workspace $w3
+    $mod+Shift+4 move container to workspace $w4
+    $mod+Shift+5 move container to workspace $w5
+    $mod+Shift+6 move container to workspace $w6
+    $mod+Shift+7 move container to workspace $w7
+    $mod+Shift+8 move container to workspace $w8
+    $mod+Shift+9 move container to workspace $w9
+    $mod+Shift+0 move container to workspace $w10
+}
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
