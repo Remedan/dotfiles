@@ -223,6 +223,9 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 input * xkb_layout "us,cz(qwerty)"
 input * xkb_options "grp:alt_shift_toggle"
 
+# Notification manager
+exec --no-startup-id dunst
+
 # Applets
 #exec --no-startup-id nm-applet # network manager
 exec --no-startup-id nextcloud
