@@ -23,3 +23,5 @@
     st = status
     br = branch
     cp = cherry-pick
+[commit]
+    gpgsign = true
