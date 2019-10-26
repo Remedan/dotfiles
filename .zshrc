@@ -1,8 +1,8 @@
-eval `dircolors ~/.dir_colors`
+eval `dircolors $HOME/.dir_colors`
 
-if [ -d ~/scripts ]
+if [ -d $HOME/scripts ]
 then
-    export PATH="$PATH:~/scripts"
+    export PATH="$PATH:$HOME/scripts"
 fi
 
 if command -v nvim > /dev/null
