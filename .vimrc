@@ -217,6 +217,10 @@ nnoremap <silent> <F5> :TlistToggle<CR>
 " leader r to save as root
 nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
 
+" learder w to remove trailing whitespace from file
+nnoremap <leader>w :%s/\s\+$//e<CR>
+
+" leader pcf to format php code
 nnoremap <leader>pcf :w <bar> execute "!php-cs-fixer fix %" <bar> :e<CR>
 
 """""""""""""""""""""""""""""
