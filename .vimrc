@@ -131,12 +131,16 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_key_list_select_completion   = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
-" Open ale location list on save
+" Open ALE location list on save
 let g:ale_open_list = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 " ale-airline integration
 let g:airline#extensions#ale#enabled = 1
+" Enable ALE autofix
+let g:ale_fixers = {
+\    'javascript': ['eslint']
+\}
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
