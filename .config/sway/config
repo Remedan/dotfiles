@@ -234,8 +234,8 @@ exec --no-startup-id dunst
 # Applets
 #exec --no-startup-id nm-applet # network manager
 exec --no-startup-id nextcloud
-#exec --no-startup-id redshift-gtk
-#exec --no-startup-id udiskie --smart-tray # usb storage automounter
+exec --no-startup-id redshift-gtk -m wayland
+exec --no-startup-id udiskie # usb storage automounter
 
 # Wallpaper
 output * bg ~/wall.png fill
