@@ -86,7 +86,6 @@ Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
@@ -248,6 +247,9 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Coc extensions
+let g:coc_global_extensions = ['coc-snippets']
 
 """""""""""""""""""""""""""""
 "        Key mapping        "
