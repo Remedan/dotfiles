@@ -47,7 +47,6 @@ Plugins are managed via vim-plug. The install cripts sets this up.
 
 * [ack.vim](https://github.com/mileszs/ack.vim)
 * [ALE](https://github.com/w0rp/ale)
-* [coc-snippets](https://github.com/neoclide/coc-snippets)
 * [Coc](https://github.com/neoclide/coc.nvim)
 * [Colorizer](https://github.com/chrisbra/Colorizer)
 * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
