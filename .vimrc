@@ -249,7 +249,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-snippets']
+let g:coc_global_extensions = ['coc-snippets', 'coc-python']
 
 """""""""""""""""""""""""""""
 "        Key mapping        "
