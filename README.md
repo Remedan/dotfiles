@@ -23,7 +23,7 @@ The repo has different branches for the different computers I use. There's some 
 
 ### Fonts
 
-My two favourite programming fonts are Iosevka and Terminus. I also use Font Awesome for a few icons in Polybar.
+My two favourite programming fonts are [Iosevka](https://typeof.net/Iosevka/) and [Terminus](http://terminus-font.sourceforge.net/). I also use Font Awesome for a few icons in Polybar.
 
 ### Git user config
 
