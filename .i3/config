@@ -226,10 +226,10 @@ client.unfocused        #002b36 #073642 #839496 #073642   #073642
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36   #dc322f
 
 # I had issues with Xresources not loading
-exec --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id xrdb -load ~/.Xresources
 
 # Keyboard layouts, alt+shift to switch
-exec setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
+exec_always --no-startup-id setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
 
 # Multiple monitors
 exec xrandr --output DVI-I-1 --auto --pos 0x420 --primary --output DVI-D-0 --auto --pos 1920x1 --rotate right --output HDMI-0 --auto --pos 3000x420
