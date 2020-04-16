@@ -84,6 +84,13 @@ set $w8 8
 set $w9 9
 set $w10 10
 
+set $m1 DP-0
+set $m2 DP-4
+
+# worspace placement
+workspace "$w1" output $m2
+workspace "$w2" output $m1
+
 # switch to workspace
 bindsym $mod+1 workspace $w1
 bindsym $mod+2 workspace $w2
@@ -210,7 +217,7 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36   #dc322f
 exec setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
 
 # Multiple monitors
-exec xrandr --output DP-0 --auto --primary --output DP-4 --auto --left-of DP-0
+exec xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --primary --output DP-4 --mode 1920x1080 --rate 144.00 --left-of DP-0 --output HDMI-0 --off
 
 exec --no-startup-id polybar b0
 exec --no-startup-id polybar b1
