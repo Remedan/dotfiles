@@ -9,11 +9,11 @@
        "x": 1934,
        "y": 34
     },
-    "name": "Slack - Internet Handel",
+    "name": "Franz",
     "percent": 1,
     "swallows": [
        {
-          "class": "^Slack$",
+          "class": "^Franz$",
           "transient_for": "^$"
        }
     ],

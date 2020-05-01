@@ -257,10 +257,11 @@ exec systemctl --user start mpdas
 for_window [class="Firefox"] move to workspace $w1
 for_window [class="Spotify"] move to workspace $w2
 for_window [class="Slack"] move to workspace $w8
+for_window [class="Franz"] move to workspace $w8
 
 exec i3-msg 'workspace $w1; append_layout ~/.i3/layout/w1.json; gaps inner current set 0; exec firefox-developer-edition;'
 exec i3-msg 'workspace $w2; exec spotify;'
 exec i3-msg 'workspace $w5; append_layout ~/.i3/layout/w5.json; exec alacritty -t dev; gaps inner current set 0;'
 exec i3-msg 'workspace $w7; append_layout ~/.i3/layout/w7.json; exec alacritty -t term1; exec alacritty -t term2;'
-exec i3-msg 'workspace $w8; append_layout ~/.i3/layout/w8.json; exec slack;'
+exec i3-msg 'workspace $w8; append_layout ~/.i3/layout/w8.json; exec franz;'
 exec i3-msg 'workspace $w9; append_layout ~/.i3/layout/w9.json; exec alacritty -t chat -e weechat;'
