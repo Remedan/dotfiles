@@ -84,8 +84,8 @@ set $w8 8
 set $w9 9
 set $w10 10
 
-set $m1 DP-0
-set $m2 DP-4
+set $m1 DP-2
+set $m2 DP-0
 
 # worspace placement
 workspace "$w1" output $m2
@@ -213,17 +213,14 @@ client.focused_inactive #002b36 #073642 #839496 #073642   #073642
 client.unfocused        #002b36 #073642 #839496 #073642   #073642
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36   #dc322f
 
-# I had issues with Xresources not loading
-exec_always --no-startup-id xrdb -load ~/.Xresources
-
 # Keyboard layouts, alt+shift to switch
 exec_always --no-startup-id setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
 
 # Multiple monitors
-exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --primary --output DP-4 --mode 1920x1080 --rate 144.00 --left-of DP-0 --output HDMI-0 --off
+exec --no-startup-id xrandr --output DP-4 --mode 1920x1080 --rate 144.00 --primary --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --output HDMI-0 --off
 
-exec --no-startup-id polybar b0
-exec --no-startup-id polybar b1
+# GDM doesn't load Xresources
+exec --no-startup-id xrdb -load ~/.Xresources && ( polybar b0 & polybar b1 )
 
 exec --no-startup-id unclutter
 

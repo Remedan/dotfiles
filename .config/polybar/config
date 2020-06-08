@@ -24,7 +24,7 @@ primary = ${colors.color3}
 alert = #bd2c40
 
 [bar/b0]
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-4}
 width = 100%
 height = 27
 fixed-center = true
@@ -62,7 +62,7 @@ cursor-click = pointer
 
 [bar/b1]
 inherit = bar/b0
-monitor = ${env:MONITOR:DP-4}
+monitor = ${env:MONITOR:DP-0}
 tray-position =
 
 [module/xwindow]
