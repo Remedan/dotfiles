@@ -25,3 +25,5 @@
     cp = cherry-pick
 [commit]
     gpgsign = true
+[pull]
+    rebase = false
