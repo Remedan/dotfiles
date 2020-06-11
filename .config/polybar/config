@@ -24,7 +24,7 @@ primary = ${colors.color3}
 alert = #bd2c40
 
 [bar/b0]
-monitor = ${env:MONITOR:DVI-I-1}
+lonitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 27
 fixed-center = true
@@ -68,7 +68,7 @@ tray-position =
 
 [bar/b2]
 inherit = bar/b0
-monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR:DVI-I-1}
 tray-position =
 
 [module/xwindow]

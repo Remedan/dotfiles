@@ -84,9 +84,9 @@ set $w8 8 
 set $w9 9 
 set $w10 10
 
-set $m1 DVI-I-1
+set $m1 HDMI-0
 set $m2 DVI-D-0
-set $m3 HDMI-0
+set $m3 DVI-I-1
 
 # worspace placement
 workspace "$w1" output $m1
@@ -229,7 +229,7 @@ exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
 
 # Multiple monitors
-exec xrandr --output DVI-I-1 --auto --pos 0x420 --primary --output DVI-D-0 --auto --pos 1920x1 --rotate right --output HDMI-0 --auto --pos 3000x420
+exec xrandr --output HDMI-0 --auto --pos 0x520 --primary --output DVI-D-0 --auto --pos 1920x1 --rotate right --output DVI-I-1 --auto --pos 3000x520
 
 exec --no-startup-id polybar b0
 exec --no-startup-id polybar b1
