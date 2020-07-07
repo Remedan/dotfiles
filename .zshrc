@@ -21,6 +21,7 @@ fi
 alias sxiv='sxiv -a'
 alias sudo='sudo -E'
 alias ip='ip -c'
+alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
 
 alias gs='git status'
 alias ga='git add'
