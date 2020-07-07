@@ -76,13 +76,13 @@ bindsym $mod+z focus child
 set $w1 1 
 set $w2 2 
 set $w3 3
-set $w4 4
-set $w5 5 
+set $w4 4 
+set $w5 5
 set $w6 6
 set $w7 7 
-set $w8 8 
-set $w9 9 
-set $w10 10
+set $w8 8
+set $w9 9
+set $w10 10 
 
 set $m1 HDMI-0
 set $m2 DVI-D-0
@@ -92,7 +92,7 @@ set $m3 DVI-I-1
 workspace "$w1" output $m1
 workspace "$w2" output $m1
 workspace "$w3" output $m1
-workspace "$w4" output $m1
+workspace "$w4" output $m2
 workspace "$w5" output $m2
 workspace "$w6" output $m2
 workspace "$w7" output $m3
@@ -256,12 +256,11 @@ exec systemctl --user start mpdas
 # restore layout
 for_window [class="Firefox"] move to workspace $w1
 for_window [class="Spotify"] move to workspace $w2
-for_window [class="Slack"] move to workspace $w8
-for_window [class="Franz"] move to workspace $w8
+for_window [class="Slack"] move to workspace $w10
+for_window [class="Franz"] move to workspace $w10
 
 exec i3-msg 'workspace $w1; append_layout ~/.i3/layout/w1.json; gaps inner current set 0; exec firefox-developer-edition;'
 exec i3-msg 'workspace $w2; exec spotify;'
-exec i3-msg 'workspace $w5; append_layout ~/.i3/layout/w5.json; exec alacritty -t dev; gaps inner current set 0;'
+exec i3-msg 'workspace $w4; append_layout ~/.i3/layout/w4.json; exec alacritty -t dev; gaps inner current set 0;'
 exec i3-msg 'workspace $w7; append_layout ~/.i3/layout/w7.json; exec alacritty -t term1; exec alacritty -t term2;'
-exec i3-msg 'workspace $w8; append_layout ~/.i3/layout/w8.json; exec franz;'
-exec i3-msg 'workspace $w9; append_layout ~/.i3/layout/w9.json; exec alacritty -t chat -e weechat;'
+exec i3-msg 'workspace $w10; append_layout ~/.i3/layout/w10.json; exec franz;'
