@@ -223,7 +223,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 
 # Compositor
-exec compton -b --config ~/.compton.conf
+exec picom -b
 
 # Wallpaper
 exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
