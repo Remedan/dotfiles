@@ -246,7 +246,7 @@ exec --no-startup-id udiskie --smart-tray # usb storage automounter
 exec --no-startup-id system-config-printer-applet
 
 # Compositor
-exec picom -b
+exec picom -b --experimental-backends
 
 # Wallpaper
 exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
