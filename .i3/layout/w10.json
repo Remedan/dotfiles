@@ -9,11 +9,11 @@
        "x": 1934,
        "y": 34
     },
-    "name": "Franz",
+    "name": "Ferdi",
     "percent": 1,
     "swallows": [
        {
-          "class": "^Franz$",
+          "class": "^Ferdi$",
           "transient_for": "^$"
        }
     ],
