@@ -29,7 +29,6 @@ set fish_greeting
 
 alias sxiv "sxiv -a"
 alias sudo "sudo -E"
-alias time "time -p"
 alias ip "ip -c"
 
 abbr -a gs git status
