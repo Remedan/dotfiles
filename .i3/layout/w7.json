@@ -4,17 +4,17 @@
     "current_border_width": 2,
     "floating": "auto_off",
     "geometry": {
-       "height": 436,
-       "width": 731,
+       "height": 1025,
+       "width": 938,
        "x": 0,
        "y": 0
     },
-    "name": "remedan@hedgehog: ~",
+    "name": "remedan@hedgehog: i3-save-tree > .i3/layout/w7.json",
     "percent": 0.5,
     "swallows": [
        {
-          "title": "^term1$",
-          "transient_for": "^$"
+           "class": "^kitty$",
+           "instance": "^kitty$"
        }
     ],
     "type": "con"
@@ -25,17 +25,17 @@
     "current_border_width": 2,
     "floating": "auto_off",
     "geometry": {
-       "height": 436,
-       "width": 731,
+       "height": 1025,
+       "width": 938,
        "x": 0,
        "y": 0
     },
-    "name": "remedan@hedgehog: less .i3/config",
+    "name": "remedan@hedgehog: ~",
     "percent": 0.5,
     "swallows": [
        {
-          "title": "^term2$",
-          "transient_for": "^$"
+           "class": "^kitty$",
+           "instance": "^kitty$"
        }
     ],
     "type": "con"

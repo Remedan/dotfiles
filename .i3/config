@@ -13,7 +13,7 @@ font pango:Open Sans 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -261,6 +261,6 @@ for_window [class="Ferdi"] move to workspace $w10
 
 exec i3-msg 'workspace $w1; append_layout ~/.i3/layout/w1.json; gaps inner current set 0; exec firefox-developer-edition;'
 exec i3-msg 'workspace $w2; exec spotify;'
-exec i3-msg 'workspace $w4; append_layout ~/.i3/layout/w4.json; exec alacritty -t dev; gaps inner current set 0;'
-exec i3-msg 'workspace $w7; append_layout ~/.i3/layout/w7.json; exec alacritty -t term1; exec alacritty -t term2;'
+exec i3-msg 'workspace $w4; append_layout ~/.i3/layout/w4.json; exec kitty; gaps inner current set 0;'
+exec i3-msg 'workspace $w7; append_layout ~/.i3/layout/w7.json; exec kitty; exec kitty;'
 exec i3-msg 'workspace $w10; append_layout ~/.i3/layout/w10.json; exec ferdi;'
