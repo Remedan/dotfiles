@@ -13,7 +13,7 @@ font pango:Open Sans 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec WINIT_HIDPI_FACTOR=1 alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
