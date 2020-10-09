@@ -10,8 +10,9 @@ The repo has different branches for the different computers I use. There's some 
 
 ## Key Components and Software
 
-* [i3-gaps](https://github.com/Airblader/i3) + Polybar + Compton
-* alacritty + zsh
+* [i3-gaps](https://github.com/Airblader/i3) + Polybar + Picom
+    - OR Sway + Waybar
+* kitty/alacritty + zsh
 * Neovim
 * Ranger
 * Rofi
@@ -41,47 +42,6 @@ To keep my git user info from this repo I source it from `~/.gituser`. Git will 
 I usually have the [grml zsh config](https://grml.org/zsh/) installed in /etc,
 which is why my .zshrc is rather short.
 
-## Vim plugins
+### Vim plugins
 
-Plugins are managed via vim-plug. The install cripts sets this up.
-
-* [ack.vim](https://github.com/mileszs/ack.vim)
-* [ALE](https://github.com/w0rp/ale)
-* [Coc](https://github.com/neoclide/coc.nvim)
-* [Colorizer](https://github.com/chrisbra/Colorizer)
-* [ctrlp.vim](https://github.com/kien/ctrlp.vim)
-* [delimitMate](https://github.com/Raimondi/delimitMate)
-* [EasyMotion](https://github.com/easymotion/vim-easymotion)
-* [Emmet-vim](https://github.com/mattn/emmet-vim)
-* [Fugitive](https://github.com/tpope/vim-fugitive)
-* [MatchTag](https://github.com/gregsexton/MatchTag)
-* [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
-* [NERD Tree](https://github.com/scrooloose/nerdtree)
-* [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim)
-* [Previm](https://github.com/kannokanno/previm)
-* [surround.vim](https://github.com/tpope/vim-surround)
-* [Tag List](https://github.com/vim-scripts/taglist.vim)
-* [undotree.vim](https://github.com/mbbill/undotree)
-* [Vim ESearch](https://github.com/eugen0329/vim-esearch)
-* [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
-* [vim-airline](https://github.com/vim-airline/vim-airline)
-* [vim-easy-align](https://github.com/junegunn/vim-easy-align)
-* [vim-fish](https://github.com/dag/vim-fish)
-* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-* [vim-glsl](https://github.com/tikhomirov/vim-glsl)
-* [Vim-php-cs-fixer](https://github.com/stephpy/vim-php-cs-fixer)
-* [vim-plug](https://github.com/junegunn/vim-plug)
-* [vim-twig](https://github.com/lumiliet/vim-twig)
-* [vimtex](https://github.com/lervag/vimtex)
-* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-
-## Vim colourschemes
-
-* [Bad Wolf](https://github.com/sjl/badwolf)
-* [Gotham](https://github.com/whatyouhide/vim-gotham)
-* [Gruvbox](https://github.com/morhetz/gruvbox)
-* [Inkpot](https://github.com/ciaranm/inkpot)
-* [Jellybeans](https://github.com/nanotech/jellybeans.vim)
-* [Molokai](https://github.com/tomasr/molokai)
-* [Solarized](https://github.com/altercation/vim-colors-solarized)
-* [Solarized 8](https://github.com/lifepillar/vim-solarized8)
+Plugins are managed via vim-plug. The install script sets this up.
