@@ -251,6 +251,9 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Coc extensions
 let g:coc_global_extensions = ['coc-snippets', 'coc-python']
 
+" Vimtex needs default TeX flavour to be set
+let g:tex_flavor = 'latex'
+
 """""""""""""""""""""""""""""
 "        Key mapping        "
 """""""""""""""""""""""""""""
