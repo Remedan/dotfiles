@@ -12,7 +12,7 @@ The repo has different branches for the different computers I use. There's some 
 
 * [i3-gaps](https://github.com/Airblader/i3) + Polybar + Picom
     - OR Sway + Waybar
-* alacritty + zsh
+* kitty/alacritty + zsh
 * Neovim
 * Ranger
 * Rofi
@@ -44,4 +44,4 @@ which is why my .zshrc is rather short.
 
 ### Vim plugins
 
-Plugins are managed via vim-plug. The install cripts sets this up.
+Plugins are managed via vim-plug. The install script sets this up.
