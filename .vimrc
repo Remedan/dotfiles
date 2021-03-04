@@ -98,7 +98,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/taglist.vim'
-Plug 'w0rp/ale'
 Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
@@ -121,17 +120,6 @@ let g:NERDTreeShowHidden = 1
 
 " Nice enter inside parentheses
 let delimitMate_expand_cr = 1
-
-" Open ALE location list on save
-let g:ale_open_list = 1
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-" ale-airline integration
-let g:airline#extensions#ale#enabled = 1
-" Enable ALE autofix
-let g:ale_fixers = {
-\    'javascript': ['eslint']
-\}
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -249,7 +237,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-python']
+let g:coc_global_extensions = ['coc-snippets']
 
 " Vimtex needs default TeX flavour to be set
 let g:tex_flavor = 'latex'
