@@ -277,6 +277,12 @@ nnoremap <A-l> >>
 vnoremap <A-h> <gv
 vnoremap <A-l> >gv
 
+" Ctrl+h/j/k/l switch windows
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
 " F2 toggles paste mode
 set pastetoggle=<F2>
 
