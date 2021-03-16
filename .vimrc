@@ -1,4 +1,11 @@
 """""""""""""""""""""""""""""
+"     Optional Features     "
+"""""""""""""""""""""""""""""
+" Machines where I have extra things set up (e.g. powerline fonts).
+let my_hosts = ['helios', 'hermes', 'hedgehog', 'athena']
+let extra_setup = index(my_hosts, hostname()) >= 0
+
+"""""""""""""""""""""""""""""
 "        Behaviour          "
 """""""""""""""""""""""""""""
 set nocompatible    " Don't behave like Vi
@@ -101,25 +108,30 @@ Plug 'vim-scripts/taglist.vim'
 Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
+" Airline
+
 " Enable nice tabline
 let g:airline#extensions#tabline#enabled = 1
 " Use dark solarized variant for airline
 let g:airline_solarized_bg='dark'
 " Enable nice font only on my machines
-let nice_powerline = index(['helios', 'hermes', 'hedgehog', 'athena'], hostname()) >= 0
-if nice_powerline
+if extra_setup
     let g:airline_powerline_fonts = 1
-else
+endif
+
+" NERDTree
+
+if !extra_setup
     " Disable fancy arrows in NERDTree
     let g:NERDTreeDirArrowExpandable = '+'
     let g:NERDTreeDirArrowCollapsible = '-'
 endif
-
 " Show hidden files
 let g:NERDTreeShowHidden = 1
-
 " Nice enter inside parentheses
 let delimitMate_expand_cr = 1
+
+" NERD Commenter
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -132,19 +144,32 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+" ack.vim
+
 " Use The Silver Searcher when available
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+" Colorizer
+
 " Colorize hex colors by default
 let g:colorizer_auto_filetype='css,html'
+
+" Previm
 
 " Open markdown preview in Firefox
 let g:previm_open_cmd = 'firefox-developer-edition'
 
+" VimTeX
+
 " Open latex preview in Zathura
 let g:vimtex_view_method = 'zathura'
+
+" Vimtex needs default TeX flavour to be set
+let g:tex_flavor = 'latex'
+
+" CoC
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -239,9 +264,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Coc extensions
 let g:coc_global_extensions = ['coc-snippets']
 
-" Vimtex needs default TeX flavour to be set
-let g:tex_flavor = 'latex'
-
 """""""""""""""""""""""""""""
 "        Key mapping        "
 """""""""""""""""""""""""""""
@@ -322,7 +344,7 @@ if has("gui_running")
     set guioptions+=c       " Don't open dialogue windows
 
     if has("unix")
-        if nice_powerline
+        if extra_setup
             set guifont=Inconsolata\ for\ Powerline\ Medium\ 12
         else
             set guifont=Inconsolata\ Medium\ 12
