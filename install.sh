@@ -7,13 +7,13 @@ cd "$HOME/dotfiles"
 
 BLACKLIST="-I install.sh -I .config -I .git -I .gitignore -I .gitmodules -I README.md -I screenshot.png"
 
-for file in `ls -A $BLACKLIST`
+for file in $(ls -A $BLACKLIST)
 do
     mv "$HOME/$file" "$HOME/dotfiles_old"
     ln -s "$HOME/dotfiles/$file" "$HOME/$file"
 done
 
-for file in `ls -A -I .config .config`
+for file in $(ls -A -I .config .config)
 do
     mv "$HOME/.config/$file" "$HOME/dotfiles_old/.config"
     ln -s "$HOME/dotfiles/.config/$file" "$HOME/.config/$file"
