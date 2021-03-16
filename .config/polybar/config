@@ -40,9 +40,9 @@ padding-right = 2
 
 module-margin = 1
 
-font-0 = FontAwesome:pixelsize=10;1
+font-0 = Symbols\ Nerd\ Font:10;2
 font-1 = Open Sans:pixelsize=11;2
-font-2 = Source\ Han\ Sans JP:pixelsize=10;2
+font-2 = Source\ Han\ Sans:pixelsize=10;2
 
 modules-left = i3 player-mpris-tail mpd pulseaudio
 modules-center = xwindow
