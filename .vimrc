@@ -57,6 +57,9 @@ set listchars=tab:>-,trail:· " Show tabs and trailing space
 set list            " Enable the above settings
 set laststatus=2    " Wider status line, needed for powerline
 set foldmethod=syntax " Create fold points based on syntax
+if extra_setup
+    set termguicolors " Use 24 bit colours in terminal
+endif
 syntax on           " Enable syntax highlighting
 " Open all folds by default
 autocmd BufWinEnter * normal zR
@@ -76,7 +79,6 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
-Plug 'chrisbra/Colorizer'
 Plug 'ciaranm/inkpot'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
@@ -95,6 +97,7 @@ Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
+Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'shawncplus/phpcomplete.vim'
@@ -151,10 +154,12 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" Colorizer
-
-" Colorize hex colors by default
-let g:colorizer_auto_filetype='css,html'
+" vim-hexokinase
+if has('nvim')
+    let g:Hexokinase_highlighters = [ 'virtual' ]
+else
+    let g:Hexokinase_highlighters = [ 'background' ]
+endif
 
 " Previm
 
@@ -329,12 +334,8 @@ nnoremap <leader>pcf :w <bar> execute "!php-cs-fixer fix %" <bar> :e<CR>
 """""""""""""""""""""""""""""
 "        Colours and GUI    "
 """""""""""""""""""""""""""""
-set background=dark     " Use dark background
-colorscheme gruvbox     " Use nicer colourscheme
-
-if (has("nvim"))
-    set termguicolors
-endif
+set background=dark    " Use dark background
+colorscheme gruvbox    " Use nicer colourscheme
 
 if has("gui_running")
     set guioptions+=TlrbRLe " Bug workaround
