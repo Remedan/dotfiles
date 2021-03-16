@@ -8,9 +8,7 @@ let extra_setup = index(my_hosts, hostname()) >= 0
 """""""""""""""""""""""""""""
 "        Behaviour          "
 """""""""""""""""""""""""""""
-set nocompatible    " Don't behave like Vi
-
-set wildmenu        " Enhanced command line completion
+set nocompatible    " Don't behave like Vi set wildmenu        " Enhanced command line completion
 set wildmode=longest,list   " Complete the longest match, then list others
 set backspace=indent,eol,start  " Allow backspacing over more stuff
 set confirm         " Ask to confirm instead of failing
@@ -98,6 +96,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'shawncplus/phpcomplete.vim'
@@ -173,6 +172,11 @@ let g:vimtex_view_method = 'zathura'
 
 " Vimtex needs default TeX flavour to be set
 let g:tex_flavor = 'latex'
+
+" DevIcons
+if !extra_setup
+    let g:webdevicons_enable = 0
+endif
 
 " CoC
 
