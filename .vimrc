@@ -6,9 +6,10 @@ let my_hosts = ['helios', 'hermes', 'hedgehog', 'athena']
 let extra_setup = index(my_hosts, hostname()) >= 0
 
 """""""""""""""""""""""""""""
-"        Behaviour          "
+"        Behavior           "
 """""""""""""""""""""""""""""
-set nocompatible    " Don't behave like Vi set wildmenu        " Enhanced command line completion
+set nocompatible    " Don't behave like Vi
+set wildmenu        " Enhanced command line completion
 set wildmode=longest,list   " Complete the longest match, then list others
 set backspace=indent,eol,start  " Allow backspacing over more stuff
 set confirm         " Ask to confirm instead of failing
@@ -16,7 +17,7 @@ set ignorecase      " Case insensitive search
 set smartcase       " Case sensitive if search term contains capitals
 set linebreak       " Allow linebreaks between words
 set scrolloff=2     " Start scrolling a few lines from the border
-set visualbell      " Use colour blink instead of sound
+set visualbell      " Use color blink instead of sound
 set display+=lastline   " Always display the last line of the screen
 set encoding=utf8   " Use utf8 as internal encoding
 set whichwrap+=<,>,h,l  " Allow cursor to wrap lines
@@ -36,7 +37,7 @@ set tabstop=4       " Width of the tab character
 set softtabstop=4   " How many columns the tab key inserts
 set shiftwidth=4    " Width of 1 indentation level
 set expandtab       " Expand tabs into spaces
-set smartindent     " Smart C-like autoindenting
+set smartindent     " Smart C-like autoindentation
 
 " Determine indentation rules by filetype
 filetype plugin indent on
@@ -56,7 +57,7 @@ set list            " Enable the above settings
 set laststatus=2    " Wider status line, needed for powerline
 set foldmethod=syntax " Create fold points based on syntax
 if extra_setup
-    set termguicolors " Use 24 bit colours in terminal
+    set termguicolors " Use 24 bit colors in terminal
 endif
 syntax on           " Enable syntax highlighting
 " Open all folds by default
@@ -74,39 +75,39 @@ let php_folding = 1 " Enable syntax-based folding
 """""""""""""""""""""""""""""
 " vim-plug takes care of loading the plugins
 call plug#begin()
+" Functionality
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
-Plug 'ciaranm/inkpot'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dag/vim-fish'
 Plug 'easymotion/vim-easymotion'
 Plug 'eugen0329/vim-esearch'
 Plug 'gregsexton/MatchTag'
-Plug 'junegunn/vim-easy-align'
 Plug 'kannokanno/previm'
-Plug 'lervag/vimtex'
-Plug 'lifepillar/vim-solarized8'
-Plug 'lumiliet/vim-twig'
-Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
+Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
-Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'sjl/badwolf'
-Plug 'tikhomirov/vim-glsl'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/taglist.vim'
+" Filetypes
+Plug 'lervag/vimtex'
+Plug 'lumiliet/vim-twig'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'tikhomirov/vim-glsl'
+" Colorschemes
+Plug 'altercation/vim-colors-solarized'
+Plug 'ciaranm/inkpot'
+Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'sjl/badwolf'
+Plug 'tomasr/molokai'
 Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
@@ -336,10 +337,10 @@ nnoremap <leader>w :%s/\s\+$//e<CR>
 nnoremap <leader>pcf :w <bar> execute "!php-cs-fixer fix %" <bar> :e<CR>
 
 """""""""""""""""""""""""""""
-"        Colours and GUI    "
+"        Colors and GUI     "
 """""""""""""""""""""""""""""
 set background=dark    " Use dark background
-colorscheme gruvbox    " Use nicer colourscheme
+colorscheme gruvbox    " Use nicer colorscheme
 
 if has("gui_running")
     set guioptions+=TlrbRLe " Bug workaround
