@@ -82,6 +82,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'eugen0329/vim-esearch'
 Plug 'gregsexton/MatchTag'
+Plug 'jupyter-vim/jupyter-vim'
 Plug 'kannokanno/previm'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
@@ -272,7 +273,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-snippets']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pyright']
 
 """""""""""""""""""""""""""""
 "        Key mapping        "
@@ -326,6 +327,9 @@ nnoremap <silent> <F4> :UndotreeToggle<CR>
 
 " F5 toggles tag list
 nnoremap <silent> <F5> :TlistToggle<CR>
+
+" F9 runs current file
+nnoremap <F9> :!time "%:p"<CR>
 
 " leader r to save as root
 nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
