@@ -24,9 +24,9 @@ set whichwrap+=<,>,h,l  " Allow cursor to wrap lines
 set hidden          " Allow opening new buffers without saving changes
 set mouse=a         " Allow mouse control in all modes
 set undofile        " Persistent undo history
-set undodir=~/.vim/undo " Undo data location
-set directory=~/.vim/swap " Swap file location
-set backupdir=~/.vim/backup " Backup file location
+set undodir=~/.config/nvim/undo " Undo data location
+set directory=~/.config/nvim/swap " Swap file location
+set backupdir=~/.config/nvim/backup " Backup file location
 
 autocmd CompleteDone * pclose " Automatically close preview after completion
 
