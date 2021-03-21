@@ -217,7 +217,6 @@ exec --no-startup-id unclutter
 # Applets
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id nextcloud
-exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 
 # Compositor
