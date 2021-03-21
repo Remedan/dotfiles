@@ -1,0 +1,113 @@
+actions:
+  pre:
+    vim-plug-install: test -e ~/.config/nvim/autoload/plug.vim || (mkdir -p ~/.config/nvim/autoload; curl
+      -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
+  vim-plug: nvim +PlugInstall +qall
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+dotfiles:
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
+  d_xresources-include:
+    src: Xresources-include
+    dst: ~/.Xresources-include
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+  d_dunst:
+    src: config/dunst
+    dst: ~/.config/dunst
+  d_kitty:
+    src: config/kitty
+    dst: ~/.config/kitty
+  d_mpd:
+    src: config/mpd
+    dst: ~/.config/mpd
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+    actions:
+      - vim-plug-install
+      - vim-plug
+  d_picom:
+    src: config/picom
+    dst: ~/.config/picom
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+  d_ranger:
+    src: config/ranger
+    dst: ~/.config/ranger
+  d_redshift:
+    src: config/redshift
+    dst: ~/.config/redshift
+  d_sway:
+    src: config/sway
+    dst: ~/.config/sway
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_zathura:
+    src: config/zathura
+    dst: ~/.config/zathura
+  f_ctags:
+    src: ctags
+    dst: ~/.ctags
+  f_dir_colors:
+    src: dir_colors
+    dst: ~/.dir_colors
+  f_eslintrc:
+    src: eslintrc
+    dst: ~/.eslintrc
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+  d_i3:
+    src: i3
+    dst: ~/.i3
+  d_ncmpcpp:
+    src: ncmpcpp
+    dst: ~/.ncmpcpp
+  f_stylelintrc:
+    src: stylelintrc
+    dst: ~/.stylelintrc
+  d_weechat:
+    src: weechat
+    dst: ~/.weechat
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+profiles:
+  athena:
+    dotfiles:
+    - f_xresources
+    - d_xresources-include
+    - d_alacritty
+    - d_dunst
+    - d_kitty
+    - d_mpd
+    - d_nvim
+    - d_picom
+    - d_polybar
+    - d_ranger
+    - d_redshift
+    - d_sway
+    - d_waybar
+    - d_zathura
+    - f_ctags
+    - f_dir_colors
+    - f_eslintrc
+    - f_gitconfig
+    - d_i3
+    - d_ncmpcpp
+    - f_stylelintrc
+    - d_weechat
+    - f_zshrc
