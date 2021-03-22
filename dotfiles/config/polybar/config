@@ -25,8 +25,18 @@ alert = #bd2c40
 
 [bar/b0]
 width = 100%
+{%@@ if profile == "athena" @@%}
 height = 25
 fixed-center = false
+{%@@ elif profile == "hedgehog" @@%}
+height = 27
+fixed-center = true
+monitor = ${env:MONITOR:HDMI-0}
+{%@@ elif profile == "helios" @@%}
+height = 27
+fixed-center = true
+monitor = ${env:MONITOR:DP-4}
+{%@@ endif @@%}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -39,13 +49,23 @@ padding-right = 2
 
 module-margin = 1
 
+{%@@ if profile == "athena" @@%}
 font-0 = Symbols\ Nerd\ Font:14;2
 font-1 = Open Sans:pixelsize=14;2
 font-2 = Source\ Han\ Sans:pixelsize=16;2
+{%@@ else @@%}
+font-0 = Symbols\ Nerd\ Font:10;2
+font-1 = Open Sans:pixelsize=11;2
+font-2 = Source\ Han\ Sans:pixelsize=10;2
+{%@@ endif @@%}
 
 modules-left = i3 player-mpris-tail mpd pulseaudio
 modules-center = xwindow
+{%@@ if profile == "athena" @@%}
 modules-right = filesystem xkeyboard cpu memory xbacklight battery date powermenu
+{%@@ elif profile == "hedgehog" @@%}
+-modules-right = filesystem xkeyboard cpu memory date powermenu
+{%@@ endif @@%}
 
 locale = cs_CZ.utf8
 
@@ -58,6 +78,23 @@ scroll-up = i3wm-wsprev
 scroll-down = i3wm-wsnext
 
 cursor-click = pointer
+
+[bar/b1]
+inherit = bar/b0
+tray-position =
+{%@@ if profile == "hedgehog" @@%}
+monitor = ${env:MONITOR:DVI-D-0}
+modules-left = i3
+{%@@ elif profile == "helios" @@%}
+monitor = ${env:MONITOR:DP-0}
+{%@@ endif @@%}
+
+[bar/b2]
+inherit = bar/b0
+tray-position =
+{%@@ if profile == "hedgehog" @@%}
+monitor = ${env:MONITOR:DVI-I-1}
+{%@@ endif @@%}
 
 [module/xwindow]
 type = internal/xwindow

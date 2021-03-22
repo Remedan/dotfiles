@@ -73,6 +73,18 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 # workspace names
+{%@@ if profile == "hedgehog" @@%}
+set $w1 1 
+set $w2 2 
+set $w3 3
+set $w4 4 
+set $w5 5
+set $w6 6
+set $w7 7 
+set $w8 8
+set $w9 9
+set $w10 10 
+{%@@ else @@%}
 set $w1 1
 set $w2 2
 set $w3 3
@@ -83,6 +95,32 @@ set $w7 7
 set $w8 8
 set $w9 9
 set $w10 10
+{%@@ endif @@%}
+
+{%@@ if profile == "hedgehog" @@%}
+# worspace placement
+set $m1 HDMI-0
+set $m2 DVI-D-0
+set $m3 DVI-I-1
+
+workspace "$w1" output $m1
+workspace "$w2" output $m1
+workspace "$w3" output $m1
+workspace "$w4" output $m2
+workspace "$w5" output $m2
+workspace "$w6" output $m2
+workspace "$w7" output $m3
+workspace "$w8" output $m3
+workspace "$w9" output $m3
+workspace "$w10" output $m3
+{%@@ elif profile == "helios" @@%}
+# worspace placement
+set $m1 DP-2
+set $m2 DP-0
+
+workspace "$w1" output $m2
+workspace "$w2" output $m1
+{%@@ endif @@%}
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -192,7 +230,11 @@ bindsym $mod+i exec firefox-developer-edition
 default_border pixel 2
 
 # Gaps
+{%@@ if profile == "athena" @@%}
 gaps inner 6
+{%@@ else @@%}
+gaps inner 12
+{%@@ endif @@%}
 smart_borders no_gaps
 
 bindsym $mod+y       gaps inner current minus 6
@@ -201,27 +243,68 @@ bindsym $mod+Shift+y gaps outer current minus 6
 bindsym $mod+Shift+u gaps outer current plus 6
 
 # class                 border  backgr. text    indicator child_border
+{%@@ if profile == "athena" @@%}
 client.focused          #676d3d #676d3d #ebdbb2 #676d3d   #676d3d
 client.unfocused        #323232 #323232 #ebdbb2 #323232   #323232
 client.focused_inactive #323232 #333333 #ebdbb2 #323232   #333333
 client.urgent           #383a3b #383a3b #ee0000 #383a3b   #383a3b
+{%@@ else @@%}
+client.focused          #002b36 #586e75 #fdf6e3 #268bd2   #586e75
+client.focused_inactive #002b36 #073642 #839496 #073642   #073642
+client.unfocused        #002b36 #073642 #839496 #073642   #073642
+client.urgent           #002b36 #dc322f #fdf6e3 #002b36   #dc322f
+{%@@ endif @@%}
 
 # Keyboard layouts, alt+shift to switch
 exec_always --no-startup-id setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
 
+{%@@ if profile == "hedgehog" @@%}
+# Multiple monitors
+exec xrandr --output HDMI-0 --auto --pos 0x520 --primary --output DVI-D-0 --auto --pos 1920x1 --rotate right --output DVI-I-1 --auto --pos 3000x520
+{%@@ elif profile == "helios" @@%}
+# Multiple monitors
+exec xrandr --output DP-4 --mode 1920x1080 --rate 144.00 --primary --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --output HDMI-0 --off
+{%@@ endif @@%}
+
 # GDM doesn't load Xresources
+{%@@ if profile == "hedgehog" @@%}
+exec --no-startup-id xrdb -load ~/.Xresources && ( polybar b0 & polybar b1 & polybar b2 )
+{%@@ elif profile == "helios" @@%}
+exec --no-startup-id xrdb -load ~/.Xresources && ( polybar b0 & polybar b1 )
+{%@@ else @@%}
 exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
+{%@@ endif @@%}
 
 exec --no-startup-id unclutter
+{%@@ if profile == "hedgehog" @@%}
+exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
+{%@@ endif @@%}
 
 # Applets
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
+{%@@ if profile == "hedgehog" @@%}
+exec --no-startup-id system-config-printer-applet
+exec --no-stratup-id blueman-tray
+{%@@ endif @@%}
 
 # Compositor
 exec picom -b --experimental-backends
 
-
 # Wallpaper
 exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
+
+{%@@ if profile == "hedgehog" @@%}
+# restore layout
+for_window [class="Firefox"] move to workspace $w1
+for_window [class="Spotify"] move to workspace $w2
+for_window [class="Slack"] move to workspace $w10
+for_window [class="Ferdi"] move to workspace $w10
+
+exec i3-msg 'workspace $w1; append_layout ~/.i3/layout/hedgehog/w1.json; gaps inner current set 0; exec firefox-developer-edition;'
+exec i3-msg 'workspace $w2; exec spotify;'
+exec i3-msg 'workspace $w4; append_layout ~/.i3/layout/hedgehog/w4.json; exec kitty; gaps inner current set 0;'
+exec i3-msg 'workspace $w7; append_layout ~/.i3/layout/hedgehog/w7.json; exec kitty; exec kitty;'
+exec i3-msg 'workspace $w10; append_layout ~/.i3/layout/hedgehog/w10.json; exec ferdi;'
+{%@@ endif @@%}

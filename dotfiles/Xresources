@@ -10,7 +10,11 @@ Xcursor.size: 16
 URxvt.scrollBar: true
 URxvt.scrollBar_right: true
 URxvt.scrollstyle: plain
+{%@@ if profile == "athena" @@%}
 URxvt.scrollColor: #ebdbb2
+{%@@ else @@%}
+URxvt.scrollColor: #093748
+{%@@ endif @@%}
 
 ! Clickable links
 URxvt.perl-ext-common: default,matcher
@@ -19,8 +23,16 @@ URxvt.matcher.button: 1
 
 ! Colours
 URxvt.depth: 24
+{%@@ if profile == "athena" @@%}
 #include ".Xresources-include/colors-gruvbox"
+{%@@ else @@%}
+#include ".Xresources-include/colors-solarized-dark"
+{%@@ endif @@%}
 
 ! Rofi settings
 rofi.terminal: st
+{%@@ if profile == "athena" @@%}
 #include ".Xresources-include/rofi-gruvbox"
+{%@@ else @@%}
+#include ".Xresources-include/rofi-solarized-dark"
+{%@@ endif @@%}

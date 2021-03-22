@@ -1,0 +1,22 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 436,
+       "width": 731,
+       "x": 0,
+       "y": 0
+    },
+    "name": "WeeChat 1.9.1",
+    "percent": 1,
+    "swallows": [
+       {
+          "title": "^chat$",
+          "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+

@@ -111,3 +111,51 @@ profiles:
     - f_stylelintrc
     - d_weechat
     - f_zshrc
+  hedgehog:
+    dotfiles:
+    - f_xresources
+    - d_xresources-include
+    - d_alacritty
+    - d_dunst
+    - d_kitty
+    - d_mpd
+    - d_nvim
+    - d_picom
+    - d_polybar
+    - d_ranger
+    - d_redshift
+    - d_sway
+    - d_waybar
+    - d_zathura
+    - f_ctags
+    - f_dir_colors
+    - f_eslintrc
+    - f_gitconfig
+    - d_i3
+    - d_ncmpcpp
+    - f_stylelintrc
+    - d_weechat
+    - f_zshrc
+  helios:
+    dotfiles:
+    - f_xresources
+    - d_xresources-include
+    - d_alacritty
+    - d_dunst
+    - d_kitty
+    - d_mpd
+    - d_nvim
+    - d_picom
+    - d_polybar
+    - d_ranger
+    - d_redshift
+    - d_zathura
+    - f_ctags
+    - f_dir_colors
+    - f_eslintrc
+    - f_gitconfig
+    - d_i3
+    - d_ncmpcpp
+    - f_stylelintrc
+    - d_weechat
+    - f_zshrc

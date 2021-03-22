@@ -135,7 +135,12 @@ font:
     #style: Bold Italic
 
   # Point size
+{%@@ if profile == "athena" @@%}
   size: 8.0
+{%@@ else @@%}
+  size: 10.0
+{%@@ endif @@%}
+
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -161,7 +166,11 @@ font:
 
 # Colors
 import:
+{%@@ if profile == "athena" @@%}
     - ~/.config/alacritty/colors/gruvbox.yml
+{%@@ else @@%}
+    - ~/.config/alacritty/colors/solarized-dark.yml
+{%@@ endif @@%}
 
 # Bell
 #

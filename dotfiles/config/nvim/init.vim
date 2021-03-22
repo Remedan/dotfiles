@@ -344,7 +344,11 @@ nnoremap <leader>pcf :w <bar> execute "!php-cs-fixer fix %" <bar> :e<CR>
 "        Colors and GUI     "
 """""""""""""""""""""""""""""
 set background=dark    " Use dark background
+{%@@ if profile == "athena" @@%}
 colorscheme gruvbox    " Use nicer colorscheme
+{%@@ else @@%}
+colorscheme solarized8 " Use nicer colorscheme
+{%@@ endif @@%}
 
 if has("gui_running")
     set guioptions+=TlrbRLe " Bug workaround

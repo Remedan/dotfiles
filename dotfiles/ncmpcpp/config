@@ -1,4 +1,10 @@
-mpd_music_dir = "/media/data/dokumenty/audio"
+{%@@ if profile == "athena" @@%}
+mpd_music_dir = "/media/data/Dokumenty/audio"
+{%@@ elif profile == "hedgehog" @@%}
+mpd_music_dir = "/run/media/remedan/Elements/Music"
+{%@@ elif profile == "helios" @@%}
+mpd_music_dir = "/media/data/Dokumenty/audio"
+{%@@ endif @@%}
 
 #media_library_left_column = "A"
 
