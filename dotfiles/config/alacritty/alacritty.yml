@@ -138,7 +138,7 @@ font:
 {%@@ if profile == "athena" @@%}
   size: 8.0
 {%@@ else @@%}
-  size: 10.0
+  size: 11.0
 {%@@ endif @@%}
 
 

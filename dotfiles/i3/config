@@ -277,7 +277,7 @@ exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
 
 exec --no-startup-id unclutter
 {%@@ if profile == "hedgehog" @@%}
-exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
+exec --no-startup-id xautolock -time 30 -locker ~/.i3/lock.sh
 {%@@ endif @@%}
 
 # Applets
