@@ -167,7 +167,7 @@ font:
 # Colors
 import:
 {%@@ if profile == "athena" @@%}
-    - ~/.config/alacritty/colors/gruvbox.yml
+    - ~/.config/alacritty/colors/gruvbox-dark.yml
 {%@@ else @@%}
     - ~/.config/alacritty/colors/solarized-dark.yml
 {%@@ endif @@%}

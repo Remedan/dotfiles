@@ -242,17 +242,10 @@ bindsym $mod+u       gaps inner current plus 6
 bindsym $mod+Shift+y gaps outer current minus 6
 bindsym $mod+Shift+u gaps outer current plus 6
 
-# class                 border  backgr. text    indicator child_border
 {%@@ if profile == "athena" @@%}
-client.focused          #676d3d #676d3d #ebdbb2 #676d3d   #676d3d
-client.unfocused        #323232 #323232 #ebdbb2 #323232   #323232
-client.focused_inactive #323232 #333333 #ebdbb2 #323232   #333333
-client.urgent           #383a3b #383a3b #ee0000 #383a3b   #383a3b
+{%@@ include "i3/colors/gruvbox-dark" @@%}
 {%@@ else @@%}
-client.focused          #002b36 #586e75 #fdf6e3 #268bd2   #586e75
-client.focused_inactive #002b36 #073642 #839496 #073642   #073642
-client.unfocused        #002b36 #073642 #839496 #073642   #073642
-client.urgent           #002b36 #dc322f #fdf6e3 #002b36   #dc322f
+{%@@ include "i3/colors/solarized-dark" @@%}
 {%@@ endif @@%}
 
 # Keyboard layouts, alt+shift to switch

@@ -40,3 +40,5 @@
 *color13:                 S_violet
 *color14:                 S_base1
 *color15:                 S_base3
+
+URxvt.scrollColor: #093748

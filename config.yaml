@@ -87,6 +87,8 @@ dotfiles:
   d_i3:
     src: i3
     dst: ~/.i3
+    instignore:
+      - "colors"
   d_ncmpcpp:
     src: ncmpcpp
     dst: ~/.ncmpcpp
