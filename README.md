@@ -9,6 +9,8 @@ pip3 install -r dotdrop/requirements.txt
 ./dotdrop.sh install
 ```
 
+The color scheme is configurable via the variable `colorscheme` in `config.yaml`. Possible values are `solarized-dark`, `gruvbox-dark`.
+
 ## Screenshot
 
 ![screenshot](https://raw.githubusercontent.com/Remedan/dotfiles/master/screenshot.png)
@@ -45,7 +47,3 @@ To keep my git user info from this repo I source it from `~/.gituser`. Git will 
 
 I usually have the [grml zsh config](https://grml.org/zsh/) installed in /etc,
 which is why my .zshrc is rather short.
-
-### Vim plugins
-
-Plugins are managed via vim-plug. The install script sets this up.

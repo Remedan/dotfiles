@@ -344,10 +344,10 @@ nnoremap <leader>pcf :w <bar> execute "!php-cs-fixer fix %" <bar> :e<CR>
 "        Colors and GUI     "
 """""""""""""""""""""""""""""
 set background=dark    " Use dark background
-{%@@ if profile == "athena" @@%}
-colorscheme gruvbox    " Use nicer colorscheme
-{%@@ else @@%}
+{%@@ if colorscheme == "solarized-dark" @@%}
 colorscheme solarized8 " Use nicer colorscheme
+{%@@ elif colorscheme == "gruvbox-dark" @@%}
+colorscheme gruvbox    " Use nicer colorscheme
 {%@@ endif @@%}
 
 if has("gui_running")

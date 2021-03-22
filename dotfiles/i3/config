@@ -242,11 +242,7 @@ bindsym $mod+u       gaps inner current plus 6
 bindsym $mod+Shift+y gaps outer current minus 6
 bindsym $mod+Shift+u gaps outer current plus 6
 
-{%@@ if profile == "athena" @@%}
-{%@@ include "i3/colors/gruvbox-dark" @@%}
-{%@@ else @@%}
-{%@@ include "i3/colors/solarized-dark" @@%}
-{%@@ endif @@%}
+{%@@ include "i3/colors/" + colorscheme @@%}
 
 # Keyboard layouts, alt+shift to switch
 exec_always --no-startup-id setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'

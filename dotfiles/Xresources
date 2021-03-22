@@ -18,16 +18,8 @@ URxvt.matcher.button: 1
 
 ! Colours
 URxvt.depth: 24
-{%@@ if profile == "athena" @@%}
-#include ".Xresources-include/colors-gruvbox-dark"
-{%@@ else @@%}
-#include ".Xresources-include/colors-solarized-dark"
-{%@@ endif @@%}
+#include ".Xresources-include/colors-{{@@ colorscheme @@}}"
 
 ! Rofi settings
-rofi.terminal: st
-{%@@ if profile == "athena" @@%}
-#include ".Xresources-include/rofi-gruvbox-dark"
-{%@@ else @@%}
-#include ".Xresources-include/rofi-solarized-dark"
-{%@@ endif @@%}
+rofi.terminal: kitty
+#include ".Xresources-include/rofi-{{@@ colorscheme @@}}"
