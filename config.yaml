@@ -39,6 +39,18 @@ dotfiles:
       - vim-plug-install
       - vim-plug
       - vim-folders
+    cmpignore:
+      - "autoload/plug.vim"
+      - "plugged"
+      - "backup"
+      - "swap"
+      - "undo"
+    upignore:
+      - "autoload/plug.vim"
+      - "plugged"
+      - "backup"
+      - "swap"
+      - "undo"
   d_picom:
     src: config/picom
     dst: ~/.config/picom
@@ -84,6 +96,7 @@ dotfiles:
   d_weechat:
     src: weechat
     dst: ~/.weechat
+    ignore_missing_in_dotdrop: true
   f_zshrc:
     src: zshrc
     dst: ~/.zshrc
