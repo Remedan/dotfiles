@@ -1,8 +1,13 @@
 # ~/dotfiles
 
-Can be installed by cloning this repo into your home and running the `install.sh` script. The script will back up your old dotfiles. Use at your own risk.
+I use [dotdrop](https://github.com/deadc0de6/dotdrop) to manage my dotfiles. Everything can be installed like so:
 
-The repo has different branches for the different computers I use. There's some stuff such as paths and monitor setup that you'll need to adapt to your environment.
+```
+git submodule update --init
+pip3 install -r dotdrop/requirements.txt
+./dotdrop/bootstrap.sh
+./dotdrop.sh install
+```
 
 ## Screenshot
 
