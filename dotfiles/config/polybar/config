@@ -35,7 +35,7 @@ monitor = ${env:MONITOR:HDMI-0}
 {%@@ elif profile == "helios" @@%}
 height = 27
 fixed-center = true
-monitor = ${env:MONITOR:DP-4}
+monitor = ${env:MONITOR:DP-0}
 {%@@ endif @@%}
 
 background = ${colors.background}
@@ -63,8 +63,8 @@ modules-left = i3 player-mpris-tail mpd pulseaudio
 modules-center = xwindow
 {%@@ if profile == "athena" @@%}
 modules-right = filesystem xkeyboard cpu memory xbacklight battery date powermenu
-{%@@ elif profile == "hedgehog" @@%}
--modules-right = filesystem xkeyboard cpu memory date powermenu
+{%@@ else @@%}
+modules-right = filesystem xkeyboard cpu memory date powermenu
 {%@@ endif @@%}
 
 locale = cs_CZ.utf8
@@ -86,7 +86,7 @@ tray-position =
 monitor = ${env:MONITOR:DVI-D-0}
 modules-left = i3
 {%@@ elif profile == "helios" @@%}
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-4}
 {%@@ endif @@%}
 
 [bar/b2]
