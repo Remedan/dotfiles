@@ -34,6 +34,7 @@ dotfiles:
   d_mpd:
     src: config/mpd
     dst: ~/.config/mpd
+    ignore_missing_in_dotdrop: true
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim

@@ -67,6 +67,12 @@
                 }
             }
         },
+        "haskell": {
+            "command": "haskell-language-server-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+            "filetypes": ["haskell", "lhaskell"]
+        },
         "intelephense": {
             "command": "intelephense",
             "args": ["--stdio"],
@@ -75,14 +81,5 @@
                 "storagePath": "/tmp/intelephense"
             }
         },
-        "flow": {
-            "command": "flow",
-            "args": ["lsp"],
-            "filetypes": ["javascript", "javascriptreact"],
-            "initializationOptions": {},
-            "requireRootPattern": true,
-            "settings": {},
-            "rootPatterns": [".flowconfig"]
-        }
     }
 }
