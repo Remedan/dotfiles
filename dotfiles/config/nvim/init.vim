@@ -181,6 +181,9 @@ if !extra_setup
     let g:webdevicons_enable = 0
 endif
 
+" Don't use distro specific icons
+let g:DevIconsEnableDistro = 0
+
 " CoC
 
 " Use tab for trigger completion with characters ahead and navigate.
