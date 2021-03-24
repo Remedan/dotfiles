@@ -21,5 +21,5 @@ URxvt.depth: 24
 #include ".Xresources-include/colors-{{@@ colorscheme @@}}"
 
 ! Rofi settings
-rofi.terminal: kitty
+rofi.terminal: alacritty
 #include ".Xresources-include/rofi-{{@@ colorscheme @@}}"
