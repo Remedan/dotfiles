@@ -104,6 +104,7 @@ Plug 'tikhomirov/vim-glsl'
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
 Plug 'ciaranm/inkpot'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
@@ -358,10 +359,12 @@ nnoremap <leader>pcf :w <bar> execute "!php-cs-fixer fix %" <bar> :e<CR>
 "        Colors and GUI     "
 """""""""""""""""""""""""""""
 set background=dark    " Use dark background
-{%@@ if colorscheme == "solarized-dark" @@%}
-colorscheme solarized8 " Use nicer colorscheme
-{%@@ elif colorscheme == "gruvbox-dark" @@%}
+{%@@ if colorscheme == "gruvbox-dark" @@%}
 colorscheme gruvbox    " Use nicer colorscheme
+{%@@ elif colorscheme == "dracula" @@%}
+colorscheme dracula    " Use nicer colorscheme
+{%@@ else @@%}
+colorscheme solarized8 " Use nicer colorscheme
 {%@@ endif @@%}
 
 if has("gui_running")

@@ -9,7 +9,7 @@ pip3 install -r dotdrop/requirements.txt
 ./dotdrop.sh install
 ```
 
-The color scheme is configurable via the variable `colorscheme` in `config.yaml`. Possible values are `solarized-dark`, `gruvbox-dark`.
+The color scheme is configurable via the variable `colorscheme` in `config.yaml`. Possible values are `solarized-dark`, `gruvbox-dark`, and `dracula`.
 
 ## Screenshot
 

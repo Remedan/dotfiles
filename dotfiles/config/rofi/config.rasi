@@ -1,0 +1,11 @@
+configuration {
+    font: "Open Sans 12";
+    terminal: "alacritty";
+{%@@ if colorscheme == "gruvbox-dark" @@%}
+    theme: "gruvbox-dark";
+{%@@ elif colorscheme == "dracula" @@%}
+    theme: "dracula";
+{%@@ else @@%}
+    theme: "solarized";
+{%@@ endif @@%}
+}
