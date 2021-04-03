@@ -13,7 +13,7 @@ The color scheme is configurable via the variable `colorscheme` in `config.yaml`
 
 ## Screenshot
 
-![screenshot](https://raw.githubusercontent.com/Remedan/dotfiles/master/screenshot.png)
+![screenshot](screenshot.png)
 
 ## Key Components and Software
 
