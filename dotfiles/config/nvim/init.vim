@@ -2,7 +2,7 @@
 "     Optional Features     "
 """""""""""""""""""""""""""""
 " Machines where I have extra things set up (e.g. powerline fonts).
-let my_hosts = ['helios', 'hermes', 'hedgehog', 'athena']
+let my_hosts = ['helios', 'hermes', 'hedgehog', 'athena', 'dev-pc-28']
 let extra_setup = index(my_hosts, hostname()) >= 0
 
 """""""""""""""""""""""""""""
@@ -69,6 +69,8 @@ autocmd BufWinEnter * normal zR
 let php_sql_query=1 " Highlight sql inside php strings
 let php_htmlInStrings=1 " Highlight html inside php strings
 let php_folding = 1 " Enable syntax-based folding
+
+let g:python3_host_prog='/usr/bin/python3' " Workaround for virtualenv issues
 
 """""""""""""""""""""""""""""
 "        Plugins            "

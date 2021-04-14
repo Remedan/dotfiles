@@ -36,6 +36,9 @@ monitor = ${env:MONITOR:HDMI-0}
 height = 27
 fixed-center = true
 monitor = ${env:MONITOR:DP-0}
+{%@@ elif profile == "dev-pc-28" @@%}
+height = 27
+monitor = ${env:MONITOR:HDMI-0}
 {%@@ endif @@%}
 
 background = ${colors.background}
@@ -87,6 +90,8 @@ monitor = ${env:MONITOR:DVI-D-0}
 modules-left = i3
 {%@@ elif profile == "helios" @@%}
 monitor = ${env:MONITOR:DP-4}
+{%@@ elif profile == "dev-pc-28" @@%}
+monitor = ${env:MONITOR:DP-0}
 {%@@ endif @@%}
 
 [bar/b2]

@@ -1,7 +1,7 @@
 {
     "languageserver": {
         "python": {
-            "command": "python",
+            "command": "/usr/bin/python3",
             "args": [
                 "-mpyls",
                 "-vv",

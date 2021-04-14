@@ -120,6 +120,21 @@ set $m2 DP-0
 
 workspace "$w1" output $m2
 workspace "$w2" output $m1
+{%@@ elif profile == "dev-pc-28" @@%}
+# worspace placement
+set $m1 HDMI-0
+set $m2 DP-0
+
+workspace "$w1" output $m1
+workspace "$w2" output $m1
+workspace "$w3" output $m2
+workspace "$w4" output $m2
+workspace "$w5" output $m2
+workspace "$w6" output $m2
+workspace "$w7" output $m2
+workspace "$w8" output $m2
+workspace "$w9" output $m2
+workspace "$w10" output $m2
 {%@@ endif @@%}
 
 # switch to workspace
@@ -253,12 +268,15 @@ exec xrandr --output HDMI-0 --auto --pos 0x520 --primary --output DVI-D-0 --auto
 {%@@ elif profile == "helios" @@%}
 # Multiple monitors
 exec xrandr --output DP-4 --mode 1920x1080 --rate 144.00 --primary --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --output HDMI-0 --off
+{%@@ elif profile == "dev-pc-28" @@%}
+# Multiple monitors
+exec xrandr --output HDMI-0 --primary --left-of DP-0
 {%@@ endif @@%}
 
 # GDM doesn't load Xresources
 {%@@ if profile == "hedgehog" @@%}
 exec --no-startup-id xrdb -load ~/.Xresources && ( polybar b0 & polybar b1 & polybar b2 )
-{%@@ elif profile == "helios" @@%}
+{%@@ elif profile in ["helios", "dev-pc-28"]  @@%}
 exec --no-startup-id xrdb -load ~/.Xresources && ( polybar b0 & polybar b1 )
 {%@@ else @@%}
 exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
@@ -275,7 +293,9 @@ exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 {%@@ if profile == "hedgehog" @@%}
 exec --no-startup-id system-config-printer-applet
-exec --no-stratup-id blueman-tray
+exec --no-startup-id blueman-tray # bluetooth
+{%@@ elif profile == "dev-pc-28" @@%}
+exec --no-startup-id blueman-tray # bluetooth
 {%@@ endif @@%}
 
 # Compositor
@@ -296,4 +316,14 @@ exec i3-msg 'workspace $w2; exec spotify;'
 exec i3-msg 'workspace $w4; append_layout ~/.i3/layout/hedgehog/w4.json; exec kitty; gaps inner current set 0;'
 exec i3-msg 'workspace $w7; append_layout ~/.i3/layout/hedgehog/w7.json; exec kitty; exec kitty;'
 exec i3-msg 'workspace $w10; append_layout ~/.i3/layout/hedgehog/w10.json; exec ferdi;'
+{%@@ elif profile == "dev-pc-28" @@%}
+# restore layout
+for_window [class="Firefox"] move to workspace $w1
+for_window [class="Slack"] move to workspace $w9
+for_window [class="Spotify"] move to workspace $w10
+
+exec i3-msg 'workspace $w1; gaps inner current set 0; exec firefox;'
+exec i3-msg 'workspace $w3; append_layout ~/.i3/layout/dev-pc-28/w3.json; exec alacritty; exec alacritty;'
+exec i3-msg 'workspace $w9; exec slack;'
+exec i3-msg 'workspace $w10; exec spotify;'
 {%@@ endif @@%}
