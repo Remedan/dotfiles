@@ -15,6 +15,8 @@ actions:
       curl -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
     vim-folders: mkdir -p ~/.config/nvim/undo ~/.config/nvim/swap ~/.config/nvim/backup
   vim-plug: nvim +PlugInstall +qall
+  oh-my-zsh: test -e ~/.oh-my-zsh || (git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh)
+  zsh-autosuggestions: test -e ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions || (git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions)
 dotfiles:
   f_xresources:
     src: Xresources
@@ -105,6 +107,9 @@ dotfiles:
   f_zshrc:
     src: zshrc
     dst: ~/.zshrc
+    actions:
+    - oh-my-zsh
+    - zsh-autosuggestions
   d_rofi:
     src: config/rofi
     dst: ~/.config/rofi
@@ -128,7 +133,6 @@ profiles:
     - d_waybar
     - d_zathura
     - f_ctags
-    - f_dir_colors
     - f_eslintrc
     - f_gitconfig
     - d_i3
@@ -154,7 +158,6 @@ profiles:
     - d_waybar
     - d_zathura
     - f_ctags
-    - f_dir_colors
     - f_eslintrc
     - f_gitconfig
     - d_i3
@@ -180,7 +183,6 @@ profiles:
     - d_redshift
     - d_zathura
     - f_ctags
-    - f_dir_colors
     - f_eslintrc
     - f_gitconfig
     - d_i3
