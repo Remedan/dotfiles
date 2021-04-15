@@ -101,8 +101,11 @@ Plug 'vim-scripts/taglist.vim'
 " Filetypes
 Plug 'lervag/vimtex'
 Plug 'lumiliet/vim-twig'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'tikhomirov/vim-glsl'
+Plug 'yuezk/vim-js'
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
 Plug 'ciaranm/inkpot'

@@ -38,3 +38,8 @@ then
     export WORKON_HOME=~/.virtualenvs
     source /usr/bin/virtualenvwrapper.sh
 fi
+
+# Needed for YubiKey + ssh
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
