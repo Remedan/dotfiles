@@ -1,6 +1,6 @@
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=lambda
+ZSH_THEME=rem-lambda
 ENABLE_CORRECTION="true"
 plugins=(
     git
