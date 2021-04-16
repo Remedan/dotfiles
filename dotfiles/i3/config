@@ -13,7 +13,7 @@ font pango:Open Sans 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec {{@@ terminal @@}}
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -313,8 +313,8 @@ for_window [class="Ferdi"] move to workspace $w10
 
 exec i3-msg 'workspace $w1; append_layout ~/.i3/layout/hedgehog/w1.json; gaps inner current set 0; exec {{@@ browser @@}};'
 exec i3-msg 'workspace $w2; exec spotify;'
-exec i3-msg 'workspace $w4; append_layout ~/.i3/layout/hedgehog/w4.json; exec kitty; gaps inner current set 0;'
-exec i3-msg 'workspace $w7; append_layout ~/.i3/layout/hedgehog/w7.json; exec kitty; exec kitty;'
+exec i3-msg 'workspace $w4; append_layout ~/.i3/layout/hedgehog/w4.json; exec {{@@ terminal @@}}; gaps inner current set 0;'
+exec i3-msg 'workspace $w7; append_layout ~/.i3/layout/hedgehog/w7.json; exec {{@@ terminal @@}}; exec {{@@ terminal @@}};'
 exec i3-msg 'workspace $w10; append_layout ~/.i3/layout/hedgehog/w10.json; exec ferdi;'
 {%@@ elif profile == "dev-pc-28" @@%}
 # restore layout
@@ -323,7 +323,7 @@ for_window [class="Slack"] move to workspace $w9
 for_window [class="Spotify"] move to workspace $w10
 
 exec i3-msg 'workspace $w1; gaps inner current set 0; exec {{@@ browser @@}};'
-exec i3-msg 'workspace $w3; append_layout ~/.i3/layout/dev-pc-28/w3.json; exec alacritty; exec alacritty;'
+exec i3-msg 'workspace $w3; append_layout ~/.i3/layout/dev-pc-28/w3.json; exec {{@@ terminal @@}}; exec {{@@ terminal @@}};'
 exec i3-msg 'workspace $w9; exec slack;'
 exec i3-msg 'workspace $w10; exec spotify;'
 {%@@ endif @@%}

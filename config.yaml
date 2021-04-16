@@ -10,6 +10,7 @@ config:
 variables:
   distro: arch
   colorscheme: solarized-dark
+  terminal: alacritty
   browser: firefox-developer-edition
 actions:
   pre:
@@ -150,6 +151,8 @@ profiles:
     - f_rem-lambda.zsh-theme
     - d_rofi
   hedgehog:
+    variables:
+      terminal: kitty
     dotfiles:
     - f_xresources
     - d_xresources-include

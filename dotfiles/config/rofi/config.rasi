@@ -4,7 +4,7 @@ configuration {
 {%@@ else @@%}
     font: "Open Sans 12";
 {%@@ endif @@%}
-    terminal: "alacritty";
+    terminal: "{{@@ terminal @@}}";
 {%@@ if colorscheme == "gruvbox-dark" @@%}
     theme: "gruvbox-dark";
 {%@@ elif colorscheme == "dracula" @@%}
