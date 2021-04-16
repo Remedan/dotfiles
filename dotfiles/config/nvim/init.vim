@@ -71,6 +71,9 @@ let php_htmlInStrings=1 " Highlight html inside php strings
 let php_folding = 1 " Enable syntax-based folding
 
 let g:python3_host_prog='/usr/bin/python3' " Workaround for virtualenv issues
+{%@@ if profile == "dev-pc-28" @@%}
+autocmd FileType python setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+{%@@ endif @@%}
 
 """""""""""""""""""""""""""""
 "        Plugins            "
@@ -171,7 +174,7 @@ endif
 " Previm
 
 " Open markdown preview in Firefox
-let g:previm_open_cmd = 'firefox-developer-edition'
+let g:previm_open_cmd = '{{@@ browser @@}}'
 
 " VimTeX
 

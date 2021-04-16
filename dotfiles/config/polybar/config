@@ -56,6 +56,9 @@ module-margin = 1
 font-0 = Symbols\ Nerd\ Font:14;2
 font-1 = Open Sans:pixelsize=14;2
 font-2 = Source\ Han\ Sans:pixelsize=16;2
+{%@@ elif distro == "ubuntu" @@%}
+font-0 = Ubuntu Nerd Font:pixelsize=11;2
+font-1 = Source\ Han\ Sans:pixelsize=10;2
 {%@@ else @@%}
 font-0 = Symbols\ Nerd\ Font:10;2
 font-1 = Open Sans:pixelsize=11;2

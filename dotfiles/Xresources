@@ -13,7 +13,7 @@ URxvt.scrollstyle: plain
 
 ! Clickable links
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/{{@@ browser @@}}
 URxvt.matcher.button: 1
 
 ! Colours

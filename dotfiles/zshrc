@@ -49,10 +49,18 @@ alias gm='git merge'
 alias gl='git log'
 
 # Set up virtualenvwrapper
-if [ -f /usr/bin/virtualenvwrapper.sh ]
+{%@@ if distro == "ubuntu" @@%}
+{%@@ set path = "/usr/local/bin" @@%}
+{%@@ else @@%}
+{%@@ set path = "/usr/bin" @@%}
+{%@@ endif @@%}
+if [ -f {{@@ path @@}}/virtualenvwrapper.sh ]
 then
     export WORKON_HOME=~/.virtualenvs
-    source /usr/bin/virtualenvwrapper.sh
+{%@@ if profile == "dev-pc-28" @@%}
+    export VIRTUALENVWRAPPER_PYTHON=$(which python3.8)
+{%@@ endif @@%}
+    source {{@@ path @@}}/virtualenvwrapper.sh
 fi
 
 # Needed for YubiKey + ssh

@@ -1,0 +1,39 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "percent": 0.5,
+    "swallows": [
+       {
+          "class": "^Alacritty$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "percent": 0.5,
+    "swallows": [
+       {
+          "class": "^Alacritty$"
+       }
+    ],
+    "type": "con"
+}
+

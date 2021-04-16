@@ -8,7 +8,9 @@ config:
   link_on_import: nolink
   longkey: false
 variables:
+  distro: arch
   colorscheme: solarized-dark
+  browser: firefox-developer-edition
 actions:
   pre:
     vim-plug-install: test -e ~/.config/nvim/autoload/plug.vim || (mkdir -p ~/.config/nvim/autoload;
@@ -200,6 +202,9 @@ profiles:
     - f_rem-lambda.zsh-theme
     - d_rofi
   dev-pc-28:
+    variables:
+      distro: ubuntu
+      browser: firefox
     dotfiles:
     - f_xresources
     - d_xresources-include
