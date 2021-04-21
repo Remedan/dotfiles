@@ -42,8 +42,3 @@ To keep my git user info from this repo I source it from `~/.gituser`. Git will 
     email = "jd@example.org"
     signingkey = "ABC123DEF456"
 ```
-
-### Zsh config
-
-I usually have the [grml zsh config](https://grml.org/zsh/) installed in /etc,
-which is why my .zshrc is rather short.
