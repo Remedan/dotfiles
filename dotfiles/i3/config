@@ -283,7 +283,7 @@ exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
 {%@@ endif @@%}
 
 exec --no-startup-id unclutter
-{%@@ if profile == "hedgehog" @@%}
+{%@@ if profile == "hedgehog" or profile == "dev-pc-28" @@%}
 exec --no-startup-id xautolock -time 30 -locker ~/.i3/lock.sh
 {%@@ endif @@%}
 
