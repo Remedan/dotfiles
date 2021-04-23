@@ -10,6 +10,7 @@ plugins=(
     pip
     virtualenvwrapper
     zsh-autosuggestions
+    shrink-path
 )
 source $ZSH/oh-my-zsh.sh
 
