@@ -193,6 +193,16 @@ endif
 " Don't use distro specific icons
 let g:DevIconsEnableDistro = 0
 
+" vimwiki
+let g:vimwiki_global_ext = 0
+
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki/'
+let wiki_1.syntax = 'markdown'
+let wiki_1.ext = '.md'
+
+let g:vimwiki_list = [wiki_1]
+
 " CoC
 
 " Use tab for trigger completion with characters ahead and navigate.
