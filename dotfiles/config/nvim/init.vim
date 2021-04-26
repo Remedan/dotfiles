@@ -101,6 +101,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/taglist.vim'
+Plug 'vimwiki/vimwiki'
 " Filetypes
 Plug 'lervag/vimtex'
 Plug 'lumiliet/vim-twig'
