@@ -310,7 +310,10 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pyright', 'coc-html', 'coc-css', 'coc-tsserver']
+let g:coc_global_extensions = [
+      \ 'coc-snippets', 'coc-pyright', 'coc-html', 'coc-css',
+      \ 'coc-tsserver', 'coc-rust-analyzer'
+      \ ]
 
 """""""""""""""""""""""""""""
 "        Key mapping        "
