@@ -128,6 +128,9 @@ dotfiles:
     dst: ~/.doom.d
     actions:
     - doom-emacs-install
+  d_fontconfig:
+    src: config/fontconfig
+    dst: ~/.config/fontconfig
 profiles:
   athena:
     variables:
@@ -157,6 +160,7 @@ profiles:
     - f_zshrc
     - f_rem-lambda.zsh-theme
     - d_rofi
+    - d_fontconfig
   hedgehog:
     variables:
       terminal: kitty
@@ -185,6 +189,7 @@ profiles:
     - f_zshrc
     - f_rem-lambda.zsh-theme
     - d_rofi
+    - d_fontconfig
   helios:
     variables:
       colorscheme: dracula
@@ -211,6 +216,7 @@ profiles:
     - f_zshrc
     - f_rem-lambda.zsh-theme
     - d_rofi
+    - d_fontconfig
   dev-pc-28:
     variables:
       distro: ubuntu
@@ -230,3 +236,4 @@ profiles:
     - f_zshrc
     - f_rem-lambda.zsh-theme
     - d_rofi
+    - d_fontconfig
