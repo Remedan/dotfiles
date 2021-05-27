@@ -161,35 +161,6 @@ profiles:
     - f_rem-lambda.zsh-theme
     - d_rofi
     - d_fontconfig
-  hedgehog:
-    variables:
-      terminal: kitty
-    dotfiles:
-    - f_xresources
-    - d_xresources-include
-    - d_alacritty
-    - d_dunst
-    - d_kitty
-    - d_mpd
-    - d_nvim
-    - d_picom
-    - d_polybar
-    - d_ranger
-    - d_redshift
-    - d_sway
-    - d_waybar
-    - d_zathura
-    - f_ctags
-    - f_eslintrc
-    - f_gitconfig
-    - d_i3
-    - d_ncmpcpp
-    - f_stylelintrc
-    - d_weechat
-    - f_zshrc
-    - f_rem-lambda.zsh-theme
-    - d_rofi
-    - d_fontconfig
   helios:
     variables:
       colorscheme: dracula
