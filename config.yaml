@@ -11,7 +11,7 @@ variables:
   distro: arch
   colorscheme: solarized-dark
   terminal: alacritty
-  browser: firefox-developer-edition
+  browser: firefox
 actions:
   pre:
     vim-plug-install: test -e ~/.config/nvim/autoload/plug.vim || (mkdir -p ~/.config/nvim/autoload;
@@ -164,6 +164,7 @@ profiles:
   helios:
     variables:
       colorscheme: dracula
+      browser: firefox-developer-edition
     dotfiles:
     - f_xresources
     - d_xresources-include
@@ -191,7 +192,6 @@ profiles:
   dev-pc-28:
     variables:
       distro: ubuntu
-      browser: firefox
     dotfiles:
     - f_xresources
     - d_xresources-include
