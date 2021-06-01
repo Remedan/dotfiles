@@ -74,6 +74,7 @@ let g:python3_host_prog='/usr/bin/python3' " Workaround for virtualenv issues
 {%@@ if profile == "dev-pc-28" @@%}
 autocmd FileType python setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4 listchars=tab:\ \ ,trail:·
 {%@@ endif @@%}
+autocmd FileType yaml setlocal  tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufRead,BufNewFile *.yml.jinja2 set filetype=yaml
 
 """""""""""""""""""""""""""""
