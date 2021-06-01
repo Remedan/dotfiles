@@ -190,8 +190,6 @@ profiles:
     - d_rofi
     - d_fontconfig
   dev-pc-28:
-    variables:
-      distro: ubuntu
     dotfiles:
     - f_xresources
     - d_xresources-include

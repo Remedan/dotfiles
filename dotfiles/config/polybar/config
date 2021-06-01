@@ -38,7 +38,7 @@ fixed-center = true
 monitor = ${env:MONITOR:DP-0}
 {%@@ elif profile == "dev-pc-28" @@%}
 height = 27
-monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR:HDMI-1}
 {%@@ endif @@%}
 
 background = ${colors.background}
@@ -94,7 +94,7 @@ modules-left = i3
 {%@@ elif profile == "helios" @@%}
 monitor = ${env:MONITOR:DP-4}
 {%@@ elif profile == "dev-pc-28" @@%}
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-1}
 {%@@ endif @@%}
 
 [bar/b2]
@@ -126,6 +126,9 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+{%@@ if profile == "dev-pc-28" @@%}
+mount-1 = /home
+{%@@ endif @@%}
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
