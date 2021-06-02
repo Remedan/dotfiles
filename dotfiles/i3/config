@@ -122,8 +122,8 @@ workspace "$w1" output $m2
 workspace "$w2" output $m1
 {%@@ elif profile == "dev-pc-28" @@%}
 # worspace placement
-set $m1 HDMI-1
-set $m2 DP-1
+set $m1 HDMI-0
+set $m2 DP-0
 
 workspace "$w1" output $m1
 workspace "$w2" output $m1
@@ -270,7 +270,7 @@ exec xrandr --output HDMI-0 --auto --pos 0x520 --primary --output DVI-D-0 --auto
 exec xrandr --output DP-4 --mode 1920x1080 --rate 144.00 --primary --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --output HDMI-0 --off
 {%@@ elif profile == "dev-pc-28" @@%}
 # Multiple monitors
-exec xrandr --output HDMI-1 --primary --left-of DP-1
+exec xrandr --output HDMI-0 --primary --left-of DP-0
 {%@@ endif @@%}
 
 # GDM doesn't load Xresources
