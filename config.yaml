@@ -131,6 +131,9 @@ dotfiles:
   d_fontconfig:
     src: config/fontconfig
     dst: ~/.config/fontconfig
+  d_emacs.d:
+    src: emacs.d
+    dst: ~/.emacs.d
 profiles:
   athena:
     variables:
@@ -189,6 +192,7 @@ profiles:
     - f_rem-lambda.zsh-theme
     - d_rofi
     - d_fontconfig
+    - d_emacs.d
   dev-pc-28:
     dotfiles:
     - f_xresources
