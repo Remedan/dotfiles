@@ -210,3 +210,4 @@ profiles:
     - f_rem-lambda.zsh-theme
     - d_rofi
     - d_fontconfig
+    - d_emacs.d
