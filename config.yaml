@@ -134,6 +134,7 @@ dotfiles:
   d_emacs.d:
     src: emacs.d
     dst: ~/.emacs.d
+    ignore_missing_in_dotdrop: true
 profiles:
   athena:
     variables:
