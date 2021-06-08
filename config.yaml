@@ -135,6 +135,7 @@ dotfiles:
     src: emacs.d
     dst: ~/.emacs.d
     ignore_missing_in_dotdrop: true
+    chmod: '700'
 profiles:
   athena:
     variables:
