@@ -19,8 +19,8 @@ The color scheme is configurable via the variable `colorscheme` in `config.yaml`
 
 * [i3-gaps](https://github.com/Airblader/i3) + Polybar + Picom
     - OR Sway + Waybar
-* kitty/alacritty + zsh
-* Neovim
+* kitty/alacritty + zsh + Oh My Zsh
+* Neovim (0.5 or later)
 * Ranger
 * Rofi
 * dunst
