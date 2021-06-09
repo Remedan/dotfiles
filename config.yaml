@@ -97,8 +97,8 @@ dotfiles:
     src: gitconfig
     dst: ~/.gitconfig
   d_i3:
-    src: i3
-    dst: ~/.i3
+    src: config/i3
+    dst: ~/.config/i3
     instignore:
     - colors
   d_ncmpcpp:
@@ -131,11 +131,11 @@ dotfiles:
   d_fontconfig:
     src: config/fontconfig
     dst: ~/.config/fontconfig
-  d_emacs.d:
-    src: emacs.d
-    dst: ~/.emacs.d
-    ignore_missing_in_dotdrop: true
+  d_emacs:
+    src: config/emacs
+    dst: ~/.config/emacs
     chmod: '700'
+    ignore_missing_in_dotdrop: true
 profiles:
   athena:
     variables:
@@ -194,7 +194,7 @@ profiles:
     - f_rem-lambda.zsh-theme
     - d_rofi
     - d_fontconfig
-    - d_emacs.d
+    - d_emacs
   dev-pc-28:
     dotfiles:
     - f_xresources
@@ -212,4 +212,4 @@ profiles:
     - f_rem-lambda.zsh-theme
     - d_rofi
     - d_fontconfig
-    - d_emacs.d
+    - d_emacs
