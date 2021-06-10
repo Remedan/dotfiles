@@ -2,7 +2,7 @@
 "     Optional Features     "
 """""""""""""""""""""""""""""
 " Machines where I have extra things set up (e.g. powerline fonts).
-let my_hosts = ['helios', 'hermes', 'hedgehog', 'athena', 'dev-pc-28']
+let my_hosts = ['helios', 'hermes', 'athena', 'dev-pc-28']
 let extra_setup = index(my_hosts, hostname()) >= 0
 
 """""""""""""""""""""""""""""

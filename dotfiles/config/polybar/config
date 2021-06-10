@@ -28,10 +28,6 @@ width = 100%
 {%@@ if profile == "athena" @@%}
 height = 25
 fixed-center = false
-{%@@ elif profile == "hedgehog" @@%}
-height = 27
-fixed-center = true
-monitor = ${env:MONITOR:HDMI-0}
 {%@@ elif profile == "helios" @@%}
 height = 27
 fixed-center = true
@@ -88,20 +84,10 @@ cursor-click = pointer
 [bar/b1]
 inherit = bar/b0
 tray-position =
-{%@@ if profile == "hedgehog" @@%}
-monitor = ${env:MONITOR:DVI-D-0}
-modules-left = i3
-{%@@ elif profile == "helios" @@%}
+{%@@ if profile == "helios" @@%}
 monitor = ${env:MONITOR:DP-4}
 {%@@ elif profile == "dev-pc-28" @@%}
 monitor = ${env:MONITOR:DP-0}
-{%@@ endif @@%}
-
-[bar/b2]
-inherit = bar/b0
-tray-position =
-{%@@ if profile == "hedgehog" @@%}
-monitor = ${env:MONITOR:DVI-I-1}
 {%@@ endif @@%}
 
 [module/xwindow]

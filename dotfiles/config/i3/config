@@ -73,18 +73,6 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 # workspace names
-{%@@ if profile == "hedgehog" @@%}
-set $w1 1 
-set $w2 2 
-set $w3 3
-set $w4 4 
-set $w5 5
-set $w6 6
-set $w7 7 
-set $w8 8
-set $w9 9
-set $w10 10 
-{%@@ else @@%}
 set $w1 1
 set $w2 2
 set $w3 3
@@ -95,25 +83,8 @@ set $w7 7
 set $w8 8
 set $w9 9
 set $w10 10
-{%@@ endif @@%}
 
-{%@@ if profile == "hedgehog" @@%}
-# worspace placement
-set $m1 HDMI-0
-set $m2 DVI-D-0
-set $m3 DVI-I-1
-
-workspace "$w1" output $m1
-workspace "$w2" output $m1
-workspace "$w3" output $m1
-workspace "$w4" output $m2
-workspace "$w5" output $m2
-workspace "$w6" output $m2
-workspace "$w7" output $m3
-workspace "$w8" output $m3
-workspace "$w9" output $m3
-workspace "$w10" output $m3
-{%@@ elif profile == "helios" @@%}
+{%@@ if profile == "helios" @@%}
 # worspace placement
 set $m1 DP-2
 set $m2 DP-0
@@ -262,10 +233,7 @@ bindsym $mod+Shift+u gaps outer current plus 6
 # Keyboard layouts, alt+shift to switch
 exec_always --no-startup-id setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
 
-{%@@ if profile == "hedgehog" @@%}
-# Multiple monitors
-exec xrandr --output HDMI-0 --auto --pos 0x520 --primary --output DVI-D-0 --auto --pos 1920x1 --rotate right --output DVI-I-1 --auto --pos 3000x520
-{%@@ elif profile == "helios" @@%}
+{%@@ if profile == "helios" @@%}
 # Multiple monitors
 exec xrandr --output DP-4 --mode 1920x1080 --rate 144.00 --primary --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --output HDMI-0 --off
 {%@@ elif profile == "dev-pc-28" @@%}
@@ -274,16 +242,14 @@ exec xrandr --output HDMI-0 --primary --left-of DP-0
 {%@@ endif @@%}
 
 # GDM doesn't load Xresources
-{%@@ if profile == "hedgehog" @@%}
-exec --no-startup-id xrdb -load ~/.Xresources && ( polybar b0 & polybar b1 & polybar b2 )
-{%@@ elif profile in ["helios", "dev-pc-28"]  @@%}
+{%@@ if profile in ["helios", "dev-pc-28"]  @@%}
 exec --no-startup-id xrdb -load ~/.Xresources && ( polybar b0 & polybar b1 )
 {%@@ else @@%}
 exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
 {%@@ endif @@%}
 
 exec --no-startup-id unclutter
-{%@@ if profile == "hedgehog" or profile == "dev-pc-28" @@%}
+{%@@ if profile == "dev-pc-28" @@%}
 exec --no-startup-id xautolock -time 30 -locker ~/.config/i3/lock.sh
 {%@@ endif @@%}
 
@@ -291,10 +257,7 @@ exec --no-startup-id xautolock -time 30 -locker ~/.config/i3/lock.sh
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
-{%@@ if profile == "hedgehog" @@%}
-exec --no-startup-id system-config-printer-applet
-exec --no-startup-id blueman-tray # bluetooth
-{%@@ elif profile == "dev-pc-28" @@%}
+{%@@ if profile == "dev-pc-28" @@%}
 exec --no-startup-id blueman-tray # bluetooth
 {%@@ endif @@%}
 
@@ -304,19 +267,7 @@ exec picom -b --experimental-backends
 # Wallpaper
 exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
 
-{%@@ if profile == "hedgehog" @@%}
-# restore layout
-for_window [class="Firefox"] move to workspace $w1
-for_window [class="Spotify"] move to workspace $w2
-for_window [class="Slack"] move to workspace $w10
-for_window [class="Ferdi"] move to workspace $w10
-
-exec i3-msg 'workspace $w1; append_layout ~/.config/i3/layout/hedgehog/w1.json; gaps inner current set 0; exec {{@@ browser @@}};'
-exec i3-msg 'workspace $w2; exec spotify;'
-exec i3-msg 'workspace $w4; append_layout ~/.config/i3/layout/hedgehog/w4.json; exec {{@@ terminal @@}}; gaps inner current set 0;'
-exec i3-msg 'workspace $w7; append_layout ~/.config/i3/layout/hedgehog/w7.json; exec {{@@ terminal @@}}; exec {{@@ terminal @@}};'
-exec i3-msg 'workspace $w10; append_layout ~/.config/i3/layout/hedgehog/w10.json; exec ferdi;'
-{%@@ elif profile == "dev-pc-28" @@%}
+{%@@ if profile == "dev-pc-28" @@%}
 # restore layout
 for_window [class="Firefox"] move to workspace $w1
 for_window [class="Slack"] move to workspace $w9
