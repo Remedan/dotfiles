@@ -102,8 +102,8 @@ dotfiles:
     instignore:
     - colors
   d_ncmpcpp:
-    src: ncmpcpp
-    dst: ~/.ncmpcpp
+    src: config/ncmpcpp
+    dst: ~/.config/ncmpcpp
   f_stylelintrc:
     src: stylelintrc
     dst: ~/.stylelintrc
