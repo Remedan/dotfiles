@@ -20,10 +20,10 @@ actions:
   vim-plug: nvim +PlugInstall +qall
   doom-emacs-install: test -e ~/.emacs.d || (git clone --depth 1 https://github.com/hlissner/doom-emacs
     ~/.emacs.d; ~/.emacs.d/bin/doom install)
-  oh-my-zsh: test -e ~/.oh-my-zsh || (git clone https://github.com/robbyrussell/oh-my-zsh.git
-    ~/.oh-my-zsh)
-  zsh-autosuggestions: test -e ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ||
-    (git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions)
+  oh-my-zsh: test -e ~/.config/oh-my-zsh || (git clone https://github.com/robbyrussell/oh-my-zsh.git
+    ~/.config/oh-my-zsh)
+  zsh-autosuggestions: test -e ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions ||
+    (git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions)
 dotfiles:
   f_xresources:
     src: Xresources
@@ -119,8 +119,8 @@ dotfiles:
     src: config/rofi
     dst: ~/.config/rofi
   f_rem-lambda.zsh-theme:
-    src: oh-my-zsh/custom/themes/rem-lambda.zsh-theme
-    dst: ~/.oh-my-zsh/custom/themes/rem-lambda.zsh-theme
+    src: config/oh-my-zsh/custom/themes/rem-lambda.zsh-theme
+    dst: ~/.config/oh-my-zsh/custom/themes/rem-lambda.zsh-theme
   d_doom.d:
     src: doom.d
     dst: ~/.doom.d
