@@ -84,12 +84,6 @@ dotfiles:
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
-  f_ctags:
-    src: ctags
-    dst: ~/.ctags
-  f_dir_colors:
-    src: dir_colors
-    dst: ~/.dir_colors
   f_eslintrc:
     src: eslintrc
     dst: ~/.eslintrc
@@ -159,7 +153,6 @@ profiles:
     - d_sway
     - d_waybar
     - d_zathura
-    - f_ctags
     - f_eslintrc
     - f_gitconfig
     - d_i3
@@ -187,7 +180,6 @@ profiles:
     - d_ranger
     - d_redshift
     - d_zathura
-    - f_ctags
     - f_eslintrc
     - f_gitconfig
     - d_i3
