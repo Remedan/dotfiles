@@ -47,3 +47,9 @@ fi
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+
+# Load extra config
+if [ -f "$HOME/.zshrc.extra" ]
+then
+    source "$HOME/.zshrc.extra"
+fi
