@@ -104,6 +104,10 @@ dotfiles:
   d_ncmpcpp:
     src: config/ncmpcpp
     dst: ~/.config/ncmpcpp
+    cmpignore:
+    - error.log
+    upignore:
+    - error.log
   f_stylelintrc:
     src: stylelintrc
     dst: ~/.stylelintrc
