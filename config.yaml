@@ -18,8 +18,6 @@ actions:
       curl -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
     vim-folders: mkdir -p ~/.config/nvim/undo ~/.config/nvim/swap ~/.config/nvim/backup
   vim-plug: nvim +PlugInstall +qall
-  doom-emacs-install: test -e ~/.emacs.d || (git clone --depth 1 https://github.com/hlissner/doom-emacs
-    ~/.emacs.d; ~/.emacs.d/bin/doom install)
   oh-my-zsh: test -e ~/.config/oh-my-zsh || (git clone https://github.com/robbyrussell/oh-my-zsh.git
     ~/.config/oh-my-zsh)
   zsh-autosuggestions: test -e ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions ||
@@ -121,11 +119,6 @@ dotfiles:
   f_rem-lambda.zsh-theme:
     src: config/oh-my-zsh/custom/themes/rem-lambda.zsh-theme
     dst: ~/.config/oh-my-zsh/custom/themes/rem-lambda.zsh-theme
-  d_doom.d:
-    src: doom.d
-    dst: ~/.doom.d
-    actions:
-    - doom-emacs-install
   d_fontconfig:
     src: config/fontconfig
     dst: ~/.config/fontconfig
