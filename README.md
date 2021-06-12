@@ -34,7 +34,7 @@ My two favourite programming fonts are [Iosevka](https://typeof.net/Iosevka/) an
 
 ### Git user config
 
-To keep my git user info from this repo I source it from `~/.gituser`. Git will complain if it doesn't exist. Example contents:
+To keep my git user info from this repo I source it from `~/.config/git/user`. Git will complain if it doesn't exist. Example contents:
 
 ```
 [user]

@@ -1,5 +1,5 @@
 [include]
-    path = ~/.gituser
+    path = ~/.config/git/user
 [push]
     default = current
 [credential]

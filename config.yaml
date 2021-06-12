@@ -20,8 +20,8 @@ actions:
   vim-plug: nvim +PlugInstall +qall
   oh-my-zsh: test -e ~/.config/oh-my-zsh || (git clone https://github.com/robbyrussell/oh-my-zsh.git
     ~/.config/oh-my-zsh)
-  zsh-autosuggestions: test -e ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions ||
-    (git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions)
+  zsh-autosuggestions: test -e ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+    || (git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions)
 dotfiles:
   f_xresources:
     src: Xresources
@@ -85,9 +85,6 @@ dotfiles:
   f_eslintrc:
     src: eslintrc
     dst: ~/.eslintrc
-  f_gitconfig:
-    src: gitconfig
-    dst: ~/.gitconfig
   d_i3:
     src: config/i3
     dst: ~/.config/i3
@@ -127,6 +124,13 @@ dotfiles:
     dst: ~/.config/emacs
     chmod: '700'
     ignore_missing_in_dotdrop: true
+  d_git:
+    src: config/git
+    dst: ~/.config/git
+    cmpignore:
+    - user
+    upignore:
+    - user
 profiles:
   athena:
     variables:
@@ -147,7 +151,7 @@ profiles:
     - d_waybar
     - d_zathura
     - f_eslintrc
-    - f_gitconfig
+    - d_git
     - d_i3
     - d_ncmpcpp
     - f_stylelintrc
@@ -174,7 +178,7 @@ profiles:
     - d_redshift
     - d_zathura
     - f_eslintrc
-    - f_gitconfig
+    - d_git
     - d_i3
     - d_ncmpcpp
     - f_stylelintrc
@@ -195,7 +199,7 @@ profiles:
     - d_polybar
     - d_ranger
     - d_zathura
-    - f_gitconfig
+    - d_git
     - d_i3
     - f_zshrc
     - f_rem-lambda.zsh-theme
