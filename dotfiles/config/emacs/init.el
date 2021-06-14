@@ -22,3 +22,6 @@
 ;; EVIL Mode
 (use-package evil
   :config (evil-mode 1))
+
+;; Disable bell
+(setq ring-bell-function 'ignore)
