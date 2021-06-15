@@ -16,8 +16,16 @@
 (setq use-package-always-ensure 't)
 
 ;; Theme
+{%@@ if colorscheme == "gruvbox-dark" @@%}
+(use-package gruvbox-theme
+  :config (load-theme 'gruvbox-dark-medium t))
+{%@@ elif colorscheme == "dracula" @@%}
+(use-package dracula-theme
+  :config (load-theme 'dracula t))
+{%@@ else @@%}
 (use-package solarized-theme
   :config (load-theme 'solarized-dark t))
+{%@@ endif @@%}
 
 ;; EVIL Mode
 (use-package evil
