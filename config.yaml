@@ -35,9 +35,6 @@ dotfiles:
   d_dunst:
     src: config/dunst
     dst: ~/.config/dunst
-  d_kitty:
-    src: config/kitty
-    dst: ~/.config/kitty
   d_mpd:
     src: config/mpd
     dst: ~/.config/mpd
@@ -82,9 +79,6 @@ dotfiles:
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
-  f_eslintrc:
-    src: eslintrc
-    dst: ~/.eslintrc
   d_i3:
     src: config/i3
     dst: ~/.config/i3
@@ -97,9 +91,6 @@ dotfiles:
     - error.log
     upignore:
     - error.log
-  f_stylelintrc:
-    src: stylelintrc
-    dst: ~/.stylelintrc
   d_weechat:
     src: weechat
     dst: ~/.weechat
@@ -140,7 +131,6 @@ profiles:
     - d_xresources-include
     - d_alacritty
     - d_dunst
-    - d_kitty
     - d_mpd
     - d_nvim
     - d_picom
@@ -150,11 +140,9 @@ profiles:
     - d_sway
     - d_waybar
     - d_zathura
-    - f_eslintrc
     - d_git
     - d_i3
     - d_ncmpcpp
-    - f_stylelintrc
     - d_weechat
     - f_zshrc
     - f_rem-lambda.zsh-theme
@@ -170,7 +158,6 @@ profiles:
     - d_xresources-include
     - d_alacritty
     - d_dunst
-    - d_kitty
     - d_mpd
     - d_nvim
     - d_picom
@@ -178,11 +165,9 @@ profiles:
     - d_ranger
     - d_redshift
     - d_zathura
-    - f_eslintrc
     - d_git
     - d_i3
     - d_ncmpcpp
-    - f_stylelintrc
     - d_weechat
     - f_zshrc
     - f_rem-lambda.zsh-theme
