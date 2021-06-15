@@ -190,6 +190,8 @@ profiles:
     - d_fontconfig
     - d_emacs
   dev-pc-28:
+    variables:
+      colorscheme: gruvbox-dark
     dotfiles:
     - f_xresources
     - d_xresources-include
