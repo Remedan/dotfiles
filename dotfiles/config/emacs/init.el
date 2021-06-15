@@ -1,7 +1,17 @@
+;; Base config
+
 ;; Disable GUI
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+
+;; Disable bell
+(setq ring-bell-function 'ignore)
+
+;; Enable line numbers
+(global-linum-mode t)
+
+;; Packages
 
 ;; Add the MELPA package repository
 (require 'package)
@@ -27,9 +37,12 @@
   :config (load-theme 'solarized-dark t))
 {%@@ endif @@%}
 
+;; Undo Tree
+(use-package undo-tree
+  :config (global-undo-tree-mode))
+
 ;; EVIL Mode
 (use-package evil
-  :config (evil-mode 1))
-
-;; Disable bell
-(setq ring-bell-function 'ignore)
+  :config
+  (evil-mode 1)
+  (evil-set-undo-system 'undo-tree))
