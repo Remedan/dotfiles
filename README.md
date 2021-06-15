@@ -9,7 +9,12 @@ pip3 install -r dotdrop/requirements.txt
 ./dotdrop.sh install
 ```
 
-The color scheme is configurable via the variable `colorscheme` in `config.yaml`. Possible values are `solarized-dark`, `gruvbox-dark`, and `dracula`.
+## Configuration
+
+A few variables can be set in `config.yaml`.
+
+* `colorscheme`: System-wide color scheme. Possible values are `solarized-dark`, `gruvbox-dark`, `dracula` and `nord`.
+* `browser`: Default browser to be used by various applications to open links.
 
 ## Screenshot
 
@@ -18,7 +23,6 @@ The color scheme is configurable via the variable `colorscheme` in `config.yaml`
 ## Key Components and Software
 
 * [i3-gaps](https://github.com/Airblader/i3) + Polybar + Picom
-    - OR Sway + Waybar
 * alacritty + zsh + Oh My Zsh
 * Neovim (0.5 or later)
 * Ranger

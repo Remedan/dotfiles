@@ -32,6 +32,9 @@
 {%@@ elif colorscheme == "dracula" @@%}
 (use-package dracula-theme
   :config (load-theme 'dracula t))
+{%@@ elif colorscheme == "nord" @@%}
+(use-package nord-theme
+  :config (load-theme 'nord t))
 {%@@ else @@%}
 (use-package solarized-theme
   :config (load-theme 'solarized-dark t))

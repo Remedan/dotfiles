@@ -5,11 +5,9 @@ configuration {
     font: "Open Sans 12";
 {%@@ endif @@%}
     terminal: "{{@@ terminal @@}}";
-{%@@ if colorscheme == "gruvbox-dark" @@%}
-    theme: "gruvbox-dark";
-{%@@ elif colorscheme == "dracula" @@%}
-    theme: "dracula";
-{%@@ else @@%}
+{%@@ if colorscheme == "solarized-dark" @@%}
     theme: "solarized";
+{%@@ else @@%}
+    theme: "{{@@ colorscheme @@}}";
 {%@@ endif @@%}
 }

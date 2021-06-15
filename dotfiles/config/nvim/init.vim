@@ -102,6 +102,7 @@ Plug 'shawncplus/phpcomplete.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'yuezk/vim-js'
 " Colorschemes
+Plug 'arcticicestudio/nord-vim'
 Plug 'ciaranm/inkpot'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ishan9299/nvim-solarized-lua'
@@ -337,10 +338,10 @@ nnoremap <leader>w :%s/\s\+$//e<CR>
 "        Colors             "
 """""""""""""""""""""""""""""
 set background=dark    " Use dark background
-{%@@ if colorscheme == "gruvbox-dark" @@%}
-colorscheme gruvbox    " Use nicer colorscheme
-{%@@ elif colorscheme == "dracula" @@%}
-colorscheme dracula    " Use nicer colorscheme
-{%@@ else @@%}
+{%@@ if colorscheme == "solarized-dark" @@%}
 colorscheme solarized  " Use nicer colorscheme
+{%@@ elif colorscheme == "gruvbox-dark" @@%}
+colorscheme gruvbox    " Use nicer colorscheme
+{%@@ else @@%}
+colorscheme {{@@ colorscheme @@}} " Use nicer colorscheme
 {%@@ endif @@%}
