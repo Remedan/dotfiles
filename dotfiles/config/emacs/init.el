@@ -11,6 +11,13 @@
 ;; Enable line numbers
 (global-linum-mode t)
 
+;; Always show mathing parentheses
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
+;; Change backup directory
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "/backup"))))
+
 ;; Packages
 
 ;; Add the MELPA package repository
@@ -42,7 +49,12 @@
 
 ;; Undo Tree
 (use-package undo-tree
-  :config (global-undo-tree-mode))
+  :config
+  (global-undo-tree-mode)
+  (setq undo-tree-visualizer-diff t
+	undo-tree-auto-save-history t
+	undo-tree-history-directory-alist
+	`(("." . ,(concat user-emacs-directory "/undo")))))
 
 ;; EVIL Mode
 (use-package evil
