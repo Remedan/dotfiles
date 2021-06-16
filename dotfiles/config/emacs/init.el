@@ -15,8 +15,9 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
-;; Change backup directory
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "/backup"))))
+;; Backups
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "/backup")))
+      backup-by-copying t)
 
 ;; Packages
 
@@ -61,3 +62,11 @@
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-tree))
+
+;; Dasboard
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-startup-banner
+	(concat user-emacs-directory "/sakamoto.png")))
