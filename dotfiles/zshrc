@@ -9,9 +9,13 @@ plugins=(
     kubectl
     pip
     virtualenvwrapper
-    zsh-autosuggestions
     shrink-path
 )
+# Suggestion colors don't work properly in emacs term
+if [ $TERM != "eterm-color" ]
+then
+    plugins+=(zsh-autosuggestions)
+fi
 source $ZSH/oh-my-zsh.sh
 
 {%@@ if colorscheme == "solarized-dark" @@%}

@@ -11,12 +11,16 @@
 ;; Enable line numbers
 (global-linum-mode t)
 
+;; Enable column indicator
+(setq column-number-mode t)
+
 ;; Always show mathing parentheses
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
 ;; Backups
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "/backup")))
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name "backup" user-emacs-directory))) ;
       backup-by-copying t)
 
 ;; Packages
@@ -34,19 +38,15 @@
 (setq use-package-always-ensure 't)
 
 ;; Theme
+(use-package doom-themes
+  :ensure t
+  :config
 {%@@ if colorscheme == "gruvbox-dark" @@%}
-(use-package gruvbox-theme
-  :config (load-theme 'gruvbox-dark-medium t))
-{%@@ elif colorscheme == "dracula" @@%}
-(use-package dracula-theme
-  :config (load-theme 'dracula t))
-{%@@ elif colorscheme == "nord" @@%}
-(use-package nord-theme
-  :config (load-theme 'nord t))
+  (load-theme 'doom-gruvbox t)
 {%@@ else @@%}
-(use-package solarized-theme
-  :config (load-theme 'solarized-dark t))
+  (load-theme 'doom-{{@@ colorscheme @@}} t)
 {%@@ endif @@%}
+  (doom-themes-neotree-config))
 
 ;; Undo Tree
 (use-package undo-tree
@@ -55,13 +55,25 @@
   (setq undo-tree-visualizer-diff t
 	undo-tree-auto-save-history t
 	undo-tree-history-directory-alist
-	`(("." . ,(concat user-emacs-directory "/undo")))))
+	`(("." . ,(expand-file-name "undo" user-emacs-directory)))))
 
 ;; EVIL Mode
 (use-package evil
+  :ensure t
+  :init
+  (setq evil-want-keybinding nil) ;; Needed for evil-collection
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-tree))
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
+
+;; All the Icons
+(use-package all-the-icons)
 
 ;; Dasboard
 (use-package dashboard
@@ -69,4 +81,25 @@
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-startup-banner
-	(concat user-emacs-directory "/sakamoto.png")))
+	(expand-file-name "sakamoto.png" user-emacs-directory)
+	dashboard-center-content t
+	dashboard-set-heading-icons t
+	dashboard-set-file-icons t))
+
+;; Doom Modeline
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+;; Solaire Mode
+(use-package solaire-mode
+  :config (solaire-global-mode +1))
+
+;; Neotree
+(use-package neotree
+  :config
+  (global-set-key [f8] 'neotree-toggle)
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+
+;; Multi Term
+(use-package multi-term)
