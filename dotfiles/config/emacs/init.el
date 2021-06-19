@@ -9,7 +9,7 @@
 (setq ring-bell-function 'ignore)
 
 ;; Enable line numbers
-(global-linum-mode t)
+(global-display-line-numbers-mode)
 
 ;; Enable column indicator
 (setq column-number-mode t)
@@ -22,6 +22,10 @@
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backup" user-emacs-directory))) ;
       backup-by-copying t)
+
+;; Separate config for customize
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
 
 ;; Packages
 
@@ -100,6 +104,30 @@
   :config
   (global-set-key [f8] 'neotree-toggle)
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+
+;; Helm
+(use-package helm
+  :config
+  (helm-mode 1))
+
+;; Projectile
+(use-package projectile
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
+
+;; Helm-Projectile integration
+(use-package helm-projectile)
+
+;; Magit
+(use-package magit)
+
+;; GitGutter
+(use-package git-gutter
+  :config
+  (global-git-gutter-mode +1))
 
 ;; Multi Term
 (use-package multi-term)
