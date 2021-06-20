@@ -2,7 +2,7 @@
 
 ;; Disable GUI
 (tool-bar-mode -1)
-(menu-bar-mode -1)
+;; (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
 ;; Disable bell
@@ -17,6 +17,9 @@
 ;; Always show mathing parentheses
 (show-paren-mode 1)
 (setq show-paren-delay 0)
+
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
 
 ;; Backups
 (setq backup-directory-alist
@@ -129,14 +132,24 @@
 (use-package company
   :config (global-company-mode))
 
+;; Flycheck
+(use-package flycheck
+  :init (global-flycheck-mode))
+
+;; Which Key
+(use-package which-key
+    :config (which-key-mode))
+
+;; Language-specific
+
 ;; LSP
 (setq lsp-keymap-prefix "C-c l")
 (use-package lsp-mode
   :hook (python-mode . lsp)
   :config
+  (setq lsp-pyls-disable-warning t)
   (lsp-register-custom-settings
-   '(("lsp-pyls-disable-warning" t)
-     ("pyls.plugins.pyls_mypy.enabled" t t)
+     '(("pyls.plugins.pyls_mypy.enabled" t t)
      ("pyls.plugins.pyls_mypy.live_mode" nil t)))
   :commands lsp)
 
@@ -146,7 +159,6 @@
 (use-package helm-lsp
   :commands helm-lsp-workspace-symbol)
 
-;; Which Key
-(use-package which-key
-    :config
-    (which-key-mode))
+;; Rust
+(use-package rust-mode
+  :hook (rust-mode . lsp))
