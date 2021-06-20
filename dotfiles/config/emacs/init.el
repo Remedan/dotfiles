@@ -43,7 +43,6 @@
 
 ;; Theme
 (use-package doom-themes
-  :ensure t
   :config
 {%@@ if colorscheme == "gruvbox-dark" @@%}
   (load-theme 'doom-gruvbox t)
@@ -63,7 +62,6 @@
 
 ;; EVIL Mode
 (use-package evil
-  :ensure t
   :init
   (setq evil-want-keybinding nil) ;; Needed for evil-collection
   :config
@@ -72,7 +70,6 @@
 
 (use-package evil-collection
   :after evil
-  :ensure t
   :config
   (evil-collection-init))
 
@@ -81,7 +78,6 @@
 
 ;; Dasboard
 (use-package dashboard
-  :ensure t
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-startup-banner
@@ -92,7 +88,6 @@
 
 ;; Doom Modeline
 (use-package doom-modeline
-  :ensure t
   :init (doom-modeline-mode 1))
 
 ;; Solaire Mode
@@ -115,7 +110,6 @@
   :init
   (projectile-mode +1)
   :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)
               ("C-c p" . projectile-command-map)))
 
 ;; Helm-Projectile integration
@@ -126,8 +120,33 @@
 
 ;; GitGutter
 (use-package git-gutter
-  :config
-  (global-git-gutter-mode +1))
+  :config (global-git-gutter-mode +1))
 
 ;; Multi Term
 (use-package multi-term)
+
+;; Company
+(use-package company
+  :config (global-company-mode))
+
+;; LSP
+(setq lsp-keymap-prefix "C-c l")
+(use-package lsp-mode
+  :hook (python-mode . lsp)
+  :config
+  (lsp-register-custom-settings
+   '(("lsp-pyls-disable-warning" t)
+     ("pyls.plugins.pyls_mypy.enabled" t t)
+     ("pyls.plugins.pyls_mypy.live_mode" nil t)))
+  :commands lsp)
+
+(use-package lsp-ui
+  :commands ls-ui-mode)
+
+(use-package helm-lsp
+  :commands helm-lsp-workspace-symbol)
+
+;; Which Key
+(use-package which-key
+    :config
+    (which-key-mode))
