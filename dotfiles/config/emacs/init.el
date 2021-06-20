@@ -9,7 +9,7 @@
 (setq ring-bell-function 'ignore)
 
 ;; Enable line numbers
-(global-display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Enable column indicator
 (setq column-number-mode t)
