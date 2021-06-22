@@ -48,6 +48,60 @@ syntax enable       " Enable syntax highlighting
 autocmd BufWinEnter * normal zR
 
 """""""""""""""""""""""""""""
+"        Key mapping        "
+"""""""""""""""""""""""""""""
+" Set leader to <Space>
+let mapleader="\<Space>"
+nnoremap <Space> <Nop>
+
+" j and k go up/down a row in wrapped lines
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
+" Clear search highlights and any message displayed
+nnoremap <silent> <leader>c :silent noh<Bar>echo<CR>
+
+" Nice buffer navigation
+nnoremap tg  :buffer<Space>
+nnoremap th  :bfirst<CR>
+nnoremap tj  :bnext<CR>
+nnoremap tk  :bprev<CR>
+nnoremap tl  :blast<CR>
+nnoremap tt  :edit<Space>
+nnoremap tn  :enew<CR>
+nnoremap td  :bdelete<CR>
+nnoremap ts  :files<CR>
+
+" Alt+j/k moves lines down/up
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
+
+" Alt+h/l decreases/increases indentation level
+nnoremap <A-h> <<
+nnoremap <A-l> >>
+vnoremap <A-h> <gv
+vnoremap <A-l> >gv
+
+" Ctrl+h/j/k/l switch windows
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Paste mode
+nnoremap <silent> <leader>p :set invpaste<CR>
+
+" F9 runs current file
+nnoremap <F9> :!time "%:p"<CR>
+
+" learder w to remove trailing whitespace from file
+nnoremap <leader>w :%s/\s\+$//e<CR>
+
+"""""""""""""""""""""""""""""
 "    Language-specific      "
 """""""""""""""""""""""""""""
 let php_sql_query=1 " Highlight sql inside php strings
@@ -222,6 +276,9 @@ let g:NERDTreeShowHidden = 1
 " Nice enter inside parentheses
 let delimitMate_expand_cr = 1
 
+" F3 toggles NERDTree view
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
+
 " NERD Commenter
 
 " Add spaces after comment delimiters by default
@@ -268,71 +325,15 @@ let wiki_1.ext = '.md'
 
 let g:vimwiki_list = [wiki_1]
 
-"""""""""""""""""""""""""""""
-"        Key mapping        "
-"""""""""""""""""""""""""""""
-" Set leader to <Space>
-let mapleader="\<Space>"
-nnoremap <Space> <Nop>
-
-" j and k go up/down a row in wrapped lines
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
-
-" Clear search highlights and any message displayed
-nnoremap <silent> <leader>c :silent noh<Bar>echo<CR>
-
-" Nice buffer navigation
-nnoremap tg  :buffer<Space>
-nnoremap th  :bfirst<CR>
-nnoremap tj  :bnext<CR>
-nnoremap tk  :bprev<CR>
-nnoremap tl  :blast<CR>
-nnoremap tt  :edit<Space>
-nnoremap tn  :enew<CR>
-nnoremap td  :bdelete<CR>
-nnoremap ts  :files<CR>
-
-" Alt+j/k moves lines down/up
-nnoremap <A-j> :m+<CR>==
-nnoremap <A-k> :m-2<CR>==
-vnoremap <A-j> :m'>+<CR>gv=gv
-vnoremap <A-k> :m-2<CR>gv=gv
-
-" Alt+h/l decreases/increases indentation level
-nnoremap <A-h> <<
-nnoremap <A-l> >>
-vnoremap <A-h> <gv
-vnoremap <A-l> >gv
-
-" Ctrl+h/j/k/l switch windows
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
-" F2 toggles paste mode
-set pastetoggle=<F2>
-
-" F3 toggles NERDTree view
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
+" undotree
 
 " F4 toggles undo tree
 nnoremap <silent> <F4> :UndotreeToggle<CR>
 
+" Tag List
+
 " F5 toggles tag list
 nnoremap <silent> <F5> :TlistToggle<CR>
-
-" F9 runs current file
-nnoremap <F9> :!time "%:p"<CR>
-
-" leader r to save as root
-nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
-
-" learder w to remove trailing whitespace from file
-nnoremap <leader>w :%s/\s\+$//e<CR>
 
 """""""""""""""""""""""""""""
 "        Colors             "
