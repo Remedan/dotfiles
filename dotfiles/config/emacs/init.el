@@ -87,7 +87,9 @@
 	(expand-file-name "sakamoto.png" user-emacs-directory)
 	dashboard-center-content t
 	dashboard-set-heading-icons t
-	dashboard-set-file-icons t))
+	dashboard-set-file-icons t
+	dashboard-items '((projects . 10)
+			  (recents . 10))))
 
 ;; Doom Modeline
 (use-package doom-modeline
