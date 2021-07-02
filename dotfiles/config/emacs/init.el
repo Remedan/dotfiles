@@ -140,7 +140,7 @@
 
 ;; Which Key
 (use-package which-key
-    :config (which-key-mode))
+  :config (which-key-mode))
 
 ;; Language-specific
 
@@ -151,7 +151,7 @@
   :config
   (setq lsp-pyls-disable-warning t)
   (lsp-register-custom-settings
-     '(("pyls.plugins.pyls_mypy.enabled" t t)
+   '(("pyls.plugins.pyls_mypy.enabled" t t)
      ("pyls.plugins.pyls_mypy.live_mode" nil t)))
   :commands lsp)
 
@@ -164,3 +164,19 @@
 ;; Rust
 (use-package rust-mode
   :hook (rust-mode . lsp))
+
+{%@@ if profile == "dev-pc-28" @@%}
+;; Python
+(add-hook 'python-mode-hook
+	  (lambda()
+	    (setq indent-tabs-mode t
+		  tab-width 4)))
+{%@@ endif @@%}
+
+;; Clojure
+(use-package clojure-mode
+  :hook ((clojure-mode . lsp)
+	 (clojurescript-mode . lsp)
+	 (clojurec-mode . lsp)))
+(use-package cider)
+(use-package flycheck-joker)
