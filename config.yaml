@@ -26,9 +26,9 @@ dotfiles:
   f_xresources:
     src: Xresources
     dst: ~/.Xresources
-  d_xresources-include:
-    src: Xresources-include
-    dst: ~/.Xresources-include
+  d_xresources.extra:
+    src: Xresources.extra
+    dst: ~/.Xresources.extra
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
@@ -128,7 +128,7 @@ profiles:
       colorscheme: nord
     dotfiles:
     - f_xresources
-    - d_xresources-include
+    - d_xresources.extra
     - d_alacritty
     - d_dunst
     - d_mpd
@@ -154,7 +154,7 @@ profiles:
       browser: firefox-developer-edition
     dotfiles:
     - f_xresources
-    - d_xresources-include
+    - d_xresources.extra
     - d_alacritty
     - d_dunst
     - d_mpd
@@ -178,7 +178,7 @@ profiles:
       colorscheme: gruvbox-dark
     dotfiles:
     - f_xresources
-    - d_xresources-include
+    - d_xresources.extra
     - d_alacritty
     - d_dunst
     - d_nvim

@@ -18,4 +18,4 @@ URxvt.matcher.button: 1
 
 ! Colours
 URxvt.depth: 24
-#include ".Xresources-include/colors-{{@@ colorscheme @@}}"
+#include ".Xresources.extra/colors-{{@@ colorscheme @@}}"
