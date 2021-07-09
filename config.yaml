@@ -122,6 +122,9 @@ dotfiles:
     - user
     upignore:
     - user
+  f_xprofile:
+    src: xprofile
+    dst: ~/.xprofile
 profiles:
   athena:
     variables:
@@ -149,6 +152,7 @@ profiles:
     - d_rofi
     - d_fontconfig
     - d_emacs
+    - f_xprofile
   helios:
     variables:
       browser: firefox-developer-edition
