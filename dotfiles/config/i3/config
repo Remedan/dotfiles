@@ -221,6 +221,7 @@ gaps inner 6
 {%@@ else @@%}
 gaps inner 12
 {%@@ endif @@%}
+smart_gaps on
 smart_borders no_gaps
 
 bindsym $mod+y       gaps inner current minus 6
