@@ -153,7 +153,9 @@
 (use-package lsp-mode
   :hook (python-mode . lsp)
   :config
-  (setq lsp-pyls-disable-warning t)
+  (setq lsp-pyls-disable-warning t
+        lsp-signature-auto-activate '(:on-server-request))
+
   (lsp-register-custom-settings
    '(("pyls.plugins.pyls_mypy.enabled" t t)
      ("pyls.plugins.pyls_mypy.live_mode" nil t)))
