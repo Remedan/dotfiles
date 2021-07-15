@@ -177,6 +177,7 @@ profiles:
     - d_rofi
     - d_fontconfig
     - d_emacs
+    - f_xprofile
   dev-pc-28:
     variables:
       colorscheme: gruvbox-dark
@@ -197,3 +198,4 @@ profiles:
     - d_rofi
     - d_fontconfig
     - d_emacs
+    - f_xprofile

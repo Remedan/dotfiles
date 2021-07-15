@@ -231,9 +231,6 @@ bindsym $mod+Shift+u gaps outer current plus 6
 
 {%@@ include "config/i3/colors/" + colorscheme @@%}
 
-# Keyboard layouts, alt+shift to switch
-exec_always --no-startup-id setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle'
-
 {%@@ if profile == "helios" @@%}
 # Multiple monitors
 exec xrandr --output DP-4 --mode 1920x1080 --rate 144.00 --primary --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --output HDMI-0 --off

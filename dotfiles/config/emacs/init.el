@@ -8,6 +8,10 @@
 ;; Disable bell
 (setq ring-bell-function 'ignore)
 
+;; Font
+(add-to-list 'default-frame-alist
+             '(font . "Iosevka Term-10"))
+
 ;; Enable line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
