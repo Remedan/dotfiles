@@ -34,6 +34,10 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+;; Key mapping
+(global-set-key "\C-c\C-j" 'previous-buffer)
+(global-set-key "\C-c\C-k" 'next-buffer)
+
 ;; Packages
 
 ;; Add the MELPA package repository
@@ -70,7 +74,8 @@
 ;; EVIL Mode
 (use-package evil
   :init
-  (setq evil-want-keybinding nil) ;; Needed for evil-collection
+  (setq evil-want-keybinding nil ;; Needed for evil-collection
+	evil-want-C-u-scroll t)
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-tree))
