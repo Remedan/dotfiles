@@ -67,15 +67,15 @@
   :config
   (global-undo-tree-mode)
   (setq undo-tree-visualizer-diff t
-	undo-tree-auto-save-history t
-	undo-tree-history-directory-alist
-	`(("." . ,(expand-file-name "undo" user-emacs-directory)))))
+        undo-tree-auto-save-history t
+        undo-tree-history-directory-alist
+        `(("." . ,(expand-file-name "undo" user-emacs-directory)))))
 
 ;; EVIL Mode
 (use-package evil
   :init
   (setq evil-want-keybinding nil ;; Needed for evil-collection
-	evil-want-C-u-scroll t)
+        evil-want-C-u-scroll t)
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-tree))
@@ -93,12 +93,12 @@
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-startup-banner
-	(expand-file-name "sakamoto.png" user-emacs-directory)
-	dashboard-center-content t
-	dashboard-set-heading-icons t
-	dashboard-set-file-icons t
-	dashboard-items '((projects . 10)
-			  (recents . 10))))
+        (expand-file-name "sakamoto.png" user-emacs-directory)
+        dashboard-center-content t
+        dashboard-set-heading-icons t
+        dashboard-set-file-icons t
+        dashboard-items '((projects . 10)
+                          (recents . 10))))
 
 ;; Doom Modeline
 (use-package doom-modeline
@@ -179,15 +179,16 @@
 {%@@ if profile == "dev-pc-28" @@%}
 ;; Python
 (add-hook 'python-mode-hook
-	  (lambda()
-	    (setq indent-tabs-mode t
-		  tab-width 4)))
+          (lambda()
+            (setq indent-tabs-mode t
+                  tab-width 4
+                  python-indent-guess-indent-offset nil)))
 {%@@ endif @@%}
 
 ;; Clojure
 (use-package clojure-mode
   :hook ((clojure-mode . lsp)
-	 (clojurescript-mode . lsp)
-	 (clojurec-mode . lsp)))
+         (clojurescript-mode . lsp)
+         (clojurec-mode . lsp)))
 (use-package cider)
 (use-package flycheck-joker)
