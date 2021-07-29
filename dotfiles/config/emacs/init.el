@@ -147,6 +147,9 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
+(use-package flycheck-inline
+  :hook (flycheck-mode . flycheck-inline-mode))
+
 ;; Which Key
 (use-package which-key
   :config (which-key-mode))
@@ -175,6 +178,9 @@
 ;; Rust
 (use-package rust-mode
   :hook (rust-mode . lsp))
+
+(use-package flycheck-rust
+  :hook (flycheck-mode . flycheck-rust-setup))
 
 {%@@ if profile == "dev-pc-28" @@%}
 ;; Python
