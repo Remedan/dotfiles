@@ -10,7 +10,7 @@
 
 ;; Font
 (add-to-list 'default-frame-alist
-             '(font . "Iosevka Term-10"))
+             '(font . "Iosevka Term-11"))
 
 ;; Enable line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
