@@ -10,6 +10,7 @@ plugins=(
     pip
     virtualenvwrapper
     shrink-path
+    direnv
 )
 # Suggestion colors don't work properly in emacs term
 if [ $TERM != "eterm-color" ]
