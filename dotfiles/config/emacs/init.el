@@ -147,9 +147,6 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
-(use-package flycheck-inline
-  :hook (flycheck-mode . flycheck-inline-mode))
-
 ;; Which Key
 (use-package which-key
   :config (which-key-mode))
@@ -161,8 +158,8 @@
 (use-package lsp-mode
   :hook (python-mode . lsp)
   :config
-  (setq lsp-pyls-disable-warning t
-        lsp-signature-auto-activate '(:on-server-request))
+  (setq lsp-signature-auto-activate nil
+        lsp-ui-doc-enable nil)
 
   (lsp-register-custom-settings
    '(("pyls.plugins.pyls_mypy.enabled" t t)
