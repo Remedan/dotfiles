@@ -25,6 +25,10 @@
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace t)
 
+;; Set scratch buffer to Org Mode and disable message
+(setq initial-major-mode 'org-mode)
+(setq initial-scratch-message nil)
+
 ;; Backups
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backup" user-emacs-directory))) ;
