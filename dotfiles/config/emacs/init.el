@@ -25,6 +25,11 @@
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace t)
 
+;; Use 4 spaces for indentation
+(setq-default indent-tabs-mode nil)
+(setq tab-stop-list (number-sequence 4 120 4))
+(setq tab-width 2)
+
 ;; Set scratch buffer to Org Mode and disable message
 (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message nil)
