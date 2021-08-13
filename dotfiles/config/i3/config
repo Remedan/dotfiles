@@ -167,10 +167,17 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+
+{%@@ if profile == "dev-pc-28" @@%}
+{%@@    set lock_script = '~/.config/i3/lock.sh -x"-960+0,+960+0"' @@%}
+{%@@ else @@%}
+{%@@    set lock_script = '~/.config/i3/lock.sh' @@%}
+{%@@ endif @@%}
+
 # Power control mode
 set $power_control "[l]ock log[o]ut [s]uspend [h]ibernate [r]eboot [p]oweroff"
 mode  $power_control {
-    bindsym l exec ~/.config/i3/lock.sh; mode "default"
+    bindsym l exec {{@@ lock_script @@}}; mode "default"
     bindsym o exec i3-msg exit; mode "default"
     bindsym s exec systemctl suspend; mode "default"
     bindsym h exec systemctl hibernate; mode "default"
@@ -211,6 +218,7 @@ bindsym XF86AudioStop exec ~/.config/i3/player-control.sh stop
 
 # Applications
 bindsym $mod+i exec {{@@ browser @@}}
+bindsym $mod+o exec emacs
 
 # Borders
 default_border pixel 2
@@ -248,7 +256,7 @@ exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
 
 exec --no-startup-id unclutter
 {%@@ if profile == "dev-pc-28" @@%}
-exec --no-startup-id xautolock -time 30 -locker ~/.config/i3/lock.sh
+exec --no-startup-id xautolock -time 30 -locker {{@@ lock_script @@}}
 {%@@ endif @@%}
 
 # Applets

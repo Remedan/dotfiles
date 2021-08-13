@@ -1,7 +1,51 @@
-#!/bin/bash
-MUTED=$(pacmd list-sinks | awk '/muted/ { print $2 }')
-pactl set-sink-mute @DEFAULT_SINK@ 1
+#!/usr/bin/env bash
+
+OPTS=$(getopt -l "pixelize,xkcd::" -o "px::" -- "$@")
+eval set -- "$OPTS"
+while true; do
+    case "$1" in
+        --pixelize|-p)
+            PIXELIZE=true
+            ;;
+        --xkcd|-x)
+            shift
+            POSITIONS=${1//,/ }
+            ;;
+        --)
+            shift
+            break
+            ;;
+    esac
+    shift
+done
+
+dunstctl set-paused true
+
 scrot /tmp/screenshot.png
-convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
+if [[ $PIXELIZE = true ]]; then
+    convert /tmp/screenshot.png -scale 5% -scale 2000% /tmp/screenshotblur.png
+else
+    convert /tmp/screenshot.png -blur 0x30 /tmp/screenshotblur.png
+fi
 rm /tmp/screenshot.png
-i3lock -n -i /tmp/screenshotblur.png && if [[ $MUTED != "yes" ]]; then pactl set-sink-mute @DEFAULT_SINK@ 0; fi
+
+function random_xkcd() {
+    MAX=$1
+    NUM=$(shuf -i 1-$MAX -n 1)
+    mkdir -p "$HOME/.cache/xkcd"
+    FILE="$HOME/.cache/xkcd/$NUM.png"
+    if [[ ! -f "$FILE" ]]; then
+        URL=$(curl -s "https://xkcd.com/$NUM/info.0.json" | jq -r .img)
+        curl $URL -o $FILE
+    fi
+    echo $FILE
+}
+
+if [[ -n $POSITIONS ]]; then
+    CURRENT=$(curl -s 'https://xkcd.com/info.0.json' | jq .num)
+    for p in $POSITIONS; do
+        composite -gravity center -geometry $p $(random_xkcd $CURRENT) /tmp/screenshotblur.png /tmp/screenshotblur.png
+    done
+fi
+
+i3lock -n -i /tmp/screenshotblur.png && dunstctl set-paused false && rm /tmp/screenshotblur.png
