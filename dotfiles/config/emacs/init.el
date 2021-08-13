@@ -41,6 +41,8 @@
 
 ;; Separate config for customize
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(unless (file-exists-p custom-file)
+  (write-region "" nil custom-file))
 (load custom-file)
 
 ;; Key mapping
