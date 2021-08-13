@@ -70,12 +70,6 @@ dotfiles:
   d_redshift:
     src: config/redshift
     dst: ~/.config/redshift
-  d_sway:
-    src: config/sway
-    dst: ~/.config/sway
-  d_waybar:
-    src: config/waybar
-    dst: ~/.config/waybar
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
@@ -140,8 +134,6 @@ profiles:
     - d_polybar
     - d_ranger
     - d_redshift
-    - d_sway
-    - d_waybar
     - d_zathura
     - d_git
     - d_i3
