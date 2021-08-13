@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OPTS=$(getopt -l "pixelize,xkcd::" -o "px::" -- "$@")
+OPTS=$(getopt -l "pixelize,xkcd::,text::" -o "px::t::" -- "$@")
 eval set -- "$OPTS"
 while true; do
     case "$1" in
@@ -10,6 +10,10 @@ while true; do
         --xkcd|-x)
             shift
             POSITIONS=${1//,/ }
+            ;;
+        --text|-t)
+            shift
+            TEXT=$1
             ;;
         --)
             shift
@@ -28,6 +32,10 @@ else
     convert /tmp/screenshot.png -blur 0x30 /tmp/screenshotblur.png
 fi
 rm /tmp/screenshot.png
+
+if [[ -n $TEXT ]]; then
+    convert /tmp/screenshotblur.png -pointsize 300 -fill white -stroke black -strokewidth 5 -gravity center -annotate 0 "$TEXT" /tmp/screenshotblur.png
+fi
 
 function random_xkcd() {
     MAX=$1
