@@ -39,7 +39,8 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
   normal:
-    black:   *gruvbox_dark_bg
+    #black:   *gruvbox_dark_bg
+    black:   '#665c54'
     red:     '#cc241d'
     green:   '#98971a'
     yellow:  '#d79921'
