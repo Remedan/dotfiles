@@ -206,3 +206,9 @@
          (clojurec-mode . lsp)))
 (use-package cider)
 (use-package flycheck-joker)
+
+;; YAML
+(use-package yaml-mode)
+
+;; Dockerfile
+(use-package dockerfile-mode)
