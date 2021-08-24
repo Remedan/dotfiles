@@ -28,7 +28,7 @@
 ;; Use 4 spaces for indentation
 (setq-default indent-tabs-mode nil)
 (setq tab-stop-list (number-sequence 4 120 4))
-(setq tab-width 2)
+(setq tab-width 4)
 
 ;; Set scratch buffer to Org Mode and disable message
 (setq initial-major-mode 'org-mode)
