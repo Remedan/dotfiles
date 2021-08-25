@@ -222,6 +222,7 @@ bindsym $mod+o exec emacs
 
 # Borders
 default_border pixel 2
+smart_borders on
 
 # Gaps
 {%@@ if profile == "athena" @@%}
@@ -230,7 +231,6 @@ gaps inner 6
 gaps inner 12
 {%@@ endif @@%}
 smart_gaps on
-smart_borders no_gaps
 
 bindsym $mod+y       gaps inner current minus 6
 bindsym $mod+u       gaps inner current plus 6
