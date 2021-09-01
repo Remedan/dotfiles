@@ -45,10 +45,6 @@
   (write-region "" nil custom-file))
 (load custom-file)
 
-;; Key mapping
-(global-set-key "\C-c\C-j" 'previous-buffer)
-(global-set-key "\C-c\C-k" 'next-buffer)
-
 ;; Packages
 
 ;; Add the MELPA package repository
@@ -167,6 +163,17 @@
 (use-package tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;; Centaur tabs
+
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode t)
+  (setq centaur-tabs-set-icons t)
+  :bind
+  ("C-k" . centaur-tabs-backward)
+  ("C-j" . centaur-tabs-forward))
 
 ;; Language-specific
 
