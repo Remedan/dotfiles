@@ -276,10 +276,12 @@ exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wal
 {%@@ if profile == "dev-pc-28" @@%}
 # restore layout
 for_window [class="Firefox"] move to workspace $w1
+for_window [class="Thunderbird"] move to workspace $w2
 for_window [class="Slack"] move to workspace $w9
 for_window [class="Spotify"] move to workspace $w10
 
-exec i3-msg 'workspace $w1; gaps inner current set 0; exec {{@@ browser @@}};'
+exec i3-msg 'workspace $w1; exec {{@@ browser @@}};'
+exec i3-msg 'workspace $w2; exec thunderbird;'
 exec i3-msg 'workspace $w3; append_layout ~/.config/i3/layout/dev-pc-28/w3.json; exec {{@@ terminal @@}}; exec {{@@ terminal @@}};'
 exec i3-msg 'workspace $w9; exec slack;'
 exec i3-msg 'workspace $w10; exec spotify;'
