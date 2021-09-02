@@ -13,11 +13,6 @@ variables:
   terminal: alacritty
   browser: firefox
 actions:
-  pre:
-    vim-plug-install: test -e ~/.config/nvim/autoload/plug.vim || (mkdir -p ~/.config/nvim/autoload;
-      curl -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
-    vim-folders: mkdir -p ~/.config/nvim/undo ~/.config/nvim/swap ~/.config/nvim/backup
-  vim-plug: nvim +PlugInstall +qall
   oh-my-zsh: test -e ~/.config/oh-my-zsh || (git clone https://github.com/robbyrussell/oh-my-zsh.git
     ~/.config/oh-my-zsh)
   zsh-autosuggestions: test -e ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions
@@ -42,22 +37,6 @@ dotfiles:
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
-    actions:
-    - vim-plug-install
-    - vim-plug
-    - vim-folders
-    cmpignore:
-    - autoload/plug.vim
-    - plugged
-    - backup
-    - swap
-    - undo
-    upignore:
-    - autoload/plug.vim
-    - plugged
-    - backup
-    - swap
-    - undo
   d_picom:
     src: config/picom
     dst: ~/.config/picom
