@@ -36,8 +36,12 @@
 
 ;; Backups
 (setq backup-directory-alist
-      `(("." . ,(expand-file-name "backup" user-emacs-directory))) ;
+      `(("." . ,(expand-file-name "backup" user-emacs-directory)))
       backup-by-copying t)
+
+;; Autosave
+(setq auto-save-file-name-transforms
+      `((".*" ,(expand-file-name "autosave" user-emacs-directory) t)))
 
 ;; Separate config for customize
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -165,7 +169,6 @@
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 ;; Centaur tabs
-
 (use-package centaur-tabs
   :demand
   :config
@@ -225,3 +228,6 @@
 
 ;; Dockerfile
 (use-package dockerfile-mode)
+
+;; Terraform
+(use-package terraform-mode)
