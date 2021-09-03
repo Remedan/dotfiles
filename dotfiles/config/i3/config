@@ -265,6 +265,7 @@ exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 {%@@ if profile == "dev-pc-28" @@%}
 exec --no-startup-id blueman-applet # bluetooth
+exec --no-startup-id birdtray
 {%@@ endif @@%}
 
 # Compositor
