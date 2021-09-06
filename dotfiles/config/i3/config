@@ -263,7 +263,9 @@ exec --no-startup-id xautolock -time 30 -locker {{@@ lock_script @@}}
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
-{%@@ if profile == "dev-pc-28" @@%}
+{%@@ if profile == "helios" @@%}
+exec --no-startup-id blueman-applet # bluetooth
+{%@@ elif profile == "dev-pc-28" @@%}
 exec --no-startup-id blueman-applet # bluetooth
 exec --no-startup-id birdtray
 {%@@ endif @@%}
