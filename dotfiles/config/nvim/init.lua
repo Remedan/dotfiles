@@ -97,7 +97,13 @@ require('packer').startup(function()
 end)
 
 -- Color scheme
+{%@@ if colorscheme == "solarized-dark" @@%}
+vim.cmd 'colorscheme solarized'
+{%@@ elif colorscheme == "gruvbox-dark" @@%}
 vim.cmd 'colorscheme gruvbox'
+{%@@ else @@%}
+vim.cmd 'colorscheme {{@@ colorscheme @@}}'
+{%@@ endif @@%}
 
 -- LSP
 local nvim_lsp = require('lspconfig')
