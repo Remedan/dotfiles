@@ -49,6 +49,9 @@
   (write-region "" nil custom-file))
 (load custom-file)
 
+;; Org
+(setq org-agenda-files (list "~/org"))
+
 ;; Packages
 
 ;; Add the MELPA package repository
@@ -128,6 +131,8 @@
 ;; Helm
 (use-package helm
   :config
+  (global-set-key (kbd "M-x") #'helm-M-x)
+  (global-set-key (kbd "C-x C-f") #'helm-find-files)
   (helm-mode 1))
 
 ;; Projectile
@@ -167,16 +172,6 @@
 (use-package tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-
-;; Centaur tabs
-(use-package centaur-tabs
-  :demand
-  :config
-  (centaur-tabs-mode t)
-  (setq centaur-tabs-set-icons t)
-  :bind
-  ("C-k" . centaur-tabs-backward)
-  ("C-j" . centaur-tabs-forward))
 
 ;; Language-specific
 
