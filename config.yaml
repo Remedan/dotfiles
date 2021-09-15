@@ -170,3 +170,5 @@ profiles:
     - d_fontconfig
     - d_emacs
     - f_xprofile
+    - d_mpd
+    - d_ncmpcpp
