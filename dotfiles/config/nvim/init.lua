@@ -55,31 +55,31 @@ end
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim' -- Packer can manage itself
-    use 'bling/vim-airline'
-    use 'vim-airline/vim-airline-themes'
     use 'neovim/nvim-lspconfig'
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
     use {
         'hrsh7th/nvim-cmp',
         requires = {
             'hrsh7th/vim-vsnip',
             'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-nvim-lsp',
         }
     }
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'scrooloose/nerdtree'
-    use 'scrooloose/nerdcommenter'
-    use 'mbbill/undotree'
-    use 'ryanoasis/vim-devicons'
-    use 'airblade/vim-gitgutter'
-    use 'mhinz/vim-startify'
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+    use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes'
+    use 'scrooloose/nerdtree'
+    use 'scrooloose/nerdcommenter'
+    use 'airblade/vim-gitgutter'
+    use 'ryanoasis/vim-devicons'
+    use 'mbbill/undotree'
+    use 'mhinz/vim-startify'
 
     -- file types
     use 'lervag/vimtex'
@@ -173,7 +173,6 @@ map('n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", ma
 map('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", map_opts)
 
 -- Airline
-vim.g['airline#extensions#tabline#enabled'] = 1
 if extra_setup then
     vim.g.airline_powerline_fonts = 1
 end
