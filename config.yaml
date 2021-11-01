@@ -125,8 +125,6 @@ profiles:
     - d_emacs
     - f_xprofile
   helios:
-    variables:
-      browser: firefox-developer-edition
     dotfiles:
     - f_xresources
     - d_xresources.extra
