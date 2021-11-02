@@ -15,14 +15,8 @@
     statusHints = false
     pushNonFastForward = false
 [branch]
-    autosetupmerge = true
-[alias]
-    hist = log --graph --oneline --all
-    co = checkout
-    ci = commit
-    st = status
-    br = branch
-    cp = cherry-pick
+    autosetupmerge = always
+    autosetuprebase = always
 [commit]
     gpgsign = true
 [pull]
@@ -34,3 +28,5 @@
     process = git-lfs filter-process
     required = true
     clean = git-lfs clean -- %f
+[rebase]
+    autosquash = true
