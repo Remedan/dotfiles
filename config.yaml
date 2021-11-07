@@ -98,6 +98,12 @@ dotfiles:
   f_xprofile:
     src: xprofile
     dst: ~/.xprofile
+  d_sway:
+    src: config/sway
+    dst: ~/.config/sway
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
 profiles:
   athena:
     variables:
@@ -124,6 +130,8 @@ profiles:
     - d_fontconfig
     - d_emacs
     - f_xprofile
+    - d_sway
+    - d_waybar
   helios:
     dotfiles:
     - f_xresources
