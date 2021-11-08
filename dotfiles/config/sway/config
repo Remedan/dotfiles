@@ -36,7 +36,7 @@ exec swayidle -w \
 ### Input configuration
 input "type:keyboard" {
     xkb_layout us,cz(qwerty)
-    xkb_options grp:alt_shift_toggle
+    xkb_options grp:alt_shift_toggle,caps:escape
 }
 input "type:touchpad" {
     dwt enabled
@@ -122,8 +122,33 @@ input "type:touchpad" {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
+    # Next and previous workspaces
+    bindsym $mod+comma workspace prev
+    bindsym $mod+period workspace next
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+    #
+    # Czech variant
+    bindsym $mod+plus workspace 1
+    bindsym $mod+ecaron workspace 2
+    bindsym $mod+scaron workspace 3
+    bindsym $mod+ccaron workspace 4
+    bindsym $mod+rcaron workspace 5
+    bindsym $mod+zcaron workspace 6
+    bindsym $mod+yacute workspace 7
+    bindsym $mod+aacute workspace 8
+    bindsym $mod+iacute workspace 9
+    bindsym $mod+eacute workspace 0
+    bindsym $mod+Shift+plus move container to workspace 1
+    bindsym $mod+Shift+ecaron move container to workspace 2
+    bindsym $mod+Shift+scaron move container to workspace 3
+    bindsym $mod+Shift+ccaron move container to workspace 4
+    bindsym $mod+Shift+rcaron move container to workspace 5
+    bindsym $mod+Shift+zcaron move container to workspace 6
+    bindsym $mod+Shift+yacute move container to workspace 7
+    bindsym $mod+Shift+aacute move container to workspace 8
+    bindsym $mod+Shift+iacute move container to workspace 9
+    bindsym $mod+Shift+eacute move container to workspace 0
 #
 # Layout stuff:
 #
