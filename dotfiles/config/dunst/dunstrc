@@ -1,5 +1,5 @@
 [global]
-#font = Iosevka Term 11
+font = Open Sans 12
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
