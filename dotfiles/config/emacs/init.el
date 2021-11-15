@@ -8,10 +8,6 @@
 ;; Disable bell
 (setq ring-bell-function 'ignore)
 
-;; Font
-(add-to-list 'default-frame-alist
-             '(font . "Iosevka Term-11"))
-
 ;; Enable line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
@@ -50,7 +46,12 @@
 (load custom-file)
 
 ;; Org
-(setq org-agenda-files (list "~/org"))
+(setq org-agenda-files (list "~/org")
+      org-startup-indented t
+      org-pretty-entities t
+      org-hide-emphasis-markers t
+      org-startup-with-inline-images t
+      org-image-actual-width '(300))
 
 ;; Packages
 
@@ -173,6 +174,26 @@
 (use-package tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;; Mixed Pitch
+(use-package mixed-pitch
+  :hook
+  (text-mode . mixed-pitch-mode)
+  :config
+  (set-face-attribute 'default nil :family "Source Code Pro" :height 110)
+  (set-face-attribute 'fixed-pitch nil :family "Source Code Pro")
+  (set-face-attribute 'variable-pitch nil :family "Source Sans Pro"))
+
+;; Org Appear
+(use-package org-appear
+  :hook (org-mode . org-appear-mode))
+
+;; Org Superstar
+(use-package org-superstar
+  :config
+  (setq org-superstar-special-todo-items t)
+  (add-hook 'org-mode-hook (lambda ()
+                             (org-superstar-mode 1))))
 
 ;; Language-specific
 
