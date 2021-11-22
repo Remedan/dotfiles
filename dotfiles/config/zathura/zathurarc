@@ -1,1 +1,1 @@
-set show-v-scrollbar
+set guioptions sv
