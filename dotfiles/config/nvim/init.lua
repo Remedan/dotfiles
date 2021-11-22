@@ -76,6 +76,7 @@ require('packer').startup(function()
     use 'vim-airline/vim-airline-themes'
     use 'scrooloose/nerdtree'
     use 'scrooloose/nerdcommenter'
+    use 'tpope/vim-fugitive'
     use 'airblade/vim-gitgutter'
     use 'ryanoasis/vim-devicons'
     use 'mbbill/undotree'
