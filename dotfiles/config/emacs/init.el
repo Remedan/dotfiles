@@ -53,6 +53,10 @@
       org-startup-with-inline-images t
       org-image-actual-width '(300))
 
+;; Flyspell
+(dolist (hook '(text-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+
 ;; Packages
 
 ;; Add the MELPA package repository
@@ -216,6 +220,11 @@
 (use-package helm-lsp
   :commands helm-lsp-workspace-symbol)
 
+;; SLIME
+(use-package slime
+  :config
+  (setq inferior-lisp-program "clisp"))
+
 ;; Rust
 (use-package rust-mode
   :hook (rust-mode . lsp))
@@ -230,8 +239,8 @@
             (setq indent-tabs-mode t
                   tab-width 4
                   python-indent-guess-indent-offset nil)))
-{%@@ endif @@%}
 
+{%@@ endif @@%}
 ;; Clojure
 (use-package clojure-mode
   :hook ((clojure-mode . lsp)
@@ -239,6 +248,12 @@
          (clojurec-mode . lsp)))
 (use-package cider)
 (use-package flycheck-joker)
+
+;; Haskell
+(use-package haskell-mode)
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
+(add-to-list 'exec-path "~/.ghcup/bin")
 
 ;; YAML
 (use-package yaml-mode)
