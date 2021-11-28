@@ -5,9 +5,9 @@ configuration {
     font: "Open Sans 12";
 {%@@ endif @@%}
     terminal: "{{@@ terminal @@}}";
-{%@@ if colorscheme == "solarized-dark" @@%}
-    theme: "solarized";
-{%@@ else @@%}
-    theme: "{{@@ colorscheme @@}}";
-{%@@ endif @@%}
 }
+{%@@ if colorscheme == "solarized-dark" @@%}
+@theme "solarized"
+{%@@ else @@%}
+@theme "{{@@ colorscheme @@}}"
+{%@@ endif @@%}
