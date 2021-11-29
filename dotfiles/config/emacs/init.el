@@ -45,6 +45,11 @@
   (write-region "" nil custom-file))
 (load custom-file)
 
+;; Extra config
+(let ((extra-file (expand-file-name "extra.el" user-emacs-directory)))
+  (when (file-exists-p extra-file)
+    (load extra-file)))
+
 ;; Org
 (setq org-agenda-files (list "~/org")
       org-startup-indented t
@@ -178,6 +183,14 @@
 (use-package tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;; Org-roam
+(use-package org-roam
+  :init
+  (setq org-roam-v2-ack t)
+  :config
+  (setq org-roam-directory (file-truename "~/org"))
+  (org-roam-db-autosync-mode))
 
 ;; Mixed Pitch
 (use-package mixed-pitch
