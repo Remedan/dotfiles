@@ -19,7 +19,8 @@
 (setq show-paren-delay 0)
 
 ;; Show trailing whitespace
-(setq-default show-trailing-whitespace t)
+(add-hook 'prog-mode-hook
+          (lambda () (show-trailing-whitespace t)))
 
 ;; Use 4 spaces for indentation
 (setq-default indent-tabs-mode nil)
@@ -102,7 +103,8 @@
         evil-want-C-u-scroll t)
   :config
   (evil-mode 1)
-  (evil-set-undo-system 'undo-tree))
+  (evil-set-undo-system 'undo-tree)
+  (evil-set-initial-state 'term-mode 'emacs))
 
 (use-package evil-collection
   :after evil
@@ -198,10 +200,20 @@
          ("C-c n c" . org-roam-capture)
          ;; Dailies
          ("C-c n j" . org-roam-dailies-capture-today))
+  :init
+  (setq org-roam-v2-ack t)
   :config
   (org-roam-db-autosync-mode)
-  ;; If using org-roam-protocol
   (require 'org-roam-protocol))
+
+;; Org Roam UI
+(use-package org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
 
 ;; Mixed Pitch
 (use-package mixed-pitch
