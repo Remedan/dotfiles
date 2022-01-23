@@ -2,7 +2,6 @@
 
 ;; Disable GUI
 (tool-bar-mode -1)
-;; (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
 ;; Disable bell
@@ -20,7 +19,7 @@
 
 ;; Show trailing whitespace
 (add-hook 'prog-mode-hook
-          (lambda () (show-trailing-whitespace t)))
+          (lambda () (setq show-trailing-whitespace t)))
 
 ;; Use 4 spaces for indentation
 (setq-default indent-tabs-mode nil)
