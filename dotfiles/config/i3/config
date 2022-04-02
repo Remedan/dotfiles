@@ -220,6 +220,9 @@ bindsym XF86AudioStop exec ~/.config/i3/player-control.sh stop
 bindsym $mod+i exec {{@@ browser @@}}
 bindsym $mod+o exec emacs
 
+# Fix for Origin running in Wine
+for_window [title="Origin"] floating enable
+
 # Borders
 default_border pixel 2
 smart_borders on
