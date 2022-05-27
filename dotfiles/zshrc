@@ -11,6 +11,7 @@ plugins=(
     virtualenvwrapper
     shrink-path
     direnv
+    fzf
 )
 # Suggestion colors don't work properly in emacs term
 if [ $TERM != "eterm-color" ]
