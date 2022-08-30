@@ -51,7 +51,7 @@
     (load extra-file)))
 
 ;; Org
-(setq org-agenda-files (list "~/org")
+(setq org-agenda-files (list "~/Nextcloud/Org")
       org-startup-indented t
       org-pretty-entities t
       org-hide-emphasis-markers t
@@ -191,7 +191,7 @@
 ;; Org Roam
 (use-package org-roam
   :custom
-  (org-roam-directory (file-truename "~/org/roam"))
+  (org-roam-directory (file-truename "~/Nextcloud/Org/roam"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
