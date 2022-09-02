@@ -234,6 +234,10 @@
   (add-hook 'org-mode-hook (lambda ()
                              (org-superstar-mode 1))))
 
+;; Rainbow Delimiters
+(use-package rainbow-delimiters
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
 ;; Language-specific
 
 ;; LSP
