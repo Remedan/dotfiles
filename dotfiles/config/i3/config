@@ -218,7 +218,7 @@ bindsym XF86AudioStop exec ~/.config/i3/player-control.sh stop
 
 # Applications
 bindsym $mod+i exec {{@@ browser @@}}
-bindsym $mod+o exec emacs
+bindsym $mod+o exec emacsclient -c
 
 # Fix for Origin running in Wine
 for_window [title="Origin"] floating enable

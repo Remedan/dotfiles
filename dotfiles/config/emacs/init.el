@@ -123,7 +123,8 @@
         dashboard-set-heading-icons t
         dashboard-set-file-icons t
         dashboard-items '((projects . 10)
-                          (recents . 10))))
+                          (recents . 10))
+        initial-buffer-choice (lambda () (get-buffer "*dashboard*")))) ;; For emacsclient
 
 ;; Doom Modeline
 (use-package doom-modeline
