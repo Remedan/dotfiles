@@ -1,7 +1,7 @@
 {%@@ if profile == "athena" @@%}
 mpd_music_dir = "/media/data/Dokumenty/audio"
 {%@@ elif profile == "helios" @@%}
-mpd_music_dir = "/media/data1/Audio"
+mpd_music_dir = "/media/Media/Audio"
 {%@@ else @@%}
 mpd_music_dir = "~/Music"
 {%@@ endif @@%}
