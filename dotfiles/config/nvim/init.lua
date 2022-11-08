@@ -27,7 +27,7 @@ end
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
-{%@@ if profile == "dev-pc-28" @@%}
+{%@@ if profile in ["dev-pc-28", "atuin"] @@%}
 vim.cmd('autocmd FileType python setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4')
 {%@@ endif @@%}
 vim.cmd('autocmd FileType yaml setlocal tabstop=2')

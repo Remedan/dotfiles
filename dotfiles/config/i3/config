@@ -123,6 +123,9 @@ bindsym $mod+0 workspace $w10
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
 
+bindsym $mod+Shift+comma move workspace to output right
+bindsym $mod+Shift+period move workspace to output left
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $w1
 bindsym $mod+Shift+2 move container to workspace $w2
@@ -249,6 +252,9 @@ exec xrandr --output DP-4 --mode 1920x1080 --rate 144.00 --primary --output DP-0
 {%@@ elif profile == "dev-pc-28" @@%}
 # Multiple monitors
 exec xrandr --output HDMI-0 --primary --left-of DP-0
+{%@@ elif profile == "atuin" @@%}
+# Multiple monitors
+bindsym $mod+t exec autorandr --change --default mobile
 {%@@ endif @@%}
 
 # GDM doesn't load Xresources
@@ -259,7 +265,7 @@ exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
 {%@@ endif @@%}
 
 exec --no-startup-id unclutter
-{%@@ if profile == "dev-pc-28" @@%}
+{%@@ if profile in ["dev-pc-28", "atuin"] @@%}
 exec --no-startup-id xautolock -time 30 -locker {{@@ lock_script @@}}
 {%@@ endif @@%}
 
@@ -269,7 +275,7 @@ exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 {%@@ if profile == "helios" @@%}
 exec --no-startup-id blueman-applet # bluetooth
-{%@@ elif profile == "dev-pc-28" @@%}
+{%@@ elif profile in ["dev-pc-28", "atuin"] @@%}
 exec --no-startup-id blueman-applet # bluetooth
 exec --no-startup-id birdtray
 {%@@ endif @@%}
@@ -281,6 +287,7 @@ exec picom -b --experimental-backends
 exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
 
 {%@@ if profile == "dev-pc-28" @@%}
+
 # restore layout
 for_window [class="Firefox"] move to workspace $w1
 for_window [class="Thunderbird"] move to workspace $w2
@@ -292,4 +299,10 @@ exec i3-msg 'workspace $w2; exec thunderbird;'
 exec i3-msg 'workspace $w3; append_layout ~/.config/i3/layout/dev-pc-28/w3.json; exec {{@@ terminal @@}}; exec {{@@ terminal @@}};'
 exec i3-msg 'workspace $w9; exec slack;'
 exec i3-msg 'workspace $w10; exec spotify;'
+{%@@ elif profile == "atuin" @@%}
+
+for_window [class="Firefox"] move to workspace $w1
+for_window [class="Thunderbird"] move to workspace $w2
+for_window [class="Slack"] move to workspace $w8
+for_window [class="Spotify"] move to workspace $w9
 {%@@ endif @@%}

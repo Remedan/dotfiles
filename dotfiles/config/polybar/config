@@ -35,6 +35,10 @@ monitor = ${env:MONITOR:DP-0}
 {%@@ elif profile == "dev-pc-28" @@%}
 height = 27
 monitor = ${env:MONITOR:HDMI-0}
+{%@@ elif profile == "atuin" @@%}
+monitor = ${env:MONITOR:DP-2}
+monitor-fallback = ${env:MONITOR:eDP-1}
+monitor-strict = true
 {%@@ endif @@%}
 
 background = ${colors.background}
@@ -65,6 +69,8 @@ modules-left = i3 player-mpris-tail mpd pulseaudio
 modules-center = xwindow
 {%@@ if profile == "athena" @@%}
 modules-right = filesystem xkeyboard cpu memory xbacklight battery date powermenu
+{%@@ elif profile == "atuin" @@%}
+modules-right = filesystem xkeyboard cpu memory backlight battery date powermenu
 {%@@ else @@%}
 modules-right = filesystem xkeyboard cpu memory date powermenu
 {%@@ endif @@%}
@@ -88,6 +94,9 @@ tray-position =
 monitor = ${env:MONITOR:DP-4}
 {%@@ elif profile == "dev-pc-28" @@%}
 monitor = ${env:MONITOR:DP-0}
+{%@@ elif profile == "atuin" @@%}
+monitor = ${env:MONITOR:DP-1}
+monitor-strict = true
 {%@@ endif @@%}
 
 [module/xwindow]
@@ -180,6 +189,19 @@ bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+
+format = <label> <bar>
+label = 
+
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
 
 [module/player-mpris-tail]
 type = custom/script
