@@ -36,7 +36,7 @@ monitor = ${env:MONITOR:DP-0}
 height = 27
 monitor = ${env:MONITOR:HDMI-0}
 {%@@ elif profile == "atuin" @@%}
-monitor = ${env:MONITOR:DP-2}
+monitor = ${env:MONITOR:DP-1-2}
 monitor-fallback = ${env:MONITOR:eDP-1}
 monitor-strict = true
 {%@@ endif @@%}
@@ -95,7 +95,7 @@ monitor = ${env:MONITOR:DP-4}
 {%@@ elif profile == "dev-pc-28" @@%}
 monitor = ${env:MONITOR:DP-0}
 {%@@ elif profile == "atuin" @@%}
-monitor = ${env:MONITOR:DP-1}
+monitor = ${env:MONITOR:DP-1-3}
 monitor-strict = true
 {%@@ endif @@%}
 
