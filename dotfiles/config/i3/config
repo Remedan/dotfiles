@@ -173,6 +173,8 @@ bindsym $mod+r mode "resize"
 
 {%@@ if profile in ["helios", "dev-pc-28"] @@%}
 {%@@    set lock_script = '"~/.config/i3/lock.sh -x-960+0\,+960+0"' @@%}
+{%@@ elif profile == "atuin" @@%}
+{%@@    set lock_script = '"~/.config/i3/lock.sh --profile=`autorandr --current`"' @@%}
 {%@@ else @@%}
 {%@@    set lock_script = '"~/.config/i3/lock.sh -x+0+0"' @@%}
 {%@@ endif @@%}

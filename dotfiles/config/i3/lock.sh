@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OPTS=$(getopt -l "pixelize,xkcd::,text::" -o "px::t::" -- "$@")
+OPTS=$(getopt -l "pixelize,xkcd::,text::,profile::" -o "px::t::" -- "$@")
 eval set -- "$OPTS"
 while true; do
     case "$1" in
@@ -15,6 +15,10 @@ while true; do
             shift
             TEXT=$1
             ;;
+        --profile)
+            shift
+            PROFILE=$1
+            ;;
         --)
             shift
             break
@@ -22,6 +26,15 @@ while true; do
     esac
     shift
 done
+
+case $PROFILE in
+    mobile)
+    POSITIONS="+0+0"
+    ;;
+    docked)
+    POSITIONS="-960+0 +960+0"
+    ;;
+esac
 
 dunstctl set-paused true
 
