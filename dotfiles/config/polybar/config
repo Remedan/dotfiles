@@ -176,32 +176,16 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = 
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+format = <label>
+label =  %percentage%%
 
 [module/backlight]
 type = internal/backlight
 
 card = intel_backlight
 
-format = <label> <bar>
-label = 
-
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
+format = <label>
+label =  %percentage%%
 
 [module/player-mpris-tail]
 type = custom/script
