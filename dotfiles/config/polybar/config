@@ -286,7 +286,8 @@ battery = BAT0
 adapter = ACAD
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
+label-charging =  %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 
@@ -299,14 +300,6 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.color6}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = ${colors.color6}
-animation-charging-framerate = 750
 
 [module/powermenu]
 type = custom/menu
