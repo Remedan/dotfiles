@@ -171,10 +171,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-{%@@ if profile == "dev-pc-28" @@%}
+{%@@ if profile in ["helios", "dev-pc-28"] @@%}
 {%@@    set lock_script = '"~/.config/i3/lock.sh -x-960+0\,+960+0"' @@%}
 {%@@ else @@%}
-{%@@    set lock_script = '~/.config/i3/lock.sh' @@%}
+{%@@    set lock_script = '"~/.config/i3/lock.sh -x+0+0"' @@%}
 {%@@ endif @@%}
 
 # Power control mode
