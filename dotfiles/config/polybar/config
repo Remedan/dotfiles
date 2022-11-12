@@ -67,9 +67,7 @@ font-2 = Source\ Han\ Sans:pixelsize=10;2
 
 modules-left = i3 player-mpris-tail mpd pulseaudio
 modules-center = xwindow
-{%@@ if profile == "athena" @@%}
-modules-right = filesystem xkeyboard cpu memory xbacklight battery date powermenu
-{%@@ elif profile == "atuin" @@%}
+{%@@ if profile in ["athena", "atuin"] @@%}
 modules-right = filesystem xkeyboard cpu memory backlight battery date powermenu
 {%@@ else @@%}
 modules-right = filesystem xkeyboard cpu memory date powermenu
