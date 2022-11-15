@@ -91,21 +91,6 @@ set $m2 DP-0
 
 workspace "$w1" output $m2
 workspace "$w2" output $m1
-{%@@ elif profile == "dev-pc-28" @@%}
-# worspace placement
-set $m1 HDMI-0
-set $m2 DP-0
-
-workspace "$w1" output $m1
-workspace "$w2" output $m1
-workspace "$w3" output $m2
-workspace "$w4" output $m2
-workspace "$w5" output $m2
-workspace "$w6" output $m2
-workspace "$w7" output $m2
-workspace "$w8" output $m2
-workspace "$w9" output $m2
-workspace "$w10" output $m2
 {%@@ endif @@%}
 
 # switch to workspace
@@ -171,7 +156,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-{%@@ if profile in ["helios", "dev-pc-28"] @@%}
+{%@@ if profile == "helios" @@%}
 {%@@    set lock_script = '"~/.config/i3/lock.sh -x-960+0\,+960+0"' @@%}
 {%@@ elif profile == "atuin" @@%}
 {%@@    set lock_script = '"~/.config/i3/lock.sh --profile=`autorandr --current`"' @@%}
@@ -251,23 +236,20 @@ bindsym $mod+Shift+u gaps outer current plus 6
 {%@@ if profile == "helios" @@%}
 # Multiple monitors
 exec xrandr --output DP-4 --mode 1920x1080 --rate 144.00 --primary --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --output HDMI-0 --off
-{%@@ elif profile == "dev-pc-28" @@%}
-# Multiple monitors
-exec xrandr --output HDMI-0 --primary --left-of DP-0
 {%@@ elif profile == "atuin" @@%}
 # Multiple monitors
 bindsym $mod+t exec autorandr --change --default mobile
 {%@@ endif @@%}
 
 # GDM doesn't load Xresources
-{%@@ if profile in ["helios", "dev-pc-28"]  @@%}
+{%@@ if profile == "helios"  @@%}
 exec --no-startup-id xrdb -load ~/.Xresources && ( polybar b0 & polybar b1 )
 {%@@ else @@%}
 exec --no-startup-id xrdb -load ~/.Xresources && polybar b0
 {%@@ endif @@%}
 
 exec --no-startup-id unclutter
-{%@@ if profile in ["dev-pc-28", "atuin"] @@%}
+{%@@ if profile == "atuin" @@%}
 exec --no-startup-id xautolock -time 30 -locker {{@@ lock_script @@}}
 {%@@ endif @@%}
 
@@ -277,7 +259,7 @@ exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 {%@@ if profile == "helios" @@%}
 exec --no-startup-id blueman-applet # bluetooth
-{%@@ elif profile in ["dev-pc-28", "atuin"] @@%}
+{%@@ elif profile == "atuin" @@%}
 exec --no-startup-id blueman-applet # bluetooth
 exec --no-startup-id birdtray
 {%@@ endif @@%}
@@ -288,21 +270,8 @@ exec picom -b --experimental-backends
 # Wallpaper
 exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
 
-{%@@ if profile == "dev-pc-28" @@%}
-
-# restore layout
-for_window [class="Firefox"] move to workspace $w1
-for_window [class="Thunderbird"] move to workspace $w2
-for_window [class="Slack"] move to workspace $w9
-for_window [class="Spotify"] move to workspace $w10
-
-exec i3-msg 'workspace $w1; exec {{@@ browser @@}};'
-exec i3-msg 'workspace $w2; exec thunderbird;'
-exec i3-msg 'workspace $w3; append_layout ~/.config/i3/layout/dev-pc-28/w3.json; exec {{@@ terminal @@}}; exec {{@@ terminal @@}};'
-exec i3-msg 'workspace $w9; exec slack;'
-exec i3-msg 'workspace $w10; exec spotify;'
-{%@@ elif profile == "atuin" @@%}
-
+{%@@ if profile == "atuin" @@%}
+# App to workspace assignment
 for_window [class="Firefox"] move to workspace $w1
 for_window [class="Thunderbird"] move to workspace $w2
 for_window [class="Slack"] move to workspace $w8

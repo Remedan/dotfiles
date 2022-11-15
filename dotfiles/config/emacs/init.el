@@ -273,7 +273,7 @@
 (use-package flycheck-rust
   :hook (flycheck-mode . flycheck-rust-setup))
 
-{%@@ if profile in ["dev-pc-28", "atuin"] @@%}
+{%@@ if profile == "atuin" @@%}
 ;; Python
 (add-hook 'python-mode-hook
           (lambda()
