@@ -2,4 +2,7 @@ setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle' -option 'caps:e
 {%@@ if profile ==  "athena" @@%}
 xinput --set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 xinput --set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
+{%@@ elif profile == "atuin" @@%}
+xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
+xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
 {%@@ endif @@%}
