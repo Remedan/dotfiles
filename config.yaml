@@ -184,6 +184,7 @@ profiles:
   atuin:
     variables:
       colorscheme: gruvbox-dark
+      terminal: WINIT_X11_SCALE_FACTOR=1 alacritty
     dotfiles:
     - f_xresources
     - d_xresources.extra
