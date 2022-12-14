@@ -265,7 +265,7 @@ exec --no-startup-id birdtray
 {%@@ endif @@%}
 
 # Compositor
-exec picom -b --experimental-backends
+exec picom -b
 
 # Wallpaper
 exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
