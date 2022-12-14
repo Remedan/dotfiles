@@ -37,6 +37,10 @@ dotfiles:
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
+    cmpignore:
+    - plugin
+    upignore:
+    - plugin
   d_picom:
     src: config/picom
     dst: ~/.config/picom
