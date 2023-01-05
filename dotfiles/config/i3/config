@@ -274,6 +274,16 @@ exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wal
 # App to workspace assignment
 for_window [class="Firefox"] move to workspace $w1
 for_window [class="Thunderbird"] move to workspace $w2
+for_window [class="obsidian"] move to workspace $w3
 for_window [class="Slack"] move to workspace $w8
 for_window [class="Spotify"] move to workspace $w9
+
+# Restore layout
+exec i3-msg 'workspace $w1; exec {{@@ browser @@}};'
+exec i3-msg 'workspace $w2; exec thunderbird;'
+exec i3-msg 'workspace $w3; exec obsidian;'
+exec i3-msg 'workspace $w4; append_layout ~/.config/i3/layout/atuin/w4.json; exec {{@@ terminal @@}}; exec {{@@ terminal @@}};'
+exec i3-msg 'workspace $w5; exec emacsclient -c;'
+exec i3-msg 'workspace $w8; exec slack;'
+exec i3-msg 'workspace $w9; exec spotify;'
 {%@@ endif @@%}
