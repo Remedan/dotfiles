@@ -2,6 +2,7 @@
     path = ~/.config/git/user
 [push]
     default = current
+    autoSetupRemote = true
 [credential]
     helper = cache
 [diff]
