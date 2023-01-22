@@ -1,10 +1,10 @@
 # ~/dotfiles
 
-I use [dotdrop](https://github.com/deadc0de6/dotdrop) to manage my dotfiles. Everything can be installed like so:
+I use [dotdrop](https://github.com/deadc0de6/dotdrop) to manage my dotfiles. Everything can be installed like so (preferably in a Python virtual env):
 
 ```
 git submodule update --init
-pip3 install -r dotdrop/requirements.txt
+pip install -r dotdrop/requirements.txt
 ./dotdrop/bootstrap.sh
 ./dotdrop.sh install
 ```
