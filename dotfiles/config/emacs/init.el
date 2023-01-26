@@ -175,6 +175,11 @@
 (use-package company
   :config (global-company-mode))
 
+;; Company-Posframe
+(use-package company-posframe
+  :after company
+  :init (company-posframe-mode))
+
 ;; Flycheck
 (use-package flycheck
   :init (global-flycheck-mode))
