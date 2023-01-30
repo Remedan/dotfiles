@@ -255,7 +255,6 @@ exec --no-startup-id xautolock -time 30 -locker {{@@ lock_script @@}}
 
 # Applets
 exec --no-startup-id nm-applet # network manager
-exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 {%@@ if profile == "helios" @@%}
 exec --no-startup-id blueman-applet # bluetooth
