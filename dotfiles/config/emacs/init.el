@@ -245,6 +245,16 @@
   :hook
   (prog-mode . rainbow-delimiters-mode))
 
+;; Vterm
+(use-package vterm)
+
+;; Kubernetes
+(use-package kubel
+  :after vterm
+  :config (kubel-vterm-setup))
+(use-package kubel-evil
+  :after kubel)
+
 ;; Language-specific
 
 ;; LSP
