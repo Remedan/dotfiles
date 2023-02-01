@@ -86,11 +86,11 @@ set $w10 10
 
 {%@@ if profile == "helios" @@%}
 # worspace placement
-set $m1 DP-2
-set $m2 DP-0
+set $m1 DP-0
+set $m2 DP-4
 
-workspace "$w1" output $m2
-workspace "$w2" output $m1
+workspace "$w1" output $m1
+workspace "$w2" output $m2
 {%@@ endif @@%}
 
 # switch to workspace

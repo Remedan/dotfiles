@@ -31,7 +31,7 @@ fixed-center = false
 {%@@ elif profile == "helios" @@%}
 height = 27
 fixed-center = true
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-4}
 {%@@ elif profile == "atuin" @@%}
 monitor = ${env:MONITOR:DP-1-2}
 monitor-fallback = ${env:MONITOR:eDP-1}
@@ -86,7 +86,7 @@ cursor-click = pointer
 inherit = bar/b0
 tray-position =
 {%@@ if profile == "helios" @@%}
-monitor = ${env:MONITOR:DP-4}
+monitor = ${env:MONITOR:DP-0}
 {%@@ elif profile == "atuin" @@%}
 monitor = ${env:MONITOR:DP-1-3}
 monitor-strict = true
