@@ -284,5 +284,5 @@ exec i3-msg 'workspace $w3; exec obsidian;'
 exec i3-msg 'workspace $w4; append_layout ~/.config/i3/layout/atuin/w4.json; exec {{@@ terminal @@}}; exec {{@@ terminal @@}};'
 exec i3-msg 'workspace $w5; exec emacsclient -c;'
 exec i3-msg 'workspace $w8; exec slack;'
-exec i3-msg 'workspace $w9; exec spotify;'
+exec i3-msg 'workspace $w9; exec spotify-launcher;'
 {%@@ endif @@%}
