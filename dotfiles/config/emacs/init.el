@@ -7,8 +7,11 @@
 ;; Disable bell
 (setq ring-bell-function 'ignore)
 
-;; Enable line numbers
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+;; Enable line numbers and showing trailing whitespace in prog mode
+(defun setup-prog-mode ()
+  (display-line-numbers-mode 1)
+  (setq show-trailing-whitespace t))
+(add-hook 'prog-mode-hook 'setup-prog-mode)
 
 ;; Enable column indicator
 (setq column-number-mode t)
@@ -16,10 +19,6 @@
 ;; Always show mathing parentheses
 (show-paren-mode 1)
 (setq show-paren-delay 0)
-
-;; Show trailing whitespace
-(add-hook 'prog-mode-hook
-          (lambda () (setq show-trailing-whitespace t)))
 
 ;; Use 4 spaces for indentation
 (setq-default indent-tabs-mode nil)
@@ -51,7 +50,7 @@
     (load extra-file)))
 
 ;; Org
-(setq org-agenda-files (list "~/Nextcloud/Org")
+(setq org-agenda-files (list "~/Documents/Org")
       org-startup-indented t
       org-pretty-entities t
       org-hide-emphasis-markers t
@@ -155,11 +154,11 @@
   :bind (:map projectile-mode-map
               ("C-c p" . projectile-command-map)))
 
-;; Ripgrep
-(use-package ripgrep)
-
 ;; Helm-Projectile integration
 (use-package helm-projectile)
+
+;; Ripgrep
+(use-package ripgrep)
 
 ;; Magit
 (use-package magit)
@@ -167,9 +166,6 @@
 ;; GitGutter
 (use-package git-gutter
   :config (global-git-gutter-mode +1))
-
-;; Multi Term
-(use-package multi-term)
 
 ;; Company
 (use-package company
@@ -193,32 +189,6 @@
 (use-package tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-
-;; Org Roam
-(use-package org-roam
-  :custom
-  (org-roam-directory (file-truename "~/Nextcloud/Org/roam"))
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-         ("C-c n f" . org-roam-node-find)
-         ("C-c n g" . org-roam-graph)
-         ("C-c n i" . org-roam-node-insert)
-         ("C-c n c" . org-roam-capture)
-         ;; Dailies
-         ("C-c n j" . org-roam-dailies-capture-today))
-  :init
-  (setq org-roam-v2-ack t)
-  :config
-  (org-roam-db-autosync-mode)
-  (require 'org-roam-protocol))
-
-;; Org Roam UI
-(use-package org-roam-ui
-  :after org-roam
-  :config
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t))
 
 ;; Mixed Pitch
 (use-package mixed-pitch
@@ -312,7 +282,10 @@
 (add-to-list 'exec-path "~/.ghcup/bin")
 
 ;; YAML
-(use-package yaml-mode)
+(use-package yaml-mode
+  :hook (yaml-mode . (lambda ()
+                       (setup-prog-mode)
+                       (mixed-pitch-mode 0))))
 
 ;; Dockerfile
 (use-package dockerfile-mode)
