@@ -47,6 +47,8 @@ alias sxiv='sxiv -a'
 alias sudo='sudo -E'
 alias ip='ip -c'
 alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
+alias mkvenv='mkvirtualenv `basename $PWD`'
+alias rmvenv='rmvirtualenv `basename $PWD`'
 
 # Set up Node Version Manager
 if [ -f /usr/share/nvm/init-nvm.sh ]
