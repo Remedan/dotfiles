@@ -89,6 +89,7 @@ require('packer').startup(function()
     use 'neovimhaskell/haskell-vim'
     use 'tikhomirov/vim-glsl'
     use 'cespare/vim-toml'
+    use 'LnL7/vim-nix'
 
     -- colors
     use 'ishan9299/nvim-solarized-lua'

@@ -324,3 +324,7 @@
               (when (string-equal "jsx" (file-name-extension buffer-file-name))
                 (setup-tide-mode))))
   (flycheck-add-mode 'javascript-eslint 'web-mode))
+
+;; Nix
+(use-package nix-mode
+  :mode "\\.nix\\'")
