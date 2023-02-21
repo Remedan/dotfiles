@@ -225,6 +225,11 @@
 (use-package kubel-evil
   :after kubel)
 
+;; Vdiff
+(use-package vdiff
+  :config
+  (define-key vdiff-mode-map (kbd "C-c") vdiff-mode-prefix-map))
+
 ;; Language-specific
 
 ;; LSP
