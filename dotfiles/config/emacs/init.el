@@ -201,14 +201,19 @@
 
 ;; Org Appear
 (use-package org-appear
-  :hook (org-mode . org-appear-mode))
-
-;; Org Superstar
-(use-package org-superstar
   :config
-  (setq org-superstar-special-todo-items t)
-  (add-hook 'org-mode-hook (lambda ()
-                             (org-superstar-mode 1))))
+  (setq org-appear-trigger 'manual)
+  :hook
+  (org-mode . org-appear-mode)
+  (org-mode . (lambda ()
+                (add-hook 'evil-insert-state-entry-hook
+                          #'org-appear-manual-start
+                          nil
+                          t)
+                (add-hook 'evil-insert-state-exit-hook
+                          #'org-appear-manual-stop
+                          nil
+                          t))))
 
 ;; Rainbow Delimiters
 (use-package rainbow-delimiters
