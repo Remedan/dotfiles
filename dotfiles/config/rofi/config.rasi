@@ -1,9 +1,5 @@
 configuration {
-{%@@ if distro == "ubuntu" @@%}
-    font: "Ubuntu 12";
-{%@@ else @@%}
     font: "Open Sans 12";
-{%@@ endif @@%}
     terminal: "{{@@ terminal @@}}";
 }
 {%@@ if colorscheme == "solarized-dark" @@%}

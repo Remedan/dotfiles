@@ -166,11 +166,7 @@ font:
 
 # Colors
 import:
-{%@@ if distro == "ubuntu" @@%}
-  - .config/alacritty/colors/{{@@ colorscheme @@}}.yml
-{%@@ else @@%}
   - ~/.config/alacritty/colors/{{@@ colorscheme @@}}.yml
-{%@@ endif @@%}
 
 # Bell
 #
