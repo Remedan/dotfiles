@@ -2,8 +2,4 @@ configuration {
     font: "Open Sans 12";
     terminal: "{{@@ terminal @@}}";
 }
-{%@@ if colorscheme == "solarized-dark" @@%}
-@theme "solarized"
-{%@@ else @@%}
 @theme "{{@@ colorscheme @@}}"
-{%@@ endif @@%}

@@ -96,10 +96,11 @@ require('packer').startup(function()
     use 'morhetz/gruvbox'
     use 'arcticicestudio/nord-vim'
     use 'dracula/vim'
+    use {'jan-warchol/selenized', rtp = 'editors/vim'}
 end)
 
 -- Color scheme
-{%@@ if colorscheme == "solarized-dark" @@%}
+{%@@ if colorscheme == "selenized-dark" @@%}
 vim.cmd 'colorscheme solarized'
 {%@@ elif colorscheme == "gruvbox-dark" @@%}
 vim.cmd 'colorscheme gruvbox'

@@ -9,7 +9,7 @@ config:
   longkey: false
 variables:
   distro: arch
-  colorscheme: solarized-dark
+  colorscheme: selenized-dark
   terminal: alacritty
   browser: firefox
 actions:

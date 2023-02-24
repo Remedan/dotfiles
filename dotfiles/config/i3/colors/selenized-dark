@@ -1,0 +1,20 @@
+# Selenized dark colorscheme for i3
+set $bg #103c48
+set $black #184956
+set $white #72898f
+set $fg #adbcbc
+
+set $red #fa5750
+set $green #75b938
+set $yellow #dbb32d
+set $blue #4695f7
+set $magenta #f275be
+set $cyan #41c7b9
+set $orange #ed8649
+set $violet #af88eb
+
+# clientclass border backgr. text indicator
+client.focused $green $green $black $blue
+client.focused_inactive $cyan $cyan $black $violet
+client.unfocused $black $black $fg $white
+client.urgent $yellow $yellow $black $orange

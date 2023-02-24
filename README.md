@@ -13,7 +13,7 @@ pip install -r dotdrop/requirements.txt
 
 A few variables can be set in `config.yaml`.
 
-* `colorscheme`: System-wide color scheme. Possible values are `solarized-dark`, `gruvbox-dark`, `dracula` and `nord`.
+* `colorscheme`: System-wide color scheme. Possible values are `selenized-dark`, `gruvbox-dark`, `dracula` and `nord`.
 * `browser`: Default browser to be used by various applications to open links.
 
 ## Screenshot

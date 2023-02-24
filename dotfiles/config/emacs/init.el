@@ -78,7 +78,9 @@
 ;; Theme
 (use-package doom-themes
   :config
-{%@@ if colorscheme == "gruvbox-dark" @@%}
+{%@@ if colorscheme == "selenized-dark" @@%}
+  (load-theme 'doom-solarized-dark t)
+{%@@ elif colorscheme == "gruvbox-dark" @@%}
   (load-theme 'doom-gruvbox t)
 {%@@ else @@%}
   (load-theme 'doom-{{@@ colorscheme @@}} t)

@@ -20,11 +20,6 @@ then
 fi
 source $ZSH/oh-my-zsh.sh
 
-{%@@ if colorscheme == "solarized-dark" @@%}
-# zsh-autosuggestion isn't visible with solarized dark
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
-{%@@ endif @@%}
-
 # Add useful directories to path
 export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/bin:$PATH"
