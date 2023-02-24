@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle' -option 'caps:escape' 
+
+for i in {1..3}; do
+    i3-msg '[workspace="'$i'"]' move workspace to output DP-1-2
+done
+for i in {4..10}; do
+    i3-msg '[workspace="'$i'"]' move workspace to output DP-1-3
+done
+
+killall polybar
+sleep 1
+polybar b0 &
+polybar b1 &
