@@ -31,7 +31,7 @@ case $PROFILE in
     mobile)
     POSITIONS="+0+0"
     ;;
-    docked)
+    home|office)
     POSITIONS="-960+0 +960+0"
     ;;
 esac
