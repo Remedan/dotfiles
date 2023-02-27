@@ -24,14 +24,14 @@ vim.opt.list = true
 if extra_setup then
     vim.opt.termguicolors = true
 end
-vim.cmd('syntax enable')
-vim.cmd('filetype plugin indent on')
+vim.cmd.syntax('enable')
+vim.cmd.filetype('plugin indent on')
 
 {%@@ if profile in "atuin" @@%}
-vim.cmd('autocmd FileType python setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4')
+vim.cmd.autocmd('FileType python setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4')
 {%@@ endif @@%}
-vim.cmd('autocmd FileType yaml setlocal tabstop=2')
-vim.cmd('autocmd BufRead,BufNewFile *.yml.jinja2 set filetype=yaml')
+vim.cmd.autocmd('FileType yaml setlocal tabstop=2')
+vim.cmd.autocmd('BufRead,BufNewFile *.yml.jinja2 set filetype=yaml')
 
 -- Key mapping --
 
@@ -50,7 +50,7 @@ map('n', '<leader>n', ':noh<CR>', map_opts)
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd 'packadd packer.nvim'
+    vim.cmd.packadd('packer.nvim')
 end
 
 require('packer').startup(function()
@@ -100,7 +100,7 @@ require('packer').startup(function()
 end)
 
 -- Color scheme
-local colorscheme_name = function(name)
+local function colorscheme_name(name)
     if name == 'selenized-dark' then
         return 'solarized'
     elseif name == 'gruvbox-dark' then
