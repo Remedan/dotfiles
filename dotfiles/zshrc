@@ -40,6 +40,10 @@ then
     source "$HOME/.zshrc.extra"
 fi
 
+{%@@ if profile == 'atuin' @@%}
+export REM_LAMBDA_KUBERNETES=1
+{%@@ endif @@%}
+
 # Oh My Zsh
 export ZSH="$HOME/.config/oh-my-zsh"
 ZSH_THEME=rem-lambda
