@@ -76,15 +76,14 @@
 (setq use-package-always-ensure 't)
 
 ;; Theme
+(defun theme-name (name)
+  (intern (concat "doom-"
+                  (cond ((string= name "selenized-dark") "solarized-dark")
+                        ((string= name "gruvbox-dark") "gruvbox")
+                        (t name)))))
 (use-package doom-themes
   :config
-{%@@ if colorscheme == "selenized-dark" @@%}
-  (load-theme 'doom-solarized-dark t)
-{%@@ elif colorscheme == "gruvbox-dark" @@%}
-  (load-theme 'doom-gruvbox t)
-{%@@ else @@%}
-  (load-theme 'doom-{{@@ colorscheme @@}} t)
-{%@@ endif @@%}
+  (load-theme (theme-name "{{@@ colorscheme @@}}") t)
   (doom-themes-neotree-config))
 
 ;; Undo Tree
