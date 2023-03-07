@@ -10,15 +10,18 @@ fi
 
 # Set EDITOR to Emacs client or Neovim if available, otherwise vi
 if systemctl --user is-active emacs > /dev/null; then
-    export EDITOR='emacsclient -nw'
+    export EDITOR="$HOME/.config/emacs/edit.sh"
 elif command -v nvim > /dev/null; then
     export EDITOR=nvim
 else
     export EDITOR=vi
 fi
+export VISUAL="$EDITOR"
+export SUDO_EDITOR="$EDITOR"
 
 # Useful aliases
-alias ec='emacsclient -nw'
+alias e="$EDITOR"
+alias E="sudoedit"
 alias sxiv='sxiv -a'
 alias sudo='sudo -E'
 alias ip='ip -c'
