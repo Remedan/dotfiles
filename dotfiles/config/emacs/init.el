@@ -25,6 +25,9 @@
 (setq tab-stop-list (number-sequence 4 120 4))
 (setq tab-width 4)
 
+;; Always insert final newline
+(setq require-final-newline t)
+
 ;; Set scratch buffer to Org Mode and disable message
 (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message nil)
