@@ -1,6 +1,6 @@
 -- Base config --
 
-local extra_setup = true -- whether to use powerline fonts, 24 bit color, etc.
+local patched_font = true -- whether to use powerline fonts and icons
 
 vim.opt.hidden = true -- hidden buffers
 vim.opt.number = true -- line numbers
@@ -21,9 +21,8 @@ vim.opt.smartindent = true
 vim.opt.showmatch = true -- highlight matching brackets
 vim.opt.list = true
 
-if extra_setup then
-    vim.opt.termguicolors = true
-end
+vim.opt.termguicolors = true
+
 vim.cmd.syntax('enable')
 vim.cmd.filetype('plugin indent on')
 
@@ -179,12 +178,12 @@ map('n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", ma
 map('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", map_opts)
 
 -- Airline
-if extra_setup then
+if patched_font then
     vim.g.airline_powerline_fonts = 1
 end
 
 -- NERD Tree
-if not extra_setup then
+if not patched_font then
     vim.g.NERDTreeDirArrowExpandable = '+'
     vim.g.NERDTreeDirArrowCollapsible = '-'
 end
@@ -204,7 +203,7 @@ vim.g.NERDCommentEmptyLines = 1
 vim.g.NERDTrimTrailingWhitespace = 1
 
 -- DevIcons
-if not extra_setup then
+if not patched_font then
     vim.g.webdevicons_enable = 0
 end
 vim.g.DevIconsEnableDistro = 0
