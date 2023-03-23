@@ -313,3 +313,6 @@
 ;; Nix
 (use-package nix-mode
   :mode "\\.nix\\'")
+
+;; Lua
+(use-package lua-mode)
