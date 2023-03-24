@@ -239,6 +239,10 @@
   :config
   (define-key vdiff-mode-map (kbd "C-c") vdiff-mode-prefix-map))
 
+;; Ranger
+(use-package ranger
+  :config (setq ranger-show-literal nil))
+
 ;; Language-specific
 
 ;; LSP
