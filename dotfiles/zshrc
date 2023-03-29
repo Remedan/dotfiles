@@ -9,7 +9,7 @@ if command -v ghcup > /dev/null; then
 fi
 
 # Set EDITOR to Emacs client or Neovim if available, otherwise vi
-if systemctl --user is-active emacs > /dev/null; then
+if [ -f "$HOME/.config/emacs/edit.sh" ]; then
     export EDITOR="$HOME/.config/emacs/edit.sh"
 elif command -v nvim > /dev/null; then
     export EDITOR=nvim
