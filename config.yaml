@@ -111,6 +111,10 @@ dotfiles:
   d_autorandr:
     src: config/autorandr
     dst: ~/.config/autorandr
+  d_systemd:
+    src: config/systemd
+    dst: ~/.config/systemd
+    ignore_missing_in_dotdrop: true
 profiles:
   athena:
     variables:
@@ -187,3 +191,4 @@ profiles:
     - d_mpd
     - d_ncmpcpp
     - d_autorandr
+    - d_systemd
