@@ -143,6 +143,7 @@ profiles:
     - f_xprofile
     - d_sway
     - d_waybar
+    - d_systemd
   helios:
     dotfiles:
     - f_xresources
@@ -166,6 +167,7 @@ profiles:
     - d_fontconfig
     - d_emacs
     - f_xprofile
+    - d_systemd
   atuin:
     variables:
       colorscheme: gruvbox-dark
