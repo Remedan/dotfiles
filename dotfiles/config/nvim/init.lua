@@ -2,7 +2,6 @@
 
 local patched_font = true -- whether to use powerline fonts and icons
 
-vim.opt.hidden = true -- hidden buffers
 vim.opt.number = true -- line numbers
 vim.opt.wildmode = {'longest', 'list'} -- complete the longest match, list others
 vim.opt.confirm = true
@@ -22,9 +21,6 @@ vim.opt.showmatch = true -- highlight matching brackets
 vim.opt.list = true
 
 vim.opt.termguicolors = true
-
-vim.cmd.syntax('enable')
-vim.cmd.filetype('plugin indent on')
 
 vim.cmd.autocmd('FileType yaml setlocal tabstop=2')
 vim.cmd.autocmd('BufRead,BufNewFile *.yml.jinja2 set filetype=yaml')
