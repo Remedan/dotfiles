@@ -1,6 +1,6 @@
 -- Base config --
 
-local patched_font = true -- whether to use powerline fonts and icons
+local patched_font = false -- whether to use powerline fonts and icons
 
 vim.opt.number = true -- line numbers
 vim.opt.wildmode = {'longest', 'list'} -- complete the longest match, list others
