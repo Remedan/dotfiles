@@ -243,6 +243,9 @@
 (use-package ranger
   :config (setq ranger-show-literal nil))
 
+;; ChatGPT
+(use-package gptel)
+
 ;; Language-specific
 
 ;; LSP
