@@ -46,10 +46,11 @@
             };
           }
           ./modules/common.nix
+          ./modules/packages.nix
           ./modules/zsh.nix
           ./modules/git-common.nix
-          ./modules/git-personal.com
-          ./hosts/rincewind.nix
+          ./modules/git-personal.nix
+          ./modules/emacs.nix
         ];
       };
 
@@ -74,7 +75,7 @@
           ./modules/common.nix
           ./modules/zsh.nix
           ./modules/git-common.nix
-          ./modules/git-quantlane.com
+          ./modules/git-quantlane.nix
         ];
       };
     };
