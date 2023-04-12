@@ -22,7 +22,7 @@
             home = {
               username = "remedan";
               homeDirectory = "/home/remedan";
-              stateVersion = "22.11";
+              stateVersion = "23.05";
             };
             programs.home-manager.enable = true;
           }
@@ -40,7 +40,7 @@
             home = {
                 username = "vojta";
                 homeDirectory = "/home/vojta";
-                stateVersion = "22.11";
+                stateVersion = "23.05";
             };
             programs.home-manager.enable = true;
           }
