@@ -23,9 +23,6 @@
               username = "remedan";
               homeDirectory = "/home/remedan";
               stateVersion = "23.05";
-              sessionPath = [
-                "$HOME/.local/bin"
-              ];
             };
             programs.home-manager.enable = true;
           }
@@ -45,11 +42,13 @@
                 username = "vojta";
                 homeDirectory = "/home/vojta";
                 stateVersion = "23.05";
-                sessionPath = [
-                  "$HOME/.local/bin"
-                ];
                 sessionVariables = {
                   REM_LAMBDA_KUBERNETES=1;
+                };
+                shellAliases = {
+                  tunnel = "***REMOVED***";
+                  ovpn = "***REMOVED***";
+                  squid = "PGPASSWORD=***REMOVED*** pgcli -U squid -d squid -h squid.int.quantlane.com -p 2080";
                 };
             };
             programs.home-manager.enable = true;
