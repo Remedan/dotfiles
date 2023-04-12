@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "remedan";
-  home.homeDirectory = "/home/remedan";
-
-  home.stateVersion = "22.11"; # Do not change without checking release notes
-
   home.packages = with pkgs; [
     emacs
     ranger
@@ -45,9 +40,6 @@
     EDITOR = "vim";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -65,16 +57,6 @@
         "shrink-path"
         # "virtualenvwrapper"
       ];
-    };
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "Vojtěch Balák";
-    userEmail = "vojtech@balak.me";
-    lfs.enable = true;
-    extraConfig = {
-      push.autoSetupRemote = true;
     };
   };
 }

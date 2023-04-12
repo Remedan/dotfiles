@@ -18,6 +18,16 @@
         inherit pkgs;
 
         modules = [
+          {
+            home = {
+              username = "remedan";
+              homeDirectory = "/home/remedan";
+              stateVersion = "22.11";
+            };
+            programs.home-manager.enable = true;
+          }
+          ./modules/git-common.nix
+          ./modules/git-personal.com
           ./hosts/rincewind.nix
         ];
       };
@@ -26,7 +36,16 @@
         inherit pkgs;
 
         modules = [
-          ./hosts/atuin.nix
+          {
+            home = {
+                username = "vojta";
+                homeDirectory = "/home/vojta";
+                stateVersion = "22.11";
+            };
+            programs.home-manager.enable = true;
+          }
+          ./modules/git-common.nix
+          ./modules/git-quantlane.com
         ];
       };
     };
