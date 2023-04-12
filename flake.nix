@@ -43,7 +43,11 @@
             home = {
               username = "remedan";
               homeDirectory = "/home/remedan";
+              sessionVariables = {
+                COLORSCHEME = "dracula";
+              };
             };
+	    xsession.enable = true;
           }
           ./modules/common.nix
           ./modules/packages.nix
@@ -63,7 +67,7 @@
               username = "vojta";
               homeDirectory = "/home/vojta";
               sessionVariables = {
-                REM_LAMBDA_KUBERNETES=1;
+                REM_LAMBDA_KUBERNETES = 1;
               };
               shellAliases = {
                 tunnel = "***REMOVED***";

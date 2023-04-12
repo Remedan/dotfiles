@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    emacs
     ranger
     gnumake
     cmake

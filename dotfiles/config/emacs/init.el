@@ -86,7 +86,7 @@
                         (t name)))))
 (use-package doom-themes
   :config
-  (load-theme (theme-name "dracula") t)
+  (load-theme (theme-name (getenv "COLORSCHEME")) t)
   (doom-themes-neotree-config))
 
 ;; Undo Tree
