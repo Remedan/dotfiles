@@ -14,6 +14,28 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
+      homeConfigurations.helios = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          {
+            home = {
+              username = "remedan";
+              homeDirectory = "/home/remedan";
+              stateVersion = "23.05";
+            };
+            programs.home-manager.enable = true;
+            programs.git = {
+                signing.key = "6C91735267F988F7E16BE32EA16152897E76E209";
+                signing.signByDefault = true;
+            };
+          }
+          ./modules/zsh.nix
+          ./modules/git-common.nix
+          ./modules/git-personal.nix
+        ];
+      };
+
       homeConfigurations.rincewind = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
