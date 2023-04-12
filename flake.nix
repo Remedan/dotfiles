@@ -23,9 +23,13 @@
               username = "remedan";
               homeDirectory = "/home/remedan";
               stateVersion = "23.05";
+              sessionPath = [
+                "$HOME/.local/bin"
+              ];
             };
             programs.home-manager.enable = true;
           }
+          ./modules/zsh.nix
           ./modules/git-common.nix
           ./modules/git-personal.com
           ./hosts/rincewind.nix
@@ -41,9 +45,16 @@
                 username = "vojta";
                 homeDirectory = "/home/vojta";
                 stateVersion = "23.05";
+                sessionPath = [
+                  "$HOME/.local/bin"
+                ];
+                sessionVariables = {
+                  REM_LAMBDA_KUBERNETES=1;
+                };
             };
             programs.home-manager.enable = true;
           }
+          ./modules/zsh.nix
           ./modules/git-common.nix
           ./modules/git-quantlane.com
         ];

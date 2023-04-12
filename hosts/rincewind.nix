@@ -39,24 +39,4 @@
   home.sessionVariables = {
     EDITOR = "vim";
   };
-
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-      plugins = [
-        "direnv"
-        "docker"
-        "docker-compose"
-        "fzf"
-        "git"
-        "kubectl"
-        "pip"
-        "shrink-path"
-        # "virtualenvwrapper"
-      ];
-    };
-  };
 }
