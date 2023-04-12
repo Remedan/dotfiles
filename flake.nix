@@ -22,14 +22,13 @@
             home = {
               username = "remedan";
               homeDirectory = "/home/remedan";
-              stateVersion = "23.05";
             };
-            programs.home-manager.enable = true;
             programs.git = {
                 signing.key = "6C91735267F988F7E16BE32EA16152897E76E209";
                 signing.signByDefault = true;
             };
           }
+          ./modules/common.nix
           ./modules/zsh.nix
           ./modules/git-common.nix
           ./modules/git-personal.nix
@@ -44,10 +43,9 @@
             home = {
               username = "remedan";
               homeDirectory = "/home/remedan";
-              stateVersion = "23.05";
             };
-            programs.home-manager.enable = true;
           }
+          ./modules/common.nix
           ./modules/zsh.nix
           ./modules/git-common.nix
           ./modules/git-personal.com
@@ -61,20 +59,19 @@
         modules = [
           {
             home = {
-                username = "vojta";
-                homeDirectory = "/home/vojta";
-                stateVersion = "23.05";
-                sessionVariables = {
-                  REM_LAMBDA_KUBERNETES=1;
-                };
-                shellAliases = {
-                  tunnel = "***REMOVED***";
-                  ovpn = "***REMOVED***";
-                  squid = "PGPASSWORD=***REMOVED*** pgcli -U squid -d squid -h squid.int.quantlane.com -p 2080";
-                };
+              username = "vojta";
+              homeDirectory = "/home/vojta";
+              sessionVariables = {
+                REM_LAMBDA_KUBERNETES=1;
+              };
+              shellAliases = {
+                tunnel = "***REMOVED***";
+                ovpn = "***REMOVED***";
+                squid = "PGPASSWORD=***REMOVED*** pgcli -U squid -d squid -h squid.int.quantlane.com -p 2080";
+              };
             };
-            programs.home-manager.enable = true;
           }
+          ./modules/common.nix
           ./modules/zsh.nix
           ./modules/git-common.nix
           ./modules/git-quantlane.com
