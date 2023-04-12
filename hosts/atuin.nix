@@ -12,8 +12,11 @@
     enable = true;
     userName = "Vojtěch Balák";
     userEmail = "***REMOVED***";
-    signing.signByDefault = true;
     signing.key = "***REMOVED***";
+    signing.signByDefault = true;
     lfs.enable = true;
+    extraConfig = {
+      push.autoSetupRemote = true;
+    };
   };
 }

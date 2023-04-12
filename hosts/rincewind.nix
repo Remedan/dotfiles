@@ -72,5 +72,9 @@
     enable = true;
     userName = "Vojtěch Balák";
     userEmail = "vojtech@balak.me";
+    lfs.enable = true;
+    extraConfig = {
+      push.autoSetupRemote = true;
+    };
   };
 }
