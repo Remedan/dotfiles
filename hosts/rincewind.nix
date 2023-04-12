@@ -70,7 +70,7 @@
 
   programs.git = {
     enable = true;
-    userName = "Vojtech Balak";
+    userName = "Vojtěch Balák";
     userEmail = "vojtech@balak.me";
   };
 }

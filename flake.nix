@@ -18,7 +18,15 @@
         inherit pkgs;
 
         modules = [
-          ./home.nix
+          ./hosts/rincewind.nix
+        ];
+      };
+
+      homeConfigurations.atuin = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./hosts/atuin.nix
         ];
       };
     };
