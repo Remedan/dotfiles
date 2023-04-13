@@ -10,4 +10,5 @@
     };
   };
   programs.home-manager.enable = true;
+  xsession.enable = true;
 }

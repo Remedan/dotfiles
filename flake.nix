@@ -23,6 +23,9 @@
               username = "remedan";
               homeDirectory = "/home/remedan";
             };
+            xsession.profileExtra = ''
+              nvidia-settings -l
+            '';
             programs.git = {
                 signing.key = "6C91735267F988F7E16BE32EA16152897E76E209";
                 signing.signByDefault = true;
@@ -47,7 +50,10 @@
                 COLORSCHEME = "dracula";
               };
             };
-	    xsession.enable = true;
+            xsession.profileExtra = ''
+              xinput --set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
+              xinput --set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
+            '';
           }
           ./modules/common.nix
           ./modules/packages.nix
@@ -75,6 +81,10 @@
                 squid = "PGPASSWORD=***REMOVED*** pgcli -U squid -d squid -h squid.int.quantlane.com -p 2080";
               };
             };
+            xsession.profileExtra = ''
+              xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
+              xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
+            '';
           }
           ./modules/common.nix
           ./modules/zsh.nix
