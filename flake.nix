@@ -3,19 +3,26 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixgl.url = "github:guibou/nixGL";
+    nixgl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, nixgl, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [ nixgl.overlay ];
+        config.allowUnfree = true;
+      };
     in {
       homeConfigurations.helios = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+
+        extraSpecialArgs = {
+          colorscheme = "selenized-dark";
+        };
 
         modules = [
           {
@@ -33,6 +40,8 @@
           }
           ./modules/common.nix
           ./modules/zsh.nix
+          ./modules/nixgl.nix
+          ./modules/alacritty.nix
           ./modules/git-common.nix
           ./modules/git-personal.nix
         ];
