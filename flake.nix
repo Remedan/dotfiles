@@ -90,6 +90,7 @@
           ./modules/zsh.nix
           ./modules/git-common.nix
           ./modules/git-quantlane.nix
+          ./modules/nodejs.nix
         ];
       };
     };
