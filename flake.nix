@@ -76,6 +76,10 @@
       homeConfigurations.atuin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
+        extraSpecialArgs = {
+          colorscheme = "gruvbox-dark";
+        };
+
         modules = [
           {
             home = {
@@ -97,6 +101,8 @@
           }
           ./modules/common.nix
           ./modules/zsh.nix
+          ./modules/nixgl.nix
+          ./modules/alacritty.nix
           ./modules/git-common.nix
           ./modules/git-quantlane.nix
           ./modules/nodejs.nix
