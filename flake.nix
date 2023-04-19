@@ -42,8 +42,7 @@
           ./modules/zsh.nix
           ./modules/nixgl.nix
           ./modules/alacritty.nix
-          ./modules/git-common.nix
-          ./modules/git-personal.nix
+          ./modules/git.nix
         ];
       };
 
@@ -67,8 +66,7 @@
           ./modules/common.nix
           ./modules/packages.nix
           ./modules/zsh.nix
-          ./modules/git-common.nix
-          ./modules/git-personal.nix
+          ./modules/git.nix
           ./modules/emacs.nix
         ];
       };
@@ -88,10 +86,6 @@
               sessionVariables = {
                 REM_LAMBDA_KUBERNETES = 1;
               };
-              shellAliases = {
-                tunnel = "***REMOVED***";
-                ovpn = "***REMOVED***";
-              };
             };
             xsession.profileExtra = ''
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
@@ -102,10 +96,13 @@
           ./modules/zsh.nix
           ./modules/nixgl.nix
           ./modules/alacritty.nix
-          ./modules/git-common.nix
-          ./modules/git-quantlane.nix
           ./modules/nodejs.nix
-        ];
+        ] ++ (
+          if builtins.pathExists ./modules/quantlane.nix then
+            [ ./modules/quantlane.nix ]
+          else
+            []
+        );
       };
     };
 }
