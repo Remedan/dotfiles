@@ -91,7 +91,6 @@
               shellAliases = {
                 tunnel = "***REMOVED***";
                 ovpn = "***REMOVED***";
-                squid = "PGPASSWORD=***REMOVED*** pgcli -U squid -d squid -h squid.int.quantlane.com -p 2080";
               };
             };
             xsession.profileExtra = ''
