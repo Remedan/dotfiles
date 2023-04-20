@@ -23,6 +23,10 @@
     shellAliases = {
       e = "eval \"$EDITOR\"";
       E = "sudoedit";
+      ip = "ip -c";
+      sxiv = "sxiv -a";
+      mkvenv = "mkvirtualenv `basename $PWD`";
+      rmvenv = "rmvirtualenv `basename $PWD`";
     };
   };
   programs.zsh = {
