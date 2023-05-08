@@ -75,6 +75,7 @@
           ./modules/i3.nix
           ./modules/alacritty.nix
           ./modules/rofi.nix
+          ./modules/polybar.nix
         ];
       };
 
