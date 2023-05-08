@@ -87,25 +87,6 @@
                 REM_LAMBDA_KUBERNETES = 1;
                 COLORSCHEME = "gruvbox";
               };
-              packages = with pkgs; [
-                awscli2
-                cmake
-                fzf
-                gcc
-                gnumake
-                kubectl
-                postgresql
-                ripgrep
-
-                # Python
-                python310
-                python310Packages.virtualenv
-                python310Packages.virtualenvwrapper
-
-                # Fonts
-                source-code-pro
-                source-sans-pro
-              ];
             };
             fonts.fontconfig.enable = true;
             xsession.profileExtra = ''
@@ -114,6 +95,7 @@
             '';
           }
           ./modules/common.nix
+          ./modules/packages.nix
           ./modules/zsh.nix
           ./modules/nixgl.nix
           ./modules/alacritty.nix
