@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     alacritty
     awscli2
@@ -21,6 +22,7 @@
     python310Packages.virtualenvwrapper
 
     # Fonts
+    iosevka
     source-code-pro
     source-sans-pro
   ];

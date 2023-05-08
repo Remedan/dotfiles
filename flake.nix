@@ -49,6 +49,10 @@
       homeConfigurations.rincewind = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
+        extraSpecialArgs = {
+          colorscheme = "dracula";
+        };
+
         modules = [
           {
             home = {
@@ -68,6 +72,8 @@
           ./modules/zsh.nix
           ./modules/git.nix
           ./modules/emacs.nix
+          ./modules/i3.nix
+          ./modules/alacritty.nix
         ];
       };
 
@@ -88,7 +94,6 @@
                 COLORSCHEME = "gruvbox";
               };
             };
-            fonts.fontconfig.enable = true;
             xsession.profileExtra = ''
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
