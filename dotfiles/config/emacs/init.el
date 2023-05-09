@@ -78,15 +78,10 @@
 (require 'use-package)
 (setq use-package-always-ensure 't)
 
-;; Theme
-(defun theme-name (name)
-  (intern (concat "doom-"
-                  (cond ((string= name "selenized-dark") "solarized-dark")
-                        ((string= name "gruvbox-dark") "gruvbox")
-                        (t name)))))
+;; Themes
+;; The theme is set in default.el which is managed by home-manager
 (use-package doom-themes
   :config
-  (load-theme (theme-name (getenv "COLORSCHEME")) t)
   (doom-themes-neotree-config))
 
 ;; Undo Tree
@@ -223,9 +218,6 @@
 (use-package rainbow-delimiters
   :hook
   (prog-mode . rainbow-delimiters-mode))
-
-;; Vterm
-(use-package vterm)
 
 ;; Kubernetes
 (use-package kubel
