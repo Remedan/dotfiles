@@ -5,8 +5,10 @@
   home.packages = with pkgs; [
     alacritty
     awscli2
+    blackbox
     cmake
     fzf
+    fzy
     gcc
     gnumake
     gnupg
@@ -14,6 +16,7 @@
     postgresql
     ranger
     ripgrep
+    rlwrap
     tig
 
     # Python
