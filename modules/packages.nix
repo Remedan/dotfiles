@@ -3,20 +3,28 @@
 {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    # Core
     alacritty
-    awscli2
-    blackbox
     cmake
     fzf
     gcc
     gnumake
     gnupg
-    kubectl
-    postgresql
     ranger
     ripgrep
     rlwrap
     tig
+
+    # Extra
+    _1password
+    _1password-gui
+
+    # Dev
+    awscli2
+    blackbox
+    kubectl
+    postgresql
+    terraform
 
     # Python
     python310
