@@ -266,6 +266,9 @@ exec --no-startup-id birdtray
 # Compositor
 exec picom -b
 
+# Needed for 1password
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # Wallpaper
 exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
 
