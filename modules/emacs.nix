@@ -1,4 +1,4 @@
-{ pkgs, colorscheme, ... }:
+{ pkgs, colorscheme, pythonTabs, ... }:
 {
   services.emacs.enable = true;
   home.file = {
@@ -15,7 +15,18 @@
                               ((string= name "gruvbox-dark") "gruvbox")
                               (t name)))))
       (load-theme (theme-name "${colorscheme}") t)
-    '';
+    '' + (
+      if pythonTabs then
+        ''
+          (add-hook 'python-mode-hook
+                    (lambda()
+                      (setq indent-tabs-mode t
+                            tab-width 4
+                            python-indent-guess-indent-offset nil)))
+        ''
+      else
+        ""
+    );
     extraPackages = epkgs: [ epkgs.vterm ];
   };
 }

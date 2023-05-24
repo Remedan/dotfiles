@@ -22,6 +22,7 @@
 
         extraSpecialArgs = {
           colorscheme = "selenized-dark";
+          pythonTabs = false;
         };
 
         modules = [
@@ -81,6 +82,7 @@
 
         extraSpecialArgs = {
           colorscheme = "gruvbox-dark";
+          pythonTabs = true;
         };
 
         modules = [
