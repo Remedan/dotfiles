@@ -59,7 +59,7 @@ font-1 = Open Sans:pixelsize=11;2
 font-2 = Source\ Han\ Sans:pixelsize=10;2
 {%@@ endif @@%}
 
-modules-left = i3 player-mpris-tail mpd pulseaudio
+modules-left = i3 playerctl mpd pulseaudio
 modules-center = xwindow
 {%@@ if profile in ["athena", "atuin"] @@%}
 modules-right = filesystem xkeyboard cpu memory backlight battery date powermenu
@@ -177,9 +177,9 @@ card = intel_backlight
 format = <label>
 label =  %percentage%%
 
-[module/player-mpris-tail]
+[module/playerctl]
 type = custom/script
-exec = ~/.config/polybar/player-mpris-tail.py --icon-playing  --icon-paused 
+exec = playerctl --follow metadata --format '{{emoji(status)}} {{ artist }} - {{ title }}'
 tail = true
 click-left = playerctl previous
 click-right = playerctl next
