@@ -13,11 +13,8 @@
     ranger
     ripgrep
     rlwrap
+    rsync
     tig
-
-    # Extra
-    _1password
-    _1password-gui
 
     # Dev
     awscli2
