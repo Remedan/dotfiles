@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, installKubectl, ... }:
 
 {
   fonts.fontconfig.enable = true;
@@ -19,7 +19,6 @@
     # Dev
     awscli2
     blackbox
-    kubectl
     postgresql
     terraform
 
@@ -32,5 +31,5 @@
     iosevka
     source-code-pro
     source-sans-pro
-  ];
+  ] ++ lib.optional installKubectl kubectl;
 }

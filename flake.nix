@@ -23,6 +23,7 @@
         extraSpecialArgs = {
           colorscheme = "selenized-dark";
           pythonTabs = false;
+          installKubectl = true;
         };
 
         modules = [
@@ -83,6 +84,7 @@
         extraSpecialArgs = {
           colorscheme = "gruvbox-dark";
           pythonTabs = true;
+          installKubectl = false;
         };
 
         modules = [
@@ -106,12 +108,7 @@
           ./modules/alacritty.nix
           ./modules/nodejs.nix
           ./modules/emacs.nix
-        ] ++ (
-          if builtins.pathExists ./modules/quantlane.nix then
-            [ ./modules/quantlane.nix ]
-          else
-            []
-        );
+        ] ++ pkgs.lib.optional (builtins.pathExists ./modules/quantlane.nix) ./modules/quantlane.nix;
       };
     };
 }
