@@ -1,4 +1,4 @@
-{ pkgs, installKubectl, ... }:
+{ pkgs, installKubectl ? true, ... }:
 
 {
   fonts.fontconfig.enable = true;
