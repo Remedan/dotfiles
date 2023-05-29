@@ -22,8 +22,6 @@
 
         extraSpecialArgs = {
           colorscheme = "selenized-dark";
-          pythonTabs = false;
-          installKubectl = true;
         };
 
         modules = [
