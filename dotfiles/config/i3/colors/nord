@@ -1,8 +1,0 @@
-# class                 border  backgr. text    indicator
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
-client.unfocused        #2e3440 #2e3440 #888888 #2e3440
-client.urgent           #900000 #900000 #ffffff #900000
-client.placeholder      #2e3440 #2e3440 #888888 #2e3440
-
-client.background       #242424

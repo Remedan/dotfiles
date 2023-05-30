@@ -1,5 +1,0 @@
-configuration {
-    font: "Open Sans 12";
-    terminal: "{{@@ terminal @@}}";
-}
-@theme "{{@@ colorscheme @@}}"

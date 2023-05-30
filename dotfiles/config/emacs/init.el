@@ -86,7 +86,7 @@
                         (t name)))))
 (use-package doom-themes
   :config
-  (load-theme (theme-name "{{@@ colorscheme @@}}") t)
+  (load-theme (theme-name "dracula") t)
   (doom-themes-neotree-config))
 
 ;; Undo Tree
@@ -279,15 +279,6 @@
 (use-package flycheck-rust
   :hook (flycheck-mode . flycheck-rust-setup))
 
-{%@@ if profile == "atuin" @@%}
-;; Python
-(add-hook 'python-mode-hook
-          (lambda()
-            (setq indent-tabs-mode t
-                  tab-width 4
-                  python-indent-guess-indent-offset nil)))
-
-{%@@ endif @@%}
 ;; Clojure
 (use-package clojure-mode
   :hook ((clojure-mode . lsp)
