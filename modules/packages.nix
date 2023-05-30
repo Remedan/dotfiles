@@ -31,5 +31,6 @@
     iosevka
     source-code-pro
     source-sans-pro
+  # Kubectl is optional since I sometimes need to install a specific older version
   ] ++ lib.optional installKubectl kubectl;
 }
