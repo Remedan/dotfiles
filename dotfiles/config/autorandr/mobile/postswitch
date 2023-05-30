@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle' -option 'caps:escape'
-
-polybar-msg cmd quit
-sleep 1
-polybar b0 &
