@@ -9,7 +9,7 @@ for i in {4..10}; do
     i3-msg '[workspace="'$i'"]' move workspace to output DP-1-3
 done
 
-killall polybar
+polybar-msg cmd quit
 sleep 1
 polybar b0 &
 polybar b1 &

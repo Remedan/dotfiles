@@ -2,6 +2,6 @@
 
 setxkbmap -layout 'us,cz(qwerty)' -option 'grp:alt_shift_toggle' -option 'caps:escape'
 
-killall polybar
+polybar-msg cmd quit
 sleep 1
 polybar b0 &
