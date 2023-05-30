@@ -15,18 +15,13 @@
                               ((string= name "gruvbox-dark") "gruvbox")
                               (t name)))))
       (load-theme (theme-name "${colorscheme}") t)
-    '' + (
-      if pythonTabs then
-        ''
-          (add-hook 'python-mode-hook
-                    (lambda()
-                      (setq indent-tabs-mode t
-                            tab-width 4
-                            python-indent-guess-indent-offset nil)))
-        ''
-      else
-        ""
-    );
+    '' + pkgs.lib.optionalString pythonTabs ''
+      (add-hook 'python-mode-hook
+                (lambda()
+                  (setq indent-tabs-mode t
+                        tab-width 4
+                        python-indent-guess-indent-offset nil)))
+    '';
     extraPackages = epkgs: [ epkgs.vterm ];
   };
 }
