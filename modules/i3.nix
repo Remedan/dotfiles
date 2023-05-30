@@ -4,7 +4,8 @@ let
   # Mod is the Windows key
   mod = "Mod4";
   powerControlMode = "[l]ock log[o]ut [s]uspend [h]ibernate [r]eboot [p]oweroff";
-in {
+in
+{
   xsession.windowManager.i3 = {
     enable = true;
     config = {
@@ -114,9 +115,9 @@ in {
         k = "resize shrink height 10 px or 10 ppt";
         l = "resize grow   width  10 px or 10 ppt";
 
-        Left  = "resize shrink width  10 px or 10 ppt";
-        Down  = "resize grow   height 10 px or 10 ppt";
-        Up    = "resize shrink height 10 px or 10 ppt";
+        Left = "resize shrink width  10 px or 10 ppt";
+        Down = "resize grow   height 10 px or 10 ppt";
+        Up = "resize shrink height 10 px or 10 ppt";
         Right = "resize grow   width  10 px or 10 ppt";
 
         Escape = "mode default";
@@ -132,7 +133,7 @@ in {
         Escape = "mode default";
       };
 
-      bars = [];
+      bars = [ ];
     };
   };
 }

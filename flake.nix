@@ -16,7 +16,9 @@
         overlays = [ nixgl.overlay ];
         config.allowUnfree = true;
       };
-    in {
+    in
+    {
+      formatter.${pkgs.system} = pkgs.nixpkgs-fmt;
       homeConfigurations.helios = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
@@ -34,8 +36,8 @@
               nvidia-settings -l
             '';
             programs.git = {
-                signing.key = "6C91735267F988F7E16BE32EA16152897E76E209";
-                signing.signByDefault = true;
+              signing.key = "6C91735267F988F7E16BE32EA16152897E76E209";
+              signing.signByDefault = true;
             };
           }
           ./modules/common.nix
