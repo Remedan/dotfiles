@@ -14,6 +14,7 @@
     ripgrep
     rlwrap
     rsync
+    steam-run
     tig
 
     # Dev
