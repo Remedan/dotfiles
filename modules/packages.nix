@@ -22,6 +22,7 @@
     blackbox
     postgresql
     terraform
+    xxd
 
     # Python
     python310
