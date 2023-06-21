@@ -17,8 +17,38 @@ let
       color6 = "#689d6a";
       color7 = "#a89984";
     };
-    "selenized-dark" = { };
-    "dracula" = { };
+    "selenized-dark" = {
+      background = "#103c48";
+      foreground = "#adbcbc";
+      foreground-alt = "\${colors.color7}";
+      primary = "\${colors.color3}";
+      alert = "\${colors.color1}";
+
+      color0 = "#174956";
+      color1 = "#fa5750";
+      color2 = "#75b938";
+      color3 = "#dbb32d";
+      color4 = "#4695f7";
+      color5 = "#f275be";
+      color6 = "#41c7b9";
+      color7 = "#72898f";
+    };
+    "dracula" = {
+      background = "#282A36";
+      foreground = "#F8F8F2";
+      foreground-alt = "\${colors.color7}";
+      primary = "\${colors.color3}";
+      alert = "\${colors.color1}";
+
+      color0 = "#000000";
+      color1 = "#FF5555";
+      color2 = "#50FA7B";
+      color3 = "#F1FA8C";
+      color4 = "#BD93F9";
+      color5 = "#FF79C6";
+      color6 = "#8BE9FD";
+      color7 = "#BFBFBF";
+    };
   };
 in
 {
