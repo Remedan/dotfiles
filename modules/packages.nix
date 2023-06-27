@@ -30,9 +30,11 @@
     python310Packages.virtualenvwrapper
 
     # Fonts
-    iosevka
+    iosevka-bin
     source-code-pro
     source-sans-pro
+    noto-fonts-emoji
+
     # Kubectl is optional since I sometimes need to install a specific older version
   ] ++ lib.optional installKubectl kubectl;
 }
