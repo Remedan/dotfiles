@@ -24,6 +24,8 @@
 
         extraSpecialArgs = {
           colorscheme = "selenized-dark";
+          pythonTabs = false;
+          installKubectl = true;
           polybarExtraSettings = {
             "b0" = {
               height = 27;
@@ -52,11 +54,16 @@
               nvidia-settings -l
             '';
           }
-          ./modules/common.nix
-          ./modules/zsh.nix
-          ./modules/nixgl.nix
           ./modules/alacritty.nix
+          ./modules/common.nix
+          ./modules/dunst.nix
+          ./modules/emacs.nix
           ./modules/git.nix
+          ./modules/nixgl.nix
+          ./modules/packages.nix
+          ./modules/polybar.nix
+          ./modules/zathura.nix
+          ./modules/zsh.nix
         ];
       };
 
@@ -90,15 +97,15 @@
               xinput --set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
             '';
           }
-          ./modules/common.nix
-          ./modules/packages.nix
-          ./modules/zsh.nix
-          ./modules/git.nix
-          ./modules/emacs.nix
-          ./modules/i3.nix
           ./modules/alacritty.nix
-          ./modules/rofi.nix
+          ./modules/common.nix
+          ./modules/emacs.nix
+          ./modules/git.nix
+          ./modules/i3.nix
+          ./modules/packages.nix
           ./modules/polybar.nix
+          ./modules/rofi.nix
+          ./modules/zsh.nix
         ];
       };
 
@@ -142,16 +149,16 @@
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
             '';
           }
-          ./modules/common.nix
-          ./modules/packages.nix
-          ./modules/zsh.nix
-          ./modules/nixgl.nix
           ./modules/alacritty.nix
-          ./modules/nodejs.nix
-          ./modules/emacs.nix
-          ./modules/polybar.nix
+          ./modules/common.nix
           ./modules/dunst.nix
+          ./modules/emacs.nix
+          ./modules/nixgl.nix
+          ./modules/nodejs.nix
+          ./modules/packages.nix
+          ./modules/polybar.nix
           ./modules/zathura.nix
+          ./modules/zsh.nix
         ] ++ pkgs.lib.optional (builtins.pathExists ./modules/quantlane.nix) ./modules/quantlane.nix;
       };
     };
