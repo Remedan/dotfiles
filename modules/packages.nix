@@ -10,6 +10,7 @@
     gcc
     gnumake
     gnupg
+    playerctl
     ranger
     ripgrep
     rlwrap
