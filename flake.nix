@@ -51,10 +51,6 @@
             xsession.profileExtra = ''
               nvidia-settings -l
             '';
-            programs.git = {
-              signing.key = "6C91735267F988F7E16BE32EA16152897E76E209";
-              signing.signByDefault = true;
-            };
           }
           ./modules/common.nix
           ./modules/zsh.nix
