@@ -151,6 +151,7 @@
           ./modules/emacs.nix
           ./modules/polybar.nix
           ./modules/dunst.nix
+          ./modules/zathura.nix
         ] ++ pkgs.lib.optional (builtins.pathExists ./modules/quantlane.nix) ./modules/quantlane.nix;
       };
     };
