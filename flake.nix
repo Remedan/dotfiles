@@ -154,6 +154,7 @@
           ./modules/nodejs.nix
           ./modules/emacs.nix
           ./modules/polybar.nix
+          ./modules/dunst.nix
         ] ++ pkgs.lib.optional (builtins.pathExists ./modules/quantlane.nix) ./modules/quantlane.nix;
       };
     };
