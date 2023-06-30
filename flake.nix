@@ -30,7 +30,7 @@
             "b0" = {
               height = 27;
               fixed-center = true;
-              monitor = "\${env:MONITOR:DP-2}";
+              monitor = "\${env:MONITOR:DP-0}";
               font = [
                 "Symbols\ Nerd\ Font:10;2"
                 "Open Sans:pixelsize=11;2"
@@ -39,7 +39,7 @@
               modules-right = "filesystem xkeyboard cpu memory date powermenu";
             };
             "b1" = {
-              monitor = "\${env:MONITOR:DP-0}";
+              monitor = "\${env:MONITOR:DP-2}";
             };
           };
         };
