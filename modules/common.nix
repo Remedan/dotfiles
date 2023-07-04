@@ -11,4 +11,5 @@
   };
   programs.home-manager.enable = true;
   xsession.enable = true;
+  xdg.userDirs.enable = true;
 }
