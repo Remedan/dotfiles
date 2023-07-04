@@ -157,6 +157,7 @@
           ./modules/nodejs.nix
           ./modules/packages.nix
           ./modules/polybar.nix
+          ./modules/rofi.nix
           ./modules/zathura.nix
           ./modules/zsh.nix
         ] ++ pkgs.lib.optional (builtins.pathExists ./modules/quantlane.nix) ./modules/quantlane.nix;
