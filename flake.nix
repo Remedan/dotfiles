@@ -19,7 +19,7 @@
     in
     {
       formatter.${pkgs.system} = pkgs.nixpkgs-fmt;
-      homeConfigurations.helios = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.vimes = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         extraSpecialArgs = {
