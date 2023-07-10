@@ -133,6 +133,7 @@
               monitor-strict = true;
             };
           };
+          musicDirectory = "~/Music";
         };
 
         modules = [
@@ -153,6 +154,7 @@
           ./modules/common.nix
           ./modules/dunst.nix
           ./modules/emacs.nix
+          ./modules/mpd.nix
           ./modules/nixgl.nix
           ./modules/nodejs.nix
           ./modules/packages.nix
