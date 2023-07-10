@@ -156,6 +156,7 @@
           ./modules/nixgl.nix
           ./modules/nodejs.nix
           ./modules/packages.nix
+          ./modules/picom.nix
           ./modules/polybar.nix
           ./modules/rofi.nix
           ./modules/zathura.nix
