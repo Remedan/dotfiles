@@ -154,6 +154,7 @@
           ./modules/common.nix
           ./modules/dunst.nix
           ./modules/emacs.nix
+          ./modules/fonts.nix
           ./modules/mpd.nix
           ./modules/nixgl.nix
           ./modules/nodejs.nix
