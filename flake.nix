@@ -151,6 +151,7 @@
             '';
           }
           ./modules/alacritty.nix
+          ./modules/autorandr.nix
           ./modules/common.nix
           ./modules/dunst.nix
           ./modules/emacs.nix
