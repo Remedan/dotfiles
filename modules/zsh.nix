@@ -16,6 +16,7 @@
     '';
     sessionPath = [
       "$HOME/.local/bin"
+      "$HOME/.krew/bin"
     ];
     sessionVariables = {
       EDITOR = "emacsclient -nw";
