@@ -30,5 +30,5 @@
     python310Packages.virtualenvwrapper
 
     # Kubectl is optional since I sometimes need to install a specific older version
-  ] ++ lib.optional installKubectl kubectl;
+  ] ++ lib.optionals installKubectl [ kubectl krew ];
 }
