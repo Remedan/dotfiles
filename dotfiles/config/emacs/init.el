@@ -82,7 +82,6 @@
 ;; The theme is set in default.el which is managed by home-manager
 (use-package doom-themes
   :config
-  (load-theme (theme-name "dracula") t)
   (doom-themes-neotree-config))
 
 ;; Undo Tree
