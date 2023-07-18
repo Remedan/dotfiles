@@ -253,6 +253,9 @@ exec --no-startup-id unclutter
 exec --no-startup-id xautolock -time 30 -locker {{@@ lock_script @@}}
 {%@@ endif @@%}
 
+# Compositor
+exec picom -b
+
 # Applets
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id udiskie --tray # usb storage automounter
@@ -263,10 +266,8 @@ exec --no-startup-id blueman-applet # bluetooth
 exec --no-startup-id birdtray
 {%@@ endif @@%}
 
-# Compositor
-exec picom -b
-
-# Needed for 1password
+# 1Password
+exec --no-startup-id 1password --silent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Wallpaper
