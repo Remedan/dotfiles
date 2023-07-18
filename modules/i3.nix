@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, terminal, ... }:
 
 let
   # Mod is the Windows key
@@ -29,7 +29,7 @@ in
 
       keybindings = lib.mkOptionDefault {
         # Start a terminal
-        "${mod}+Return" = "exec alacritty";
+        "${mod}+Return" = "exec " + terminal;
 
         # Open a program launcher
         "${mod}+d" = "exec rofi -show run";

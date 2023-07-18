@@ -24,6 +24,7 @@
 
         extraSpecialArgs = {
           colorscheme = "selenized-dark";
+          terminal = "run-alacritty";
           pythonTabs = false;
           installKubectl = true;
           polybarExtraSettings = {
@@ -72,6 +73,7 @@
 
         extraSpecialArgs = {
           colorscheme = "dracula";
+          terminal = "alacritty";
           polybarExtraSettings = {
             "b0" = {
               height = 25;
@@ -114,6 +116,7 @@
 
         extraSpecialArgs = {
           colorscheme = "gruvbox-dark";
+          terminal = "run-alacritty";
           pythonTabs = true;
           installKubectl = false;
           polybarExtraSettings = {

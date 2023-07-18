@@ -1,8 +1,9 @@
-{ colorscheme, ... }:
+{ colorscheme, terminal, ... }:
 {
   programs.rofi = {
     enable = true;
     font = "Open Sans 12";
+    terminal = terminal;
     theme = colorscheme;
   };
   home.file = {
