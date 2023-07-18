@@ -271,7 +271,7 @@ exec --no-startup-id 1password --silent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Wallpaper
-exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg || feh --bg-tile ~/wall-tile.png || feh --bg-tile ~/wall-tile.jpg
+exec feh --bg-fill ~/Pictures/wallpaper.png || feh --bg-fill ~/Pictures/wallpaper.jpg || feh --bg-tile ~/Pictures/wallpaper-tile.png || feh --bg-tile ~/Pictures/wallpaper-tile.jpg || feh --bg-fill --no-xinerama ~/Pictures/wallpaper-wide.png || feh --bg-fill --no-xinerama ~/Pictures/wallpaper-wide.jpg
 
 {%@@ if profile == "atuin" @@%}
 # App to workspace assignment
