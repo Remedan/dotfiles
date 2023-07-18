@@ -43,6 +43,7 @@
               monitor = "\${env:MONITOR:DP-2}";
             };
           };
+          musicDirectory = "~/Network/Media/Audio";
         };
 
         modules = [
@@ -59,10 +60,14 @@
           ./modules/common.nix
           ./modules/dunst.nix
           ./modules/emacs.nix
+          ./modules/fonts.nix
           ./modules/git.nix
+          ./modules/mpd.nix
           ./modules/nixgl.nix
           ./modules/packages.nix
+          ./modules/picom.nix
           ./modules/polybar.nix
+          ./modules/rofi.nix
           ./modules/zathura.nix
           ./modules/zsh.nix
         ];
