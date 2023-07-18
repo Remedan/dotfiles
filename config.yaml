@@ -144,7 +144,7 @@ profiles:
     - d_sway
     - d_waybar
     - d_systemd
-  helios:
+  vimes:
     dotfiles:
     - f_xresources
     - d_xresources.extra
