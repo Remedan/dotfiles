@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     # Core
-    alacritty
     cmake
     fzf
     gcc
