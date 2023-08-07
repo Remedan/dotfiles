@@ -98,8 +98,8 @@
         strength = 5;
       };
       blur-background-exclude = [
-          "class_g = 'firefox' && argb"
-          "class_g = 'thunderbird' && argb"
+        "class_g = 'firefox' && argb"
+        "class_g = 'thunderbird' && argb"
       ];
       opacity-rule = [
         "80:class_g = 'Polybar'"
