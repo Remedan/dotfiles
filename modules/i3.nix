@@ -106,6 +106,10 @@ let
   };
 in
 {
+  home.file.".config/i3/lock.sh" = {
+    source = ../dotfiles/config/i3/lock.sh;
+    executable = true;
+  };
   xsession.windowManager.i3 = {
     enable = true;
     config = {
