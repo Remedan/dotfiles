@@ -35,7 +35,9 @@
               monitor = "\${env:MONITOR:DP-2}";
             };
           };
-          musicDirectory = "~/Network/Media/Audio";
+          mpdOverrides = {
+            musicDirectory = "~/Network/Media/Audio";
+          };
         };
 
         modules = [
@@ -133,7 +135,7 @@
               monitor-strict = true;
             };
           };
-          musicDirectory = "~/Music";
+          mpdOverrides = { };
         };
 
         modules = [
