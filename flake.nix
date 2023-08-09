@@ -27,19 +27,11 @@
           terminal = "run-alacritty";
           pythonTabs = false;
           installKubectl = true;
-          polybarExtraSettings = {
-            "b0" = {
-              height = 27;
-              fixed-center = true;
+          polybarOverride = {
+            settings."bar/b0" = {
               monitor = "\${env:MONITOR:DP-0}";
-              font = [
-                "Symbols\ Nerd\ Font:10;2"
-                "Open Sans:pixelsize=11;2"
-                "Source\ Han\ Sans:pixelsize=10;2"
-              ];
-              modules-right = "filesystem xkeyboard cpu memory date powermenu";
             };
-            "b1" = {
+            settings."bar/b1" = {
               monitor = "\${env:MONITOR:DP-2}";
             };
           };
@@ -79,8 +71,8 @@
         extraSpecialArgs = {
           colorscheme = "dracula";
           terminal = "alacritty";
-          polybarExtraSettings = {
-            "b0" = {
+          polybarOverride = {
+            settings."bar/b0" = {
               height = 25;
               fixed-center = false;
               font = [
@@ -124,8 +116,8 @@
           terminal = "run-alacritty";
           pythonTabs = true;
           installKubectl = false;
-          polybarExtraSettings = {
-            "b0" = {
+          polybarOverride = {
+            settings."bar/b0" = {
               monitor = "\${env:MONITOR:DP-1-2}";
               monitor-fallback = "\${env:MONITOR:eDP-1}";
               monitor-strict = true;
@@ -136,7 +128,7 @@
               ];
               modules-right = "filesystem xkeyboard cpu memory backlight battery date powermenu";
             };
-            "b1" = {
+            settings."bar/b1" = {
               monitor = "\${env:MONITOR:DP-1-3}";
               monitor-strict = true;
             };
