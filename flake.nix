@@ -27,6 +27,9 @@
           terminal = "run-alacritty";
           pythonTabs = false;
           installKubectl = true;
+          mpdOverrides = {
+            musicDirectory = "~/Network/Media/Audio";
+          };
           polybarOverride = {
             settings."bar/b0" = {
               monitor = "\${env:MONITOR:DP-0}";
@@ -35,9 +38,36 @@
               monitor = "\${env:MONITOR:DP-2}";
             };
           };
-          mpdOverrides = {
-            musicDirectory = "~/Network/Media/Audio";
+          i3Override = {
+            config.workspaceOutputAssign =
+              map
+                (number: {
+                  workspace = toString number;
+                  output = "DP-0";
+                })
+                (pkgs.lib.range 1 3)
+              ++
+              map
+                (number: {
+                  workspace = toString number;
+                  output = "DP-2";
+                })
+                (pkgs.lib.range 4 10);
           };
+          i3Startup = [
+            {
+              command = "xrandr --output DP-2 --mode 1920x1080 --rate 144.00 --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --primary";
+              notification = false;
+            }
+            {
+              command = "polybar b1";
+              notification = false;
+            }
+            {
+              command = "blueman-applet";
+              notification = false;
+            }
+          ];
         };
 
         modules = [
@@ -56,6 +86,7 @@
           ./modules/emacs.nix
           ./modules/fonts.nix
           ./modules/git.nix
+          ./modules/i3.nix
           ./modules/mpd.nix
           ./modules/nixgl.nix
           ./modules/packages.nix
@@ -85,6 +116,19 @@
               modules-right = "filesystem xkeyboard cpu memory backlight battery date powermenu";
             };
           };
+          i3Override = {
+            config.gaps.inner = 6;
+          };
+          i3Startup = [
+            {
+              command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
+              notification = false;
+            }
+            {
+              command = "blueman-applet";
+              notification = false;
+            }
+          ];
         };
 
         modules = [
@@ -118,6 +162,7 @@
           terminal = "run-alacritty";
           pythonTabs = true;
           installKubectl = false;
+          mpdOverrides = { };
           polybarOverride = {
             settings."bar/b0" = {
               monitor = "\${env:MONITOR:DP-1-2}";
@@ -135,7 +180,21 @@
               monitor-strict = true;
             };
           };
-          mpdOverrides = { };
+          i3Override = { };
+          i3Startup = [
+            {
+              command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
+              notification = false;
+            }
+            {
+              command = "blueman-applet";
+              notification = false;
+            }
+            {
+              command = "birdtray";
+              notification = false;
+            }
+          ];
         };
 
         modules = [
