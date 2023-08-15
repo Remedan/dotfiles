@@ -159,7 +159,7 @@
 
         extraSpecialArgs = {
           colorscheme = "gruvbox-dark";
-          terminal = "run-alacritty";
+          terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
           pythonTabs = true;
           installKubectl = false;
           mpdOverrides = { };
@@ -180,7 +180,15 @@
               monitor-strict = true;
             };
           };
-          i3Override = { };
+          i3Override = {
+            config.assigns = {
+              "1" = [{ class = "firefox"; }];
+              "2" = [{ class = "thunderbird"; }];
+              "3" = [{ class = "obsidian"; }];
+              "8" = [{ class = "Slack"; }];
+              "9" = [{ class = "Spotify"; }];
+            };
+          };
           i3Startup = [
             {
               command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
@@ -194,6 +202,12 @@
               command = "birdtray";
               notification = false;
             }
+            { command = "firefox"; }
+            { command = "thunderbird"; }
+            { command = "obsidian"; }
+            { command = "i3-msg 'workspace number 4; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty'"; }
+            { command = "slack"; }
+            { command = "spotify-launcher"; }
           ];
         };
 
@@ -217,6 +231,7 @@
           ./modules/dunst.nix
           ./modules/emacs.nix
           ./modules/fonts.nix
+          ./modules/i3.nix
           ./modules/mpd.nix
           ./modules/nixgl.nix
           ./modules/nodejs.nix
