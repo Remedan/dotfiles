@@ -1,4 +1,4 @@
-{ lib, colorscheme, terminal, i3Override, i3Startup, ... }:
+{ lib, colorscheme, terminal, i3, ... }:
 
 let
   # Mod is the Windows key
@@ -124,14 +124,6 @@ in
         window = {
           border = 2;
           titlebar = false;
-          commands = [
-            {
-              command = "floating enable";
-              criteria = {
-                title = "Origin";
-              };
-            }
-          ];
         };
 
         gaps = {
@@ -139,6 +131,12 @@ in
           smartGaps = true;
           smartBorders = "on";
         };
+
+        floating.criteria = [
+          { title = "Origin"; }
+        ];
+
+        colors = colorschemes.${colorscheme};
 
         startup = [
           {
@@ -170,9 +168,7 @@ in
           {
             command = "feh --bg-fill ~/Pictures/wallpaper.png || feh --bg-fill ~/Pictures/wallpaper.jpg || feh --bg-tile ~/Pictures/wallpaper-tile.png || feh --bg-tile ~/Pictures/wallpaper-tile.jpg || feh --bg-fill --no-xinerama ~/Pictures/wallpaper-wide.png || feh --bg-fill --no-xinerama ~/Pictures/wallpaper-wide.jpg";
           }
-        ] ++ i3Startup;
-
-        colors = colorschemes.${colorscheme};
+        ] ++ i3.startup or [ ];
 
         keybindings = lib.mkOptionDefault {
           # Start a terminal
@@ -286,5 +282,5 @@ in
         bars = [ ];
       };
     }
-    i3Override;
+    i3.override or { };
 }

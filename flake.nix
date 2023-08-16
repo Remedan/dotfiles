@@ -38,36 +38,38 @@
               monitor = "\${env:MONITOR:DP-2}";
             };
           };
-          i3Override = {
-            config.workspaceOutputAssign =
-              map
-                (number: {
-                  workspace = toString number;
-                  output = "DP-0";
-                })
-                (pkgs.lib.range 1 3)
-              ++
-              map
-                (number: {
-                  workspace = toString number;
-                  output = "DP-2";
-                })
-                (pkgs.lib.range 4 10);
+          i3 = {
+            override = {
+              config.workspaceOutputAssign =
+                map
+                  (number: {
+                    workspace = toString number;
+                    output = "DP-0";
+                  })
+                  (pkgs.lib.range 1 3)
+                ++
+                map
+                  (number: {
+                    workspace = toString number;
+                    output = "DP-2";
+                  })
+                  (pkgs.lib.range 4 10);
+            };
+            startup = [
+              {
+                command = "xrandr --output DP-2 --mode 1920x1080 --rate 144.00 --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --primary";
+                notification = false;
+              }
+              {
+                command = "polybar b1";
+                notification = false;
+              }
+              {
+                command = "blueman-applet";
+                notification = false;
+              }
+            ];
           };
-          i3Startup = [
-            {
-              command = "xrandr --output DP-2 --mode 1920x1080 --rate 144.00 --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --primary";
-              notification = false;
-            }
-            {
-              command = "polybar b1";
-              notification = false;
-            }
-            {
-              command = "blueman-applet";
-              notification = false;
-            }
-          ];
         };
 
         modules = [
@@ -116,19 +118,21 @@
               modules-right = "filesystem xkeyboard cpu memory backlight battery date powermenu";
             };
           };
-          i3Override = {
-            config.gaps.inner = 6;
+          i3 = {
+            override = {
+              config.gaps.inner = 6;
+            };
+            startup = [
+              {
+                command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
+                notification = false;
+              }
+              {
+                command = "blueman-applet";
+                notification = false;
+              }
+            ];
           };
-          i3Startup = [
-            {
-              command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
-              notification = false;
-            }
-            {
-              command = "blueman-applet";
-              notification = false;
-            }
-          ];
         };
 
         modules = [
@@ -180,35 +184,37 @@
               monitor-strict = true;
             };
           };
-          i3Override = {
-            config.assigns = {
-              "1" = [{ class = "firefox"; }];
-              "2" = [{ class = "thunderbird"; }];
-              "3" = [{ class = "obsidian"; }];
-              "8" = [{ class = "Slack"; }];
-              "9" = [{ class = "Spotify"; }];
+          i3 = {
+            override = {
+              config.assigns = {
+                "1" = [{ class = "firefox"; }];
+                "2" = [{ class = "thunderbird"; }];
+                "3" = [{ class = "obsidian"; }];
+                "8" = [{ class = "Slack"; }];
+                "9" = [{ class = "Spotify"; }];
+              };
             };
+            startup = [
+              {
+                command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
+                notification = false;
+              }
+              {
+                command = "blueman-applet";
+                notification = false;
+              }
+              {
+                command = "birdtray";
+                notification = false;
+              }
+              { command = "firefox"; }
+              { command = "thunderbird"; }
+              { command = "obsidian"; }
+              { command = "i3-msg 'workspace number 4; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty'"; }
+              { command = "slack"; }
+              { command = "spotify-launcher"; }
+            ];
           };
-          i3Startup = [
-            {
-              command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
-              notification = false;
-            }
-            {
-              command = "blueman-applet";
-              notification = false;
-            }
-            {
-              command = "birdtray";
-              notification = false;
-            }
-            { command = "firefox"; }
-            { command = "thunderbird"; }
-            { command = "obsidian"; }
-            { command = "i3-msg 'workspace number 4; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty'"; }
-            { command = "slack"; }
-            { command = "spotify-launcher"; }
-          ];
         };
 
         modules = [
