@@ -23,11 +23,6 @@
     terraform
     xxd
 
-    # Python
-    python310
-    python310Packages.virtualenv
-    python310Packages.virtualenvwrapper
-
     # Kubectl is optional since I sometimes need to install a specific older version
   ] ++ lib.optionals installKubectl [ kubectl krew ];
 }
