@@ -1,4 +1,4 @@
-{ lib, colorscheme, terminal, i3, ... }:
+{ lib, colorscheme, terminal, browser, i3, ... }:
 
 let
   # Mod is the Windows key
@@ -246,7 +246,7 @@ in
           "${mod}+t" = "exec autorandr --change --default mobile";
 
           # Applications
-          "${mod}+i" = "exec firefox";
+          "${mod}+i" = "exec ${browser}";
           "${mod}+o" = "exec emacsclient -c";
           "${mod}+p" = "exec obsidian";
 
