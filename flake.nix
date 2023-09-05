@@ -25,6 +25,7 @@
         extraSpecialArgs = {
           colorscheme = "selenized-dark";
           terminal = "run-alacritty";
+          browser = "firefox";
           pythonTabs = false;
           mpdOverrides = {
             musicDirectory = "~/Network/Media/Audio";
