@@ -164,7 +164,7 @@
         extraSpecialArgs = {
           colorscheme = "gruvbox-dark";
           terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
-          browser = "vivaldi-stable";
+          browser = "firefox";
           pythonTabs = true;
           installKubectl = false;
           mpdOverrides = { };
@@ -188,7 +188,7 @@
           i3 = {
             override = {
               config.assigns = {
-                "1" = [{ class = "firefox"; } { class = "vivaldi-stable"; }];
+                "1" = [{ class = "firefox"; }];
                 "2" = [{ class = "thunderbird"; }];
                 "3" = [{ class = "obsidian"; }];
                 "8" = [{ class = "Slack"; }];
@@ -208,7 +208,7 @@
                 command = "birdtray";
                 notification = false;
               }
-              { command = "vivaldi-stable"; }
+              { command = "firefox"; }
               { command = "thunderbird"; }
               { command = "obsidian"; }
               { command = "i3-msg 'workspace number 4; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty'"; }
