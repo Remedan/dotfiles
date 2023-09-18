@@ -208,6 +208,10 @@
                 command = "birdtray";
                 notification = false;
               }
+              {
+                command = "solaar";
+                notification = false;
+              }
               { command = "firefox"; }
               { command = "thunderbird"; }
               { command = "obsidian"; }
