@@ -1,4 +1,4 @@
-{ pkgs, colorscheme, pythonTabs ? false, ... }:
+{ pkgs, colorscheme, pythonTabs, ... }:
 {
   services.emacs.enable = true;
   home.file = {
