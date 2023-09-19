@@ -1,5 +1,4 @@
-{ pkgs, installKubectl ? true, ... }:
-
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     # Core
@@ -19,10 +18,10 @@
     # Dev
     awscli2
     blackbox
+    krew
+    kubectl
     postgresql
     terraform
     xxd
-
-    # Kubectl is optional since I sometimes need to install a specific older version
-  ] ++ lib.optionals installKubectl [ kubectl krew ];
+  ];
 }

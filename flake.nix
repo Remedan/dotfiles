@@ -26,7 +26,6 @@
           colorscheme = "selenized-dark";
           terminal = "run-alacritty";
           pythonTabs = false;
-          installKubectl = true;
           mpdOverrides = {
             musicDirectory = "~/Network/Media/Audio";
           };
@@ -166,7 +165,6 @@
           terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
           browser = "firefox";
           pythonTabs = true;
-          installKubectl = false;
           mpdOverrides = { };
           polybarOverride = {
             settings."bar/b0" = {
