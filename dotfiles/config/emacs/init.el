@@ -80,9 +80,7 @@
 
 ;; Themes
 ;; The theme is set in default.el which is managed by home-manager
-(use-package doom-themes
-  :config
-  (doom-themes-neotree-config))
+(use-package doom-themes)
 
 ;; Undo Tree
 (use-package undo-tree
@@ -109,7 +107,7 @@
   (evil-collection-init))
 
 ;; All the Icons
-(use-package all-the-icons)
+(use-package nerd-icons)
 
 ;; Dasboard
 (use-package dashboard
@@ -131,13 +129,6 @@
 ;; Solaire Mode
 (use-package solaire-mode
   :config (solaire-global-mode +1))
-
-;; Neotree
-(use-package neotree
-  :config
-  (global-set-key [f8] 'neotree-toggle)
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)
-        neo-window-fixed-size nil))
 
 ;; Helm
 (use-package helm
