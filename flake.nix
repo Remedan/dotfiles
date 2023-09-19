@@ -209,7 +209,7 @@
                 notification = false;
               }
               {
-                command = "solaar";
+                command = "solaar -w hide";
                 notification = false;
               }
               { command = "firefox"; }
