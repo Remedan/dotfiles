@@ -80,7 +80,14 @@
 
 ;; Themes
 ;; The theme is set in default.el which is managed by home-manager
-(use-package doom-themes)
+(use-package doom-themes
+  :config
+  (defun theme-name (name)
+    (intern (concat "doom-"
+                    (cond ((string= name "selenized-dark") "solarized-dark")
+                          ((string= name "gruvbox-dark") "gruvbox")
+                          (t name)))))
+  (load-theme (theme-name colorscheme) t))
 
 ;; Undo Tree
 (use-package undo-tree
@@ -238,7 +245,12 @@
   :config
   (setq lsp-signature-auto-activate nil
         lsp-ui-doc-enable nil)
-
+  (when python-tabs
+    (add-hook 'python-mode-hook
+              (lambda()
+                (setq indent-tabs-mode t
+                      tab-width 4
+                      python-indent-guess-indent-offset nil))))
   (lsp-register-custom-settings
    '(("pyls.plugins.pyls_mypy.enabled" t t)
      ("pyls.plugins.pyls_mypy.live_mode" nil t)))
