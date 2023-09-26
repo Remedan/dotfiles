@@ -26,7 +26,7 @@
           colorscheme = "selenized-dark";
           terminal = "run-alacritty";
           browser = "firefox";
-          pythonTabs = false;
+          emacs = { };
           mpdOverrides = {
             musicDirectory = "~/Network/Media/Audio";
           };
@@ -106,6 +106,7 @@
         extraSpecialArgs = {
           colorscheme = "dracula";
           terminal = "alacritty";
+          emacs = { };
           polybarOverride = {
             settings."bar/b0" = {
               height = 25;
@@ -165,7 +166,9 @@
           colorscheme = "gruvbox-dark";
           terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
           browser = "firefox";
-          pythonTabs = true;
+          emacs = {
+            pythonTabs = true;
+          };
           mpdOverrides = { };
           polybarOverride = {
             settings."bar/b0" = {
@@ -262,6 +265,11 @@
         extraSpecialArgs = {
           colorscheme = "dracula";
           installKubectl = false;
+          emacs = {
+            override = {
+              services.emacs.enable = false;
+            };
+          };
         };
         modules = [
           {
@@ -272,6 +280,7 @@
             };
             programs.home-manager.enable = true;
           }
+          ./modules/emacs.nix
           ./modules/zsh.nix
         ];
       };
