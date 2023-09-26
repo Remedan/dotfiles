@@ -1,7 +1,7 @@
-{ lib, mpdOverrides, ... }:
-{
-  services.mpd = lib.recursiveUpdate
-    {
+{ lib, mpd, ... }:
+lib.recursiveUpdate
+  {
+    services.mpd = {
       enable = true;
       extraConfig = ''
         audio_output {
@@ -16,7 +16,7 @@
             format  "44100:16:2"
         }
       '';
-    }
-    mpdOverrides;
-  programs.ncmpcpp.enable = true;
-}
+    };
+    programs.ncmpcpp.enable = true;
+  }
+  mpd.override or { }
