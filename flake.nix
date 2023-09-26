@@ -253,5 +253,27 @@
           ./modules/zsh.nix
         ] ++ pkgs.lib.optional (builtins.pathExists ./modules/quantlane.nix) ./modules/quantlane.nix;
       };
+      homeConfigurations.angua = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+            system = "aarch64-darwin";
+            overlays = [ nixgl.overlay ];
+            config.allowUnfree = true;
+        };
+        extraSpecialArgs = {
+          colorscheme = "dracula";
+          installKubectl = false;
+        };
+        modules = [
+          {
+            home = {
+              stateVersion = "23.05";
+              username = "remedan";
+              homeDirectory = "/Users/remedan";
+            };
+            programs.home-manager.enable = true;
+          }
+          ./modules/zsh.nix
+        ];
+      };
     };
 }
