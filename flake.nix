@@ -86,6 +86,7 @@
             '';
             modules = {
               zsh.enable = true;
+              alacritty.enable = true;
               emacs.enable = true;
             };
           }
@@ -185,6 +186,7 @@
             '';
             modules = {
               zsh.enable = true;
+              alacritty.enable = true;
               emacs = {
                 enable = true;
                 pythonTabs = true;

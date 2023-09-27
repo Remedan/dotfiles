@@ -1,5 +1,7 @@
-{ colorscheme, ... }:
+{ config, lib, colorscheme, ... }:
+with lib;
 let
+  cfg = config.modules.emacs;
   colorschemes = {
     "gruvbox-dark" = {
       primary = {
@@ -148,22 +150,27 @@ let
   };
 in
 {
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window = {
-        padding = {
-          x = 5;
-          y = 5;
+  options.modules.alacritty = {
+    enable = mkEnableOption "Alacritty";
+  };
+  config = mkIf cfg.enable {
+    programs.alacritty = {
+      enable = true;
+      settings = {
+        window = {
+          padding = {
+            x = 5;
+            y = 5;
+          };
         };
-      };
-      font = {
-        normal = {
-          family = "Iosevka";
-          size = 11.0;
+        font = {
+          normal = {
+            family = "Iosevka";
+            size = 11.0;
+          };
         };
+        colors = colorschemes.${colorscheme};
       };
-      colors = colorschemes.${colorscheme};
     };
   };
 }
