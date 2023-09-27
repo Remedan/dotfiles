@@ -84,7 +84,10 @@
             xsession.profileExtra = ''
               nvidia-settings -l
             '';
-            modules.emacs.enable = true;
+            modules = {
+              zsh.enable = true;
+              emacs.enable = true;
+            };
           }
           ./modules/alacritty.nix
           ./modules/common.nix
@@ -180,9 +183,12 @@
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
             '';
-            modules.emacs = {
-              enable = true;
-              pythonTabs = true;
+            modules = {
+              zsh.enable = true;
+              emacs = {
+                enable = true;
+                pythonTabs = true;
+              };
             };
           }
           ./modules/alacritty.nix
@@ -221,9 +227,12 @@
               homeDirectory = "/Users/remedan";
             };
             programs.home-manager.enable = true;
-            modules.emacs = {
-              enable = true;
-              service = false;
+            modules = {
+              zsh.enable = true;
+              emacs = {
+                enable = true;
+                service = false;
+              };
             };
           }
           ./modules/emacs.nix
