@@ -191,6 +191,7 @@
                 enable = true;
                 pythonTabs = true;
               };
+              autorandr.enable = true;
             };
           }
           ./modules/alacritty.nix
