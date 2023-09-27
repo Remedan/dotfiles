@@ -1,4 +1,4 @@
-{ config, lib, pkgs, colorscheme, ... }:
+{ config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.modules.emacs;
@@ -20,7 +20,7 @@ in
       ".config/emacs/init.el".source = ../dotfiles/config/emacs/init.el;
       ".config/emacs/sakamoto.png".source = ../dotfiles/config/emacs/sakamoto.png;
       ".config/emacs/early-init.el".text = ''
-        (setq colorscheme "${colorscheme}")
+        (setq colorscheme "${config.modules.common.colorscheme}")
       '' + optionalString cfg.pythonTabs ''
         (setq python-tabs t)
       '';

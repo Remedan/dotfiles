@@ -1,15 +1,32 @@
+{ config, lib, pkgs, ... }:
+with lib;
+let
+  cfg = config.modules.common;
+in
 {
-  home = {
-    stateVersion = "23.05";
-    keyboard = {
-      layout = "us,cz(qwerty)";
-      options = [
-        "grp:alt_shift_toggle"
-        "caps:escape"
-      ];
+  options.modules.common = {
+    colorscheme = mkOption {
+      type = types.str;
+      default = "gruvbox-dark";
     };
   };
-  programs.home-manager.enable = true;
-  xsession.enable = true;
-  xdg.userDirs.enable = true;
+  config = mkMerge [
+    {
+      home = {
+        stateVersion = "23.05";
+        keyboard = {
+          layout = "us,cz(qwerty)";
+          options = [
+            "grp:alt_shift_toggle"
+            "caps:escape"
+          ];
+        };
+      };
+      programs.home-manager.enable = true;
+    }
+    (mkIf pkgs.stdenv.isLinux {
+      xsession.enable = true;
+      xdg.userDirs.enable = true;
+    })
+  ];
 }

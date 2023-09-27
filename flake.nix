@@ -85,6 +85,7 @@
               nvidia-settings -l
             '';
             modules = {
+              common.colorscheme = "selenized-dark";
               zsh.enable = true;
               alacritty.enable = true;
               emacs.enable = true;
@@ -185,6 +186,7 @@
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
             '';
             modules = {
+              common.colorscheme = "gruvbox-dark";
               zsh.enable = true;
               alacritty.enable = true;
               emacs = {
@@ -218,19 +220,14 @@
           overlays = [ nixgl.overlay ];
           config.allowUnfree = true;
         };
-        extraSpecialArgs = {
-          colorscheme = "dracula";
-          installKubectl = false;
-        };
         modules = [
           {
             home = {
-              stateVersion = "23.05";
               username = "remedan";
               homeDirectory = "/Users/remedan";
             };
-            programs.home-manager.enable = true;
             modules = {
+              common.colorscheme = "dracula";
               zsh.enable = true;
               emacs = {
                 enable = true;
@@ -238,6 +235,7 @@
               };
             };
           }
+          ./modules/common.nix
           ./modules/emacs.nix
           ./modules/zsh.nix
         ];

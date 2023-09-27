@@ -1,4 +1,4 @@
-{ config, lib, colorscheme, ... }:
+{ config, lib, ... }:
 with lib;
 let
   cfg = config.modules.emacs;
@@ -169,7 +169,7 @@ in
             size = 11.0;
           };
         };
-        colors = colorschemes.${colorscheme};
+        colors = colorschemes.${config.modules.common.colorscheme};
       };
     };
   };
