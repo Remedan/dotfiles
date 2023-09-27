@@ -8,7 +8,7 @@ in
     enable = mkEnableOption "Emacs";
     service = mkOption {
       type = types.bool;
-      default = true;
+      default = pkgs.stdenv.isLinux;
     };
     pythonTabs = mkOption {
       type = types.bool;

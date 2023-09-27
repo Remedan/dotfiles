@@ -229,10 +229,7 @@
             modules = {
               common.colorscheme = "dracula";
               zsh.enable = true;
-              emacs = {
-                enable = true;
-                service = false;
-              };
+              emacs.enable = true;
             };
           }
           ./modules/common.nix

@@ -14,7 +14,7 @@ in
         "$HOME/.krew/bin"
       ];
       sessionVariables = {
-        EDITOR = "emacsclient -nw";
+        EDITOR = if config.modules.emacs.service then "emacsclient -nw" else "emacs -nw";
       };
       shellAliases = {
         e = "eval \"$EDITOR\"";
