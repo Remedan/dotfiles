@@ -26,7 +26,6 @@
           colorscheme = "selenized-dark";
           terminal = "run-alacritty";
           browser = "firefox";
-          emacs = { };
           mpd.override = {
             services.mpd.musicDirectory = "~/Network/Media/Audio";
           };
@@ -85,6 +84,7 @@
             xsession.profileExtra = ''
               nvidia-settings -l
             '';
+            modules.emacs.enable = true;
           }
           ./modules/alacritty.nix
           ./modules/common.nix
@@ -110,7 +110,6 @@
         extraSpecialArgs = {
           colorscheme = "dracula";
           terminal = "alacritty";
-          emacs = { };
           polybar.override = {
             services.polybar = {
               settings."bar/b0" = {
@@ -152,6 +151,7 @@
               xinput --set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
               xinput --set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
             '';
+            modules.emacs.enable = true;
           }
           ./modules/alacritty.nix
           ./modules/common.nix
@@ -172,9 +172,6 @@
           colorscheme = "gruvbox-dark";
           terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
           browser = "firefox";
-          emacs = {
-            pythonTabs = true;
-          };
           mpd = { };
           polybar.override = {
             services.polybar = {
@@ -247,6 +244,10 @@
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
             '';
+            modules.emacs = {
+              enable = true;
+              pythonTabs = true;
+            };
           }
           ./modules/alacritty.nix
           ./modules/autorandr.nix
@@ -275,9 +276,6 @@
         extraSpecialArgs = {
           colorscheme = "dracula";
           installKubectl = false;
-          emacs.override = {
-            services.emacs.enable = false;
-          };
         };
         modules = [
           {
@@ -287,6 +285,10 @@
               homeDirectory = "/Users/remedan";
             };
             programs.home-manager.enable = true;
+            modules.emacs = {
+              enable = true;
+              service = false;
+            };
           }
           ./modules/emacs.nix
           ./modules/zsh.nix

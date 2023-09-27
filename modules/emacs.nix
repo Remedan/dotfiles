@@ -1,13 +1,26 @@
-{ lib, pkgs, colorscheme, emacs, ... }:
-lib.recursiveUpdate
-  {
-    services.emacs.enable = true;
+{ config, lib, pkgs, colorscheme, ... }:
+with lib;
+let
+  cfg = config.modules.emacs;
+in {
+  options.modules.emacs = {
+    enable = mkEnableOption "Emacs";
+    service = mkOption {
+      type = types.bool;
+      default = true;
+    };
+    pythonTabs = mkOption {
+      type = types.bool;
+      default = false;
+    };
+  };
+  config = mkIf cfg.enable {
     home.file = {
       ".config/emacs/init.el".source = ../dotfiles/config/emacs/init.el;
       ".config/emacs/sakamoto.png".source = ../dotfiles/config/emacs/sakamoto.png;
       ".config/emacs/early-init.el".text = ''
         (setq colorscheme "${colorscheme}")
-      '' + pkgs.lib.optionalString (emacs ? pythonTabs && emacs.pythonTabs) ''
+      '' + optionalString cfg.pythonTabs ''
         (setq python-tabs t)
       '';
     };
@@ -16,5 +29,6 @@ lib.recursiveUpdate
       package = pkgs.emacs-gtk;
       extraPackages = epkgs: [ epkgs.vterm ];
     };
-  }
-  emacs.override or { }
+    services.emacs.enable = cfg.service;
+  };
+}
