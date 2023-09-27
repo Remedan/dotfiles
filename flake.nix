@@ -104,67 +104,6 @@
         ];
       };
 
-      homeConfigurations.rincewind = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        extraSpecialArgs = {
-          colorscheme = "dracula";
-          terminal = "alacritty";
-          polybar.override = {
-            services.polybar = {
-              settings."bar/b0" = {
-                height = 25;
-                fixed-center = false;
-                font = [
-                    "Symbols\ Nerd\ Font:14;2"
-                    "Open Sans:pixelsize=14;2"
-                    "Source\ Han\ Sans:pixelsize=16;2"
-                ];
-                modules-right = "filesystem xkeyboard cpu memory backlight battery date powermenu";
-              };
-            };
-          };
-          i3 = {
-            override = {
-              config.gaps.inner = 6;
-            };
-            startup = [
-              {
-                command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
-                notification = false;
-              }
-              {
-                command = "blueman-applet";
-                notification = false;
-              }
-            ];
-          };
-        };
-
-        modules = [
-          {
-            home = {
-              username = "remedan";
-              homeDirectory = "/home/remedan";
-            };
-            xsession.profileExtra = ''
-              xinput --set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
-              xinput --set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
-            '';
-            modules.emacs.enable = true;
-          }
-          ./modules/alacritty.nix
-          ./modules/common.nix
-          ./modules/emacs.nix
-          ./modules/git.nix
-          ./modules/i3.nix
-          ./modules/packages.nix
-          ./modules/polybar.nix
-          ./modules/rofi.nix
-          ./modules/zsh.nix
-        ];
-      };
-
       homeConfigurations.atuin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
