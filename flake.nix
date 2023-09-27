@@ -89,6 +89,7 @@
               zsh.enable = true;
               alacritty.enable = true;
               emacs.enable = true;
+              dunst.enable = true;
             };
           }
           ./modules/alacritty.nix
@@ -194,6 +195,7 @@
                 pythonTabs = true;
               };
               autorandr.enable = true;
+              dunst.enable = true;
             };
           }
           ./modules/alacritty.nix
