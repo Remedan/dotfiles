@@ -2,7 +2,8 @@
 with lib;
 let
   cfg = config.modules.emacs;
-in {
+in
+{
   options.modules.emacs = {
     enable = mkEnableOption "Emacs";
     service = mkOption {

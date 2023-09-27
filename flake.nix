@@ -116,19 +116,19 @@
             services.polybar = {
               settings = {
                 "bar/b0" = {
-                    monitor = "\${env:MONITOR:DP-1-2}";
-                    monitor-fallback = "\${env:MONITOR:eDP-1}";
-                    monitor-strict = true;
-                    font = [
+                  monitor = "\${env:MONITOR:DP-1-2}";
+                  monitor-fallback = "\${env:MONITOR:eDP-1}";
+                  monitor-strict = true;
+                  font = [
                     "Symbols\ Nerd\ Font:10;2"
                     "Open Sans:pixelsize=11;2"
                     "Source\ Han\ Sans:pixelsize=10;2"
-                    ];
-                    modules-right = "filesystem xkeyboard cpu memory backlight battery date powermenu";
+                  ];
+                  modules-right = "filesystem xkeyboard cpu memory backlight battery date powermenu";
                 };
                 "bar/b1" = {
-                    monitor = "\${env:MONITOR:DP-1-3}";
-                    monitor-strict = true;
+                  monitor = "\${env:MONITOR:DP-1-3}";
+                  monitor-strict = true;
                 };
               };
             };
@@ -205,9 +205,9 @@
       };
       homeConfigurations.angua = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-            overlays = [ nixgl.overlay ];
-            config.allowUnfree = true;
+          system = "aarch64-darwin";
+          overlays = [ nixgl.overlay ];
+          config.allowUnfree = true;
         };
         extraSpecialArgs = {
           colorscheme = "dracula";
