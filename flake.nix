@@ -236,9 +236,6 @@
             home = {
               username = "vojta";
               homeDirectory = "/home/vojta";
-              sessionVariables = {
-                REM_LAMBDA_KUBERNETES = 1;
-              };
             };
             xsession.profileExtra = ''
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
