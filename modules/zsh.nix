@@ -53,8 +53,14 @@ in
       enable = true;
       enableZshIntegration = true;
       settings = {
+        right_format = "$kubernetes";
         directory = {
           truncate_to_repo = false;
+        };
+        kubernetes = {
+          disabled = false;
+          symbol = "☸  ";
+          format = "[$symbol$context( \\($namespace\\))]($style)";
         };
       };
     };
