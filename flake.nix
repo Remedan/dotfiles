@@ -90,6 +90,7 @@
               alacritty.enable = true;
               emacs.enable = true;
               dunst.enable = true;
+              git.enable = true;
             };
           }
           ./modules/alacritty.nix
