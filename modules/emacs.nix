@@ -10,6 +10,10 @@ in
       type = types.bool;
       default = pkgs.stdenv.isLinux;
     };
+    colorscheme = mkOption {
+      type = types.str;
+      default = config.modules.common.colorscheme;
+    };
     pythonTabs = mkOption {
       type = types.bool;
       default = false;
@@ -20,7 +24,7 @@ in
       ".config/emacs/init.el".source = ../dotfiles/config/emacs/init.el;
       ".config/emacs/sakamoto.png".source = ../dotfiles/config/emacs/sakamoto.png;
       ".config/emacs/early-init.el".text = ''
-        (setq colorscheme "${config.modules.common.colorscheme}")
+        (setq colorscheme "${cfg.colorscheme}")
       '' + optionalString cfg.pythonTabs ''
         (setq python-tabs t)
       '';
