@@ -1,6 +1,9 @@
-{ lib, colorscheme, terminal, browser, i3, ... }:
+{ config, lib, ... }:
+with lib;
 
 let
+  cfg = config.modules.i3;
+
   # Mod is the Windows key
   mod = "Mod4";
   powerControlMode = "[l]ock log[o]ut [s]uspend [h]ibernate [r]eboot [p]oweroff";
@@ -106,12 +109,35 @@ let
   };
 in
 {
-  home.file.".config/i3/lock.sh" = {
-    source = ../dotfiles/config/i3/lock.sh;
-    executable = true;
+  options.modules.i3 = {
+    enable = mkEnableOption "i3";
+    colorscheme = mkOption {
+      type = types.str;
+      default = config.modules.common.colorscheme;
+    };
+    terminal = mkOption {
+      type = types.str;
+      default = "alacritty";
+    };
+    browser = mkOption {
+      type = types.str;
+      default = "firefox";
+    };
+    workspaceAssignment = mkOption {
+      type = types.attrsOf types.anything;
+      default = { };
+    };
+    startup = mkOption {
+      type = types.listOf (types.attrsOf types.anything);
+      default = [ ];
+    };
   };
-  xsession.windowManager.i3 = lib.recursiveUpdate
-    {
+  config = {
+    home.file.".config/i3/lock.sh" = {
+      source = ../dotfiles/config/i3/lock.sh;
+      executable = true;
+    };
+    xsession.windowManager.i3 = {
       enable = true;
       config = {
         modifier = mod;
@@ -136,7 +162,9 @@ in
           { title = "Origin"; }
         ];
 
-        colors = colorschemes.${colorscheme};
+        colors = colorschemes.${cfg.colorscheme};
+
+        assigns = cfg.workspaceAssignment;
 
         startup = [
           {
@@ -168,11 +196,11 @@ in
           {
             command = "feh --bg-fill ~/Pictures/wallpaper.png || feh --bg-fill ~/Pictures/wallpaper.jpg || feh --bg-tile ~/Pictures/wallpaper-tile.png || feh --bg-tile ~/Pictures/wallpaper-tile.jpg || feh --bg-fill --no-xinerama ~/Pictures/wallpaper-wide.png || feh --bg-fill --no-xinerama ~/Pictures/wallpaper-wide.jpg";
           }
-        ] ++ i3.startup or [ ];
+        ] ++ cfg.startup;
 
         keybindings = lib.mkOptionDefault {
           # Start a terminal
-          "${mod}+Return" = "exec " + terminal;
+          "${mod}+Return" = "exec " + cfg.terminal;
 
           # Open a program launcher
           "${mod}+d" = "exec rofi -show run";
@@ -246,7 +274,7 @@ in
           "${mod}+t" = "exec autorandr --change --default mobile";
 
           # Applications
-          "${mod}+i" = "exec ${browser}";
+          "${mod}+i" = "exec ${cfg.browser}";
           "${mod}+o" = "exec emacsclient -c";
           "${mod}+p" = "exec obsidian";
 
@@ -281,6 +309,6 @@ in
 
         bars = [ ];
       };
-    }
-    i3.override or { };
+    };
+  };
 }
