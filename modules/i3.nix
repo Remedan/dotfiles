@@ -123,12 +123,16 @@ in
       type = types.str;
       default = "firefox";
     };
-    workspaceAssignment = mkOption {
-      type = types.attrsOf types.anything;
+    appWorkspace = mkOption {
+      type = with types; attrsOf (listOf (attrsOf anything));
+      default = { };
+    };
+    workspaceOutput = mkOption {
+      type = with types; listOf (attrsOf anything);
       default = { };
     };
     startup = mkOption {
-      type = types.listOf (types.attrsOf types.anything);
+      type = with types; listOf (attrsOf anything);
       default = [ ];
     };
   };
@@ -164,7 +168,9 @@ in
 
         colors = colorschemes.${cfg.colorscheme};
 
-        assigns = cfg.workspaceAssignment;
+        assigns = cfg.appWorkspace;
+
+        workspaceOutputAssign = cfg.workspaceOutput;
 
         startup = [
           {

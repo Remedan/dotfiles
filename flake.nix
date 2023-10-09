@@ -61,7 +61,7 @@
               i3 = {
                 enable = true;
                 terminal = "run-alacritty";
-                workspaceAssignment =
+                workspaceOutput =
                   map
                     (number: {
                       workspace = toString number;
@@ -163,7 +163,7 @@
               i3 = {
                 enable = true;
                 terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
-                workspaceAssignment = {
+                appWorkspace = {
                   "1" = [{ class = "firefox"; }];
                   "2" = [{ class = "thunderbird"; }];
                   "3" = [{ class = "obsidian"; }];
