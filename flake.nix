@@ -91,6 +91,7 @@
                 enable = true;
                 musicDirectory = "~/Network/Media/Audio";
               };
+              nixgl.enable = true;
             };
           }
           ./modules/alacritty.nix
@@ -196,6 +197,7 @@
                 ];
               };
               mpd.enable = true;
+              nixgl.enable = true;
             };
           }
           ./modules/alacritty.nix

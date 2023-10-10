@@ -1,9 +1,18 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+with lib;
+let
+  cfg = config.modules.nixgl;
+in
 {
-  home.packages = [
-    pkgs.nixgl.auto.nixGLDefault
-    (pkgs.writeShellScriptBin "run-alacritty" ''
-      nixGL alacritty
-    '')
-  ];
+  options.modules.nixgl = {
+    enable = mkEnableOption "nixGL";
+  };
+  config = mkIf cfg.enable {
+    home.packages = [
+      pkgs.nixgl.auto.nixGLDefault
+      (pkgs.writeShellScriptBin "run-alacritty" ''
+        nixGL alacritty
+      '')
+    ];
+  };
 }
