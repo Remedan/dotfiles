@@ -198,6 +198,7 @@
               };
               mpd.enable = true;
               nixgl.enable = true;
+              nodejs.enable = true;
             };
           }
           ./modules/alacritty.nix
