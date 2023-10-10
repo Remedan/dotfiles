@@ -25,9 +25,6 @@
         extraSpecialArgs = {
           colorscheme = "selenized-dark";
           terminal = "run-alacritty";
-          mpd.override = {
-            services.mpd.musicDirectory = "~/Network/Media/Audio";
-          };
           polybar.override = {
             services.polybar = {
               settings = {
@@ -90,6 +87,10 @@
                   }
                 ];
               };
+              mpd = {
+                enable = true;
+                musicDirectory = "~/Network/Media/Audio";
+              };
             };
           }
           ./modules/alacritty.nix
@@ -116,7 +117,6 @@
         extraSpecialArgs = {
           colorscheme = "gruvbox-dark";
           terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
-          mpd = { };
           polybar.override = {
             services.polybar = {
               settings = {
@@ -195,6 +195,7 @@
                   { command = "spotify-launcher"; }
                 ];
               };
+              mpd.enable = true;
             };
           }
           ./modules/alacritty.nix
