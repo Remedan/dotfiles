@@ -129,7 +129,7 @@ in
     };
     workspaceOutput = mkOption {
       type = with types; listOf (attrsOf anything);
-      default = { };
+      default = [ ];
     };
     startup = mkOption {
       type = with types; listOf (attrsOf anything);

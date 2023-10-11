@@ -7,14 +7,13 @@ in
   options.modules.mpd = {
     enable = mkEnableOption "MPD";
     musicDirectory = mkOption {
-      type = types.str;
-      default = config.services.mpd.musicDirectory;
+      type = with types; nullOr str;
+      default = null;
     };
   };
   config = mkIf cfg.enable {
     services.mpd = {
       enable = true;
-      musicDirectory = cfg.musicDirectory;
       extraConfig = ''
         audio_output {
             type    "pipewire"
@@ -28,6 +27,8 @@ in
             format  "44100:16:2"
         }
       '';
+    } // optionalAttrs (cfg.musicDirectory != null) {
+      musicDirectory = cfg.musicDirectory;
     };
     programs.ncmpcpp.enable = true;
   };
