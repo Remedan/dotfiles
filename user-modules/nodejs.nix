@@ -7,7 +7,7 @@ in
   options.user-modules.nodejs = {
     enable = mkEnableOption "Node.js";
   };
-  config = {
+  config = mkIf cfg.enable {
     home = {
       packages = with pkgs; [
         nodejs

@@ -7,7 +7,7 @@ in
   options.user-modules.fonts = {
     enable = mkEnableOption "fonts";
   };
-  config = {
+  config = mkIf cfg.enable {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
       iosevka-bin

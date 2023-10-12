@@ -136,7 +136,7 @@ in
       default = [ ];
     };
   };
-  config = {
+  config = mkIf cfg.enable {
     home.file.".config/i3/lock.sh" = {
       source = ../dotfiles/config/i3/lock.sh;
       executable = true;
