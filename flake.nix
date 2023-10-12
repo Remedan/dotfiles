@@ -93,6 +93,7 @@
               };
               nixgl.enable = true;
               fonts.enable = true;
+              packages.enable = true;
             };
           }
           ./user-modules/alacritty.nix
@@ -200,6 +201,7 @@
               mpd.enable = true;
               nixgl.enable = true;
               nodejs.enable = true;
+              packages.enable = true;
             };
           }
           ./user-modules/alacritty.nix
