@@ -1,10 +1,10 @@
 { config, lib, ... }:
 with lib;
 let
-  cfg = config.modules.zsh;
+  cfg = config.user-modules.zsh;
 in
 {
-  options.modules.zsh = {
+  options.user-modules.zsh = {
     enable = mkEnableOption "zsh";
   };
   config = mkIf cfg.enable {
@@ -14,7 +14,7 @@ in
         "$HOME/.krew/bin"
       ];
       sessionVariables = {
-        EDITOR = if config.modules.emacs.service then "emacsclient -nw" else "emacs -nw";
+        EDITOR = if config.user-modules.emacs.service then "emacsclient -nw" else "emacs -nw";
       };
       shellAliases = {
         e = "eval \"$EDITOR\"";

@@ -48,7 +48,7 @@
             xsession.profileExtra = ''
               nvidia-settings -l
             '';
-            modules = {
+            user-modules = {
               common.colorscheme = "selenized-dark";
               zsh.enable = true;
               alacritty.enable = true;
@@ -92,23 +92,24 @@
                 musicDirectory = "~/Network/Media/Audio";
               };
               nixgl.enable = true;
+              fonts.enable = true;
             };
           }
-          ./modules/alacritty.nix
-          ./modules/common.nix
-          ./modules/dunst.nix
-          ./modules/emacs.nix
-          ./modules/fonts.nix
-          ./modules/git.nix
-          ./modules/i3.nix
-          ./modules/mpd.nix
-          ./modules/nixgl.nix
-          ./modules/packages.nix
-          ./modules/picom.nix
-          ./modules/polybar.nix
-          ./modules/rofi.nix
-          ./modules/zathura.nix
-          ./modules/zsh.nix
+          ./user-modules/alacritty.nix
+          ./user-modules/common.nix
+          ./user-modules/dunst.nix
+          ./user-modules/emacs.nix
+          ./user-modules/fonts.nix
+          ./user-modules/git.nix
+          ./user-modules/i3.nix
+          ./user-modules/mpd.nix
+          ./user-modules/nixgl.nix
+          ./user-modules/packages.nix
+          ./user-modules/picom.nix
+          ./user-modules/polybar.nix
+          ./user-modules/rofi.nix
+          ./user-modules/zathura.nix
+          ./user-modules/zsh.nix
         ];
       };
 
@@ -151,7 +152,7 @@
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
             '';
-            modules = {
+            user-modules = {
               common.colorscheme = "gruvbox-dark";
               zsh.enable = true;
               alacritty.enable = true;
@@ -201,23 +202,23 @@
               nodejs.enable = true;
             };
           }
-          ./modules/alacritty.nix
-          ./modules/autorandr.nix
-          ./modules/common.nix
-          ./modules/dunst.nix
-          ./modules/emacs.nix
-          ./modules/fonts.nix
-          ./modules/i3.nix
-          ./modules/mpd.nix
-          ./modules/nixgl.nix
-          ./modules/nodejs.nix
-          ./modules/packages.nix
-          ./modules/picom.nix
-          ./modules/polybar.nix
-          ./modules/rofi.nix
-          ./modules/zathura.nix
-          ./modules/zsh.nix
-        ] ++ pkgs.lib.optional (builtins.pathExists ./modules/quantlane.nix) ./modules/quantlane.nix;
+          ./user-modules/alacritty.nix
+          ./user-modules/autorandr.nix
+          ./user-modules/common.nix
+          ./user-modules/dunst.nix
+          ./user-modules/emacs.nix
+          ./user-modules/fonts.nix
+          ./user-modules/i3.nix
+          ./user-modules/mpd.nix
+          ./user-modules/nixgl.nix
+          ./user-modules/nodejs.nix
+          ./user-modules/packages.nix
+          ./user-modules/picom.nix
+          ./user-modules/polybar.nix
+          ./user-modules/rofi.nix
+          ./user-modules/zathura.nix
+          ./user-modules/zsh.nix
+        ] ++ pkgs.lib.optional (builtins.pathExists ./user-modules/quantlane.nix) ./user-modules/quantlane.nix;
       };
       homeConfigurations.angua = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
@@ -231,15 +232,15 @@
               username = "remedan";
               homeDirectory = "/Users/remedan";
             };
-            modules = {
+            user-modules = {
               common.colorscheme = "dracula";
               zsh.enable = true;
               emacs.enable = true;
             };
           }
-          ./modules/common.nix
-          ./modules/emacs.nix
-          ./modules/zsh.nix
+          ./user-modules/common.nix
+          ./user-modules/emacs.nix
+          ./user-modules/zsh.nix
         ];
       };
     };

@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  cfg = config.modules.common;
+  cfg = config.user-modules.common;
 in
 {
-  options.modules.common = {
+  options.user-modules.common = {
     colorscheme = mkOption {
       type = types.str;
       default = "gruvbox-dark";

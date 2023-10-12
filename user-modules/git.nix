@@ -1,10 +1,10 @@
 { config, lib, ... }:
 with lib;
 let
-  cfg = config.modules.git;
+  cfg = config.user-modules.git;
 in
 {
-  options.modules.git = {
+  options.user-modules.git = {
     enable = mkEnableOption "Git";
   };
   config = mkIf cfg.enable {

@@ -1,10 +1,10 @@
 { config, lib, ... }:
 with lib;
 let
-  cfg = config.modules.mpd;
+  cfg = config.user-modules.mpd;
 in
 {
-  options.modules.mpd = {
+  options.user-modules.mpd = {
     enable = mkEnableOption "MPD";
     musicDirectory = mkOption {
       type = with types; nullOr str;

@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  cfg = config.modules.emacs;
+  cfg = config.user-modules.emacs;
 in
 {
-  options.modules.emacs = {
+  options.user-modules.emacs = {
     enable = mkEnableOption "Emacs";
     service = mkOption {
       type = types.bool;
@@ -12,7 +12,7 @@ in
     };
     colorscheme = mkOption {
       type = types.str;
-      default = config.modules.common.colorscheme;
+      default = config.user-modules.common.colorscheme;
     };
     pythonTabs = mkOption {
       type = types.bool;

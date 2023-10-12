@@ -1,10 +1,10 @@
 { config, lib, ... }:
 with lib;
 let
-  cfg = config.modules.autorandr;
+  cfg = config.user-modules.autorandr;
 in
 {
-  options.modules.autorandr = {
+  options.user-modules.autorandr = {
     enable = mkEnableOption "Autorandr";
   };
   config = mkIf cfg.enable {

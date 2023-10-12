@@ -1,10 +1,10 @@
 { config, lib, ... }:
 with lib;
 let
-  cfg = config.modules.dunst;
+  cfg = config.user-modules.dunst;
 in
 {
-  options.modules.dunst = {
+  options.user-modules.dunst = {
     enable = mkEnableOption "Dunst";
   };
   config = mkIf cfg.enable {

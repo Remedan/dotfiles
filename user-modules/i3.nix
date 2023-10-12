@@ -2,7 +2,7 @@
 with lib;
 
 let
-  cfg = config.modules.i3;
+  cfg = config.user-modules.i3;
 
   # Mod is the Windows key
   mod = "Mod4";
@@ -109,11 +109,11 @@ let
   };
 in
 {
-  options.modules.i3 = {
+  options.user-modules.i3 = {
     enable = mkEnableOption "i3";
     colorscheme = mkOption {
       type = types.str;
-      default = config.modules.common.colorscheme;
+      default = config.user-modules.common.colorscheme;
     };
     terminal = mkOption {
       type = types.str;

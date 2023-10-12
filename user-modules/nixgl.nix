@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  cfg = config.modules.nixgl;
+  cfg = config.user-modules.nixgl;
 in
 {
-  options.modules.nixgl = {
+  options.user-modules.nixgl = {
     enable = mkEnableOption "nixGL";
   };
   config = mkIf cfg.enable {

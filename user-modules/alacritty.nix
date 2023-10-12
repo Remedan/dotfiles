@@ -1,7 +1,7 @@
 { config, lib, ... }:
 with lib;
 let
-  cfg = config.modules.emacs;
+  cfg = config.user-modules.alacritty;
   colorschemes = {
     "gruvbox-dark" = {
       primary = {
@@ -150,7 +150,7 @@ let
   };
 in
 {
-  options.modules.alacritty = {
+  options.user-modules.alacritty = {
     enable = mkEnableOption "Alacritty";
   };
   config = mkIf cfg.enable {
@@ -169,7 +169,7 @@ in
             size = 11.0;
           };
         };
-        colors = colorschemes.${config.modules.common.colorscheme};
+        colors = colorschemes.${config.user-modules.common.colorscheme};
       };
     };
   };
