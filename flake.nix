@@ -196,6 +196,8 @@
                   monitor-strict = true;
                 };
               };
+              picom.enable = true;
+              fonts.enable = true;
             };
           }
           ./user-modules/alacritty.nix
