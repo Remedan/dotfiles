@@ -115,10 +115,6 @@ in
       type = types.str;
       default = config.user-modules.common.colorscheme;
     };
-    terminal = mkOption {
-      type = types.str;
-      default = "alacritty";
-    };
     browser = mkOption {
       type = types.str;
       default = "firefox";
@@ -206,7 +202,7 @@ in
 
         keybindings = lib.mkOptionDefault {
           # Start a terminal
-          "${mod}+Return" = "exec " + cfg.terminal;
+          "${mod}+Return" = "exec " + config.user-modules.common.terminal;
 
           # Open a program launcher
           "${mod}+d" = "exec rofi -show run";

@@ -22,11 +22,6 @@
       homeConfigurations.vimes = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        extraSpecialArgs = {
-          colorscheme = "selenized-dark";
-          terminal = "run-alacritty";
-        };
-
         modules = [
           {
             home = {
@@ -37,7 +32,10 @@
               nvidia-settings -l
             '';
             user-modules = {
-              common.colorscheme = "selenized-dark";
+              common = {
+                colorscheme = "selenized-dark";
+                terminal = "run-alacritty";
+              };
               zsh.enable = true;
               alacritty.enable = true;
               emacs.enable = true;
@@ -45,7 +43,6 @@
               git.enable = true;
               i3 = {
                 enable = true;
-                terminal = "run-alacritty";
                 workspaceOutput =
                   map
                     (number: {
@@ -91,6 +88,7 @@
                   monitor = "\${env:MONITOR:DP-2}";
                 };
               };
+              rofi.enable = true;
             };
           }
           ./user-modules/alacritty.nix
@@ -114,11 +112,6 @@
       homeConfigurations.atuin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        extraSpecialArgs = {
-          colorscheme = "gruvbox-dark";
-          terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
-        };
-
         modules = [
           {
             home = {
@@ -130,7 +123,10 @@
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
             '';
             user-modules = {
-              common.colorscheme = "gruvbox-dark";
+              common = {
+                colorscheme = "gruvbox-dark";
+                terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
+              };
               zsh.enable = true;
               alacritty.enable = true;
               emacs = {
@@ -141,7 +137,6 @@
               dunst.enable = true;
               i3 = {
                 enable = true;
-                terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
                 appWorkspace = {
                   "1" = [{ class = "firefox"; }];
                   "2" = [{ class = "thunderbird"; }];
@@ -198,6 +193,7 @@
               };
               picom.enable = true;
               fonts.enable = true;
+              rofi.enable = true;
             };
           }
           ./user-modules/alacritty.nix

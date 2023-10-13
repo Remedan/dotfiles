@@ -9,6 +9,10 @@ in
       type = types.str;
       default = "gruvbox-dark";
     };
+    terminal = mkOption {
+      type = types.str;
+      default = "alacritty";
+    };
   };
   config = mkMerge [
     {

@@ -1,14 +1,24 @@
-{ colorscheme, terminal, ... }:
+{ config, lib, ... }:
+with lib;
+let
+  cfg = config.user-modules.rofi;
+in
 {
-  programs.rofi = {
-    enable = true;
-    font = "Open Sans 12";
-    terminal = terminal;
-    theme = colorscheme;
+  options.user-modules.rofi = {
+    enable = mkEnableOption "Rofi";
   };
-  home.file = {
-    ".config/rofi/dracula.rasi".source = ../dotfiles/config/rofi/dracula.rasi;
-    ".config/rofi/nord.rasi".source = ../dotfiles/config/rofi/nord.rasi;
-    ".config/rofi/selenized-dark.rasi".source = ../dotfiles/config/rofi/selenized-dark.rasi;
+
+  config = mkIf cfg.enable {
+    programs.rofi = {
+      enable = true;
+      font = "Open Sans 12";
+      terminal = config.user-modules.common.terminal;
+      theme = config.user-modules.common.colorscheme;
+    };
+    xdg.configFile = {
+      "rofi/dracula.rasi".source = ../dotfiles/config/rofi/dracula.rasi;
+      "rofi/nord.rasi".source = ../dotfiles/config/rofi/nord.rasi;
+      "rofi/selenized-dark.rasi".source = ../dotfiles/config/rofi/selenized-dark.rasi;
+    };
   };
 }
