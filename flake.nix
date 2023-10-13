@@ -89,6 +89,7 @@
                 };
               };
               rofi.enable = true;
+              zathura.enable = true;
             };
           }
           ./user-modules/alacritty.nix
@@ -194,6 +195,7 @@
               picom.enable = true;
               fonts.enable = true;
               rofi.enable = true;
+              zathura.enable = true;
             };
           }
           ./user-modules/alacritty.nix
