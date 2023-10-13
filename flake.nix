@@ -92,22 +92,7 @@
               zathura.enable = true;
             };
           }
-          ./user-modules/alacritty.nix
-          ./user-modules/common.nix
-          ./user-modules/dunst.nix
-          ./user-modules/emacs.nix
-          ./user-modules/fonts.nix
-          ./user-modules/git.nix
-          ./user-modules/i3.nix
-          ./user-modules/mpd.nix
-          ./user-modules/nixgl.nix
-          ./user-modules/packages.nix
-          ./user-modules/picom.nix
-          ./user-modules/polybar.nix
-          ./user-modules/rofi.nix
-          ./user-modules/zathura.nix
-          ./user-modules/zsh.nix
-        ];
+        ] ++ import ./user-modules/module-list.nix { lib = pkgs.lib; };
       };
 
       homeConfigurations.atuin = home-manager.lib.homeManagerConfiguration {
@@ -198,23 +183,7 @@
               zathura.enable = true;
             };
           }
-          ./user-modules/alacritty.nix
-          ./user-modules/autorandr.nix
-          ./user-modules/common.nix
-          ./user-modules/dunst.nix
-          ./user-modules/emacs.nix
-          ./user-modules/fonts.nix
-          ./user-modules/i3.nix
-          ./user-modules/mpd.nix
-          ./user-modules/nixgl.nix
-          ./user-modules/nodejs.nix
-          ./user-modules/packages.nix
-          ./user-modules/picom.nix
-          ./user-modules/polybar.nix
-          ./user-modules/rofi.nix
-          ./user-modules/zathura.nix
-          ./user-modules/zsh.nix
-        ] ++ pkgs.lib.optional (builtins.pathExists ./user-modules/quantlane.nix) ./user-modules/quantlane.nix;
+        ] ++ import ./user-modules/module-list.nix { lib = pkgs.lib; };
       };
       homeConfigurations.angua = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
@@ -234,10 +203,7 @@
               emacs.enable = true;
             };
           }
-          ./user-modules/common.nix
-          ./user-modules/emacs.nix
-          ./user-modules/zsh.nix
-        ];
+        ] ++ import ./user-modules/module-list.nix { lib = pkgs.lib; };
       };
     };
 }
