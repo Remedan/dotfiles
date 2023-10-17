@@ -4,109 +4,8 @@ with lib;
 let
   cfg = config.user-modules.i3;
 
-  # Mod is the Windows key
-  mod = "Mod4";
+  mod = "Mod4"; # Mod is the Windows key
   powerControlMode = "[l]ock log[o]ut [s]uspend [h]ibernate [r]eboot [p]oweroff";
-  colorschemes = {
-    "gruvbox-dark" = {
-      focused = {
-        border = "#676d3d";
-        background = "#676d3d";
-        text = "#ebdbb2";
-        indicator = "#676d3d";
-        childBorder = "#676d3d";
-      };
-      unfocused = {
-        border = "#323232";
-        background = "#323232";
-        text = "#ebdbb2";
-        indicator = "#323232";
-        childBorder = "#323232";
-      };
-      focusedInactive = {
-        border = "#323232";
-        background = "#333333";
-        text = "#ebdbb2";
-        indicator = "#323232";
-        childBorder = "#333333";
-      };
-      urgent = {
-        border = "#383a3b";
-        background = "#383a3b";
-        text = "#ee0000";
-        indicator = "#383a3b";
-        childBorder = "#383a3b";
-      };
-    };
-    "selenized-dark" = {
-      focused = {
-        border = "#75b938";
-        background = "#75b938";
-        text = "#184956";
-        indicator = "#4695f7";
-        childBorder = "#75b938";
-      };
-      unfocused = {
-        border = "#184956";
-        background = "#184956";
-        text = "#adbcbc";
-        indicator = "#72898f";
-        childBorder = "#184956";
-      };
-      focusedInactive = {
-        border = "#41c7b9";
-        background = "#41c7b9";
-        text = "#184956";
-        indicator = "#af88eb";
-        childBorder = "#41c7b9";
-      };
-      urgent = {
-        border = "#dbb32d";
-        background = "#dbb32d";
-        text = "#184956";
-        indicator = "#ed8649";
-        childBorder = "#dbb32d";
-      };
-    };
-    "dracula" = {
-      background = "#F8F8F2";
-      focused = {
-        border = "#6272A4";
-        background = "#6272A4";
-        text = "#F8F8F2";
-        indicator = "#6272A4";
-        childBorder = "#6272A4";
-      };
-      unfocused = {
-        border = "#282A36";
-        background = "#282A36";
-        text = "#BFBFBF";
-        indicator = "#282A36";
-        childBorder = "#282A36";
-      };
-      focusedInactive = {
-        border = "#44475A";
-        background = "#44475A";
-        text = "#F8F8F2";
-        indicator = "#44475A";
-        childBorder = "#44475A";
-      };
-      urgent = {
-        border = "#44475A";
-        background = "#FF5555";
-        text = "#F8F8F2";
-        indicator = "#FF5555";
-        childBorder = "#FF5555";
-      };
-      placeholder = {
-        border = "#282A36";
-        background = "#282A36";
-        text = "#F8F8F2";
-        indicator = "#282A36";
-        childBorder = "#282A36";
-      };
-    };
-  };
 in
 {
   options.user-modules.i3 = {
@@ -134,7 +33,7 @@ in
   };
   config = mkIf cfg.enable {
     home.file.".config/i3/lock.sh" = {
-      source = ../dotfiles/config/i3/lock.sh;
+      source = ./lock.sh;
       executable = true;
     };
     xsession.windowManager.i3 = {
@@ -162,7 +61,7 @@ in
           { title = "Origin"; }
         ];
 
-        colors = colorschemes.${cfg.colorscheme};
+        colors = import ./colors/${cfg.colorscheme}.nix;
 
         assigns = cfg.appWorkspace;
 

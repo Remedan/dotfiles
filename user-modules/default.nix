@@ -7,7 +7,7 @@
   ./emacs
   ./fonts.nix
   ./git.nix
-  ./i3.nix
+  ./i3
   ./mpd.nix
   ./nixgl.nix
   ./nodejs.nix
