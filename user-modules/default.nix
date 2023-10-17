@@ -13,7 +13,7 @@
   ./nodejs.nix
   ./packages.nix
   ./picom.nix
-  ./polybar.nix
+  ./polybar
   ./rofi
   ./zathura.nix
   ./zsh.nix
