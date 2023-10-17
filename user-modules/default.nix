@@ -1,6 +1,6 @@
 { lib, ... }:
 [
-  ./alacritty.nix
+  ./alacritty
   ./autorandr.nix
   ./common.nix
   ./dunst.nix
