@@ -14,7 +14,7 @@
   ./packages.nix
   ./picom.nix
   ./polybar.nix
-  ./rofi.nix
+  ./rofi
   ./zathura.nix
   ./zsh.nix
 ] ++ lib.optional (builtins.pathExists ./local.nix) ./local.nix

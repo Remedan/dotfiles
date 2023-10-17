@@ -16,9 +16,9 @@ in
       theme = config.user-modules.common.colorscheme;
     };
     xdg.configFile = {
-      "rofi/dracula.rasi".source = ../dotfiles/config/rofi/dracula.rasi;
-      "rofi/nord.rasi".source = ../dotfiles/config/rofi/nord.rasi;
-      "rofi/selenized-dark.rasi".source = ../dotfiles/config/rofi/selenized-dark.rasi;
+      "rofi/dracula.rasi".source = ./colors/dracula.rasi;
+      "rofi/nord.rasi".source = ./colors/nord.rasi;
+      "rofi/selenized-dark.rasi".source = ./colors/selenized-dark.rasi;
     };
   };
 }
