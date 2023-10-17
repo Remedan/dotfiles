@@ -7,14 +7,19 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixgl.url = "github:guibou/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
+    nix-search-cli.url = "github:peterldowns/nix-search-cli";
+    nix-search-cli.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, ... }:
+  outputs = { nixpkgs, home-manager, nixgl, nix-search-cli, ... }:
     let
       mkPkgs = system: import nixpkgs {
         inherit system;
         overlays = [ nixgl.overlay ];
         config.allowUnfree = true;
+      };
+      extraSpecialArgs = {
+        inherit nix-search-cli;
       };
     in
     {
@@ -29,7 +34,7 @@
           pkgs = mkPkgs "x86_64-linux";
         in
         home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+          inherit pkgs extraSpecialArgs;
 
           modules = [
             {
@@ -109,16 +114,13 @@
           pkgs = mkPkgs "x86_64-linux";
         in
         home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+          inherit pkgs extraSpecialArgs;
 
           modules = [
             {
               home = {
                 username = "vojta";
                 homeDirectory = "/home/vojta";
-                packages = [
-                  nix-search-cli.packages.${pkgs.system}.default
-                ];
               };
               xsession.profileExtra = ''
                 xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
@@ -207,7 +209,7 @@
           pkgs = mkPkgs "aarch64-darwin";
         in
         home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+          inherit pkgs extraSpecialArgs;
 
           modules = [
             {

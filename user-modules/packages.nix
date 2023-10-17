@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, nix-search-cli, ... }:
 with lib;
 let
   cfg = config.user-modules.packages;
@@ -15,6 +15,7 @@ in
       gcc
       gnumake
       gnupg
+      nix-search-cli.packages.${pkgs.system}.default
       playerctl
       ranger
       ripgrep
