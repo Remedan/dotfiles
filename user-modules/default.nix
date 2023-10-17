@@ -4,7 +4,7 @@
   ./autorandr.nix
   ./common.nix
   ./dunst.nix
-  ./emacs.nix
+  ./emacs
   ./fonts.nix
   ./git.nix
   ./i3.nix
