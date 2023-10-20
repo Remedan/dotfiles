@@ -27,4 +27,4 @@
     indicator = "#ed8649";
     childBorder = "#dbb32d";
   };
-};
+}
