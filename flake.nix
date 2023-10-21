@@ -93,6 +93,7 @@
                 nixgl.enable = true;
                 fonts.enable = true;
                 packages.enable = true;
+                picom.enable = true;
                 polybar = {
                   enable = true;
                   bar0Override = {
