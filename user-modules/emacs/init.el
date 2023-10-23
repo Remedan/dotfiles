@@ -236,6 +236,10 @@
 ;; ChatGPT
 (use-package gptel)
 
+;; direnv
+(use-package direnv
+  :config (direnv-mode))
+
 ;; Language-specific
 
 ;; LSP

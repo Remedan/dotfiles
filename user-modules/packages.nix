@@ -27,8 +27,10 @@ in
       # Dev
       awscli2
       blackbox
+      direnv
       krew
       kubectl
+      nix-direnv
       postgresql
       terraform
       xxd
