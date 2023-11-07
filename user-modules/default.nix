@@ -16,4 +16,4 @@
   ./rofi
   ./zathura.nix
   ./zsh.nix
-] ++ (if builtins.pathExists ./local.nix then ./local.nix else [ ])
+] ++ (if builtins.pathExists ./local.nix then [ ./local.nix ] else [ ])
