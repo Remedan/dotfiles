@@ -121,7 +121,7 @@
                 zathura.enable = true;
               };
             }
-          ] ++ import ./user-modules { lib = pkgs.lib; };
+          ] ++ import ./user-modules;
         };
 
       homeConfigurations.weatherwax =
@@ -214,7 +214,7 @@
                 zathura.enable = true;
               };
             }
-          ] ++ import ./user-modules { lib = pkgs.lib; };
+          ] ++ import ./user-modules;
         };
 
       homeConfigurations.atuin =
@@ -320,7 +320,7 @@
                 zathura.enable = true;
               };
             }
-          ] ++ import ./user-modules { lib = pkgs.lib; };
+          ] ++ import ./user-modules;
         };
 
       homeConfigurations.angua =
@@ -342,7 +342,7 @@
                 emacs.enable = true;
               };
             }
-          ] ++ import ./user-modules { lib = pkgs.lib; };
+          ] ++ import ./user-modules;
         };
     };
 }

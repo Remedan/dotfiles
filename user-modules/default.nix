@@ -1,4 +1,3 @@
-{ lib, ... }:
 [
   ./alacritty
   ./autorandr.nix
@@ -17,4 +16,4 @@
   ./rofi
   ./zathura.nix
   ./zsh.nix
-] ++ lib.optional (builtins.pathExists ./local.nix) ./local.nix
+] ++ (if builtins.pathExists ./local.nix then ./local.nix else [])
