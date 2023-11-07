@@ -32,7 +32,9 @@ in
     programs.emacs = {
       enable = true;
       package = pkgs.emacs-gtk;
-      extraPackages = epkgs: [ epkgs.vterm ];
+      extraPackages = epkgs: with epkgs; [
+        vterm
+      ];
     };
     services.emacs.enable = cfg.service;
   };

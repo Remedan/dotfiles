@@ -69,15 +69,7 @@ in
 
         startup = [
           {
-            command = "polybar b0";
-            notification = false;
-          }
-          {
             command = "unclutter";
-            notification = false;
-          }
-          {
-            command = "picom -b";
             notification = false;
           }
           {

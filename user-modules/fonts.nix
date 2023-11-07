@@ -14,6 +14,9 @@ in
       source-code-pro
       source-sans-pro
       noto-fonts-emoji
+      open-sans
+      source-han-sans
+      nerdfonts
     ];
     home.file.".config/fontconfig/conf.d/20-no-embedded-bitmap.conf".text = ''
       <?xml version="1.0" encoding="UTF-8"?>

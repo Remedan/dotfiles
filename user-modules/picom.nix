@@ -6,9 +6,14 @@ in
 {
   options.user-modules.picom = {
     enable = mkEnableOption "picom";
+    service = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
   config = mkIf cfg.enable {
-    # TODO services.picom crashes, so we have to manage the config manually
+    # TODO services.picom crashes on non-NixOS, so we have to manage the config manually
+    services.picom.enable = cfg.service;
     xdg.configFile."picom/picom.conf".text = ''
       # Shadow
       shadow = true;

@@ -13,7 +13,7 @@ nix run <flake-uri>#homeConfigurations.<profile>.activationPackage
 ## Building new configuration
 
 ```bash
-home-manager switch --flake '<flake-uri>#<profile>'
+home-manager --flake '<flake-uri>#<profile>' switch
 ```
 
 ## Screenshot

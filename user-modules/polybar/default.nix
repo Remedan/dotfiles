@@ -6,6 +6,10 @@ in
 {
   options.user-modules.polybar = {
     enable = mkEnableOption "Polybar";
+    secondBar = mkOption {
+      type = types.bool;
+      default = false;
+    };
     bar0Override = mkOption {
       type = with types; attrsOf anything;
       default = { };
@@ -19,7 +23,7 @@ in
     services.polybar = {
       enable = true;
       package = pkgs.polybarFull;
-      script = "polybar b0 &";
+      script = if cfg.secondBar then "polybar b0 & polybar b1 &" else "polybar b0 &";
       settings = {
         "colors" = import ./colors/${config.user-modules.common.colorscheme}.nix;
         "settings" = {
@@ -159,11 +163,11 @@ in
         };
         "module/playerctl" = {
           type = "custom/script";
-          exec = "playerctl --follow metadata --format '{{emoji(status)}} {{ artist }} - {{ title }}'";
+          exec = "${pkgs.playerctl}/bin/playerctl --follow metadata --format '{{emoji(status)}} {{ artist }} - {{ title }}'";
           tail = true;
-          click-left = "playerctl previous";
-          click-right = "playerctl next";
-          click-middle = "playerctl play-pause";
+          click-left = "${pkgs.playerctl}/bin/playerctl previous";
+          click-right = "${pkgs.playerctl}/bin/playerctl next";
+          click-middle = "${pkgs.playerctl}/bin/playerctl play-pause";
         };
         "module/cpu" = {
           type = "internal/cpu";
