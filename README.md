@@ -10,10 +10,16 @@ Set up `nix` and enable [flakes](https://nixos.wiki/wiki/Flakes). Then install t
 nix run <flake-uri>#homeConfigurations.<profile>.activationPackage
 ```
 
-## Building new configuration
+## Building a new Home Manager configuration
 
 ```bash
-home-manager --flake '<flake-uri>#<profile>' switch
+home-manager switch --flake '<flake-uri>#<profile>'
+```
+
+## Building a new NixOS configuration
+
+```bash
+sudo nixos-rebuild switch --flake '<flake-uri>#<profile>'
 ```
 
 ## Screenshot

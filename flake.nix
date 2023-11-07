@@ -29,6 +29,13 @@
           value = (mkPkgs system).nixpkgs-fmt;
         }) [ "x86_64-linux" "aarch64-darwin" ]);
 
+      nixosConfigurations = {
+        weatherwax = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/weatherwax/nixos.nix ];
+        };
+      };
+
       homeConfigurations = {
         vimes = import ./hosts/weatherwax/home.nix {
           inherit home-manager extraSpecialArgs;
