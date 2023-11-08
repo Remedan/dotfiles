@@ -86,6 +86,7 @@ home-manager.lib.homeManagerConfiguration {
         };
         rofi.enable = true;
         zathura.enable = true;
+        gtk.enable = true;
       };
     }
   ] ++ import ./../../user-modules;

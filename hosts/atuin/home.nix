@@ -97,6 +97,7 @@ home-manager.lib.homeManagerConfiguration {
         fonts.enable = true;
         rofi.enable = true;
         zathura.enable = true;
+        gtk.enable = true;
       };
     }
   ] ++ import ./../../user-modules;

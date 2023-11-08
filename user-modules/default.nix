@@ -6,6 +6,7 @@
   ./emacs
   ./fonts.nix
   ./git.nix
+  ./gtk.nix
   ./i3
   ./mpd.nix
   ./nixgl.nix

@@ -9,21 +9,6 @@ home-manager.lib.homeManagerConfiguration {
         username = "remedan";
         homeDirectory = "/home/remedan";
       };
-      gtk = {
-        enable = true;
-        theme.name = "Adwaita";
-        cursorTheme.name = "Adwaita";
-        iconTheme.name = "Adwaita";
-        gtk2.extraConfig = ''
-          gtk-application-prefer-dark-theme=1
-        '';
-        gtk3.extraConfig = {
-          gtk-application-prefer-dark-theme = 1;
-        };
-        gtk4.extraConfig = {
-          gtk-application-prefer-dark-theme = 1;
-        };
-      };
       user-modules = {
         common = {
           colorscheme = "selenized-dark";
@@ -84,6 +69,7 @@ home-manager.lib.homeManagerConfiguration {
         };
         rofi.enable = true;
         zathura.enable = true;
+        gtk.enable = true;
       };
     }
   ] ++ import ./../../user-modules;
