@@ -49,6 +49,7 @@ in
       # Graphical
       firefox
       gimp
+      mpv
       networkmanagerapplet
       obsidian
       spotify
