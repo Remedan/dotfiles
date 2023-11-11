@@ -67,13 +67,16 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
+  users.groups.remedan = {
+    gid = 1000;
+  };
   users.users.remedan = {
+    uid = 1000;
+    group = "remedan";
     isNormalUser = true;
     description = "Vojta";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-    ];
   };
 
   # Allow unfree packages
@@ -83,6 +86,7 @@
     vim
     wget
     git
+    cifs-utils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
