@@ -84,9 +84,6 @@ in
             command = "1password --silent";
           }
           {
-            command = "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1";
-          }
-          {
             command = "feh --bg-fill ~/Pictures/wallpaper.png || feh --bg-fill ~/Pictures/wallpaper.jpg || feh --bg-tile ~/Pictures/wallpaper-tile.png || feh --bg-tile ~/Pictures/wallpaper-tile.jpg || feh --bg-fill --no-xinerama ~/Pictures/wallpaper-wide.png || feh --bg-fill --no-xinerama ~/Pictures/wallpaper-wide.jpg";
           }
         ] ++ cfg.startup;

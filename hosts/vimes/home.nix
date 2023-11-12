@@ -62,6 +62,9 @@ home-manager.lib.homeManagerConfiguration {
               command = "blueman-applet";
               notification = false;
             }
+            {
+              command = "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1";
+            }
           ];
         };
         mpd = {
