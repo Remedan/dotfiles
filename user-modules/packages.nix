@@ -49,6 +49,7 @@ in
 
       # Graphical
       bottles
+      filezilla
       firefox
       gimp
       lutris
