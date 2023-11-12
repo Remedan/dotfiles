@@ -19,6 +19,7 @@ in
       gnupg
       htop
       nix-search-cli.packages.${pkgs.system}.default
+      pciutils
       playerctl
       ranger
       ripgrep
