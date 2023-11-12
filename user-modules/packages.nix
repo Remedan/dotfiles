@@ -12,6 +12,7 @@ in
       # Core
       bat
       cmake
+      dig
       fzf
       gcc
       gnumake
@@ -47,14 +48,18 @@ in
       xxd
 
       # Graphical
+      bottles
       firefox
       gimp
+      lutris
       mpv
       networkmanagerapplet
       obsidian
       spotify
       thunderbird
       udiskie
+      wineWowPackages.stable
+      winetricks
     ];
   };
 }
