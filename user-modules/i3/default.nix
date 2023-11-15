@@ -14,10 +14,6 @@ in
       type = types.str;
       default = config.user-modules.common.colorscheme;
     };
-    browser = mkOption {
-      type = types.str;
-      default = "firefox";
-    };
     appWorkspace = mkOption {
       type = with types; attrsOf (listOf (attrsOf anything));
       default = { };
@@ -164,7 +160,7 @@ in
           "${mod}+t" = "exec autorandr --change --default mobile";
 
           # Applications
-          "${mod}+i" = "exec ${cfg.browser}";
+          "${mod}+i" = "exec ${config.user-modules.common.browser}";
           "${mod}+o" = "exec emacsclient -c";
           "${mod}+p" = "exec obsidian";
 

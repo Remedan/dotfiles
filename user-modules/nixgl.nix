@@ -13,6 +13,9 @@ in
       (pkgs.writeShellScriptBin "run-alacritty" ''
         nixGL alacritty
       '')
+      (pkgs.writeShellScriptBin "run-firefox" ''
+        nixGL firefox
+      '')
     ];
   };
 }

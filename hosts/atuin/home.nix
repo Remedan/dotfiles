@@ -17,6 +17,7 @@ home-manager.lib.homeManagerConfiguration {
         common = {
           colorscheme = "gruvbox-dark";
           terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
+          browser = "run-firefox";
         };
         zsh.enable = true;
         alacritty.enable = true;
@@ -63,7 +64,7 @@ home-manager.lib.homeManagerConfiguration {
               command = "solaar -w hide";
               notification = false;
             }
-            { command = "firefox"; }
+            { command = "run-firefox"; }
             { command = "thunderbird"; }
             { command = "obsidian"; }
             { command = "i3-msg 'workspace number 4; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty'"; }

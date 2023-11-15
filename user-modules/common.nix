@@ -13,6 +13,10 @@ in
       type = types.str;
       default = "alacritty";
     };
+    browser = mkOption {
+      type = types.str;
+      default = "firefox";
+    };
   };
   config = mkMerge [
     {

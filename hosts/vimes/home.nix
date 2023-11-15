@@ -16,6 +16,7 @@ home-manager.lib.homeManagerConfiguration {
         common = {
           colorscheme = "selenized-dark";
           terminal = "run-alacritty";
+          browser = "run-firefox";
         };
         zsh.enable = true;
         alacritty.enable = true;
