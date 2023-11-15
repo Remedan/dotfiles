@@ -164,7 +164,7 @@
     group = "remedan";
     isNormalUser = true;
     description = "Vojta";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" ];
     shell = pkgs.zsh;
   };
 
@@ -173,6 +173,7 @@
     wget
     git
     cifs-utils
+    virt-manager
   ];
 
   programs.zsh.enable = true;
@@ -187,6 +188,7 @@
     enable = true;
     storageDriver = "btrfs";
   };
+  virtualisation.libvirtd.enable = true;
 
   # Polkit
   security.polkit.enable = true;
