@@ -164,7 +164,7 @@
     group = "remedan";
     isNormalUser = true;
     description = "Vojta";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -182,6 +182,11 @@
   programs.steam.enable = true;
 
   services.openssh.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+  };
 
   # Polkit
   security.polkit.enable = true;
