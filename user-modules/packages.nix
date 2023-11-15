@@ -33,6 +33,7 @@ in
       neofetch
       playerctl
       scrot
+      ventoy
 
       # Dev
       awscli2
