@@ -21,6 +21,7 @@ in
       nix-search-cli.packages.${pkgs.system}.default
       pciutils
       playerctl
+      pwgen
       ranger
       ripgrep
       rlwrap
@@ -39,6 +40,7 @@ in
       awscli2
       blackbox
       direnv
+      jq
       krew
       kubectl
       nix-direnv
