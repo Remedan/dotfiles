@@ -9,10 +9,6 @@ home-manager.lib.homeManagerConfiguration {
         username = "vojta";
         homeDirectory = "/home/vojta";
       };
-      xsession.profileExtra = ''
-        xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
-        xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
-      '';
       user-modules = {
         common = {
           colorscheme = "gruvbox-dark";
@@ -102,6 +98,10 @@ home-manager.lib.homeManagerConfiguration {
         rofi.enable = true;
         zathura.enable = true;
         gtk.enable = true;
+        touchpad = {
+          enable = true;
+          deviceName = "DELL0A20:00 0488:101A Touchpad";
+        };
       };
     }
   ] ++ import ./../../user-modules;
