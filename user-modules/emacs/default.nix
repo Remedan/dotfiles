@@ -20,10 +20,10 @@ in
     };
   };
   config = mkIf cfg.enable {
-    home.file = {
-      ".config/emacs/init.el".source = ./init.el;
-      ".config/emacs/sakamoto.png".source = ./sakamoto.png;
-      ".config/emacs/early-init.el".text = ''
+    xdg.configFile = {
+      "emacs/init.el".source = ./init.el;
+      "emacs/sakamoto.png".source = ./sakamoto.png;
+      "emacs/early-init.el".text = ''
         (setq colorscheme "${cfg.colorscheme}")
       '' + optionalString cfg.pythonTabs ''
         (setq python-tabs t)

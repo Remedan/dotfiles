@@ -28,7 +28,7 @@ in
     };
   };
   config = mkIf cfg.enable {
-    home.file.".config/i3/lock.sh" = {
+    xdg.configFile."i3/lock.sh" = {
       source = ./lock.sh;
       executable = true;
     };

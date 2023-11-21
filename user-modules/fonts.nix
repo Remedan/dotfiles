@@ -18,7 +18,7 @@ in
       source-han-sans
       nerdfonts
     ];
-    home.file.".config/fontconfig/conf.d/20-no-embedded-bitmap.conf".text = ''
+    xdg.configFile."fontconfig/conf.d/20-no-embedded-bitmap.conf".text = ''
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
       <fontconfig>
@@ -29,7 +29,7 @@ in
         </match>
       </fontconfig>
     '';
-    home.file.".config/fontconfig/conf.d/55-emoji-prepend.conf".text = ''
+    xdg.configFile."fontconfig/conf.d/55-emoji-prepend.conf".text = ''
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
       <fontconfig>
