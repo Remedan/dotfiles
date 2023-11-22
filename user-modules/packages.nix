@@ -48,6 +48,7 @@ in
       python3
       python3Packages.virtualenv
       python3Packages.virtualenvwrapper
+      rustup
       terraform
       xxd
 
