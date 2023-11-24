@@ -54,6 +54,7 @@ in
 
       # Graphical
       bottles
+      bruno
       filezilla
       firefox
       gimp
