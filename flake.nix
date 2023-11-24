@@ -16,7 +16,6 @@
       mkPkgs = system: import nixpkgs {
         inherit system;
         overlays = [ nixgl.overlay ];
-        config.allowUnfree = true;
       };
       extraSpecialArgs = {
         inherit nix-search-cli;

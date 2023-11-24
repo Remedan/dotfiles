@@ -8,6 +8,14 @@ in
     enable = mkEnableOption "packages";
   };
   config = mkIf cfg.enable {
+    nixpkgs.config.allowUnfreePredicate = pkg: elem (lib.getName pkg) [
+      "obsidian"
+      "spotify"
+      "steam"
+      "steam-original"
+      "steam-run"
+      "terraform"
+    ];
     home.packages = with pkgs; [
       # Core
       bat
