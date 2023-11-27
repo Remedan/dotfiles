@@ -9,6 +9,7 @@ in
   };
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfreePredicate = pkg: elem (lib.getName pkg) [
+      "1password"
       "obsidian"
       "spotify"
       "steam"
