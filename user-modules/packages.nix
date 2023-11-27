@@ -66,6 +66,7 @@ in
       filezilla
       firefox
       gimp
+      gparted
       lutris
       mpv
       networkmanagerapplet
