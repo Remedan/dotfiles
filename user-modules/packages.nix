@@ -61,6 +61,7 @@ in
       xxd
 
       # Graphical
+      baobab
       bottles
       bruno
       filezilla
