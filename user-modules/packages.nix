@@ -16,6 +16,7 @@ in
       "steam-original"
       "steam-run"
       "terraform"
+      "winbox"
     ];
     home.packages = with pkgs; [
       # Core
@@ -76,6 +77,7 @@ in
       spotify
       thunderbird
       udiskie
+      winbox
       wineWowPackages.stable
       winetricks
     ];
