@@ -34,10 +34,6 @@ home-manager.lib.homeManagerConfiguration {
           };
           startup = [
             {
-              command = "polybar b0";
-              notification = false;
-            }
-            {
               command = "picom -b";
               notification = false;
             }
