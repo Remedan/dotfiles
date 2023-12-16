@@ -10,10 +10,7 @@ home-manager.lib.homeManagerConfiguration {
         homeDirectory = "/home/remedan";
       };
       user-modules = {
-        common = {
-          colorscheme = "selenized-dark";
-          terminal = "alacritty";
-        };
+        common.colorscheme = "selenized-dark";
         zsh.enable = true;
         alacritty.enable = true;
         emacs.enable = true;
