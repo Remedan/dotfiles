@@ -70,6 +70,7 @@ home-manager.lib.homeManagerConfiguration {
         packages.enable = true;
         polybar = {
           enable = true;
+          laptopModules = true;
           bar0Override = {
             monitor = "\${env:MONITOR:DP-1-2}";
             monitor-fallback = "\${env:MONITOR:eDP-1}";
@@ -79,7 +80,6 @@ home-manager.lib.homeManagerConfiguration {
               "Open Sans:pixelsize=11;2"
               "Source\ Han\ Sans:pixelsize=10;2"
             ];
-            modules-right = "filesystem xkeyboard cpu memory backlight battery date powermenu";
           };
           bar1Override = {
             monitor = "\${env:MONITOR:DP-1-3}";
