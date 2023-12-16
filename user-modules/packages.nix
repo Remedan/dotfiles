@@ -10,7 +10,9 @@ in
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfreePredicate = pkg: elem (lib.getName pkg) [
       "1password"
+      "discord"
       "obsidian"
+      "rust-rover"
       "spotify"
       "steam"
       "steam-original"
@@ -38,9 +40,11 @@ in
       rsync
       steam-run
       tig
+      unzip
 
       # Extra
       feh
+      jdk17
       neofetch
       playerctl
       scrot
@@ -64,22 +68,30 @@ in
 
       # Graphical
       baobab
+      blender
       bottles
       bruno
+      discord
       filezilla
       firefox
       gimp
       gparted
+      jetbrains.rust-rover
       lutris
       mpv
       networkmanagerapplet
       obsidian
+      pavucontrol
+      prusa-slicer
       spotify
       thunderbird
       udiskie
       winbox
       wineWowPackages.stable
       winetricks
+
+      # Games
+      prismlauncher # Minecraft
     ];
   };
 }
