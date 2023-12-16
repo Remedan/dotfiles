@@ -72,6 +72,7 @@ in
       bottles
       bruno
       discord
+      element-desktop
       filezilla
       firefox
       gimp
