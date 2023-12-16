@@ -6,10 +6,6 @@ in
 {
   options.user-modules.polybar = {
     enable = mkEnableOption "Polybar";
-    secondBar = mkOption {
-      type = types.bool;
-      default = false;
-    };
     bar0Override = mkOption {
       type = with types; attrsOf anything;
       default = { };
@@ -20,10 +16,13 @@ in
     };
   };
   config = mkIf cfg.enable {
+    # Polybar started as a systemd service starts earlier than i3 and can't connect to it.
+    # Instead we start it from i3.
+    # https://github.com/nix-community/home-manager/issues/3722
+    systemd.user.services.polybar = mkForce {};
     services.polybar = {
       enable = true;
       package = pkgs.polybarFull;
-      script = if cfg.secondBar then "polybar b0 & polybar b1 &" else "polybar b0 &";
       settings = {
         "colors" = import ./colors/${config.user-modules.common.colorscheme}.nix;
         "settings" = {

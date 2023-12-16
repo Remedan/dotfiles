@@ -37,6 +37,10 @@ home-manager.lib.homeManagerConfiguration {
               (pkgs.lib.range 4 10);
           startup = [
             {
+              command = "polybar b1";
+              notification = false;
+            }
+            {
               command = "xrandr --output DP-2 --mode 1920x1080 --rate 144.00 --output DP-0 --mode 1920x1080 --rate 144.00 --left-of DP-4 --primary";
               notification = false;
             }
@@ -59,7 +63,6 @@ home-manager.lib.homeManagerConfiguration {
         picom.enable = true;
         polybar = {
           enable = true;
-          secondBar = true;
           bar0Override = {
             monitor = "\${env:MONITOR:DP-0}";
           };
