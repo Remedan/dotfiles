@@ -36,6 +36,9 @@ in
         vterm
       ];
     };
-    services.emacs.enable = cfg.service;
+    services.emacs = {
+      enable = cfg.service;
+      startWithUserSession = "graphical"; # Fixes *ERROR*: Display :0 can’t be opened
+    };
   };
 }
