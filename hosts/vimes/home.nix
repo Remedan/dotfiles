@@ -48,10 +48,6 @@ home-manager.lib.homeManagerConfiguration {
               notification = false;
             }
             {
-              command = "polybar b0";
-              notification = false;
-            }
-            {
               command = "polybar b1";
               notification = false;
             }
