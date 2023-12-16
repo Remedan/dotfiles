@@ -21,6 +21,9 @@
       useOSProber = true;
     };
     loader.efi.canTouchEfiVariables = true;
+
+    # Fixes Xbox controller pairing
+    extraModprobeConfig = '' options bluetooth disable_ertm=1 '';
   };
 
   fileSystems =
