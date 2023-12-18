@@ -12,7 +12,6 @@ in
       "1password"
       "discord"
       "obsidian"
-      "rust-rover"
       "spotify"
       "steam"
       "steam-original"
@@ -81,7 +80,6 @@ in
       firefox
       gimp
       gparted
-      jetbrains.rust-rover
       lutris
       mpv
       networkmanagerapplet
