@@ -13,13 +13,7 @@
     extraModulePackages = [ ];
     # ^------------------------------------^
 
-    # Need to use Grub since systemd-boot wasn't able to find other systems
-    loader.grub = {
-      enable = true;
-      device = "nodev"; # With UEFI, we don't want to install GRUB to disk
-      efiSupport = true;
-      useOSProber = true;
-    };
+    loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
     # Fixes Xbox controller pairing
@@ -39,13 +33,25 @@
     in
     {
       "/" = {
-        device = "/dev/disk/by-uuid/18b6bac7-e683-40b0-9426-413977b94742";
+        device = "/dev/disk/by-uuid/6fc090b5-66e2-4870-91f0-145d46b65f84";
         fsType = "btrfs";
         options = [ "subvol=@" ];
       };
 
+      "/nix" = {
+        device = "/dev/disk/by-uuid/6fc090b5-66e2-4870-91f0-145d46b65f84";
+        fsType = "btrfs";
+        options = [ "subvol=@nix" "noatime" ];
+      };
+
+      "/home" = {
+        device = "/dev/disk/by-uuid/6fc090b5-66e2-4870-91f0-145d46b65f84";
+        fsType = "btrfs";
+        options = [ "subvol=@home" ];
+      };
+
       "/boot" = {
-        device = "/dev/disk/by-uuid/6D27-4D37";
+        device = "/dev/disk/by-uuid/EE81-37E8";
         fsType = "vfat";
       };
 
@@ -63,7 +69,8 @@
     };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/86f3f911-566f-4711-a884-89034309fa41"; }
+    { device = "/dev/disk/by-uuid/8fb1f7ff-4f1a-42c4-bc30-567e976c7a54"; }
+    { device = "/dev/disk/by-uuid/589f663d-8784-4e17-9634-829edb852c59"; }
   ];
 
   networking = {
