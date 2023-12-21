@@ -70,6 +70,7 @@ home-manager.lib.homeManagerConfiguration {
         rofi.enable = true;
         zathura.enable = true;
         gtk.enable = true;
+        ssh.enable = true;
       };
     }
   ] ++ import ./../../user-modules;

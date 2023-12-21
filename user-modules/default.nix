@@ -15,6 +15,7 @@
   ./picom.nix
   ./polybar
   ./rofi
+  ./ssh.nix
   ./touchpad.nix
   ./zathura.nix
   ./zsh.nix
