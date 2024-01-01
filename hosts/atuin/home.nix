@@ -12,9 +12,7 @@ home-manager.lib.homeManagerConfiguration {
       user-modules = {
         common = {
           colorscheme = "gruvbox-dark";
-          # Need to use system alacritty since nixGl stopped working
-          # https://github.com/nix-community/nixGL/issues/149
-          terminal = "WINIT_X11_SCALE_FACTOR=1 /usr/bin/alacritty";
+          terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
           browser = "run-firefox";
         };
         zsh.enable = true;
