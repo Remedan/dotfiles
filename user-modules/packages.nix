@@ -95,6 +95,11 @@ in
 
       # Games
       prismlauncher # Minecraft
+      (retroarch.override {
+        cores = with libretro; [
+          bsnes
+        ];
+      })
     ];
   };
 }
