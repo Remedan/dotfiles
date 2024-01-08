@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.user-modules.rofi;
@@ -15,6 +15,9 @@ in
       terminal = config.user-modules.common.terminal;
       theme = config.user-modules.common.colorscheme;
     };
+    home.packages = with pkgs; [
+      rofimoji
+    ];
     xdg.configFile = {
       "rofi/dracula.rasi".source = ./colors/dracula.rasi;
       "rofi/nord.rasi".source = ./colors/nord.rasi;

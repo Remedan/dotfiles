@@ -163,6 +163,9 @@ in
           # Autorandr
           "${mod}+t" = "exec autorandr --change --default mobile";
 
+          # Emoji picker
+          "${mod}+g" = "exec rofimoji";
+
           # Applications
           "${mod}+i" = "exec ${config.user-modules.common.browser}";
           "${mod}+o" = "exec emacsclient -c";
