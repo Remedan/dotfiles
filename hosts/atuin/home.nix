@@ -12,11 +12,12 @@ home-manager.lib.homeManagerConfiguration {
       user-modules = {
         common = {
           colorscheme = "gruvbox-dark";
-          terminal = "WINIT_X11_SCALE_FACTOR=1 run-alacritty";
+          terminal = "run-kitty";
           browser = "run-firefox";
         };
         zsh.enable = true;
         alacritty.enable = true;
+        kitty.enable = true;
         emacs = {
           enable = true;
           pythonTabs = true;

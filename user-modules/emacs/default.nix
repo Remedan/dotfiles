@@ -42,5 +42,9 @@ in
       enable = cfg.service;
       startWithUserSession = "graphical"; # Fixes *ERROR*: Display :0 can’t be opened
     };
+    # Emacs needs to have kitty's terminfo in env if it is started in terminal
+    systemd.user.services.emacs.Service.Environment = mkIf
+      (cfg.service && config.user-modules.kitty.enable)
+      [ "TERMINFO=${pkgs.kitty}/lib/kitty/terminfo" ];
   };
 }

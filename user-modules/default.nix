@@ -8,6 +8,7 @@
   ./git.nix
   ./gtk.nix
   ./i3
+  ./kitty
   ./mpd.nix
   ./nixgl.nix
   ./nodejs.nix
