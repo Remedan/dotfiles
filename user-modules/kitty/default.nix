@@ -18,6 +18,7 @@ in
       theme =
         let
           themeNames = {
+            selenized-dark = "Solarized Dark";
             gruvbox-dark = "Gruvbox Dark";
           };
         in
