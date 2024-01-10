@@ -60,7 +60,7 @@ home-manager.lib.homeManagerConfiguration {
             { command = "run-firefox"; }
             { command = "thunderbird"; }
             { command = "obsidian"; }
-            { command = "i3-msg 'workspace number 4; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty; exec WINIT_X11_SCALE_FACTOR=1 run-alacritty'"; }
+            { command = "i3-msg 'workspace number 4; exec run-kitty; exec run-kitty'"; }
             { command = "slack"; }
             { command = "spotify-launcher"; }
           ];
