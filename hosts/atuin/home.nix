@@ -99,6 +99,7 @@ home-manager.lib.homeManagerConfiguration {
           enable = true;
           deviceName = "DELL0A20:00 0488:101A Touchpad";
         };
+        ssh.enable = true;
       };
     }
   ] ++ import ./../../user-modules;

@@ -8,9 +8,15 @@ in
     enable = mkEnableOption "SSH";
   };
   config = mkIf cfg.enable {
-    home.file.".ssh/config".text = ''
-      Host *
-        IdentityAgent ~/.1password/agent.sock
-    '';
+    programs.ssh = {
+      enable = true;
+      matchBlocks = {
+        "*" = {
+          extraOptions.IdentityAgent = "~/.1password/agent.sock";
+          # Kitty sets TERM to 'xterm-kitty', we either need to either use the ssh kitten or change TERM on servers
+          setEnv = mkIf (config.user-modules.kitty.enable) { TERM = "xterm-256color"; };
+        };
+      };
+    };
   };
 }
