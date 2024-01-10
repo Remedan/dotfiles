@@ -26,6 +26,7 @@ in
     home.packages = with pkgs; [
       # Core
       bat
+      brightnessctl
       cmake
       dig
       fzf

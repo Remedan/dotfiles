@@ -152,8 +152,8 @@ in
           "XF86AudioStop" = "exec ~/.config/i3/player-control.sh stop";
 
           # Sreen brightness controls (brightness up, brightness down)
-          "XF86MonBrightnessUp" = "exec xbacklight -inc 5";
-          "XF86MonBrightnessDown" = "exec xbacklight -dec 5";
+          "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
+          "XF86MonBrightnessDown" = "exec  brightnessctl set 10%-";
 
           # Printscreen saves screenshot (with shift only focused window)
           "Print" = "exec scrot";
