@@ -7,6 +7,7 @@
   ./fonts.nix
   ./git.nix
   ./gtk.nix
+  ./hyprland
   ./i3
   ./kitty
   ./mpd.nix

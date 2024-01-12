@@ -75,6 +75,10 @@ home-manager.lib.homeManagerConfiguration {
         zathura.enable = true;
         gtk.enable = true;
         ssh.enable = true;
+        hyprland = {
+          enable = true;
+          nvidia = true;
+        };
       };
     }
   ] ++ import ./../../user-modules;

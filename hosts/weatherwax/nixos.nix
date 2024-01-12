@@ -98,7 +98,11 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
+    displayManager = {
+      gdm.enable = true;
+      sessionPackages = [ pkgs.hyprland ];
+    };
+
     desktopManager.gnome.enable = true;
     windowManager.i3.enable = true;
 
