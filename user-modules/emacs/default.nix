@@ -22,7 +22,7 @@ in
   config = mkIf cfg.enable {
     xdg.configFile = {
       "emacs/init.el".source = ./init.el;
-      "emacs/straight/versions/default.el".source = ./default.el;
+      "emacs/straight/versions/default.el".source = ./straight-lock.el;
       "emacs/sakamoto.png".source = ./sakamoto.png;
       "emacs/early-init.el".text = ''
         (setq package-enable-at-startup nil)
