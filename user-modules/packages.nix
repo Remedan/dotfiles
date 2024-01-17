@@ -81,6 +81,7 @@ in
       firefox
       gimp
       gparted
+      logseq
       lutris
       mpv
       networkmanagerapplet
