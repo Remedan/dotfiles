@@ -12,7 +12,7 @@ in
     programs.kitty = {
       enable = true;
       font = {
-        name = "Iosevka";
+        name = "Iosevka Term";
         size = 11;
       };
       theme =
