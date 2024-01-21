@@ -96,6 +96,7 @@ in
       winetricks
 
       # Games
+      fish-fillets-ng
       prismlauncher # Minecraft
       (retroarch.override {
         cores = with libretro; [
