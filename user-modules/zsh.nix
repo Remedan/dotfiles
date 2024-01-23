@@ -28,12 +28,6 @@ in
     programs.zsh = {
       enable = true;
       enableAutosuggestions = true;
-      initExtra = ''
-        # Needed for YubiKey + ssh
-        export GPG_TTY="$(tty)"
-        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-        gpgconf --launch gpg-agent
-      '';
       oh-my-zsh = {
         enable = true;
         plugins = [

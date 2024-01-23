@@ -19,6 +19,7 @@
   ./rofi
   ./ssh.nix
   ./touchpad.nix
+  ./yubikey.nix
   ./zathura.nix
   ./zsh.nix
 ] ++ (if builtins.pathExists ./local.nix then [ ./local.nix ] else [ ])
