@@ -30,6 +30,7 @@ in
       brightnessctl
       cmake
       dig
+      file
       fzf
       gcc
       gnumake
