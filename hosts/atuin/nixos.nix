@@ -132,7 +132,7 @@
     uid = 1000;
     group = "vojta";
     isNormalUser = true;
-    description = "Vojtech Balak";
+    description = "Vojtěch Balák";
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" ];
     shell = pkgs.zsh;
   };
