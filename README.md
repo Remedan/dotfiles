@@ -7,7 +7,7 @@
 Set up `nix` and enable [flakes](https://nixos.wiki/wiki/Flakes). Then install thus
 
 ```bash
-nix run <flake-uri>#homeConfigurations.<profile>.activationPackage
+nix --extra-experimental-features 'nix-command flakes' run <flake-uri>#homeConfigurations.<profile>.activationPackage
 ```
 
 ## Building a new Home Manager configuration
