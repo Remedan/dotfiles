@@ -22,9 +22,15 @@
       enableCryptodisk = true;
     };
     loader.efi.efiSysMountPoint = "/boot/efi";
+    # Thanks to this keyfile we don't need to enter the luks password twice
+    # https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs
+    initrd.secrets = {
+      "/crypto_keyfile.bin" = "/root/secrets/crypto_keyfile.bin";
+    };
     initrd.luks.devices = {
       root = {
         device = "/dev/disk/by-uuid/170faa4b-61ec-4f4a-ad31-9ccd58eeff6a";
+        keyFile = "/crypto_keyfile.bin";
         preLVM = true;
       };
     };
