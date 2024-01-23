@@ -12,6 +12,7 @@ in
       "1password"
       "discord"
       "obsidian"
+      "slack"
       "spotify"
       "steam"
       "steam-original"
@@ -50,9 +51,12 @@ in
       feh
       jdk17
       neofetch
+      openvpn
       playerctl
+      pulseaudio
       scrot
       ventoy
+      yubikey-manager
 
       # Dev
       awscli2
@@ -71,10 +75,12 @@ in
       xxd
 
       # Graphical
+      arandr
       baobab
       blender
       bottles
       bruno
+      chromium
       discord
       element-desktop
       filezilla
@@ -88,6 +94,7 @@ in
       obsidian
       pavucontrol
       prusa-slicer
+      slack
       spotify
       thunderbird
       udiskie

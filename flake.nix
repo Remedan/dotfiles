@@ -33,6 +33,11 @@
           system = "x86_64-linux";
           modules = [ ./hosts/weatherwax/nixos.nix ];
         };
+
+        atuin = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/atuin/nixos.nix ];
+        };
       };
 
       homeConfigurations = {

@@ -12,8 +12,8 @@ home-manager.lib.homeManagerConfiguration {
       user-modules = {
         common = {
           colorscheme = "gruvbox-dark";
-          terminal = "run-kitty";
-          browser = "run-firefox";
+          terminal = "kitty";
+          browser = "firefox";
         };
         zsh.enable = true;
         alacritty.enable = true;
@@ -57,16 +57,15 @@ home-manager.lib.homeManagerConfiguration {
               command = "solaar -w hide";
               notification = false;
             }
-            { command = "run-firefox"; }
+            { command = "firefox"; }
             { command = "thunderbird"; }
             { command = "obsidian"; }
-            { command = "i3-msg 'workspace number 4; exec run-kitty; exec run-kitty'"; }
+            { command = "i3-msg 'workspace number 4; exec kitty; exec kitty'"; }
             { command = "slack"; }
-            { command = "spotify-launcher"; }
+            { command = "spotify"; }
           ];
         };
         mpd.enable = true;
-        nixgl.enable = true;
         nodejs.enable = true;
         packages.enable = true;
         polybar = {
