@@ -50,6 +50,7 @@ in
 
       # Extra
       feh
+      imagemagick
       jdk17
       neofetch
       openvpn
@@ -97,6 +98,7 @@ in
       prusa-slicer
       slack
       spotify
+      sxiv
       thunderbird
       udiskie
       winbox
