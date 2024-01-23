@@ -225,7 +225,10 @@
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "1password"
+    "1password-cli"
+  ];
 
   system.stateVersion = "23.11"; # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
 }
