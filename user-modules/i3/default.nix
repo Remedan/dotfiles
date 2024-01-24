@@ -162,6 +162,7 @@ in
 
           # Autorandr
           "${mod}+t" = "exec autorandr --change --default mobile";
+          "${mod}+Shift+t" = "exec autorandr mobile";
 
           # Emoji picker
           "${mod}+g" = "exec rofimoji";
