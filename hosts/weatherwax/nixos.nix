@@ -197,8 +197,8 @@
   programs.steam.enable = true;
 
   services.openssh.enable = true;
-
   services.tailscale.enable = true;
+  services.flatpak.enable = true;
 
   virtualisation.docker = {
     enable = true;
