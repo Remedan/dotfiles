@@ -41,11 +41,6 @@
       };
 
       homeConfigurations = {
-        vimes = import ./hosts/weatherwax/home.nix {
-          inherit home-manager extraSpecialArgs;
-          pkgs = mkPkgs "x86_64-linux";
-        };
-
         weatherwax = import ./hosts/weatherwax/home.nix {
           inherit home-manager extraSpecialArgs;
           pkgs = mkPkgs "x86_64-linux";
