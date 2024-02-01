@@ -2,6 +2,8 @@
 
 [Home Manager Manual](https://nix-community.github.io/home-manager/)
 
+![Nix snowflake](assets/nix-snowflake.svg)
+
 ## Installation
 
 Set up `nix` and enable [flakes](https://nixos.wiki/wiki/Flakes). Then install thus
