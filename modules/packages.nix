@@ -8,7 +8,6 @@
     blackbox
     cmake
     fzf
-    fzy
     gcc
     gnumake
     gnupg
