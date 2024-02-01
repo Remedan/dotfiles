@@ -91,8 +91,10 @@
                 awscli2
                 cmake
                 fzf
+                gcc
                 gnumake
                 kubectl
+                postgresql
                 ripgrep
 
                 # Python
