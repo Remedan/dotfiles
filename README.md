@@ -24,4 +24,4 @@ sudo nixos-rebuild switch --flake '<flake-uri>#<profile>'
 
 ## Screenshot
 
-![screenshot](screenshot.png)
+![screenshot](assets/screenshot.png)
