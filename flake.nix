@@ -58,9 +58,6 @@
             home = {
               username = "remedan";
               homeDirectory = "/home/remedan";
-              sessionVariables = {
-                COLORSCHEME = "dracula";
-              };
             };
             xsession.profileExtra = ''
               xinput --set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
@@ -93,7 +90,6 @@
               homeDirectory = "/home/vojta";
               sessionVariables = {
                 REM_LAMBDA_KUBERNETES = 1;
-                COLORSCHEME = "gruvbox";
               };
             };
             xsession.profileExtra = ''
@@ -107,6 +103,7 @@
           ./modules/nixgl.nix
           ./modules/alacritty.nix
           ./modules/nodejs.nix
+          ./modules/emacs.nix
         ] ++ (
           if builtins.pathExists ./modules/quantlane.nix then
             [ ./modules/quantlane.nix ]
