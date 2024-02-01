@@ -1,12 +1,10 @@
-# Home Manager
-
-[Home Manager Manual](https://nix-community.github.io/home-manager/)
+# Home Manager and NixOS
 
 <img src="assets/nix-snowflake.svg" alt="Nix snowflake" width="200">
 
-## Installation
+[Home Manager Manual](https://nix-community.github.io/home-manager/)
 
-Set up `nix` and enable [flakes](https://nixos.wiki/wiki/Flakes). Then install thus
+## Installation
 
 ```bash
 nix --extra-experimental-features 'nix-command flakes' run <flake-uri>#homeConfigurations.<profile>.activationPackage
