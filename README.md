@@ -2,7 +2,7 @@
 
 [Home Manager Manual](https://nix-community.github.io/home-manager/)
 
-![Nix snowflake](assets/nix-snowflake.svg)
+<img src="assets/nix-snowflake.svg" alt="Nix snowflake" width="200">
 
 ## Installation
 
