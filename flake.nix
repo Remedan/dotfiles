@@ -85,8 +85,27 @@
               homeDirectory = "/home/vojta";
               sessionVariables = {
                 REM_LAMBDA_KUBERNETES = 1;
+                COLORSCHEME = "gruvbox";
               };
+              packages = with pkgs; [
+                awscli2
+                cmake
+                fzf
+                gnumake
+                kubectl
+                ripgrep
+
+                # Python
+                python310
+                python310Packages.virtualenv
+                python310Packages.virtualenvwrapper
+
+                # Fonts
+                source-code-pro
+                source-sans-pro
+              ];
             };
+            fonts.fontconfig.enable = true;
             xsession.profileExtra = ''
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Tapping Enabled" 1
               xinput --set-prop "DELL0A20:00 0488:101A Touchpad" "libinput Natural Scrolling Enabled" 1
