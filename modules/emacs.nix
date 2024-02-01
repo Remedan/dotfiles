@@ -1,4 +1,4 @@
-{ colorscheme, ... }:
+{ pkgs, colorscheme, ... }:
 {
   services.emacs.enable = true;
   home.file = {
@@ -7,6 +7,7 @@
   };
   programs.emacs = {
     enable = true;
+    package = pkgs.emacs-gtk;
     extraConfig = ''
       (defun theme-name (name)
         (intern (concat "doom-"
