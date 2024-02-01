@@ -23,7 +23,3 @@ home-manager switch --flake '<flake-uri>#<profile>'
 ```bash
 sudo nixos-rebuild switch --flake '<flake-uri>#<profile>'
 ```
-
-## Screenshot
-
-![screenshot](assets/screenshot.png)
