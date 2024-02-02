@@ -7,18 +7,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixgl.url = "github:guibou/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
-    nix-search-cli.url = "github:peterldowns/nix-search-cli";
-    nix-search-cli.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, nix-search-cli, ... }:
+  outputs = { nixpkgs, home-manager, nixgl, ... }:
     let
       mkPkgs = system: import nixpkgs {
         inherit system;
         overlays = [ nixgl.overlay ];
-      };
-      extraSpecialArgs = {
-        inherit nix-search-cli;
       };
     in
     {
@@ -42,17 +37,17 @@
 
       homeConfigurations = {
         weatherwax = import ./hosts/weatherwax/home.nix {
-          inherit home-manager extraSpecialArgs;
+          inherit home-manager;
           pkgs = mkPkgs "x86_64-linux";
         };
 
         atuin = import ./hosts/atuin/home.nix {
-          inherit home-manager extraSpecialArgs;
+          inherit home-manager;
           pkgs = mkPkgs "x86_64-linux";
         };
 
         angua = import ./hosts/angua/home.nix {
-          inherit home-manager extraSpecialArgs;
+          inherit home-manager;
           pkgs = mkPkgs "aarch64-darwin";
         };
       };

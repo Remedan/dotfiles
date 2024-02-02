@@ -1,4 +1,4 @@
-{ config, lib, pkgs, nix-search-cli, ... }:
+{ config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.user-modules.packages;
@@ -36,7 +36,7 @@ in
       gnumake
       gnupg
       htop
-      nix-search-cli.packages.${pkgs.system}.default
+      nix-search-cli
       pciutils
       playerctl
       pwgen

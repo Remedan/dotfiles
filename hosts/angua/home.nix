@@ -1,7 +1,7 @@
-{ pkgs, home-manager, extraSpecialArgs }:
+{ pkgs, home-manager }:
 
 home-manager.lib.homeManagerConfiguration {
-  inherit pkgs extraSpecialArgs;
+  inherit pkgs;
 
   modules = [
     {

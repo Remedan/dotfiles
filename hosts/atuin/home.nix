@@ -1,7 +1,7 @@
-{ pkgs, home-manager, extraSpecialArgs }:
+{ pkgs, home-manager }:
 
 home-manager.lib.homeManagerConfiguration {
-  inherit pkgs extraSpecialArgs;
+  inherit pkgs;
 
   modules = [
     {
@@ -100,6 +100,7 @@ home-manager.lib.homeManagerConfiguration {
         };
         ssh.enable = true;
         yubikey.enable = true;
+        hyprland.enable = true;
       };
     }
   ] ++ import ./../../user-modules;
