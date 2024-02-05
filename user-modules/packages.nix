@@ -106,8 +106,16 @@ in
       winetricks
 
       # Games
+      brogue-ce
+      crawl
       fish-fillets-ng
+      gargoyle
+      gzdoom
+      openttd
       prismlauncher # Minecraft
+      wesnoth
+
+      # Game Emulators
       (retroarch.override {
         cores = with libretro; [
           bsnes
