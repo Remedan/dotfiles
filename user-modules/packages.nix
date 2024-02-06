@@ -50,6 +50,7 @@ in
       # Extra
       arandr
       baobab
+      btdu
       feh
       gparted
       imagemagick
