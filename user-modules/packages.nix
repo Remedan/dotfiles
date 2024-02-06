@@ -92,6 +92,7 @@ in
 
       # Internet
       chromium
+      deluge
       filezilla
       firefox
       thunderbird
