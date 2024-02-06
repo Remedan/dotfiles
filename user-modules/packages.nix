@@ -38,7 +38,6 @@ in
       htop
       nix-search-cli
       pciutils
-      playerctl
       pwgen
       ranger
       ripgrep
@@ -49,20 +48,34 @@ in
       unzip
 
       # Extra
+      arandr
+      baobab
       feh
+      gparted
       imagemagick
       jdk17
       neofetch
+      networkmanagerapplet
       openvpn
-      playerctl
-      pulseaudio
       scrot
+      sxiv
+      udiskie
       ventoy
       yubikey-manager
 
-      # Dev
+      # Audio
+      pavucontrol
+      playerctl
+      pulseaudio
+      spotify
+
+      # Video
+      mpv
+
+      # Development
       awscli2
       blackbox
+      bruno
       direnv
       jq
       krew
@@ -74,36 +87,34 @@ in
       python3Packages.virtualenvwrapper
       rustup
       terraform
+      winbox
       xxd
 
-      # Graphical
-      arandr
-      baobab
-      blender
-      bottles
-      bruno
+      # Internet
       chromium
-      discord
-      element-desktop
       filezilla
       firefox
-      gimp
-      gparted
-      logseq
-      lutris
-      mpv
-      networkmanagerapplet
-      obsidian
-      pavucontrol
-      prusa-slicer
-      slack
-      spotify
-      sxiv
       thunderbird
-      udiskie
-      winbox
+
+      # Compatibility
+      bottles
+      lutris
       wineWowPackages.stable
       winetricks
+
+      # Messaging
+      discord
+      element-desktop
+      slack
+
+      # Graphics
+      blender
+      gimp
+      prusa-slicer
+
+      # Notes
+      logseq
+      obsidian
 
       # Games
       brogue-ce
