@@ -66,7 +66,6 @@ home-manager.lib.homeManagerConfiguration {
           ];
         };
         mpd.enable = true;
-        nodejs.enable = true;
         packages.enable = true;
         polybar = {
           enable = true;
