@@ -62,6 +62,7 @@ in
       sxiv
       udiskie
       ventoy
+      xclip
       yubikey-manager
 
       # Audio
