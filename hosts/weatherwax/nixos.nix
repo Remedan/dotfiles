@@ -183,11 +183,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
     cifs-utils
+    git
+    vim
     virt-manager
+    wget
   ];
 
   programs.zsh.enable = true;
