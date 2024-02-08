@@ -125,6 +125,7 @@ in
       fish-fillets-ng
       gargoyle
       gzdoom
+      ifm
       openttd
       prismlauncher # Minecraft
       wesnoth
