@@ -36,17 +36,17 @@
       };
 
       homeConfigurations = {
-        weatherwax = import ./hosts/weatherwax/home.nix {
+        "remedan@weatherwax" = import ./hosts/weatherwax/home.nix {
           inherit home-manager;
           pkgs = mkPkgs "x86_64-linux";
         };
 
-        atuin = import ./hosts/atuin/home.nix {
+        "vojta@atuin" = import ./hosts/atuin/home.nix {
           inherit home-manager;
           pkgs = mkPkgs "x86_64-linux";
         };
 
-        angua = import ./hosts/angua/home.nix {
+        "remedan@angua" = import ./hosts/angua/home.nix {
           inherit home-manager;
           pkgs = mkPkgs "aarch64-darwin";
         };

@@ -6,18 +6,20 @@
 
 ## Installation
 
+Clone this repo to `~/.config/home-manager` and then run:
+
 ```bash
-nix --extra-experimental-features 'nix-command flakes' run <flake-uri>#homeConfigurations.<profile>.activationPackage
+nix --extra-experimental-features 'nix-command flakes' run home-manager/master -- init --switch
 ```
 
 ## Building a new Home Manager configuration
 
 ```bash
-home-manager switch --flake '<flake-uri>#<profile>'
+home-manager switch
 ```
 
 ## Building a new NixOS configuration
 
 ```bash
-sudo nixos-rebuild switch --flake '<flake-uri>#<profile>'
+sudo nixos-rebuild switch --flake '$HOME#<profile>'
 ```
