@@ -57,6 +57,7 @@ in
       jdk17
       neofetch
       networkmanagerapplet
+      nmap
       openvpn
       scrot
       sxiv
