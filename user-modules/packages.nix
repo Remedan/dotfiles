@@ -55,6 +55,7 @@ in
       gparted
       imagemagick
       jdk17
+      libsForQt5.kgpg
       lm_sensors
       neofetch
       networkmanagerapplet
