@@ -55,6 +55,7 @@ in
       gparted
       imagemagick
       jdk17
+      lm_sensors
       neofetch
       networkmanagerapplet
       nmap
