@@ -49,6 +49,7 @@
  ("nerd-icons.el" . "c6a4acf19454b415cba1c43daf4bfca8fccdd9ba")
  ("nix-mode" . "719feb7868fb567ecfe5578f6119892c771ac5e5")
  ("nongnu-elpa" . "ddca63f901e43d79aaa2d2ef37fc5ab36275d685")
+ ("nyan-mode" . "09904af23adb839c6a9c1175349a1fb67f5b4370")
  ("org" . "ee395b9b8e2e7486fa4ad6936a3964e2f41b192c")
  ("org-appear" . "81eba5d7a5b74cdb1bad091d85667e836f16b997")
  ("parseclj" . "6af22372e0fe14df882dd300b22b12ba2d7e00b0")

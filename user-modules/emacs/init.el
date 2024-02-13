@@ -249,6 +249,9 @@
 (use-package direnv
   :config (direnv-mode))
 
+;; Nyan Mode
+(use-package nyan-mode)
+
 ;; Language-specific
 
 ;; LSP
