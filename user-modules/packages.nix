@@ -89,6 +89,7 @@ in
       python3
       python3Packages.virtualenv
       python3Packages.virtualenvwrapper
+      quickemu
       rustup
       terraform
       winbox
