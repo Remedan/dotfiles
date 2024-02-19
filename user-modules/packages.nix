@@ -52,6 +52,7 @@ in
       baobab
       btdu
       feh
+      ghostscript
       gparted
       imagemagick
       jdk17
