@@ -66,6 +66,7 @@ in
       udiskie
       ventoy
       xclip
+      xsane
       yubikey-manager
 
       # Audio

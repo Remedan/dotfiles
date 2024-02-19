@@ -122,6 +122,9 @@
     openFirewall = true;
   };
 
+  # Scanning
+  hardware.sane.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -186,7 +189,7 @@
     group = "remedan";
     isNormalUser = true;
     description = "Vojta";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" "scanner" "lp" ];
     shell = pkgs.zsh;
   };
 
