@@ -51,8 +51,10 @@ in
       windowManager.i3.enable = true;
 
       # Configure keymap in X11
-      layout = "us";
-      xkbVariant = "";
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
 
     # Printing
@@ -64,7 +66,7 @@ in
     # Network Printer Discovery
     services.avahi = {
       enable = true;
-      nssmdns = true;
+      nssmdns4 = true;
       openFirewall = true;
     };
 
