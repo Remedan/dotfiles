@@ -11,11 +11,24 @@ in
     hostName = mkOption {
       type = types.str;
     };
+    cpuType = mkOption {
+      type = with types; nullOr (enum [ "amd" "intel" ]);
+      default = null;
+    };
   };
 
   config = {
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     system.stateVersion = "23.11";
+
+    # Install common non-free firmware
+    hardware.enableRedistributableFirmware = true;
+
+    # Update CPU microcode
+    hardware.cpu = {
+      amd.updateMicrocode = cfg.cpuType == "amd";
+      intel.updateMicrocode = cfg.cpuType == "intel";
+    };
 
     networking = {
       useDHCP = lib.mkDefault true;
