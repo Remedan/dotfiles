@@ -65,23 +65,12 @@
     { device = "/dev/disk/by-uuid/e20fce16-944a-4a7d-aea1-2ac786462a62"; }
   ];
 
-  networking.hostName = "atuin";
-
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  # User setup
-  users.groups.vojta = {
-    gid = 1000;
-  };
-  users.users.vojta = {
-    uid = 1000;
-    group = "vojta";
-    isNormalUser = true;
-    description = "Vojtěch Balák";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" "scanner" "lp" ];
-    shell = pkgs.zsh;
-  };
-  programs._1password-gui.polkitPolicyOwners = [ "vojta" ];
-
   services.openssh.enable = true;
+
+  system-modules.common = {
+    userName = "vojta";
+    hostName = "atuin";
+  };
 }

@@ -73,8 +73,6 @@
     { device = "/dev/disk/by-uuid/589f663d-8784-4e17-9634-829edb852c59"; }
   ];
 
-  networking.hostName = "weatherwax";
-
   # Update CPU microcode
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
@@ -113,19 +111,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # User setup
-  users.groups.remedan = {
-    gid = 1000;
+  system-modules.common = {
+    userName = "remedan";
+    hostName = "weatherwax";
   };
-  users.users.remedan = {
-    uid = 1000;
-    group = "remedan";
-    isNormalUser = true;
-    description = "Vojta";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" "scanner" "lp" ];
-    shell = pkgs.zsh;
-  };
-  programs._1password-gui.polkitPolicyOwners = [ "remedan" ];
 
   programs.steam.enable = true;
 
