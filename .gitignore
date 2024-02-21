@@ -1,1 +1,2 @@
-modules/user/local.nix
+/modules/system/local.nix
+/modules/user/local.nix
