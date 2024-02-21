@@ -81,5 +81,5 @@ home-manager.lib.homeManagerConfiguration {
         };
       };
     }
-  ] ++ import ./../../user-modules;
+  ] ++ import ./../../modules/user;
 }

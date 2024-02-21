@@ -26,27 +26,27 @@
       nixosConfigurations = {
         weatherwax = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./hosts/weatherwax/nixos.nix ];
+          modules = [ ./hosts/weatherwax/system.nix ];
         };
 
         atuin = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./hosts/atuin/nixos.nix ];
+          modules = [ ./hosts/atuin/system.nix ];
         };
       };
 
       homeConfigurations = {
-        "remedan@weatherwax" = import ./hosts/weatherwax/home.nix {
+        "remedan@weatherwax" = import ./hosts/weatherwax/user.nix {
           inherit home-manager;
           pkgs = mkPkgs "x86_64-linux";
         };
 
-        "vojta@atuin" = import ./hosts/atuin/home.nix {
+        "vojta@atuin" = import ./hosts/atuin/user.nix {
           inherit home-manager;
           pkgs = mkPkgs "x86_64-linux";
         };
 
-        "remedan@angua" = import ./hosts/angua/home.nix {
+        "remedan@angua" = import ./hosts/angua/user.nix {
           inherit home-manager;
           pkgs = mkPkgs "aarch64-darwin";
         };

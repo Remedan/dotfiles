@@ -15,5 +15,5 @@ home-manager.lib.homeManagerConfiguration {
         emacs.enable = true;
       };
     }
-  ] ++ import ./../../user-modules;
+  ] ++ import ./../../modules/user;
 }

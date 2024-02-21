@@ -102,5 +102,5 @@ home-manager.lib.homeManagerConfiguration {
         hyprland.enable = true;
       };
     }
-  ] ++ import ./../../user-modules;
+  ] ++ import ./../../modules/user;
 }
