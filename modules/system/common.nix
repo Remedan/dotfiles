@@ -89,15 +89,15 @@ in
 
     # User setup
     users.groups.${cfg.userName} = {
-        gid = 1000;
+      gid = 1000;
     };
     users.users.${cfg.userName} = {
-        uid = 1000;
-        group = cfg.userName;
-        isNormalUser = true;
-        description = "Vojtěch Balák";
-        extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" "scanner" "lp" ];
-        shell = pkgs.zsh;
+      uid = 1000;
+      group = cfg.userName;
+      isNormalUser = true;
+      description = "Vojtěch Balák";
+      extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" "scanner" "lp" ];
+      shell = pkgs.zsh;
     };
 
     # Packages and Applications
