@@ -97,6 +97,7 @@ in
       terraform
       winbox
       xxd
+      bfg-repo-cleaner
 
       # Internet
       chromium
