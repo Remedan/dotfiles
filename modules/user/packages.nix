@@ -51,6 +51,7 @@ in
       arandr
       baobab
       btdu
+      caffeine-ng
       feh
       ghostscript
       gparted
@@ -66,6 +67,7 @@ in
       sxiv
       udiskie
       ventoy
+      xautolock
       xclip
       xsane
       yubikey-manager
