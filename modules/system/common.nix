@@ -111,7 +111,7 @@ in
       group = cfg.userName;
       isNormalUser = true;
       description = "Vojtěch Balák";
-      extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" "scanner" "lp" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "scanner" "lp" ];
       shell = pkgs.zsh;
     };
 
