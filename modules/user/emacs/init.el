@@ -255,18 +255,15 @@
 ;; Language-specific
 
 ;; LSP
-(setq lsp-keymap-prefix "C-c l")
 (use-package lsp-mode
-  :hook (python-mode . lsp)
+  :hook
+  (python-mode . lsp)
+  (lsp-mode . lsp-enable-which-key-integration)
+  :init
+  (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-signature-auto-activate nil
         lsp-ui-doc-enable nil)
-  (when python-tabs
-    (add-hook 'python-mode-hook
-              (lambda()
-                (setq indent-tabs-mode t
-                      tab-width 4
-                      python-indent-guess-indent-offset nil))))
   (lsp-register-custom-settings
    '(("pyls.plugins.pyls_mypy.enabled" t t)
      ("pyls.plugins.pyls_mypy.live_mode" nil t)))
@@ -277,6 +274,14 @@
 
 (use-package helm-lsp
   :commands helm-lsp-workspace-symbol)
+
+;; Python
+(when python-tabs
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (setq indent-tabs-mode t
+                    tab-width 4
+                    python-indent-guess-indent-offset nil))))
 
 ;; SLIME
 (use-package slime
