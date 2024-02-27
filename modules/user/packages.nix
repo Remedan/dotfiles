@@ -83,6 +83,7 @@ in
 
       # Development
       awscli2
+      bfg-repo-cleaner
       blackbox
       bruno
       direnv
@@ -92,14 +93,15 @@ in
       nix-direnv
       postgresql
       python3
+      python3Packages.pylsp-mypy
+      python3Packages.python-lsp-server
       python3Packages.virtualenv
       python3Packages.virtualenvwrapper
       quickemu
-      rustup
+      rust-analyzer
       terraform
       winbox
       xxd
-      bfg-repo-cleaner
 
       # Internet
       chromium
