@@ -27,8 +27,7 @@ in
       "emacs/early-init.el".text = ''
         (setq package-enable-at-startup nil)
         (setq colorscheme "${cfg.colorscheme}")
-      '' + optionalString cfg.pythonTabs ''
-        (setq python-tabs t)
+        (setq python-tabs ${if cfg.pythonTabs then "t" else "nil"})
       '';
     };
     programs.emacs = {
