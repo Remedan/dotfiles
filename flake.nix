@@ -29,6 +29,11 @@
           modules = [ ./hosts/weatherwax/system.nix ];
         };
 
+        rincewind = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/rincewind/system.nix ];
+        };
+
         atuin = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ ./hosts/atuin/system.nix ];
@@ -37,6 +42,11 @@
 
       homeConfigurations = {
         "remedan@weatherwax" = import ./hosts/weatherwax/user.nix {
+          inherit home-manager;
+          pkgs = mkPkgs "x86_64-linux";
+        };
+
+        "remedan@rincewind" = import ./hosts/rincewind/user.nix {
           inherit home-manager;
           pkgs = mkPkgs "x86_64-linux";
         };
