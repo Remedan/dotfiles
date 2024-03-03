@@ -13,9 +13,37 @@ in
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
+      hyprpaper
       wdisplays
       wofi
     ];
+    xdg.configFile."hypr/hyprpaper.conf".text = ''
+      preload = ~/Pictures/wallpaper.png
+      wallpaper = ,~/Pictures/wallpaper.png
+    '';
+    programs.waybar = {
+      enable = true;
+      settings = {
+        mainBar = {
+          modules-left = [
+            "hyprland/workspaces"
+            "pulseaudio"
+          ];
+          modules-center = [
+            "clock"
+          ];
+          modules-right = [
+            "hyprland/language"
+            "disk"
+            "cpu"
+            "memory"
+            "backlight"
+            "battery"
+            "tray"
+          ];
+        };
+      };
+    };
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
@@ -27,7 +55,10 @@ in
         in
         {
           # See https://wiki.hyprland.org/Configuring/Monitors/
-          monitor = ",preferred,auto,auto";
+          monitor = [
+            ",preferred,auto,auto"
+            "eDP-1,preferred,auto,1"
+          ];
 
           env = [
             "XCURSOR_SIZE,24"
@@ -41,6 +72,15 @@ in
           ];
 
           # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
+
+          exec-once = [
+            "waybar"
+            "hyprpaper"
+            "nm-applet"
+            "udiskie --tray"
+            "blueman-applet"
+            "1password --silent"
+          ];
 
           input = {
             kb_layout = "us";
@@ -101,6 +141,8 @@ in
             # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
             pseudotile = "yes"; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
             preserve_split = "yes"; # you probably want this
+
+            no_gaps_when_only = 1;
           };
 
           master = {
@@ -136,15 +178,17 @@ in
             "${mainMod}, P, pseudo," # dwindle
             "${mainMod}, V, togglesplit," # dwindle
 
-            # Move focus with mainMod + arrow keys
-            "${mainMod}, left, movefocus, l"
-            "${mainMod}, down, movefocus, d"
-            "${mainMod}, up, movefocus, u"
-            "${mainMod}, right, movefocus, r"
+            # Move focus with mainMod + hjkl
             "${mainMod}, H, movefocus, l"
             "${mainMod}, J, movefocus, d"
             "${mainMod}, K, movefocus, u"
             "${mainMod}, L, movefocus, r"
+
+            # Move window with mainMod + hjkl
+            "${mainMod} SHIFT, H, movewindow, l"
+            "${mainMod} SHIFT, J, movewindow, d"
+            "${mainMod} SHIFT, K, movewindow, u"
+            "${mainMod} SHIFT, L, movewindow, r"
 
             # Switch workspaces with mainMod + [0-9]
             "${mainMod}, 1, workspace, 1"
@@ -177,6 +221,15 @@ in
             # Scroll through existing workspaces with mainMod + scroll
             "${mainMod}, mouse_down, workspace, e+1"
             "${mainMod}, mouse_up, workspace, e-1"
+
+            # Move through workspaces
+            "${mainMod}, period, workspace, e+1"
+            "${mainMod}, comma, workspace, e-1"
+
+            # Applications
+            "${mainMod}, i, exec, ${config.user-modules.common.browser}"
+            "${mainMod}, o, exec, emacsclient -c"
+            "${mainMod}, p, exec, obsidian"
           ];
 
           bindm = [
