@@ -59,6 +59,7 @@ in
       jdk17
       libsForQt5.kgpg
       lm_sensors
+      magic-wormhole
       neofetch
       networkmanagerapplet
       nmap
