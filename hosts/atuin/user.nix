@@ -10,20 +10,7 @@ home-manager.lib.homeManagerConfiguration {
         homeDirectory = "/home/vojta";
       };
       user-modules = {
-        common = {
-          colorscheme = "gruvbox-dark";
-          terminal = "kitty";
-          browser = "firefox";
-        };
-        zsh.enable = true;
-        alacritty.enable = true;
-        kitty.enable = true;
-        emacs = {
-          enable = true;
-          pythonTabs = true;
-        };
-        autorandr.enable = true;
-        dunst.enable = true;
+        emacs.pythonTabs = true;
         i3 = {
           enable = true;
           appWorkspace = {
@@ -34,10 +21,6 @@ home-manager.lib.homeManagerConfiguration {
             "9" = [{ class = "Spotify"; }];
           };
           startup = [
-            {
-              command = "picom -b";
-              notification = false;
-            }
             {
               command = "xautolock -time 30 -locker ~/.config/i3/lock.sh";
               notification = false;
@@ -65,10 +48,7 @@ home-manager.lib.homeManagerConfiguration {
             { command = "spotify"; }
           ];
         };
-        mpd.enable = true;
-        packages.enable = true;
         polybar = {
-          enable = true;
           laptopModules = true;
           bar0Override = {
             monitor = "\${env:MONITOR:DP-1-2}";
@@ -85,19 +65,11 @@ home-manager.lib.homeManagerConfiguration {
             monitor-strict = true;
           };
         };
-        picom = {
-          enable = true;
-          service = false;
-        };
-        fonts.enable = true;
-        rofi.enable = true;
-        zathura.enable = true;
-        gtk.enable = true;
         touchpad = {
           enable = true;
           deviceName = "DELL0A20:00 0488:101A Touchpad";
         };
-        ssh.enable = true;
+        git.enable = false;
         yubikey.enable = true;
         hyprland.enable = true;
       };

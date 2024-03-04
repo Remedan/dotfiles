@@ -10,7 +10,6 @@ home-manager.lib.homeManagerConfiguration {
         homeDirectory = "/Users/remedan";
       };
       user-modules = {
-        common.colorscheme = "dracula";
         zsh.enable = true;
         emacs.enable = true;
       };

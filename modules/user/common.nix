@@ -11,7 +11,7 @@ in
     };
     terminal = mkOption {
       type = types.str;
-      default = "alacritty";
+      default = "kitty";
     };
     browser = mkOption {
       type = types.str;
@@ -34,6 +34,18 @@ in
       nix = {
         package = pkgs.nix;
         settings.experimental-features = [ "nix-command" "flakes" ];
+      };
+      user-modules = {
+        packages.enable = mkDefault true;
+        zsh.enable = mkDefault true;
+        kitty.enable = mkDefault true;
+        emacs.enable = mkDefault true;
+        mpd.enable = mkDefault true;
+        fonts.enable = mkDefault true;
+        zathura.enable = mkDefault true;
+        gtk.enable = mkDefault true;
+        ssh.enable = mkDefault true;
+        git.enable = mkDefault true;
       };
     }
     (mkIf pkgs.stdenv.isLinux {

@@ -28,6 +28,13 @@ in
     };
   };
   config = mkIf cfg.enable {
+    user-modules = {
+      polybar.enable = mkDefault true;
+      rofi.enable = mkDefault true;
+      dunst.enable = mkDefault true;
+      autorandr.enable = mkDefault true;
+      picom.enable = mkDefault true;
+    };
     xdg.configFile."i3/lock.sh" = {
       source = ./lock.sh;
       executable = true;

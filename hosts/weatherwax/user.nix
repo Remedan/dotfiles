@@ -10,16 +10,7 @@ home-manager.lib.homeManagerConfiguration {
         homeDirectory = "/home/remedan";
       };
       user-modules = {
-        common = {
-          colorscheme = "selenized-dark";
-          terminal = "kitty";
-        };
-        zsh.enable = true;
-        alacritty.enable = true;
-        kitty.enable = true;
-        emacs.enable = true;
-        dunst.enable = true;
-        git.enable = true;
+        common.colorscheme = "selenized-dark";
         i3 = {
           enable = true;
           workspaceOutput =
@@ -55,15 +46,8 @@ home-manager.lib.homeManagerConfiguration {
             }
           ];
         };
-        mpd = {
-          enable = true;
-          musicDirectory = "~/Network/Media/Audio";
-        };
-        fonts.enable = true;
-        packages.enable = true;
-        picom.enable = true;
+        mpd.musicDirectory = "~/Network/Media/Audio";
         polybar = {
-          enable = true;
           bar0Override = {
             monitor = "\${env:MONITOR:DP-0}";
           };
@@ -71,10 +55,6 @@ home-manager.lib.homeManagerConfiguration {
             monitor = "\${env:MONITOR:DP-2}";
           };
         };
-        rofi.enable = true;
-        zathura.enable = true;
-        gtk.enable = true;
-        ssh.enable = true;
         hyprland = {
           enable = true;
           nvidia = true;

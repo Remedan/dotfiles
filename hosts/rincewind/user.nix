@@ -10,15 +10,6 @@ home-manager.lib.homeManagerConfiguration {
         homeDirectory = "/home/remedan";
       };
       user-modules = {
-        common = {
-          colorscheme = "gruvbox-dark";
-          terminal = "kitty";
-        };
-        zsh.enable = true;
-        kitty.enable = true;
-        emacs.enable = true;
-        dunst.enable = true;
-        git.enable = true;
         i3 = {
           enable = true;
           startup = [
@@ -32,18 +23,7 @@ home-manager.lib.homeManagerConfiguration {
             }
           ];
         };
-        mpd.enable = true;
-        fonts.enable = true;
-        packages.enable = true;
-        picom.enable = true;
-        polybar = {
-          enable = true;
-          laptopModules = true;
-        };
-        rofi.enable = true;
-        zathura.enable = true;
-        gtk.enable = true;
-        ssh.enable = true;
+        polybar.laptopModules = true;
         hyprland.enable = true;
         touchpad = {
           enable = true;
