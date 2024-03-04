@@ -30,9 +30,6 @@ home-manager.lib.homeManagerConfiguration {
               notification = false;
             }
             {
-              command = "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1";
-            }
-            {
               command = "birdtray";
               notification = false;
             }
