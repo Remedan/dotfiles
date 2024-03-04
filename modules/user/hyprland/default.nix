@@ -180,17 +180,25 @@ in
             "${mainMod}, P, pseudo," # dwindle
             "${mainMod}, V, togglesplit," # dwindle
 
-            # Move focus with mainMod + hjkl
+            # Move focus with mainMod + hjkl, arrow keys
             "${mainMod}, H, movefocus, l"
             "${mainMod}, J, movefocus, d"
             "${mainMod}, K, movefocus, u"
             "${mainMod}, L, movefocus, r"
+            "${mainMod}, left, movefocus, l"
+            "${mainMod}, down, movefocus, d"
+            "${mainMod}, up, movefocus, u"
+            "${mainMod}, right, movefocus, r"
 
-            # Move window with mainMod + hjkl
+            # Move window with mainMod + hjkl, arrow keys
             "${mainMod} SHIFT, H, movewindow, l"
             "${mainMod} SHIFT, J, movewindow, d"
             "${mainMod} SHIFT, K, movewindow, u"
             "${mainMod} SHIFT, L, movewindow, r"
+            "${mainMod} SHIFT, left, movewindow, l"
+            "${mainMod} SHIFT, down, movewindow, d"
+            "${mainMod} SHIFT, up, movewindow, u"
+            "${mainMod} SHIFT, right, movewindow, r"
 
             # Switch workspaces with mainMod + [0-9]
             "${mainMod}, 1, workspace, 1"
