@@ -70,6 +70,16 @@ in
       };
     };
 
+    # XDG Desktop Portal
+    services.dbus.enable = true;
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-hyprland
+      ];
+    };
+
     # Printing
     services.printing = {
       enable = true;
@@ -87,7 +97,6 @@ in
     hardware.sane.enable = true;
 
     # Enable sound with pipewire.
-    sound.enable = true;
     hardware.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
@@ -141,6 +150,9 @@ in
       "steam-run"
     ];
 
+    # Gnome Keyring
+    services.gnome.gnome-keyring.enable = true;
+
     # Yubikey
     services.udev.packages = [ pkgs.yubikey-personalization ];
     # services.pcscd.enable = true;
@@ -153,9 +165,8 @@ in
     virtualisation.libvirtd.enable = true;
 
     # Polkit
+    # https://nixos.wiki/wiki/Polkit#Authentication_agents
     security.polkit.enable = true;
-    # Enable authentication agent since i3 doesn't start it
-    # Taken from https://nixos.wiki/wiki/Polkit#Authentication_agents
     systemd.user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
       wantedBy = [ "graphical-session.target" ];
