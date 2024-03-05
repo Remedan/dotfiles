@@ -30,6 +30,10 @@ in
       intel.updateMicrocode = cfg.cpuType == "intel";
     };
 
+    # Firmware upgrades
+    services.fwupd.enable = true;
+
+    # Networking
     networking = {
       useDHCP = lib.mkDefault true;
       hostName = cfg.hostName;
