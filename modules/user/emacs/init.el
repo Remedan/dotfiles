@@ -89,14 +89,13 @@
 
 ;; Themes
 ;; The theme is set in default.el which is managed by home-manager
-(use-package doom-themes
-  :config
-  (defun theme-name (name)
-    (intern (concat "doom-"
-                    (cond ((string= name "selenized-dark") "solarized-dark")
-                          ((string= name "gruvbox-dark") "gruvbox")
-                          (t name)))))
-  (load-theme (theme-name colorscheme) t))
+(use-package doom-themes)
+(use-package catppuccin-theme)
+(load-theme (intern (cond ((string= colorscheme "selenized-dark") "doom-solarized-dark")
+                          ((string= colorscheme "gruvbox-dark") "doom-gruvbox")
+                          ((string= colorscheme "dracula") "doom-dracula")
+                          (t colorscheme)))
+            :no-confirm)
 
 ;; Undo Tree
 (use-package undo-tree
