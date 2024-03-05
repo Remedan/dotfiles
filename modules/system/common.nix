@@ -153,6 +153,10 @@ in
     # Gnome Keyring
     services.gnome.gnome-keyring.enable = true;
 
+    # Enable Logitech devices support and Solaar
+    hardware.logitech.wireless.enable = true;
+    hardware.logitech.wireless.enableGraphical = true;
+
     # Yubikey
     services.udev.packages = [ pkgs.yubikey-personalization ];
     # services.pcscd.enable = true;
