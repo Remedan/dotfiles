@@ -8,7 +8,8 @@
   ./git.nix
   ./gtk.nix
   ./hyprland
-  ./i3
+  ./i3-sway/i3.nix
+  ./i3-sway/sway.nix
   ./kitty
   ./mpd.nix
   ./nixgl.nix
@@ -19,6 +20,7 @@
   ./rofi
   ./ssh.nix
   ./touchpad.nix
+  ./waybar.nix
   ./yubikey.nix
   ./zathura.nix
   ./zsh.nix

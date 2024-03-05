@@ -68,6 +68,12 @@ home-manager.lib.homeManagerConfiguration {
         };
         git.enable = false;
         yubikey.enable = true;
+        sway = {
+          enable = true;
+          startup = [
+            { command = "blueman-applet"; }
+          ];
+	      };
         hyprland.enable = true;
       };
     }

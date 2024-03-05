@@ -55,6 +55,12 @@ home-manager.lib.homeManagerConfiguration {
             monitor = "\${env:MONITOR:DP-2}";
           };
         };
+        sway = {
+          enable = true;
+          startup = [
+            { command = "blueman-applet"; }
+          ];
+	      };
         hyprland = {
           enable = true;
           nvidia = true;

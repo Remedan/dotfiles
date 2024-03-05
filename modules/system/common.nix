@@ -59,10 +59,7 @@ in
     # Enable the X11 windowing system.
     services.xserver = {
       enable = true;
-      displayManager = {
-        gdm.enable = true;
-        sessionPackages = [ pkgs.hyprland ];
-      };
+      displayManager.gdm.enable = true;
 
       desktopManager.gnome.enable = true;
       windowManager.i3.enable = true;
@@ -73,15 +70,14 @@ in
         variant = "";
       };
     };
+    programs.sway.enable = true;
+    programs.hyprland.enable = true;
 
     # XDG Desktop Portal
     services.dbus.enable = true;
     xdg.portal = {
       enable = true;
       wlr.enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-hyprland
-      ];
     };
 
     # Printing

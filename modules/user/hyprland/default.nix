@@ -22,28 +22,8 @@ in
       wallpaper = ,~/Pictures/wallpaper.png
       splash = false
     '';
-    programs.waybar = {
-      enable = true;
-      settings = {
-        mainBar = {
-          modules-left = [
-            "hyprland/workspaces"
-            "pulseaudio"
-          ];
-          modules-center = [
-            "clock"
-          ];
-          modules-right = [
-            "hyprland/language"
-            "disk"
-            "cpu"
-            "memory"
-            "backlight"
-            "battery"
-            "tray"
-          ];
-        };
-      };
+    user-modules = {
+      waybar.enable = mkDefault true;
     };
     wayland.windowManager.hyprland = {
       enable = true;

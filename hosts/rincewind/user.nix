@@ -24,6 +24,12 @@ home-manager.lib.homeManagerConfiguration {
           ];
         };
         polybar.laptopModules = true;
+        sway = {
+          enable = true;
+          startup = [
+            { command = "blueman-applet"; }
+          ];
+	      };
         hyprland.enable = true;
         touchpad = {
           enable = true;
