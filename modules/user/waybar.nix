@@ -157,6 +157,10 @@ in
             "tray"
           ];
 
+          "sway/workspaces" = {
+            enable-bar-scroll = true;
+          };
+
           pulseaudio = {
             format = "{icon}  {volume}%";
             format-bluetooth = "{icon}  {volume}%";
