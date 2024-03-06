@@ -200,7 +200,7 @@ in
           Escape = "mode default";
         };
         modes.${powerControlMode} = {
-          l = "exec swaylock -k; mode default";
+          l = "exec swaylock -k -i ~/Pictures/wallpaper.png; mode default";
           o = "exec swaymsg exit; mode default";
           s = "exec systemctl suspend; mode default";
           h = "exec systemctl hibernate; mode default";
