@@ -128,6 +128,7 @@ in
           modules-left = [
             "sway/workspaces"
             "pulseaudio"
+            "mpris"
             "sway/mode"
           ];
           modules-center = [
@@ -145,7 +146,7 @@ in
 
           pulseaudio = {
             format = "{icon}  {volume}%";
-            format-bluetooth = "{icon} {volume}%";
+            format-bluetooth = "{icon}  {volume}%";
             format-muted = "";
             format-icons = {
               headphone = "";
@@ -156,7 +157,21 @@ in
               car = "";
               default = [ "" "" ];
             };
+            scroll-step = 5;
             on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          };
+
+          mpris = {
+            format = "{player_icon} {artist} - {title}";
+            format-paused = "{status_icon} {artist} - {title}";
+            player-icons = {
+              default = "▶";
+              mpv = "🎵";
+            };
+            status-icons = {
+              paused = "⏸";
+            };
+            ignored-players = [ "firefox" ];
           };
 
           "sway/language" = {
@@ -179,6 +194,7 @@ in
 
           backlight = {
             format = "  {}%";
+            scroll-step = 5;
           };
 
           battery = {
