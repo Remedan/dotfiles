@@ -156,7 +156,7 @@ in
               car = "";
               default = [ "" "" ];
             };
-            on-click = "pavucontrol";
+            on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
           };
 
           "sway/language" = {
