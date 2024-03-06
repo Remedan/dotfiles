@@ -44,6 +44,12 @@ in
       systemd.enable = true;
       wrapperFeatures.gtk = true;
 
+      # Laptop lid handling
+      extraConfig = ''
+        bindswitch --reload --locked lid:on output eDP-1 disable
+        bindswitch --reload --locked lid:off output eDP-1 enable
+      '';
+
       config = {
         modifier = mod;
 
