@@ -35,8 +35,8 @@ in
       autorandr.enable = mkDefault true;
       picom.enable = mkDefault true;
     };
-    xdg.configFile."i3/lock.sh" = {
-      source = ./lock.sh;
+    xdg.configFile."i3/i3-lock.sh" = {
+      source = ./i3-lock.sh;
       executable = true;
     };
     xsession.windowManager.i3 = {
@@ -198,7 +198,7 @@ in
           Escape = "mode default";
         };
         modes.${powerControlMode} = {
-          l = "exec ~/.config/i3/lock.sh; mode default";
+          l = "exec ~/.config/i3/i3-lock.sh; mode default";
           o = "exec i3-msg exit; mode default";
           s = "exec systemctl suspend; mode default";
           h = "exec systemctl hibernate; mode default";
