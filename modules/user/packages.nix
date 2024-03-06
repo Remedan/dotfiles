@@ -111,6 +111,9 @@ in
       firefox
       thunderbird
 
+      # Office
+      libreoffice
+
       # Compatibility
       bottles
       lutris
