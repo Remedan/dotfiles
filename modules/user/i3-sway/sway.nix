@@ -32,10 +32,10 @@ in
       grim
       slurp
       wdisplays
-      wofi
     ];
     user-modules = {
       waybar.enable = mkDefault true;
+      wofi.enable = mkDefault true;
     };
     programs.swaylock.enable = true;
     wayland.windowManager.sway = {

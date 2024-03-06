@@ -21,6 +21,7 @@
   ./ssh.nix
   ./touchpad.nix
   ./waybar.nix
+  ./wofi.nix
   ./yubikey.nix
   ./zathura.nix
   ./zsh.nix
