@@ -44,7 +44,6 @@ in
       rlwrap
       rsync
       steam-run
-      tig
       unzip
 
       # Extra
@@ -60,6 +59,7 @@ in
       libsForQt5.kgpg
       lm_sensors
       magic-wormhole
+      ncdu
       neofetch
       networkmanagerapplet
       nmap
@@ -101,6 +101,7 @@ in
       quickemu
       rust-analyzer
       terraform
+      tig
       winbox
       xxd
 
