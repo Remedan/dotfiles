@@ -162,10 +162,10 @@ in
           "XF86AudioMicMute" = "exec pactl set-source-mute @DEFAULT_SOURCE@ toggle";
 
           # Media keys
-          "XF86AudioPlay" = "exec ~/.config/i3/player-control.sh toggle";
-          "XF86AudioNext" = "exec ~/.config/i3/player-control.sh next";
-          "XF86AudioPrev" = "exec ~/.config/i3/player-control.sh prev";
-          "XF86AudioStop" = "exec ~/.config/i3/player-control.sh stop";
+          "XF86AudioPlay" = "exec playerctl --ignore-player=firefox play-pause";
+          "XF86AudioNext" = "exec playerctl --ignore-player=firefox next";
+          "XF86AudioPrev" = "exec playerctl --ignore-player=firefox previous";
+          "XF86AudioStop" = "exec playerctl --ignore-player=firefox stop";
 
           # Sreen brightness controls (brightness up, brightness down)
           "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
