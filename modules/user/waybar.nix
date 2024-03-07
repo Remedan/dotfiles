@@ -216,7 +216,7 @@ in
 
           battery = {
             format = "{icon}   {capacity}%";
-            format-icons = [ "" "" "" "" ""];
+            format-icons = [ "" "" "" "" "" ];
           };
 
           tray = {

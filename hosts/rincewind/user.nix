@@ -29,7 +29,7 @@ home-manager.lib.homeManagerConfiguration {
           startup = [
             { command = "blueman-applet"; }
           ];
-	      };
+        };
         hyprland.enable = true;
         touchpad = {
           enable = true;

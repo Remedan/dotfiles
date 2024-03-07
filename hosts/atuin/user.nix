@@ -101,7 +101,7 @@ home-manager.lib.homeManagerConfiguration {
             { command = "slack"; }
             { command = "spotify"; }
           ];
-	      };
+        };
         hyprland.enable = true;
       };
     }
