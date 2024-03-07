@@ -106,6 +106,7 @@ in
       xxd
 
       # Internet
+      birdtray
       chromium
       deluge
       filezilla

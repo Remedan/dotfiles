@@ -70,8 +70,36 @@ home-manager.lib.homeManagerConfiguration {
         yubikey.enable = true;
         sway = {
           enable = true;
+          workspaceOutput =
+            map
+              (number: {
+                workspace = toString number;
+                output = "DP-4";
+              })
+              (pkgs.lib.range 1 3)
+            ++
+            map
+              (number: {
+                workspace = toString number;
+                output = "DP-5";
+              })
+              (pkgs.lib.range 4 10);
+          appWorkspace = {
+            "number 1" = [{ app_id = "firefox"; }];
+            "number 2" = [{ app_id = "thunderbird"; }];
+            "number 3" = [{ class = "obsidian"; }];
+            "number 8" = [{ class = "Slack"; }];
+            "number 9" = [{ class = "Spotify"; }];
+          };
           startup = [
             { command = "blueman-applet"; }
+            { command = "birdtray"; }
+            { command = "solaar -w hide"; }
+            { command = "firefox"; }
+            { command = "thunderbird"; }
+            { command = "obsidian"; }
+            { command = "slack"; }
+            { command = "spotify"; }
           ];
 	      };
         hyprland.enable = true;
