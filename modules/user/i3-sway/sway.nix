@@ -37,7 +37,15 @@ in
       waybar.enable = mkDefault true;
       wofi.enable = mkDefault true;
     };
-    programs.swaylock.enable = true;
+    xdg.configFile."swaylock/lock.png".source = ./lock.png;
+    programs.swaylock = {
+      enable = true;
+      settings = {
+        image = "~/.config/swaylock/lock.png";
+        scaling = "tile";
+        show-keyboard-layout = true;
+      };
+    };
     wayland.windowManager.sway = {
       enable = true;
       swaynag.enable = true;
@@ -200,7 +208,7 @@ in
           Escape = "mode default";
         };
         modes.${powerControlMode} = {
-          l = "exec swaylock -k -i ~/Pictures/wallpaper.png; mode default";
+          l = "exec swaylock; mode default";
           o = "exec swaymsg exit; mode default";
           s = "exec systemctl suspend; mode default";
           h = "exec systemctl hibernate; mode default";
