@@ -46,6 +46,16 @@ in
         show-keyboard-layout = true;
       };
     };
+    services.swayidle = {
+      enable = true;
+      timeouts = [
+        { timeout = 60 * 30; command = "${pkgs.swaylock}/bin/swaylock"; }
+      ];
+      events = [
+        { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock"; }
+        { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock"; }
+      ];
+    };
     wayland.windowManager.sway = {
       enable = true;
       swaynag.enable = true;
