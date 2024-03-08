@@ -62,10 +62,12 @@ in
       systemd.enable = true;
       wrapperFeatures.gtk = true;
 
-      # Laptop lid handling
+      # Laptop lid handling and workspace swiping
       extraConfig = ''
         bindswitch --reload --locked lid:on output eDP-1 disable
         bindswitch --reload --locked lid:off output eDP-1 enable
+        bindgesture swipe:right workspace prev
+        bindgesture swipe:left workspace next
       '';
 
       config = {
