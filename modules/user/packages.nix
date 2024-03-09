@@ -81,6 +81,7 @@ in
 
       # Video
       mpv
+      vlc
 
       # Development
       awscli2
