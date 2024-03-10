@@ -77,9 +77,12 @@ in
       extraOptions = optionals cfg.nvidia [
         "--unsupported-gpu"
       ];
-      extraSessionCommands = optionalString cfg.nvidia ''
+      # Enable wayland for chromium-based apps
+      extraSessionCommands = ''
+        export NIXOS_OZONE_WL=1
+      '' + (optionalString cfg.nvidia ''
         export WLR_NO_HARDWARE_CURSORS=1
-      '';
+      '');
 
       config = {
         modifier = mod;
