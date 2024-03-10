@@ -87,9 +87,9 @@ home-manager.lib.homeManagerConfiguration {
           appWorkspace = {
             "number 1" = [{ app_id = "firefox"; }];
             "number 2" = [{ app_id = "thunderbird"; }];
-            "number 3" = [{ class = "obsidian"; }];
-            "number 8" = [{ class = "Slack"; }];
-            "number 9" = [{ class = "Spotify"; }];
+            "number 3" = [{ app_id = "obsidian"; }];
+            "number 8" = [{ app_id = "Slack"; }];
+            "number 9" = [{ app_id = "Spotify"; }];
           };
           startup = [
             { command = "blueman-applet"; }
