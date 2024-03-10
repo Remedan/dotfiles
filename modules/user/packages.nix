@@ -140,15 +140,20 @@ in
       # Games
       brogue-ce
       crawl
+      dosbox
       fish-fillets-ng
       gargoyle
       gzdoom
       ifm
       openttd
       prismlauncher # Minecraft
+      scummvm
       wesnoth
 
-      # Game Emulators
+      # Console Emulators
+      desmume
+      pcsx2
+      rpcs3
       (retroarch.override {
         cores = with libretro; [
           bsnes
