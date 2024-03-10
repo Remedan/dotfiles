@@ -5,11 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixgl.url = "github:guibou/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, ... }:
+  outputs = { nixpkgs, home-manager, nixos-hardware, nixgl, ... }:
     let
       mkPkgs = system: import nixpkgs {
         inherit system;
@@ -31,7 +32,10 @@
 
         rincewind = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./hosts/rincewind/system.nix ];
+          modules = [
+            ./hosts/rincewind/system.nix
+            nixos-hardware.nixosModules.lenovo-thinkpad-x1-yoga
+          ];
         };
 
         atuin = nixpkgs.lib.nixosSystem {
