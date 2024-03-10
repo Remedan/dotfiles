@@ -26,6 +26,10 @@ in
       type = with types; listOf (attrsOf anything);
       default = [ ];
     };
+    nvidia = mkOption {
+      type = types.bool;
+      default = false;
+    };
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
@@ -68,6 +72,13 @@ in
         bindswitch --reload --locked lid:off output eDP-1 enable
         bindgesture swipe:right workspace prev
         bindgesture swipe:left workspace next
+      '';
+
+      extraOptions = optionals cfg.nvidia [
+        "--unsupported-gpu"
+      ];
+      extraSessionCommands = optionalString cfg.nvidia ''
+        export WLR_NO_HARDWARE_CURSORS=1
       '';
 
       config = {
