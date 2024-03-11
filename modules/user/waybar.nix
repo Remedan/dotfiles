@@ -180,7 +180,7 @@ in
 
           mpris = {
             format = "{player_icon} {artist} - {title}";
-            format-paused = "{status_icon} {artist} - {title}";
+            format-paused = "{status_icon} {artist} – {title}";
             player-icons = {
               default = "▶";
               mpv = "🎵";
@@ -192,7 +192,7 @@ in
           };
 
           clock = {
-            format = "{:%a, %d %b %Y %R}";
+            format = "{:%a, %d %b %Y – %R}";
             format-alt = "{:%Y-%m-%d %H:%M:%S}";
             tooltip-format = "<tt><small>{calendar}</small></tt>";
             calendar = {
