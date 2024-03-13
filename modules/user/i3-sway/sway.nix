@@ -66,12 +66,14 @@ in
       systemd.enable = true;
       wrapperFeatures.gtk = true;
 
-      # Laptop lid handling and workspace swiping
+      # Laptop lid handling and workspace switching
       extraConfig = ''
         bindswitch --reload --locked lid:on output eDP-1 disable
         bindswitch --reload --locked lid:off output eDP-1 enable
-        bindgesture swipe:right workspace prev
-        bindgesture swipe:left workspace next
+        bindgesture swipe:right workspace prev_on_output
+        bindgesture swipe:left workspace next_on_output
+        bindsym --whole-window button8 workspace prev_on_output
+        bindsym --whole-window button9 workspace next_on_output
       '';
 
       extraOptions = optionals cfg.nvidia [
@@ -176,8 +178,8 @@ in
           "${mod}+z" = "focus child";
 
           # Quick workspace switching
-          "${mod}+comma" = "workspace prev";
-          "${mod}+period" = "workspace next";
+          "${mod}+comma" = "workspace prev_on_output";
+          "${mod}+period" = "workspace next_on_output";
 
           # Quick workspace moving
           "${mod}+Shift+comma" = "move workspace to output right";
