@@ -19,6 +19,7 @@ in
             "sway/workspaces"
             "pulseaudio"
             "mpris"
+            "custom/weather"
             "sway/mode"
           ];
           modules-center = [
@@ -37,6 +38,12 @@ in
 
           "sway/workspaces" = {
             enable-bar-scroll = true;
+          };
+
+          "custom/weather" = {
+            exec = "curl -s 'https://wttr.in/Prague+Czechia?format=%c+%t'";
+            format = "{}";
+            interval = 3600;
           };
 
           pulseaudio = {
