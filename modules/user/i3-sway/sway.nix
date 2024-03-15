@@ -40,6 +40,7 @@ in
     user-modules = {
       waybar.enable = mkDefault true;
       wofi.enable = mkDefault true;
+      dunst.enable = mkDefault true;
     };
     xdg.configFile."swaylock/lock.png".source = ./lock.png;
     programs.swaylock = {

@@ -15,6 +15,10 @@ in
       type = with types; nullOr (enum [ "amd" "intel" ]);
       default = null;
     };
+    i3 = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
 
   config = {
@@ -62,7 +66,7 @@ in
       displayManager.gdm.enable = true;
 
       desktopManager.gnome.enable = true;
-      windowManager.i3.enable = true;
+      windowManager.i3.enable = cfg.i3;
 
       # Configure keymap in X11
       xkb = {

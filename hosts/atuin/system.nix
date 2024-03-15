@@ -69,5 +69,6 @@
     userName = "vojta";
     hostName = "atuin";
     cpuType = "intel";
+    i3 = false;
   };
 }
