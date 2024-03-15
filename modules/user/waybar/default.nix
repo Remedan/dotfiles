@@ -72,13 +72,13 @@ in
           clock = {
             format = "{:%a, %d %b %Y – %R}";
             format-alt = "{:%Y-%m-%d %H:%M:%S}";
+            format-alt-click = "click-right";
             tooltip-format = "<tt><small>{calendar}</small></tt>";
             calendar = {
               mode = "month";
               mode-mon-col = 3;
               weeks-pos = "left";
               on-scroll = 1;
-              on-click-right = "mode";
               format = {
                 months = "<span color='#ffead3'><b>{}</b></span>";
                 days = "<span color='#ecc6d9'><b>{}</b></span>";
@@ -87,10 +87,9 @@ in
                 today = "<span color='#ff6699'><b><u>{}</u></b></span>";
               };
             };
+            on-click = "swaync-client -t -sw";
             actions = {
-              on-click-right = "mode";
-              on-click-forward = "tz_up";
-              on-click-backward = "tz_down";
+              on-click-middle = "mode";
               on-scroll-up = "shift_down";
               on-scroll-down = "shift_up";
             };
