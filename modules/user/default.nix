@@ -19,6 +19,7 @@
   ./polybar
   ./rofi
   ./ssh.nix
+  ./swaync
   ./touchpad.nix
   ./waybar
   ./wofi.nix

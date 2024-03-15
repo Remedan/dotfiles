@@ -39,8 +39,8 @@ in
     ];
     user-modules = {
       waybar.enable = mkDefault true;
+      swaync.enable = mkDefault true;
       wofi.enable = mkDefault true;
-      dunst.enable = mkDefault true;
     };
     xdg.configFile."swaylock/lock.png".source = ./lock.png;
     programs.swaylock = {
@@ -120,6 +120,7 @@ in
 
         startup = [
           { command = "waybar"; }
+          { command = "swaync"; }
           { command = "nm-applet"; }
           { command = "udiskie --tray"; }
           { command = "1password --silent"; }
