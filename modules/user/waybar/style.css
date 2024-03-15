@@ -52,30 +52,18 @@ button {
     background-color: @alert;
 }
 
+label {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#workspaces label {
+    padding: 0;
+}
+
 #mode {
     color: @background;
     background-color: @primary;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#language,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
-    padding: 0 10px;
 }
 
 #pulseaudio {
