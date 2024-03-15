@@ -106,7 +106,7 @@ in
           };
 
           cpu = {
-            format = "  {}%";
+            format = "  {}%";
           };
 
           memory = {
@@ -120,7 +120,11 @@ in
 
           battery = {
             format = "{icon}   {capacity}%";
-            format-icons = [ "" "" "" "" "" ];
+            format-icons = {
+              default = [ "" "" "" "" "" ];
+              charging = "";
+              plugged = "";
+            };
           };
 
           tray = {
