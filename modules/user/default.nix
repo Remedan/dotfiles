@@ -20,7 +20,7 @@
   ./rofi
   ./ssh.nix
   ./touchpad.nix
-  ./waybar.nix
+  ./waybar
   ./wofi.nix
   ./yubikey.nix
   ./zathura.nix
