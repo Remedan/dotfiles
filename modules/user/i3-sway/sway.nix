@@ -61,6 +61,7 @@ in
         { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock"; }
       ];
     };
+    services.swayosd.enable = true;
     wayland.windowManager.sway = {
       enable = true;
       swaynag.enable = true;
@@ -192,21 +193,21 @@ in
           "${mod}+Shift+y" = "gaps outer current minus 6";
           "${mod}+Shift+u" = "gaps outer current plus 6";
 
-          # Audio controls (volume up, volume down, toggle mute)
-          "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
-          "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
-          "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          "XF86AudioMicMute" = "exec pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+          # Audio controls
+          "XF86AudioRaiseVolume" = "exec swayosd-client --output-volume raise";
+          "XF86AudioLowerVolume" = "exec swayosd-client --output-volume lower";
+          "XF86AudioMute" = "exec swayosd-client --output-volume mute-toggle";
+          "XF86AudioMicMute" = "exec swayosd-client --input-volume mute-toggle";
 
-          # Media keys
+          # Playback controls
           "XF86AudioPlay" = "exec playerctl --ignore-player=firefox play-pause";
           "XF86AudioNext" = "exec playerctl --ignore-player=firefox next";
           "XF86AudioPrev" = "exec playerctl --ignore-player=firefox previous";
           "XF86AudioStop" = "exec playerctl --ignore-player=firefox stop";
 
-          # Sreen brightness controls (brightness up, brightness down)
-          "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
-          "XF86MonBrightnessDown" = "exec  brightnessctl set 10%-";
+          # Sreen brightness controls
+          "XF86MonBrightnessUp" = "exec swayosd-client --brightness raise";
+          "XF86MonBrightnessDown" = "exec swayosd-client --brightness lower";
 
           # Printscreen saves screenshot (with shift only focused window)
           "Print" = "exec grim";

@@ -124,7 +124,15 @@ in
       group = cfg.userName;
       isNormalUser = true;
       description = "Vojtěch Balák";
-      extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "scanner" "lp" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+        "libvirtd"
+        "scanner"
+        "lp"
+        "video"
+      ];
       shell = pkgs.zsh;
     };
 
@@ -188,5 +196,11 @@ in
         TimeoutStopSec = 10;
       };
     };
+
+    # Udev rules for SwayOSD
+    services.udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
+      ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
+    '';
   };
 }
