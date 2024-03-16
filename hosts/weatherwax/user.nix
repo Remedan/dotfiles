@@ -66,6 +66,7 @@ home-manager.lib.homeManagerConfiguration {
           enable = true;
           nvidia = true;
         };
+        waybar.windowManager = "hyprland";
       };
     }
   ] ++ import ./../../modules/user;

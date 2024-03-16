@@ -6,6 +6,10 @@ in
 {
   options.user-modules.waybar = {
     enable = mkEnableOption "Waybar";
+    windowManager = mkOption {
+      type = types.enum [ "sway" "hyprland" ];
+      default = "sway";
+    };
   };
   config = mkIf cfg.enable {
     programs.waybar = {
@@ -16,18 +20,17 @@ in
       settings = {
         mainBar = {
           modules-left = [
-            "sway/workspaces"
+            "${cfg.windowManager}/workspaces"
             "pulseaudio"
             "mpris"
             "custom/weather"
-            "sway/mode"
-          ];
+          ] ++ optional (cfg.windowManager == "sway") "sway/mode";
           modules-center = [
             "clock"
             "custom/notification"
           ];
           modules-right = [
-            "sway/language"
+            "${cfg.windowManager}/language"
             "disk"
             "cpu"
             "memory"
