@@ -13,7 +13,7 @@ home-manager.lib.homeManagerConfiguration {
         sway = {
           enable = true;
           startup = [
-            { command = "blueman-applet"; }
+            "blueman-applet"
           ];
         };
         hyprland = {

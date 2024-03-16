@@ -59,7 +59,7 @@ home-manager.lib.homeManagerConfiguration {
           enable = true;
           nvidia = true;
           startup = [
-            { command = "blueman-applet"; }
+            "blueman-applet"
           ];
         };
         hyprland = {

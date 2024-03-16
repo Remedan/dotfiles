@@ -34,15 +34,15 @@ home-manager.lib.homeManagerConfiguration {
             "number 9" = [{ app_id = "Spotify"; }];
           };
           startup = [
-            { command = "blueman-applet"; }
-            { command = "birdtray"; }
-            { command = "solaar -w hide"; }
-            { command = "firefox"; }
-            { command = "thunderbird"; }
-            { command = "obsidian"; }
-            { command = "swaymsg 'workspace number 4; exec kitty; exec kitty'"; }
-            { command = "slack"; }
-            { command = "swaymsg 'workspace number 9; exec spotify'"; }
+            "blueman-applet"
+            "birdtray"
+            "solaar -w hide"
+            "firefox"
+            "thunderbird"
+            "obsidian"
+            "swaymsg 'workspace number 4; exec kitty; exec kitty'"
+            "slack"
+            "swaymsg 'workspace number 9; exec spotify'"
           ];
         };
         hyprland.enable = true;

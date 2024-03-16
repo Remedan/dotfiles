@@ -23,7 +23,7 @@ in
       default = [ ];
     };
     startup = mkOption {
-      type = with types; listOf (attrsOf anything);
+      type = with types; listOf string;
       default = [ ];
     };
     nvidia = mkOption {
@@ -118,12 +118,12 @@ in
 
         workspaceOutputAssign = cfg.workspaceOutput;
 
-        startup = [
-          { command = "waybar"; }
-          { command = "nm-applet"; }
-          { command = "udiskie --tray"; }
-          { command = "1password --silent"; }
-        ] ++ cfg.startup;
+        startup = map (command: { inherit command; }) ([
+          "waybar"
+          "nm-applet"
+          "udiskie --tray"
+          "1password --silent"
+        ] ++ cfg.startup);
 
         input = {
           "type:keyboard" = {
