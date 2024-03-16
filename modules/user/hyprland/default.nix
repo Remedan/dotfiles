@@ -10,12 +10,17 @@ in
       type = types.bool;
       default = false;
     };
+    startup = mkOption {
+      type = with types; listOf string;
+      default = [ ];
+    };
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
+      grim
       hyprpaper
+      slurp
       wdisplays
-      wofi
     ];
     xdg.configFile."hypr/hyprpaper.conf".text = ''
       preload = ~/Pictures/wallpaper.png
@@ -24,6 +29,8 @@ in
     '';
     user-modules = {
       waybar.enable = mkDefault true;
+      swaync.enable = mkDefault true;
+      wofi.enable = mkDefault true;
     };
     wayland.windowManager.hyprland = {
       enable = true;
@@ -44,6 +51,8 @@ in
           env = [
             "XCURSOR_SIZE,24"
             "QT_QPA_PLATFORMTHEME,qt5ct"
+            # Enable wayland for chromium-based apps
+            "NIXOS_OZONE_WL,1"
           ] ++ optionals cfg.nvidia [
             "LIBVA_DRIVER_NAME,nvidia"
             "XDG_SESSION_TYPE,wayland"
@@ -55,16 +64,16 @@ in
           # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 
           exec-once = [
-            "waybar"
             "hyprpaper"
+            "waybar"
             "nm-applet"
             "udiskie --tray"
-            "blueman-applet"
             "1password --silent"
-          ];
+          ] ++ cfg.startup;
 
           input = {
-            kb_layout = "us";
+            kb_layout = "us,cz(qwerty)";
+            kb_options = "grp:alt_shift_toggle,caps:escape";
 
             follow_mouse = 1;
 

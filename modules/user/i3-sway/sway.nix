@@ -120,7 +120,6 @@ in
 
         startup = [
           { command = "waybar"; }
-          { command = "swaync"; }
           { command = "nm-applet"; }
           { command = "udiskie --tray"; }
           { command = "1password --silent"; }

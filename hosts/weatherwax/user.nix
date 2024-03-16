@@ -65,6 +65,9 @@ home-manager.lib.homeManagerConfiguration {
         hyprland = {
           enable = true;
           nvidia = true;
+          startup = [
+            "blueman-applet"
+          ];
         };
         waybar.windowManager = "hyprland";
       };

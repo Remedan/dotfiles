@@ -24,16 +24,21 @@ home-manager.lib.homeManagerConfiguration {
           ];
         };
         polybar.laptopModules = true;
+        touchpad = {
+          enable = true;
+          deviceName = "SynPS/2 Synaptics TouchPad";
+        };
         sway = {
           enable = true;
           startup = [
             { command = "blueman-applet"; }
           ];
         };
-        hyprland.enable = true;
-        touchpad = {
+        hyprland = {
           enable = true;
-          deviceName = "SynPS/2 Synaptics TouchPad";
+          startup = [
+            "blueman-applet"
+          ];
         };
       };
     }
