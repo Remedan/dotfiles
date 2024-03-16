@@ -17,7 +17,7 @@ in
     };
     i3 = mkOption {
       type = types.bool;
-      default = true;
+      default = false;
     };
   };
 

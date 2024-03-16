@@ -76,6 +76,7 @@
       userName = "remedan";
       hostName = "weatherwax";
       cpuType = "amd";
+      i3 = true;
     };
     nvidia.enable = true;
   };
