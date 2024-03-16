@@ -59,11 +59,6 @@
           inherit home-manager;
           pkgs = mkPkgs "x86_64-linux";
         };
-
-        "remedan@angua" = import ./hosts/angua/user.nix {
-          inherit home-manager;
-          pkgs = mkPkgs "aarch64-darwin";
-        };
       };
     };
 }
