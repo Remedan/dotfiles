@@ -37,6 +37,9 @@ in
     # Firmware upgrades
     services.fwupd.enable = true;
 
+    # Enable periodic SSD trim
+    services.fstrim.enable = true;
+
     # Networking
     networking = {
       useDHCP = lib.mkDefault true;
