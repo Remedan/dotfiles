@@ -12,7 +12,20 @@ in
     home.packages = with pkgs; [
       swaynotificationcenter
     ];
-    xdg.configFile."swaync/config.json".source = ./config.json;
+    xdg.configFile."swaync/config.json".text = builtins.toJSON {
+      positionX = "center";
+      positionY = "top";
+      control-center-margin-top = 10;
+      control-center-margin-bottom = 10;
+      control-center-margin-right = 10;
+      control-center-margin-left = 10;
+      widgets = [
+        "inhibitors"
+        "title"
+        "dnd"
+        "notifications"
+      ];
+    };
     systemd.user.services.swaync = {
       Unit = {
         Description = "Sway Notification Center";
