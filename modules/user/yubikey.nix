@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.user-modules.yubikey;
@@ -11,7 +11,7 @@ in
     services.gpg-agent = {
       enable = true;
       enableSshSupport = true;
-      pinentryFlavor = "gnome3";
+      pinentryPackage = pkgs.pinentry-gnome3;
     };
     programs.zsh.initExtra = ''
       export GPG_TTY="$(tty)"
