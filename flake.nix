@@ -40,7 +40,10 @@
 
         atuin = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./hosts/atuin/system.nix ];
+          modules = [
+            ./hosts/atuin/system.nix
+            nixos-hardware.nixosModules.dell-latitude-5520
+          ];
         };
       };
 
