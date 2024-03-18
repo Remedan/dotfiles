@@ -23,7 +23,7 @@ in
       default = [ ];
     };
     startup = mkOption {
-      type = with types; listOf string;
+      type = with types; listOf str;
       default = [ ];
     };
     nvidia = mkOption {

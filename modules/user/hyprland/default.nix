@@ -11,7 +11,7 @@ in
       default = false;
     };
     startup = mkOption {
-      type = with types; listOf string;
+      type = with types; listOf str;
       default = [ ];
     };
   };
