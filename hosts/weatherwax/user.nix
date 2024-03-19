@@ -57,6 +57,7 @@ home-manager.lib.homeManagerConfiguration {
         };
         sway = {
           enable = true;
+          swayidle = false;
           nvidia = true;
           startup = [
             "blueman-applet"

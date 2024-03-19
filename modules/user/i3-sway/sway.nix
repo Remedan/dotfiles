@@ -26,6 +26,10 @@ in
       type = with types; listOf str;
       default = [ ];
     };
+    swayidle = mkOption {
+      type = types.bool;
+      default = true;
+    };
     nvidia = mkOption {
       type = types.bool;
       default = false;
@@ -52,7 +56,7 @@ in
       };
     };
     services.swayidle = {
-      enable = true;
+      enable = cfg.swayidle;
       timeouts = [
         { timeout = 60 * 30; command = "${pkgs.swaylock}/bin/swaylock"; }
       ];
