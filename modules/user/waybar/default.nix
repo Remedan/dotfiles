@@ -36,6 +36,7 @@ in
             "memory"
             "backlight"
             "battery"
+            "idle_inhibitor"
             "tray"
           ];
 
@@ -155,6 +156,14 @@ in
               default = [ "" "" "" "" "" ];
               charging = "";
               plugged = "";
+            };
+          };
+
+          idle_inhibitor = {
+            format = "{icon}";
+            format-icons = {
+              activated = "";
+              deactivated = "";
             };
           };
 
