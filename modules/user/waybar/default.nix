@@ -45,7 +45,8 @@ in
           };
 
           "custom/weather" = {
-            exec = "curl -s 'https://wttr.in/Prague+Czechia?format=%c+%t'";
+            exec = "echo \"{\\\"text\\\": \\\"$(curl -s 'https://wttr.in/?format=%c+%t')\\\",\\\"tooltip\\\": \\\"$(curl -s 'https://wttr.in/?format=%l:+%C,+%t+(Feel:+%f),+Rain:+%p,+Humidity:+%h,+Wind:+%w,+UV:+%u')\\\"}\"";
+            return-type = "json";
             format = "{}";
             interval = 3600;
           };
