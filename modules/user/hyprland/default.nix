@@ -18,11 +18,32 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       grim
+      hyprlock
       hyprpaper
       hyprpicker
       slurp
       wdisplays
       wev
+      (writeShellScriptBin "powermenu" ''
+        entries=" Lock\n Logout\n⏾ Suspend\n Hibernate\n⭮ Reboot\n⏻ Shutdown"
+
+        selected=$(echo -e $entries | wofi --width 250 --height 210 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+
+        case $selected in
+          lock)
+            hyprlock;;
+          logout)
+            hyprctl dispatch exit;;
+          suspend)
+            systemctl suspend;;
+          hibernate)
+            systemctl hibernate;;
+          reboot)
+            systemctl reboot;;
+          shutdown)
+            systemctl poweroff;;
+        esac
+      '')
     ];
     xdg.configFile."hypr/hyprpaper.conf".text = ''
       preload = ~/Pictures/wallpaper.png
@@ -154,6 +175,7 @@ in
             "${mainMod}, D, exec, wofi --show drun"
             "${mainMod} SHIFT, P, pseudo," # dwindle
             "${mainMod}, V, togglesplit," # dwindle
+            "${mainMod}, N, exec, powermenu"
 
             # Move focus with mainMod + hjkl, arrow keys
             "${mainMod}, H, movefocus, l"
