@@ -33,6 +33,7 @@ in
       swaync.enable = mkDefault true;
       wofi.enable = mkDefault true;
     };
+    services.copyq.enable = true;
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
@@ -141,6 +142,7 @@ in
 
           windowrulev2 = [
             "suppressevent maximize, class:.*"
+            "float, class:copyq"
           ];
 
           bind = [

@@ -67,6 +67,7 @@ in
       ];
     };
     services.swayosd.enable = true;
+    services.copyq.enable = true;
     wayland.windowManager.sway = {
       enable = true;
       swaynag.enable = true;
@@ -114,6 +115,7 @@ in
 
         floating.criteria = [
           { title = "Origin"; }
+          { class = "copyq"; }
         ];
 
         colors = import ./colors/${cfg.colorscheme}.nix;
