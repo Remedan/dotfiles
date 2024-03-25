@@ -20,10 +20,6 @@ in
       "terraform"
       "winbox"
     ];
-    # Obsidian still uses an EOL version of Electron
-    # https://github.com/NixOS/nixpkgs/issues/273611#issuecomment-1858755633
-    nixpkgs.config.permittedInsecurePackages =
-      lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0";
     home.packages = with pkgs; [
       # Core
       bat
