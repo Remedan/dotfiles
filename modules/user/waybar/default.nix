@@ -47,6 +47,11 @@ in
             enable-bar-scroll = true;
           };
 
+          "hyprland/workspaces" = {
+            on-scroll-up = "hyprctl dispatch workspace m-1";
+            on-scroll-down = "hyprctl dispatch workspace m+1";
+          };
+
           "custom/weather" = {
             exec = "echo \"{\\\"text\\\": \\\"$(curl -s 'https://wttr.in/?format=%c+%t')\\\",\\\"tooltip\\\": \\\"$(curl -s 'https://wttr.in/?format=%l:+%C,+%t+(Feel:+%f),+Rain:+%p,+Humidity:+%h,+Wind:+%w,+UV:+%u')\\\"}\"";
             return-type = "json";
