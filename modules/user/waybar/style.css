@@ -43,7 +43,8 @@ button {
     background: rgba(0, 0, 0, 0.5);
 }
 
-#workspaces button.focused {
+#workspaces button.focused,
+#workspaces button.active {
     color: @background;
     background-color: @primary;
 }

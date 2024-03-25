@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 with lib;
 
 let
@@ -35,6 +35,10 @@ in
       autorandr.enable = mkDefault true;
       picom.enable = mkDefault true;
     };
+    home.packages = with pkgs; [
+      scrot
+      xautolock
+    ];
     xdg.configFile."i3/i3-lock.sh" = {
       source = ./i3-lock.sh;
       executable = true;

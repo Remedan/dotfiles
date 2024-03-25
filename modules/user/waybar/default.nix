@@ -30,6 +30,7 @@ in
             "custom/notification"
           ];
           modules-right = [
+            "privacy"
             "${cfg.windowManager}/language"
             "disk"
             "cpu"

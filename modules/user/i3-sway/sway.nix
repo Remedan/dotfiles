@@ -40,6 +40,7 @@ in
       grim
       slurp
       wdisplays
+      wev
     ];
     user-modules = {
       waybar.enable = mkDefault true;

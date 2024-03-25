@@ -64,11 +64,9 @@ in
       networkmanagerapplet
       nmap
       openvpn
-      scrot
       sxiv
       udiskie
       ventoy
-      xautolock
       xclip
       xsane
       yubikey-manager

@@ -21,6 +21,7 @@ in
       hyprpaper
       slurp
       wdisplays
+      wev
     ];
     xdg.configFile."hypr/hyprpaper.conf".text = ''
       preload = ~/Pictures/wallpaper.png
@@ -42,7 +43,6 @@ in
           terminal = config.user-modules.common.terminal;
         in
         {
-          # See https://wiki.hyprland.org/Configuring/Monitors/
           monitor = [
             ",preferred,auto,auto"
             "eDP-1,preferred,auto,1"
@@ -60,8 +60,6 @@ in
             "__GLX_VENDOR_LIBRARY_NAME,nvidia"
             "WLR_NO_HARDWARE_CURSORS,1"
           ];
-
-          # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 
           exec-once = [
             "hyprpaper"
@@ -113,8 +111,6 @@ in
           animations = {
             enabled = "yes";
 
-            # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
-
             bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
             animation = [
@@ -128,16 +124,10 @@ in
           };
 
           dwindle = {
-            # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-            pseudotile = "yes"; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-            preserve_split = "yes"; # you probably want this
-
+            pseudotile = "yes";
+            preserve_split = "yes";
+            force_split = 2;
             no_gaps_when_only = 1;
-          };
-
-          master = {
-            # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-            new_is_master = true;
           };
 
           gestures = {
@@ -145,28 +135,21 @@ in
           };
 
           misc = {
-            # See https://wiki.hyprland.org/Configuring/Variables/ for more
             disable_hyprland_logo = true;
             disable_splash_rendering = true;
           };
 
-          # Example windowrule v1
-          # windowrule = float, ^(kitty)$
-          # Example windowrule v2
-          # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-          # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
           windowrulev2 = [
             "suppressevent maximize, class:.*"
           ];
 
           bind = [
-            # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
             "${mainMod}, RETURN, exec, ${terminal}"
             "${mainMod} SHIFT, Q, killactive,"
             "${mainMod} SHIFT, E, exit,"
             "${mainMod} SHIFT, SPACE, togglefloating,"
             "${mainMod}, D, exec, wofi --show drun"
-            "${mainMod}, P, pseudo," # dwindle
+            "${mainMod} SHIFT, P, pseudo," # dwindle
             "${mainMod}, V, togglesplit," # dwindle
 
             # Move focus with mainMod + hjkl, arrow keys
@@ -218,12 +201,16 @@ in
             "${mainMod} SHIFT, S, movetoworkspace, special:magic"
 
             # Scroll through existing workspaces with mainMod + scroll
-            "${mainMod}, mouse_down, workspace, e+1"
-            "${mainMod}, mouse_up, workspace, e-1"
+            "${mainMod}, mouse_down, workspace, m+1"
+            "${mainMod}, mouse_up, workspace, m-1"
 
             # Move through workspaces
-            "${mainMod}, period, workspace, e+1"
-            "${mainMod}, comma, workspace, e-1"
+            "${mainMod}, period, workspace, m+1"
+            "${mainMod}, comma, workspace, m-1"
+
+            # Move through workspaces with mouse forward/backward
+            ", mouse:276, workspace, m+1"
+            ", mouse:275, workspace, m-1"
 
             # Applications
             "${mainMod}, i, exec, ${config.user-modules.common.browser}"
