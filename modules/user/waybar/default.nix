@@ -41,6 +41,8 @@ in
             "tray"
           ];
 
+          layer = "top";
+
           "sway/workspaces" = {
             enable-bar-scroll = true;
           };
