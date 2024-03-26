@@ -226,6 +226,9 @@ in
           "${mod}+o" = "exec emacsclient -c";
           "${mod}+p" = "exec obsidian";
 
+          # 1Password quick access
+          "Ctrl+Shift+Space" = "exec 1password --quick-access";
+
           # Modes
           "${mod}+r" = "mode resize";
           "${mod}+n" = "mode \"${powerControlMode}\"";
