@@ -248,6 +248,12 @@ in
             "${mainMod}, mouse:272, movewindow"
             "${mainMod}, mouse:273, resizewindow"
           ];
+
+          # Laptop lid handling
+          bindl = [
+            ",switch:on:Lid Switch,exec,hyprctl keyword monitor \"eDP-1, disable\""
+            ",switch:off:Lid Switch,exec,hyprctl keyword monitor \"eDP-1, preferred, auto, 1\""
+          ];
         };
     };
   };
