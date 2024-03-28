@@ -45,7 +45,6 @@ in
     user-modules = {
       waybar.enable = mkDefault true;
       swaync.enable = mkDefault true;
-      wofi.enable = mkDefault true;
       fuzzel.enable = mkDefault true;
     };
     xdg.configFile."swaylock/lock.png".source = ./lock.png;

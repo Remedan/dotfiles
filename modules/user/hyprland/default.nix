@@ -14,11 +14,14 @@ in
       type = with types; listOf str;
       default = [ ];
     };
+    swayidle = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       grim
-      hyprlock
       hyprpaper
       hyprpicker
       slurp
@@ -27,11 +30,11 @@ in
       (writeShellScriptBin "powermenu" ''
         entries=" Lock\n Logout\n⏾ Suspend\n Hibernate\n⭮ Reboot\n⏻ Shutdown"
 
-        selected=$(echo -e $entries | wofi --width 250 --height 210 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+        selected=$(echo -e $entries | fuzzel --dmenu -l 6 | awk '{print tolower($2)}')
 
         case $selected in
           lock)
-            hyprlock;;
+            swaylock;;
           logout)
             hyprctl dispatch exit;;
           suspend)
@@ -53,8 +56,28 @@ in
     user-modules = {
       waybar.enable = mkDefault true;
       swaync.enable = mkDefault true;
-      wofi.enable = mkDefault true;
+      fuzzel.enable = mkDefault true;
     };
+    xdg.configFile."swaylock/lock.png".source = ../i3-sway/lock.png;
+    programs.swaylock = {
+      enable = true;
+      settings = {
+        image = "~/.config/swaylock/lock.png";
+        scaling = "tile";
+        show-keyboard-layout = true;
+      };
+    };
+    services.swayidle = {
+      enable = cfg.swayidle;
+      timeouts = [
+        { timeout = 60 * 30; command = "${pkgs.swaylock}/bin/swaylock"; }
+      ];
+      events = [
+        { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock"; }
+        { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock"; }
+      ];
+    };
+    services.swayosd.enable = true;
     services.copyq.enable = true;
     wayland.windowManager.hyprland = {
       enable = true;
@@ -105,10 +128,10 @@ in
 
           general = {
             gaps_in = 5;
-            gaps_out = 20;
+            gaps_out = 10;
             border_size = 2;
-            "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-            "col.inactive_border" = "rgba(595959aa)";
+            "col.active_border" = "rgba(676d3dee)";
+            "col.inactive_border" = "rgba(323232aa)";
 
             layout = "dwindle";
 
@@ -121,7 +144,7 @@ in
 
             blur = {
               enabled = true;
-              size = 3;
+              size = 8;
               passes = 1;
             };
 
@@ -134,15 +157,13 @@ in
           animations = {
             enabled = "yes";
 
-            bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-
             animation = [
-              "windows, 1, 7, myBezier"
-              "windowsOut, 1, 7, default, popin 80%"
-              "border, 1, 10, default"
-              "borderangle, 1, 8, default"
-              "fade, 1, 7, default"
-              "workspaces, 1, 6, default"
+              "windows, 1, 3, default"
+              "windowsOut, 1, 3, default, popin 80%"
+              "border, 1, 3, default"
+              "borderangle, 1, 3, default"
+              "fade, 1, 3, default"
+              "workspaces, 1, 3, default"
             ];
           };
 
@@ -172,7 +193,7 @@ in
             "${mainMod} SHIFT, Q, killactive,"
             "${mainMod} SHIFT, E, exit,"
             "${mainMod} SHIFT, SPACE, togglefloating,"
-            "${mainMod}, D, exec, wofi --show drun"
+            "${mainMod}, D, exec, fuzzel"
             "${mainMod} SHIFT, P, pseudo," # dwindle
             "${mainMod}, V, togglesplit," # dwindle
             "${mainMod}, N, exec, powermenu"
@@ -240,7 +261,7 @@ in
             # Applications
             "${mainMod}, i, exec, ${config.user-modules.common.browser}"
             "${mainMod}, o, exec, emacsclient -c"
-            "${mainMod}, p, exec, obsidian"
+            "${mainMod}, p, exec, copyq show"
           ];
 
           bindm = [

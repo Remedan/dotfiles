@@ -19,6 +19,9 @@ in
 
       settings = {
         mainBar = {
+          height = 20;
+          layer = "top";
+
           modules-left = [
             "${cfg.windowManager}/workspaces"
             "pulseaudio"
@@ -40,8 +43,6 @@ in
             "idle_inhibitor"
             "tray"
           ];
-
-          layer = "top";
 
           "sway/workspaces" = {
             enable-bar-scroll = true;

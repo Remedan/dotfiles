@@ -46,7 +46,15 @@ home-manager.lib.homeManagerConfiguration {
             "swaymsg 'workspace number 9; exec spotify'"
           ];
         };
-        hyprland.enable = true;
+        hyprland = {
+          enable = true;
+          startup = [
+            "blueman-applet"
+            "birdtray"
+            "solaar -w hide"
+          ];
+        };
+        waybar.windowManager = "hyprland";
         emacs.pythonTabs = true;
         git.enable = false;
         yubikey.enable = true;
