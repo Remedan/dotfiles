@@ -225,7 +225,7 @@ in
           # Applications
           "${mod}+i" = "exec ${config.user-modules.common.browser}";
           "${mod}+o" = "exec emacsclient -c";
-          "${mod}+p" = "exec obsidian";
+          "${mod}+p" = "exec copyq show";
 
           # 1Password quick access
           "Ctrl+Shift+Space" = "exec 1password --quick-access";
