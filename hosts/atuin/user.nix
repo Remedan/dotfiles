@@ -10,6 +10,7 @@ home-manager.lib.homeManagerConfiguration {
         homeDirectory = "/home/vojta";
       };
       user-modules = {
+        packages.categories.emulators = false;
         sway = {
           enable = true;
           workspaceOutput =

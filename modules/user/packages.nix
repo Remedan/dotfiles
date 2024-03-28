@@ -6,6 +6,10 @@ in
 {
   options.user-modules.packages = {
     enable = mkEnableOption "packages";
+    categories.emulators = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfreePredicate = pkg: elem (lib.getName pkg) [
@@ -143,7 +147,7 @@ in
       prismlauncher # Minecraft
       scummvm
       wesnoth
-
+    ] ++ optionals cfg.categories.emulators [
       # Console Emulators
       desmume
       pcsx2
