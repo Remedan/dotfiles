@@ -14,6 +14,10 @@ in
       type = with types; listOf str;
       default = [ ];
     };
+    workspaces = mkOption {
+      type = with types; listOf str;
+      default = [ ];
+    };
     swayidle = mkOption {
       type = types.bool;
       default = true;
@@ -185,6 +189,8 @@ in
           "float, class:copyq"
         ];
 
+        workspace = cfg.workspaces;
+
         bind = [
           # General window manipulation
           "$mod, RETURN, exec, ${config.user-modules.common.terminal}"
@@ -259,6 +265,10 @@ in
           ", mouse:276, workspace, m+1"
           ", mouse:275, workspace, m-1"
 
+          # Move workspaces between monitors
+          "$mod SHIFT, period, movecurrentworkspacetomonitor, +1"
+          "$mod SHIFT, comma,  movecurrentworkspacetomonitor, -1"
+
           # Grouping
           "$mod, q, togglegroup"
           "$mod, w, changegroupactive, b"
@@ -268,6 +278,7 @@ in
           "$mod, i, exec, ${config.user-modules.common.browser}"
           "$mod, o, exec, emacsclient -c"
           "$mod, p, exec, copyq show"
+          "CONTROL SHIFT, SPACE, exec, copyq show"
         ];
 
         bindm = [

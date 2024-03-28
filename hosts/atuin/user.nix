@@ -53,6 +53,18 @@ home-manager.lib.homeManagerConfiguration {
             "birdtray"
             "solaar -w hide"
           ];
+          workspaces = [
+            "1, monitor:DP-4, default:true, on-created-empty:firefox"
+            "2, monitor:DP-4, on-created-empty:thunderbird"
+            "3, monitor:DP-4, on-created-empty:obsidian"
+            "4, monitor:DP-5, default:true, on-created-empty:kitty & kitty"
+            "5, monitor:DP-5"
+            "6, monitor:DP-5"
+            "7, monitor:DP-5"
+            "8, monitor:DP-5, on-created-empty:slack"
+            "9, monitor:DP-5, on-created-empty:spotify"
+            "10, monitor:DP-5"
+          ];
         };
         waybar.windowManager = "hyprland";
         emacs.pythonTabs = true;
