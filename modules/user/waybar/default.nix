@@ -27,7 +27,8 @@ in
             "pulseaudio"
             "mpris"
             "custom/weather"
-          ] ++ optional (cfg.windowManager == "sway") "sway/mode";
+          ] ++ optional (cfg.windowManager == "sway") "sway/mode"
+          ++ optional (cfg.windowManager == "hyprland") "hyprland/submap";
           modules-center = [
             "clock"
             "custom/notification"

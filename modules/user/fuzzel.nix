@@ -20,7 +20,7 @@ in
         colors = {
           background = "#282828f5";
           text = "ebdbb2ff";
-          border = "d79921ff";
+          border = "676d3dee";
         };
       };
     };
