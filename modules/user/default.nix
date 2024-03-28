@@ -5,6 +5,7 @@
   ./dunst.nix
   ./emacs
   ./fonts.nix
+  ./fuzzel.nix
   ./git.nix
   ./gtk.nix
   ./hyprland

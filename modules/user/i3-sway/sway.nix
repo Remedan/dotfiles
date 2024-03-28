@@ -46,6 +46,7 @@ in
       waybar.enable = mkDefault true;
       swaync.enable = mkDefault true;
       wofi.enable = mkDefault true;
+      fuzzel.enable = mkDefault true;
     };
     xdg.configFile."swaylock/lock.png".source = ./lock.png;
     programs.swaylock = {
@@ -155,7 +156,7 @@ in
           "${mod}+Return" = "exec " + config.user-modules.common.terminal;
 
           # Open a program launcher
-          "${mod}+d" = "exec wofi --show drun";
+          "${mod}+d" = "exec fuzzel";
 
           # Move focus
           "${mod}+h" = "focus left";
