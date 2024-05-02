@@ -1,0 +1,22 @@
+[
+  ./common.nix
+  ./emacs
+  ./fonts.nix
+  ./fuzzel.nix
+  ./git.nix
+  ./gtk.nix
+  ./hyprland
+  ./japanese.nix
+  ./kitty
+  ./mpd.nix
+  ./nodejs.nix
+  ./packages.nix
+  ./shell.nix
+  ./ssh.nix
+  ./sway
+  ./swaync.nix
+  ./waybar
+  ./wofi.nix
+  ./yubikey.nix
+  ./zathura.nix
+]

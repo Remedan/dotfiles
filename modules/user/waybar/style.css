@@ -1,0 +1,113 @@
+@define-color color0 #282828;
+@define-color color1 #cc241d;
+@define-color color2 #98971a;
+@define-color color3 #d79921;
+@define-color color4 #458588;
+@define-color color5 #b16286;
+@define-color color6 #689d6a;
+@define-color color7 #a89984;
+@define-color foreground #ebdbb2;
+@define-color foreground-alt @color7;
+@define-color background #282828;
+@define-color primary @color3;
+@define-color alert @color1;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    /* @background = #282828 */
+    background-color: rgba(40, 40, 40, 0.5);
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    border-radius: 0;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @foreground;
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    color: @background;
+    background-color: @primary;
+}
+
+#workspaces button.urgent {
+    background-color: @alert;
+}
+
+label,
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#workspaces label {
+    padding: 0;
+}
+
+#mode {
+    color: @background;
+    background-color: @primary;
+}
+
+#pulseaudio {
+  color: @color4;
+}
+
+#battery {
+  color: @color6;
+}
+
+#cpu {
+  color: @color2;
+}
+
+#disk {
+  color: @foreground-alt;
+}
+
+#memory {
+  color: @color3;
+}
+
+#mpris {
+  color: @foreground-alt;
+}
+
+#language {
+  color: @color1;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
