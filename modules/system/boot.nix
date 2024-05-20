@@ -20,6 +20,9 @@ in
     boot = mkMerge [
       {
         loader.efi.canTouchEfiVariables = true;
+
+        # Plymouth boot splash screen
+        plymouth.enable = true;
       }
       (mkIf (!cfg.luks.enable) {
         loader.systemd-boot.enable = true;
