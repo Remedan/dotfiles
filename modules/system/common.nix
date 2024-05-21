@@ -222,5 +222,9 @@ in
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
     '';
+
+    # Gaming
+    programs.steam.enable = true;
+    programs.gamemode.enable = true;
   };
 }
