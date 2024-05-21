@@ -15,6 +15,14 @@ in
       type = with types; nullOr (enum [ "amd" "intel" ]);
       default = null;
     };
+    tailscale = mkOption {
+      type = types.bool;
+      default = false;
+    };
+    flatpak = mkOption {
+      type = types.bool;
+      default = false;
+    };
   };
 
   config = {
@@ -223,5 +231,9 @@ in
     # Gaming
     programs.steam.enable = true;
     programs.gamemode.enable = true;
+
+    # Extra services
+    services.tailscale.enable = cfg.tailscale;
+    services.flatpak.enable = cfg.flatpak;
   };
 }

@@ -46,13 +46,12 @@
       userName = "remedan";
       hostName = "rincewind";
       cpuType = "intel";
+      tailscale = true;
+      flatpak = true;
     };
     boot.luks = {
       enable = true;
       uuid = "6be4f120-522f-4fc6-8b58-937c5fe36791";
     };
   };
-
-  services.tailscale.enable = true;
-  services.flatpak.enable = true;
 }

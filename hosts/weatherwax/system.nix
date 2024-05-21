@@ -73,11 +73,9 @@
       userName = "remedan";
       hostName = "weatherwax";
       cpuType = "amd";
-      i3 = true;
+      tailscale = true;
+      flatpak = true;
     };
     nvidia.enable = true;
   };
-
-  services.tailscale.enable = true;
-  services.flatpak.enable = true;
 }
