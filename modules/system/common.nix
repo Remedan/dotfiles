@@ -30,6 +30,9 @@ in
       intel.updateMicrocode = cfg.cpuType == "intel";
     };
 
+    # CPU power management gui
+    services.cpupower-gui.enable = true;
+
     # Firmware upgrades
     services.fwupd.enable = true;
 
