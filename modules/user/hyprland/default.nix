@@ -190,8 +190,6 @@ in
 
             layout = "dwindle";
 
-            cursor_inactive_timeout = 10;
-
             # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
             allow_tearing = false;
           };
@@ -235,6 +233,11 @@ in
           misc = {
             disable_hyprland_logo = true;
             disable_splash_rendering = true;
+          };
+
+          cursor = {
+            inactive_timeout = 10;
+            hide_on_key_press = true;
           };
 
           windowrulev2 = [
