@@ -16,6 +16,7 @@ home-manager.lib.homeManagerConfiguration {
           startup = [
             "birdtray"
             "solaar -w hide"
+            "jetbrains-toolbox"
             "[workspace 1 silent] firefox"
             "[workspace 2 silent] thunderbird"
             "[workspace 3 silent] obsidian"

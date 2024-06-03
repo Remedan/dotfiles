@@ -14,8 +14,8 @@ in
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfreePredicate = pkg: elem (lib.getName pkg) [
       "1password"
+      "jetbrains-toolbox"
       "obsidian"
-      "rust-rover"
       "slack"
       "spotify"
       "steam"
@@ -89,8 +89,7 @@ in
       bruno
       direnv
       git-crypt
-      jetbrains.pycharm-community
-      jetbrains.rust-rover
+      jetbrains-toolbox
       jq
       krew
       kubectl
