@@ -185,6 +185,8 @@ in
       "steam"
       "steam-original"
       "steam-run"
+      "uhk-agent"
+      "uhk-udev-rules"
     ];
 
     # Gnome Keyring
@@ -194,8 +196,13 @@ in
     hardware.logitech.wireless.enable = true;
     hardware.logitech.wireless.enableGraphical = true;
 
+    # Udev
+    services.udev.packages = with pkgs; [
+      yubikey-personalization
+      uhk-udev-rules
+    ];
+
     # Yubikey
-    services.udev.packages = [ pkgs.yubikey-personalization ];
     # services.pcscd.enable = true;
 
     # Virtualisation

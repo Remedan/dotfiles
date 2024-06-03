@@ -22,6 +22,7 @@ in
       "steam-original"
       "steam-run"
       "terraform"
+      "uhk-agent"
       "winbox"
     ];
     home.packages = with pkgs; [
@@ -67,6 +68,7 @@ in
       openvpn
       sxiv
       udiskie
+      uhk-agent
       ventoy
       wl-clipboard
       xclip
