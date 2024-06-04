@@ -76,6 +76,11 @@
       tailscale = true;
       flatpak = true;
     };
-    nvidia.enable = true;
+    nvidia = {
+      enable = true;
+      # TODO: Use beta until version 555 hits latest/stable
+      # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/nvidia-x11/default.nix#L44
+      driverVersion = "beta";
+    };
   };
 }
