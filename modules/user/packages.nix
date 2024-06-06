@@ -93,23 +93,30 @@ in
       git-crypt
       jetbrains-toolbox
       jq
-      krew
-      kubectl
       nix-direnv
       postgresql
       quickemu
-      rust-analyzer
-      sbcl
-      terraform
       tig
-      winbox
       xxd
 
       # Python
       poetry
       python3
-      python3Packages.pylsp-mypy
-      python3Packages.python-lsp-server
+
+      # Rust
+      rustup
+
+      # Common Lisp
+      sbcl
+
+      # Clojure
+      leiningen
+
+      # Infrastructure
+      krew
+      kubectl
+      terraform
+      winbox
 
       # Internet
       birdtray
