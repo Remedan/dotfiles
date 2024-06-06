@@ -96,16 +96,17 @@ in
       krew
       kubectl
       nix-direnv
-      poetry
       postgresql
       quickemu
       rust-analyzer
+      sbcl
       terraform
       tig
       winbox
       xxd
 
       # Python
+      poetry
       python3
       python3Packages.pylsp-mypy
       python3Packages.python-lsp-server

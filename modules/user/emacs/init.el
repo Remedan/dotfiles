@@ -318,7 +318,7 @@
 ;; SLIME
 (use-package slime
   :config
-  (setq inferior-lisp-program "clisp"))
+  (setq inferior-lisp-program "sbcl"))
 
 ;; Rust
 (use-package rust-mode
