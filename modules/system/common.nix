@@ -82,15 +82,11 @@ in
         variant = "";
       };
     };
-    programs.sway.enable = true;
     programs.hyprland.enable = true;
 
     # XDG Desktop Portal
     services.dbus.enable = true;
-    xdg.portal = {
-      enable = true;
-      wlr.enable = true;
-    };
+    xdg.portal.enable = true;
 
     # Printing
     services.printing = {
