@@ -30,7 +30,6 @@ in
     {
       home.packages = with pkgs; [
         grim
-        hyprlock
         hyprpicker
         slurp
         wdisplays
@@ -61,80 +60,71 @@ in
           | while read name; do ${pkgs.hyprland}/bin/hyprctl switchxkblayout "$name" 0 > /dev/null; done
         '')
       ];
-      xdg.configFile."hypr/hyprpaper.conf".text = ''
-        preload = ~/Pictures/wallpaper.png
-        wallpaper = ,~/Pictures/wallpaper.png
-        splash = false
-      '';
-      systemd.user.services.hyprpaper = {
-        Unit = {
-          Description = "Hyprpaper";
-          After = [ "graphical-session-pre.target" ];
-          PartOf = [ "graphical-session.target" ];
-        };
-
-        Install = { WantedBy = [ "graphical-session.target" ]; };
-
-        Service = {
-          ExecStart = "${pkgs.hyprpaper}/bin/hyprpaper";
-          Restart = "always";
-          RestartSec = 3;
-        };
-      };
-      xdg.configFile."hypr/hyprlock.conf".text = ''
-        background {
-          monitor =
-          path = screenshot
-          blur_size = 8
-          blur_passes = 3
-        }
-        input-field {
-          monitor =
-        }
-      '';
-      xdg.configFile."hypr/hypridle.conf".text = ''
-        general {
-          lock_cmd = pidof hyprlock || ${lockCommand}                      # avoid starting multiple hyprlock instances.
-          before_sleep_cmd = loginctl lock-session                         # lock before suspend.
-          after_sleep_cmd = ${pkgs.hyprland}/bin/hyprctl dispatch dpms on  # to avoid having to press a key twice to turn on the display.
-        }
-
-        listener {
-          timeout = 300                                                    # 5 minutes
-          on-timeout = ${pkgs.brightnessctl}/bin/brightnessctl -s set 10   # set monitor backlight to minimum, avoid 0 on OLED monitor.
-          on-resume = ${pkgs.brightnessctl}/bin/brightnessctl -r           # monitor backlight restore.
-        }
-
-        listener {
-          timeout = 600                                                    # 10 minutes
-          on-timeout = loginctl lock-session                               # lock screen when timeout has passed
-        }
-
-        listener {
-          timeout = 660                                                    # 11 minutes
-          on-timeout = ${pkgs.hyprland}/bin/hyprctl dispatch dpms off      # screen off when timeout has passed
-          on-resume = ${pkgs.hyprland}/bin/hyprctl dispatch dpms on        # screen on when activity is detected after timeout has fired.
-        }
-      '';
-      systemd.user.services.hypridle = mkIf cfg.idleLock {
-        Unit = {
-          Description = "Hypridle";
-          After = [ "graphical-session-pre.target" ];
-          PartOf = [ "graphical-session.target" ];
-        };
-
-        Install = { WantedBy = [ "graphical-session.target" ]; };
-
-        Service = {
-          ExecStart = "${pkgs.hypridle}/bin/hypridle";
-          Restart = "always";
-          RestartSec = 3;
-        };
-      };
       user-modules = {
         waybar.enable = mkDefault true;
         swaync.enable = mkDefault true;
         fuzzel.enable = mkDefault true;
+      };
+      services.hyprpaper = {
+        enable = true;
+        settings = {
+          preload =  [ "~/Pictures/wallpaper.png" ];
+          wallpaper = [ ",~/Pictures/wallpaper.png" ];
+          splash = false;
+        };
+      };
+      programs.hyprlock = {
+        enable = true;
+        settings = {
+          background = {
+            monitor = "";
+            path = "screenshot";
+            blur_size = 8;
+            blur_passes = 3;
+          };
+
+          input-field = {
+            monitor = "";
+          };
+        };
+      };
+      services.hypridle = {
+        enable = true;
+        settings = {
+          general = {
+            # avoid starting multiple hyprlock instances.
+            lock_cmd = "pidof hyprlock || ${lockCommand}";
+            # lock before suspend.
+            before_sleep_cmd = "loginctl lock-session";
+            # to avoid having to press a key twice to turn on the display.
+            after_sleep_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+          };
+
+          listener = [
+            {
+              # 5 minutes
+              timeout = 300;
+              # set monitor backlight to minimum, avoid 0 on OLED monitor.
+              on-timeout = "${pkgs.brightnessctl}/bin/brightnessctl -s set 10";
+              # monitor backlight restore.
+              on-resume = "${pkgs.brightnessctl}/bin/brightnessctl -r";
+            }
+            {
+              # 10 minutes
+              timeout = 600;
+              # lock screen when timeout has passed
+              on-timeout = "loginctl lock-session";
+            }
+            {
+              # 11 minutes
+              timeout = 660;
+              # screen off when timeout has passed
+              on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+              # screen on when activity is detected after timeout has fired.
+              on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+            }
+          ];
+        };
       };
       services.swayosd.enable = true;
       services.copyq.enable = true;
