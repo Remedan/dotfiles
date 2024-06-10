@@ -26,8 +26,8 @@ in
   };
 
   config = {
-    # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-    system.stateVersion = "23.11";
+    # https://wiki.nixos.org/wiki/FAQ/When_do_I_update_stateVersion
+    system.stateVersion = "24.05";
 
     # Install common non-free firmware
     hardware.enableRedistributableFirmware = true;

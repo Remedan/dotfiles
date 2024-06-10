@@ -21,7 +21,7 @@ in
   config = mkMerge [
     {
       home = {
-        stateVersion = "23.11";
+        stateVersion = "24.05";
         keyboard = {
           layout = "us,cz(qwerty)";
           options = [
