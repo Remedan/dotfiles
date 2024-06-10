@@ -38,7 +38,6 @@ in
       gnupg
       htop
       killall
-      nix-index
       nix-search-cli
       pciutils
       pwgen

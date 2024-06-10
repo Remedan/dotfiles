@@ -44,6 +44,7 @@ in
           ];
         };
       };
+      programs.nix-index.enable = true;
       user-modules = {
         packages.enable = mkDefault true;
         shell.enable = mkDefault true;
