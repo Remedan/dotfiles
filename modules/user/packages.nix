@@ -90,6 +90,7 @@ in
       blackbox
       bruno
       direnv
+      dive
       git-crypt
       jetbrains-toolbox
       jq
