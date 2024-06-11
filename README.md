@@ -9,7 +9,7 @@
 Clone this repo to `~/.config/home-manager` and then run:
 
 ```bash
-nix --extra-experimental-features 'nix-command flakes' run home-manager/master -- init --switch
+nix --extra-experimental-features 'nix-command flakes' run home-manager/master -- switch
 ```
 
 ## Building a new Home Manager configuration
@@ -21,5 +21,5 @@ home-manager switch
 ## Building a new NixOS configuration
 
 ```bash
-sudo nixos-rebuild switch --flake '$HOME#<profile>'
+sudo nixos-rebuild switch --flake "$HOME/.config/home-manager#$(hostname)"
 ```
