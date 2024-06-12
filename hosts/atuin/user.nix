@@ -10,6 +10,7 @@ home-manager.lib.homeManagerConfiguration {
         homeDirectory = "/home/vojta";
       };
       user-modules = {
+        common.hidpi = true;
         packages.categories.emulators = false;
         hyprland = {
           enable = true;

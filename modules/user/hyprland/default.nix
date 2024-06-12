@@ -132,7 +132,7 @@ in
         "$mod" = "SUPER";
 
         monitor = [
-          ",preferred,auto,auto"
+          ",preferred,auto,${if config.user-modules.common.hidpi then "1.25" else "auto"}"
           "eDP-1,preferred,auto,1"
         ];
 
@@ -147,6 +147,11 @@ in
           "GBM_BACKEND,nvidia-drm"
           "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         ];
+
+        # XWayland apps are blurry when using fractional scaling
+        xwayland = {
+          force_zero_scaling = true;
+        };
 
         exec-once = [
           "nm-applet"

@@ -204,7 +204,7 @@
   :hook
   (text-mode . mixed-pitch-mode)
   :config
-  (set-face-attribute 'default nil :family "Source Code Pro" :height 110)
+  (set-face-attribute 'default nil :family "Source Code Pro" :height font-size)
   (set-face-attribute 'fixed-pitch nil :family "Source Code Pro")
   (set-face-attribute 'variable-pitch nil :family "Source Sans Pro"))
 

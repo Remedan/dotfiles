@@ -17,6 +17,10 @@ in
       type = types.str;
       default = "firefox";
     };
+    hidpi = mkOption {
+      type = types.bool;
+      default = false;
+    };
   };
   config = mkMerge [
     {
