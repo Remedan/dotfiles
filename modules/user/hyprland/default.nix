@@ -133,7 +133,7 @@ in
 
         monitor = [
           ",preferred,auto,${if config.user-modules.common.hidpi then "1.25" else "auto"}"
-          "eDP-1,preferred,auto,1"
+          "eDP-1,preferred,auto,1.25"
         ];
 
         env = [
