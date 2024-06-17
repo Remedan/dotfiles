@@ -60,7 +60,7 @@ in
         gtk.enable = mkDefault true;
         ssh.enable = mkDefault true;
         git.enable = mkDefault true;
-        japanese.enable = mkDefault false; # Disabled until Hyprland fixes focus issue
+        japanese.enable = mkDefault true;
       };
     }
   ];
