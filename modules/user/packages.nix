@@ -25,6 +25,9 @@ in
       "uhk-agent"
       "winbox"
     ];
+    nixpkgs.config.permittedInsecurePackages = [
+      "electron-27.3.11"
+    ];
     home.packages = with pkgs; [
       # Core
       bat
