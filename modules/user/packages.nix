@@ -116,6 +116,7 @@ in
       leiningen
 
       # Infrastructure
+      k9s
       krew
       kubectl
       terraform
