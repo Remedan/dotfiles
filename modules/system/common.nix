@@ -162,7 +162,6 @@ in
       cifs-utils
       git
       vim
-      virt-manager
       wget
     ];
 
@@ -208,6 +207,7 @@ in
       storageDriver = "btrfs";
     };
     virtualisation.libvirtd.enable = true;
+    programs.virt-manager.enable = true;
 
     # Polkit
     # https://nixos.wiki/wiki/Polkit#Authentication_agents
