@@ -47,7 +47,6 @@
       hostName = "rincewind";
       cpuType = "intel";
       tailscale = true;
-      flatpak = true;
     };
     boot.luks = {
       enable = true;

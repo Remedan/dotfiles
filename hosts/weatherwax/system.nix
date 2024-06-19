@@ -74,7 +74,6 @@
       hostName = "weatherwax";
       cpuType = "amd";
       tailscale = true;
-      flatpak = true;
     };
     nvidia = {
       enable = true;

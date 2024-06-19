@@ -19,10 +19,6 @@ in
       type = types.bool;
       default = false;
     };
-    flatpak = mkOption {
-      type = types.bool;
-      default = false;
-    };
   };
 
   config = {
@@ -185,6 +181,9 @@ in
       "uhk-udev-rules"
     ];
 
+    # Flatpak
+    services.flatpak.enable = true;
+
     # Gnome Keyring
     services.gnome.gnome-keyring.enable = true;
 
@@ -238,6 +237,5 @@ in
 
     # Extra services
     services.tailscale.enable = cfg.tailscale;
-    services.flatpak.enable = cfg.flatpak;
   };
 }
