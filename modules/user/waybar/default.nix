@@ -6,10 +6,6 @@ in
 {
   options.user-modules.waybar = {
     enable = mkEnableOption "Waybar";
-    windowManager = mkOption {
-      type = types.enum [ "sway" "hyprland" ];
-      default = "hyprland";
-    };
   };
   config = mkIf cfg.enable {
     programs.waybar = {
@@ -24,19 +20,19 @@ in
           layer = "top";
 
           modules-left = [
-            "${cfg.windowManager}/workspaces"
+            "hyprland/workspaces"
             "pulseaudio"
             "mpris"
             "custom/weather"
-          ] ++ optional (cfg.windowManager == "sway") "sway/mode"
-          ++ optional (cfg.windowManager == "hyprland") "hyprland/submap";
+            "hyprland/submap"
+          ];
           modules-center = [
             "clock"
             "custom/notification"
           ];
           modules-right = [
             "privacy"
-            "${cfg.windowManager}/language"
+            "hyprland/language"
             "disk"
             "cpu"
             "memory"
@@ -45,10 +41,6 @@ in
             "idle_inhibitor"
             "tray"
           ];
-
-          "sway/workspaces" = {
-            enable-bar-scroll = true;
-          };
 
           "hyprland/workspaces" = {
             on-scroll-up = "hyprctl dispatch workspace m-1";
@@ -137,11 +129,6 @@ in
             on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
             on-click-right = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
             escape = true;
-          };
-
-          "sway/language" = {
-            format = "{}";
-            on-click = "swaymsg input type:keyboard xkb_switch_layout next";
           };
 
           disk = {

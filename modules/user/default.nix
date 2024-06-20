@@ -13,7 +13,6 @@
   ./packages.nix
   ./shell.nix
   ./ssh.nix
-  ./sway
   ./swaync.nix
   ./waybar
   ./wofi.nix
