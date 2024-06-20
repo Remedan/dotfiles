@@ -58,6 +58,7 @@ in
       caffeine-ng
       feh
       ghostscript
+      gnome.gnome-software
       gparted
       imagemagick
       jdk17
