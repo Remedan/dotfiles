@@ -360,7 +360,7 @@ in
         # Laptop lid handling
         bindl = [
           ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
-          ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, auto, 1\""
+          ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, auto, 1.25\""
         ];
       };
       extraConfig = ''
