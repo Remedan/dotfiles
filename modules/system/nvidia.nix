@@ -13,7 +13,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    # Taken from https://nixos.wiki/wiki/Nvidia#Modifying_NixOS_Configuration
+    # Taken from https://wiki.nixos.org/wiki/Nvidia#Modifying_NixOS_configuration
 
     # Enable OpenGL
     hardware.opengl = {

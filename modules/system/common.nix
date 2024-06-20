@@ -209,7 +209,7 @@ in
     programs.virt-manager.enable = true;
 
     # Polkit
-    # https://nixos.wiki/wiki/Polkit#Authentication_agents
+    # https://wiki.nixos.org/wiki/Polkit#Authentication_agents
     security.polkit.enable = true;
     systemd.user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
