@@ -211,9 +211,9 @@ in
     virtualisation.docker = {
       enable = true;
       storageDriver = "btrfs";
-      atuoPrune = {
+      autoPrune = {
         enable = true;
-        flags = "--all --volumes";
+        flags = [ "--all" "--volumes" ];
       };
     };
     virtualisation.libvirtd.enable = true;
