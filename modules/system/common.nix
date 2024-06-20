@@ -211,6 +211,10 @@ in
     virtualisation.docker = {
       enable = true;
       storageDriver = "btrfs";
+      atuoPrune = {
+        enable = true;
+        flags = "--all --volumes";
+      };
     };
     virtualisation.libvirtd.enable = true;
     programs.virt-manager.enable = true;
