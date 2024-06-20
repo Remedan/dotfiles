@@ -5,9 +5,9 @@
   ./fuzzel.nix
   ./git.nix
   ./gtk.nix
-  ./hyprland
+  ./hyprland.nix
   ./japanese.nix
-  ./kitty
+  ./kitty.nix
   ./mpd.nix
   ./nodejs.nix
   ./packages.nix
