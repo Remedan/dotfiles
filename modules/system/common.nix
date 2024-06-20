@@ -151,7 +151,14 @@ in
       ];
     };
 
-    nix.settings.trusted-users = [ "root" cfg.userName ];
+    nix = {
+      settings.trusted-users = [ "root" cfg.userName ];
+      optimise.automatic = true;
+      gc = {
+        automatic = true;
+        options = "--delete-older-than 30d";
+      };
+    };
 
     # Packages and Applications
     environment.systemPackages = with pkgs; [
