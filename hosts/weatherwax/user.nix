@@ -36,5 +36,6 @@ home-manager.lib.homeManagerConfiguration {
         };
       };
     }
+    (import ./../../secrets/weatherwax-user.nix)
   ] ++ import ./../../modules/user;
 }
