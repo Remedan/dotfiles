@@ -55,27 +55,23 @@ in
       arandr
       baobab
       btdu
-      caffeine-ng
-      feh
       ghostscript
       gnome.gnome-software
       gparted
       imagemagick
-      jdk17
       lm_sensors
       magic-wormhole
       ncdu
       neofetch
       networkmanagerapplet
       nmap
+      nsxiv
       obs-studio
       openvpn
-      sxiv
       udiskie
       uhk-agent
       ventoy
       wl-clipboard
-      xclip
       xsane
       yubikey-manager
 
@@ -91,7 +87,6 @@ in
       # Development
       awscli2
       bfg-repo-cleaner
-      blackbox
       bruno
       direnv
       dive
@@ -154,7 +149,6 @@ in
       prusa-slicer
 
       # Notes
-      logseq
       obsidian
 
       # Games
