@@ -10,8 +10,8 @@ home-manager.lib.homeManagerConfiguration {
         homeDirectory = "/home/remedan";
       };
       user-modules = {
+        packages.categories.emulators = true;
         hyprland = {
-          enable = true;
           idleLock = false;
           nvidia = true;
           startup = [

@@ -11,9 +11,7 @@ home-manager.lib.homeManagerConfiguration {
       };
       user-modules = {
         common.hidpi = true;
-        packages.categories.emulators = false;
         hyprland = {
-          enable = true;
           startup = [
             "birdtray"
             "solaar -w hide"

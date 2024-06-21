@@ -61,6 +61,7 @@ in
         ssh.enable = mkDefault true;
         git.enable = mkDefault true;
         japanese.enable = mkDefault true;
+        hyprland.enable = mkDefault true;
       };
     }
   ];

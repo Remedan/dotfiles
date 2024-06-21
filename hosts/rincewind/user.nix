@@ -9,9 +9,6 @@ home-manager.lib.homeManagerConfiguration {
         username = "remedan";
         homeDirectory = "/home/remedan";
       };
-      user-modules = {
-        hyprland.enable = true;
-      };
     }
   ] ++ import ./../../modules/user;
 }

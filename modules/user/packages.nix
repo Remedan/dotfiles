@@ -8,7 +8,7 @@ in
     enable = mkEnableOption "packages";
     categories.emulators = mkOption {
       type = types.bool;
-      default = true;
+      default = false;
     };
   };
   config = mkIf cfg.enable {
