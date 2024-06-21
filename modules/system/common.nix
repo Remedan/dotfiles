@@ -79,7 +79,7 @@ in
       };
     };
     programs.hyprland.enable = true;
-    security.pam.services.hyprlock = {};
+    security.pam.services.hyprlock = { };
 
     # XDG Desktop Portal
     services.dbus.enable = true;

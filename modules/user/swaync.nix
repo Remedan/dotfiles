@@ -19,10 +19,10 @@ in
         control-center-margin-right = 10;
         control-center-margin-left = 10;
         widgets = [
-            "inhibitors"
-            "title"
-            "dnd"
-            "notifications"
+          "inhibitors"
+          "title"
+          "dnd"
+          "notifications"
         ];
       };
     };

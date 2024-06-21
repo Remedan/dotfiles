@@ -31,25 +31,25 @@ in
       wdisplays
       wev
       (writeShellScriptBin "powermenu" ''
-          entries=" Lock\n Logout\n⏾ Suspend\n Hibernate\n⭮ Reboot\n⏻ Shutdown"
+        entries=" Lock\n Logout\n⏾ Suspend\n Hibernate\n⭮ Reboot\n⏻ Shutdown"
 
-          selected=$(echo -e $entries | ${pkgs.fuzzel}/bin/fuzzel --dmenu -l 6 | awk '{print tolower($2)}')
+        selected=$(echo -e $entries | ${pkgs.fuzzel}/bin/fuzzel --dmenu -l 6 | awk '{print tolower($2)}')
 
-          case $selected in
-            lock)
-              ${pkgs.hyprlock}/bin/hyprlock;;
-            logout)
-              ${pkgs.hyprland}/bin/hyprctl dispatch exit;;
-            suspend)
-              systemctl suspend;;
-            hibernate)
-              systemctl hibernate;;
-            reboot)
-              systemctl reboot;;
-            shutdown)
-              systemctl poweroff;;
-          esac
-        '')
+        case $selected in
+          lock)
+            ${pkgs.hyprlock}/bin/hyprlock;;
+          logout)
+            ${pkgs.hyprland}/bin/hyprctl dispatch exit;;
+          suspend)
+            systemctl suspend;;
+          hibernate)
+            systemctl hibernate;;
+          reboot)
+            systemctl reboot;;
+          shutdown)
+            systemctl poweroff;;
+        esac
+      '')
     ];
     user-modules = {
       waybar.enable = mkDefault true;
@@ -59,7 +59,7 @@ in
     services.hyprpaper = {
       enable = true;
       settings = {
-        preload =  [ "~/Pictures/wallpaper.png" ];
+        preload = [ "~/Pictures/wallpaper.png" ];
         wallpaper = [ ",~/Pictures/wallpaper.png" ];
         splash = false;
       };
