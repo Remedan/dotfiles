@@ -15,11 +15,10 @@ in
   config = mkIf cfg.enable {
     # Taken from https://wiki.nixos.org/wiki/Nvidia#Modifying_NixOS_configuration
 
-    # Enable OpenGL
-    hardware.opengl = {
+    # Enable graphics driver
+    hardware.graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
 
     # Load nvidia driver for Xorg and Wayland
