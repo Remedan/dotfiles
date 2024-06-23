@@ -180,8 +180,6 @@ in
 
           layout = "dwindle";
 
-          cursor_inactive_timeout = 10;
-
           # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
           allow_tearing = false;
         };
@@ -220,6 +218,11 @@ in
         gestures = {
           workspace_swipe = true;
           workspace_swipe_forever = true;
+        };
+
+        cursor = {
+          inactive_timeout = 10;
+          hide_on_key_press = true;
         };
 
         misc = {
