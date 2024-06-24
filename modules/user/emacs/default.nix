@@ -28,12 +28,11 @@ in
         (setq package-enable-at-startup nil)
         (setq colorscheme "${cfg.colorscheme}")
         (setq python-tabs ${if cfg.pythonTabs then "t" else "nil"})
-        (setq font-size ${if config.user-modules.common.hidpi then "130" else "110"})
       '';
     };
     programs.emacs = {
       enable = true;
-      package = pkgs.emacs-gtk;
+      package = pkgs.emacs29-pgtk;
       extraPackages = epkgs: with epkgs; [
         vterm
       ];
