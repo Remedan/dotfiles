@@ -49,6 +49,7 @@ in
       rlwrap
       rsync
       steam-run
+      tmux
       unzip
 
       # Extra
