@@ -62,6 +62,7 @@ in
         git.enable = mkDefault true;
         japanese.enable = mkDefault true;
         hyprland.enable = mkDefault true;
+        gnome.enable = mkDefault true;
       };
     }
   ];

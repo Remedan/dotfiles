@@ -4,6 +4,7 @@
   ./fonts.nix
   ./fuzzel.nix
   ./git.nix
+  ./gnome.nix
   ./gtk.nix
   ./hyprland.nix
   ./japanese.nix
