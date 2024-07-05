@@ -63,6 +63,7 @@ in
         japanese.enable = mkDefault true;
         hyprland.enable = mkDefault true;
         gnome.enable = mkDefault true;
+        virt-manager.enable = mkDefault true;
       };
     }
   ];

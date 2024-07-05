@@ -15,6 +15,7 @@
   ./shell.nix
   ./ssh.nix
   ./swaync.nix
+  ./virt-manager.nix
   ./waybar
   ./wofi.nix
   ./yubikey.nix
