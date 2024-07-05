@@ -117,6 +117,7 @@ in
       k9s
       krew
       kubectl
+      remmina
       terraform
       winbox
 
