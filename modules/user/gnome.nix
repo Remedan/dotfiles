@@ -9,9 +9,10 @@ in
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      gnome.gnome-tweaks
-      gnomeExtensions.appindicator
+      gnome-tweaks
       gnome-pomodoro
+
+      gnomeExtensions.appindicator
     ];
     dconf.settings = {
       "org/gnome/desktop/interface" = {
