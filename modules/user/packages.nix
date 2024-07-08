@@ -67,7 +67,7 @@ in
       neofetch
       networkmanagerapplet
       nmap
-      nsxiv
+      sxiv
       obs-studio
       openvpn
       udiskie
