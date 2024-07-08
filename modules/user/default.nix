@@ -5,6 +5,7 @@
   ./fuzzel.nix
   ./git.nix
   ./gnome.nix
+  ./gpg.nix
   ./gtk.nix
   ./hyprland.nix
   ./japanese.nix
@@ -18,6 +19,5 @@
   ./virt-manager.nix
   ./waybar
   ./wofi.nix
-  ./yubikey.nix
   ./zathura.nix
 ]

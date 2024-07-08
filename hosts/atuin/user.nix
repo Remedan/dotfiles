@@ -40,7 +40,6 @@ home-manager.lib.homeManagerConfiguration {
         };
         emacs.pythonTabs = true;
         git.enable = false;
-        yubikey.enable = true;
       };
     }
     (import ./../../secrets/atuin-user.nix)

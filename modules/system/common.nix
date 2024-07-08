@@ -204,8 +204,8 @@ in
       uhk-udev-rules
     ];
 
-    # Yubikey
-    # services.pcscd.enable = true;
+    # Smart Card / Yubikey support
+    services.pcscd.enable = true;
 
     # Virtualisation
     virtualisation.docker = {
