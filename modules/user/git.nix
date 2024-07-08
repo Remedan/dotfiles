@@ -6,10 +6,6 @@ in
 {
   options.user-modules.git = {
     enable = mkEnableOption "Git";
-    nixos = mkOption {
-      type = types.bool;
-      default = true;
-    };
   };
   config = mkIf cfg.enable {
     programs.git = {
@@ -21,7 +17,7 @@ in
 
         gpg = {
           format = "ssh";
-          ssh.program = if cfg.nixos then "${pkgs._1password-gui}/bin/op-ssh-sign" else "/opt/1Password/op-ssh-sign";
+          ssh.program = "${pkgs._1password-gui}/bin/op-ssh-sign";
           ssh.allowedSignersFile = "~/.config/git/allowed_signers";
         };
       };
