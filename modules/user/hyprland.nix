@@ -162,7 +162,7 @@ in
 
         input = {
           kb_layout = "us,cz(qwerty)";
-          kb_options = "grp:alt_shift_toggle,caps:escape";
+          kb_options = "grp:win_space_toggle,caps:escape";
 
           follow_mouse = 1;
 
