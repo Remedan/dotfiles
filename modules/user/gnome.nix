@@ -11,6 +11,7 @@ in
     home.packages = with pkgs; [
       gnome.gnome-tweaks
       gnomeExtensions.appindicator
+      gnome-pomodoro
     ];
     dconf.settings = {
       "org/gnome/desktop/interface" = {
@@ -35,8 +36,9 @@ in
       "org/gnome/shell" = {
         enabled-extensios = [
           "appindicatorsupport@rgcjonas.gmail.com"
-          "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
           "drive-menu@gnome-shell-extensions.gcampax.github.com"
+          "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
+          "pomodoro@arun.codito.in"
         ];
       };
       "org/gnome/mutter" = {
