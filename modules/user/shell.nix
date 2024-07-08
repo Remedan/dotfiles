@@ -15,6 +15,8 @@ in
       ];
       sessionVariables = {
         EDITOR = if config.user-modules.emacs.service then "emacsclient -nw" else "emacs -nw";
+        # Enable wayland for chromium-based apps
+        NIXOS_OZONE_WL = 1;
       };
       shellAliases = {
         e = "eval \"$EDITOR\"";
