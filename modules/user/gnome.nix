@@ -22,6 +22,16 @@ in
       "org/gnome/desktop/wm/preferences" = {
         focus-mode = "mouse";
       };
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        ];
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Shift><Control>space";
+        command = "1password --quick-access";
+        name = "1Password Quick Access";
+      };
       "org/gnome/shell" = {
         enabled-extensios = [
           "appindicatorsupport@rgcjonas.gmail.com"
