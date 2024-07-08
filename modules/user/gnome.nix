@@ -10,6 +10,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       gnome.gnome-tweaks
+      gnomeExtensions.appindicator
     ];
     dconf.settings = {
       "org/gnome/desktop/interface" = {
@@ -20,6 +21,13 @@ in
       };
       "org/gnome/desktop/wm/preferences" = {
         focus-mode = "mouse";
+      };
+      "org/gnome/shell" = {
+        enabled-extensios = [
+          "appindicatorsupport@rgcjonas.gmail.com"
+          "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
+          "drive-menu@gnome-shell-extensions.gcampax.github.com"
+        ];
       };
       "org/gnome/mutter" = {
         dynamic-workspaces = true;
