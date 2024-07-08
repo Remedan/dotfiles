@@ -56,6 +56,7 @@ in
       arandr
       baobab
       btdu
+      dconf2nix
       ghostscript
       gnome.gnome-software
       gparted
