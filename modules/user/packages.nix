@@ -160,6 +160,8 @@ in
       dosbox
       fish-fillets-ng
       gargoyle
+      gnome.aisleriot
+      gnome.gnome-mines
       gzdoom
       ifm
       openttd
