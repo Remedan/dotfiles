@@ -13,6 +13,8 @@ in
       gnome-pomodoro
 
       gnomeExtensions.appindicator
+      gnomeExtensions.caffeine
+      gnomeExtensions.dash-to-dock
     ];
     dconf.settings = {
       "org/gnome/desktop/interface" = {
@@ -34,12 +36,19 @@ in
         command = "1password --quick-access";
         name = "1Password Quick Access";
       };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Super>Return";
+        command = "kgx";
+        name = "Open Terminal";
+      };
       "org/gnome/shell" = {
-        enabled-extensios = [
-          "appindicatorsupport@rgcjonas.gmail.com"
+        enabled-extensions = [
           "drive-menu@gnome-shell-extensions.gcampax.github.com"
-          "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
           "pomodoro@arun.codito.in"
+          "system-monitor@gnome-shell-extensions.gcampax.github.com"
+          "caffeine@patapon.info"
+          "dash-to-dock@micxgx.gmail.com"
+          "appindicatorsupport@rgcjonas.gmail.com"
         ];
       };
       "org/gnome/mutter" = {
