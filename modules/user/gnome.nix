@@ -57,9 +57,6 @@ in
         edge-tiling = true;
         experimental-features = [ "scale-monitor-framebuffer" ];
       };
-      "org/gnome/shell/app-switcher" = {
-        current-workspace-only = true;
-      };
     };
   };
 }
