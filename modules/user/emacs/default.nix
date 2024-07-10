@@ -14,10 +14,6 @@ in
       type = types.str;
       default = config.user-modules.common.colorscheme;
     };
-    pythonTabs = mkOption {
-      type = types.bool;
-      default = false;
-    };
   };
   config = mkIf cfg.enable {
     xdg.configFile = {
@@ -27,7 +23,6 @@ in
       "emacs/early-init.el".text = ''
         (setq package-enable-at-startup nil)
         (setq colorscheme "${cfg.colorscheme}")
-        (setq python-tabs ${if cfg.pythonTabs then "t" else "nil"})
       '';
     };
     programs.emacs = {

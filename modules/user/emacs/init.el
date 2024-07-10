@@ -282,6 +282,11 @@
 (use-package treemacs-magit
   :after (treemacs magit))
 
+;; EditorConfig
+(use-package editorconfig
+  :config
+  (editorconfig-mode 1))
+
 ;; Language-specific
 
 ;; LSP
@@ -306,13 +311,6 @@
   :commands helm-lsp-workspace-symbol)
 
 ;; Python
-(when python-tabs
-  (add-hook 'python-mode-hook
-            (lambda ()
-              (setq indent-tabs-mode t
-                    tab-width 4
-                    python-indent-guess-indent-offset nil))))
-
 (use-package poetry)
 
 ;; SLIME

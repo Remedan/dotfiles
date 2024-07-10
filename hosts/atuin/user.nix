@@ -38,7 +38,7 @@ home-manager.lib.homeManagerConfiguration {
             "10, monitor:DP-5"
           ];
         };
-        emacs.pythonTabs = true;
+        emacs.colorscheme = "doom-one";
         git.enable = false;
       };
     }
