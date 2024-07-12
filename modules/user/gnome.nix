@@ -9,12 +9,15 @@ in
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      gnome-tweaks
+      dconf-editor
       gnome-pomodoro
+      gnome-tweaks
+      smile
 
       gnomeExtensions.appindicator
       gnomeExtensions.caffeine
       gnomeExtensions.dash-to-dock
+      gnomeExtensions.smile-complementary-extension
     ];
     dconf.settings = {
       "org/gnome/desktop/interface" = {
@@ -50,6 +53,7 @@ in
           "caffeine@patapon.info"
           "dash-to-dock@micxgx.gmail.com"
           "appindicatorsupport@rgcjonas.gmail.com"
+          "smile-extension@mijorus.it"
         ];
       };
       "org/gnome/mutter" = {
