@@ -10,6 +10,12 @@ in
   config = mkIf cfg.enable {
     services.flatpak = {
       enable = true;
+      remotes = lib.mkOptionDefault [
+        {
+          name = "flathub-beta";
+          location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+        }
+      ];
       packages = [
         "com.adamcake.Bolt"
         "org.gnome.Polari"
