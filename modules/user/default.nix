@@ -1,6 +1,7 @@
 [
   ./common.nix
   ./emacs
+  ./flatpak.nix
   ./fonts.nix
   ./fuzzel.nix
   ./git.nix

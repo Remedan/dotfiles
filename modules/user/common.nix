@@ -65,6 +65,7 @@ in
         gnome.enable = mkDefault true;
         virt-manager.enable = mkDefault true;
         gpg.enable = mkDefault true;
+        flatpak.enable = mkDefault true;
       };
     }
   ];

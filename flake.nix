@@ -6,9 +6,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, ... }:
+  outputs = { nixpkgs, home-manager, nixos-hardware, nix-flatpak, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -48,6 +49,7 @@
           modules = [
             (import ./hosts/weatherwax/user.nix)
             (import ./secrets/weatherwax-user.nix)
+            nix-flatpak.homeManagerModules.nix-flatpak
           ] ++ import ./modules/user;
         };
 
@@ -55,6 +57,7 @@
           inherit pkgs;
           modules = [
             (import ./hosts/rincewind/user.nix)
+            nix-flatpak.homeManagerModules.nix-flatpak
           ] ++ import ./modules/user;
         };
 
@@ -63,6 +66,7 @@
           modules = [
             (import ./hosts/atuin/user.nix)
             (import ./secrets/atuin-user.nix)
+            nix-flatpak.homeManagerModules.nix-flatpak
           ] ++ import ./modules/user;
         };
       };
