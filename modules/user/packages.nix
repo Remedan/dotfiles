@@ -77,6 +77,10 @@ in
       xsane
       yubikey-manager
 
+      # Backup
+      pika-backup
+      timeshift
+
       # Audio
       pavucontrol
       playerctl
