@@ -19,7 +19,9 @@
       nixosConfigurations = {
         weatherwax = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/weatherwax/system.nix ];
+          modules = [
+            ./hosts/weatherwax/system.nix
+          ] ++ import ./modules/system;
         };
 
         rincewind = nixpkgs.lib.nixosSystem {
@@ -27,29 +29,41 @@
           modules = [
             ./hosts/rincewind/system.nix
             nixos-hardware.nixosModules.lenovo-thinkpad-x1-yoga
-          ];
+          ] ++ import ./modules/system;
         };
 
         atuin = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             ./hosts/atuin/system.nix
+            ./secrets/atuin-system.nix
             nixos-hardware.nixosModules.dell-latitude-5520
-          ];
+          ] ++ import ./modules/system;
         };
       };
 
       homeConfigurations = {
-        "remedan@weatherwax" = import ./hosts/weatherwax/user.nix {
-          inherit pkgs home-manager;
+        "remedan@weatherwax" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            (import ./hosts/weatherwax/user.nix)
+            (import ./secrets/weatherwax-user.nix)
+          ] ++ import ./modules/user;
         };
 
-        "remedan@rincewind" = import ./hosts/rincewind/user.nix {
-          inherit pkgs home-manager;
+        "remedan@rincewind" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            (import ./hosts/rincewind/user.nix)
+          ] ++ import ./modules/user;
         };
 
-        "vojta@atuin" = import ./hosts/atuin/user.nix {
-          inherit pkgs home-manager;
+        "vojta@atuin" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            (import ./hosts/atuin/user.nix)
+            (import ./secrets/atuin-user.nix)
+          ] ++ import ./modules/user;
         };
       };
     };
