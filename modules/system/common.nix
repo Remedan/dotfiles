@@ -242,6 +242,9 @@ in
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
     '';
 
+    # Regularly scrub btrfs filesystems
+    services.btrfs.autoScrub.enable = true;
+
     # Gaming
     programs.steam.enable = true;
     programs.gamemode.enable = true;
