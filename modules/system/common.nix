@@ -248,5 +248,8 @@ in
 
     # Extra services
     services.tailscale.enable = cfg.tailscale;
+
+    # Custom Modules
+    system-modules.snapper.enable = mkDefault true;
   };
 }

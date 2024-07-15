@@ -56,6 +56,7 @@ in
       arandr
       baobab
       btdu
+      btrfs-assistant
       dconf2nix
       ghostscript
       gnome.gnome-software
@@ -67,9 +68,9 @@ in
       neofetch
       networkmanagerapplet
       nmap
-      sxiv
       obs-studio
       openvpn
+      sxiv
       udiskie
       uhk-agent
       ventoy
