@@ -79,7 +79,6 @@ in
 
       # Backup
       pika-backup
-      timeshift
 
       # Audio
       pavucontrol
