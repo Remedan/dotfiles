@@ -6,6 +6,10 @@ in
 {
   options.user-modules.packages = {
     enable = mkEnableOption "packages";
+    categories.noDesktopEnvironment = mkOption {
+      type = types.bool;
+      default = true;
+    };
     categories.emulators = mkOption {
       type = types.bool;
       default = false;
@@ -31,19 +35,14 @@ in
     home.packages = with pkgs; [
       # Core
       bat
-      brightnessctl
-      cmake
       dig
       file
       fzf
-      gcc
-      gnumake
       gnupg
       htop
       killall
       nix-search-cli
       pciutils
-      pwgen
       ranger
       ripgrep
       rlwrap
@@ -53,25 +52,20 @@ in
       unzip
 
       # Extra
-      arandr
-      baobab
-      btdu
       btrfs-assistant
       dconf2nix
       ghostscript
-      gnome.gnome-software
       gparted
       imagemagick
       lm_sensors
       magic-wormhole
       ncdu
       neofetch
-      networkmanagerapplet
       nmap
       obs-studio
       openvpn
+      pwgen
       sxiv
-      udiskie
       uhk-agent
       ventoy
       wl-clipboard
@@ -174,6 +168,11 @@ in
       prismlauncher # Minecraft
       scummvm
       wesnoth
+    ] ++ optionals cfg.categories.noDesktopEnvironment [
+      baobab
+      gnome.gnome-software
+      networkmanagerapplet
+      udiskie
     ] ++ optionals cfg.categories.emulators [
       # Console Emulators
       desmume
