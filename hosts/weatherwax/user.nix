@@ -29,5 +29,7 @@
         "10, monitor:DP-2"
       ];
     };
+    emacs.colorscheme = "doom-one";
+    kitty.colorscheme = "Argonaut";
   };
 }
