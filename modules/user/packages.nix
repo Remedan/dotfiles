@@ -8,7 +8,7 @@ in
     enable = mkEnableOption "packages";
     categories.noDesktopEnvironment = mkOption {
       type = types.bool;
-      default = true;
+      default = config.user-modules.hyprland.enable;
     };
     categories.emulators = mkOption {
       type = types.bool;
@@ -169,6 +169,7 @@ in
       scummvm
       wesnoth
     ] ++ optionals cfg.categories.noDesktopEnvironment [
+      # Packages that are useful without a full DE
       baobab
       gnome.gnome-software
       networkmanagerapplet
