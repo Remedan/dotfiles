@@ -35,5 +35,6 @@
     };
     emacs.colorscheme = "doom-one";
     git.enable = false;
+    kitty.colorscheme = "Argonaut";
   };
 }

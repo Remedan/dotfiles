@@ -6,6 +6,10 @@ in
 {
   options.user-modules.kitty = {
     enable = mkEnableOption "Kitty";
+    colorscheme = mkOption {
+      type = types.str;
+      default = config.user-modules.common.colorscheme;
+    };
   };
 
   config = mkIf cfg.enable {
@@ -22,10 +26,9 @@ in
             gruvbox-dark = "Gruvbox Dark";
           };
         in
-        themeNames.${config.user-modules.common.colorscheme};
+          themeNames.${cfg.colorscheme} or cfg.colorscheme;
       settings = {
         window_padding_width = 5;
-        background_opacity = "0.5";
       };
     };
     home.shellAliases = {

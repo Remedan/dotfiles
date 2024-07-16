@@ -42,7 +42,7 @@ in
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         binding = "<Super>Return";
-        command = "kgx";
+        command = "kitty";
         name = "Open Terminal";
       };
       "org/gnome/shell" = {
