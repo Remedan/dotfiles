@@ -29,6 +29,9 @@ in
           themeNames.${cfg.colorscheme} or cfg.colorscheme;
       settings = {
         window_padding_width = 5;
+        tab_bar_edge = "top";
+        tab_bar_style = "powerline";
+        tab_powerline_style = "slanted";
       };
     };
     home.shellAliases = {
