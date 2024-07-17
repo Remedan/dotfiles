@@ -8,17 +8,18 @@ in
     enable = mkEnableOption "Gnome";
   };
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
+    home.packages = with pkgs; ([
       dconf-editor
       gnome-pomodoro
       gnome-tweaks
       smile
-
-      gnomeExtensions.appindicator
-      gnomeExtensions.caffeine
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.smile-complementary-extension
-    ];
+    ]) ++ (with pkgs.gnomeExtensions; [
+      appindicator
+      caffeine
+      dash-to-dock
+      smile-complementary-extension
+      tiling-assistant
+    ]);
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
@@ -54,6 +55,7 @@ in
           "dash-to-dock@micxgx.gmail.com"
           "appindicatorsupport@rgcjonas.gmail.com"
           "smile-extension@mijorus.it"
+          "tiling-assistant@leleat-on-github"
         ];
       };
       "org/gnome/mutter" = {
