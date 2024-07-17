@@ -67,6 +67,7 @@ in
       pwgen
       sxiv
       uhk-agent
+      usbutils
       ventoy
       wl-clipboard
       xsane
