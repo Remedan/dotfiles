@@ -135,6 +135,7 @@ in
       libreoffice
 
       # Compatibility
+      appimage-run
       bottles
       lutris
       wineWowPackages.stable
