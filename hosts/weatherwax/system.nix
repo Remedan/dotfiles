@@ -73,5 +73,9 @@
       tailscale = true;
     };
     nvidia.enable = true;
+    nix-ld = {
+      enable = true;
+      extraLibraries = true;
+    };
   };
 }
