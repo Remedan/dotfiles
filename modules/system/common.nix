@@ -19,6 +19,10 @@ in
       type = types.bool;
       default = false;
     };
+    hyprland = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
 
   config = {
@@ -78,8 +82,8 @@ in
         variant = "";
       };
     };
-    programs.hyprland.enable = true;
-    security.pam.services.hyprlock = { };
+    programs.hyprland.enable = cfg.hyprland;
+    security.pam.services.hyprlock = mkIf cfg.hyprland { };
 
     # XDG Desktop Portal
     services.dbus.enable = true;
@@ -119,7 +123,7 @@ in
     # Enable bluetooth
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
-    services.blueman.enable = true;
+    services.blueman.enable = cfg.hyprland;
 
     # SSH Server
     services.openssh = {
