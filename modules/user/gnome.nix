@@ -15,6 +15,7 @@ in
       smile
     ]) ++ (with pkgs.gnomeExtensions; [
       appindicator
+      bluetooth-battery-meter
       caffeine
       dash-to-dock
       smile-complementary-extension
@@ -48,13 +49,14 @@ in
       };
       "org/gnome/shell" = {
         enabled-extensions = [
-          "drive-menu@gnome-shell-extensions.gcampax.github.com"
-          "pomodoro@arun.codito.in"
-          "system-monitor@gnome-shell-extensions.gcampax.github.com"
+          "Bluetooth-Battery-Meter@maniacx.github.com"
+          "appindicatorsupport@rgcjonas.gmail.com"
           "caffeine@patapon.info"
           "dash-to-dock@micxgx.gmail.com"
-          "appindicatorsupport@rgcjonas.gmail.com"
+          "drive-menu@gnome-shell-extensions.gcampax.github.com"
+          "pomodoro@arun.codito.in"
           "smile-extension@mijorus.it"
+          "system-monitor@gnome-shell-extensions.gcampax.github.com"
           "tiling-assistant@leleat-on-github"
         ];
       };
