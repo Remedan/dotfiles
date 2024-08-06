@@ -65,24 +65,20 @@ in
       obs-studio
       openvpn
       pwgen
-      sxiv
       uhk-agent
       usbutils
       ventoy
       wl-clipboard
-      xsane
       yubikey-manager
 
       # Backup
       pika-backup
 
       # Audio
-      pavucontrol
       playerctl
       spotify
 
       # Video
-      mpv
       vlc
 
       # Development
@@ -174,8 +170,12 @@ in
       # Packages that are useful without a full DE
       baobab
       gnome.gnome-software
+      mpv
       networkmanagerapplet
+      pavucontrol
+      sxiv
       udiskie
+      xsane
     ] ++ optionals cfg.categories.emulators [
       # Console Emulators
       desmume
