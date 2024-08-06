@@ -66,6 +66,7 @@ in
         virt-manager.enable = mkDefault true;
         gpg.enable = mkDefault true;
         flatpak.enable = mkDefault true;
+        ranger.enable = mkDefault true;
       };
     }
   ];

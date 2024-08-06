@@ -14,6 +14,7 @@
   ./mpd.nix
   ./nodejs.nix
   ./packages.nix
+  ./ranger.nix
   ./shell.nix
   ./ssh.nix
   ./swaync.nix

@@ -43,7 +43,6 @@ in
       killall
       nix-search-cli
       pciutils
-      ranger
       ripgrep
       rlwrap
       rsync
