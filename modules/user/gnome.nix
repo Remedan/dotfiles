@@ -35,6 +35,7 @@ in
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -46,6 +47,11 @@ in
         binding = "<Super>Return";
         command = "kitty";
         name = "Open Terminal";
+      };
+      "org/gnome/settings-daemon/plugins/media-keysg/custom-keybindings/custom2" = {
+        binding = "<Super>period";
+        command = "smile";
+        name = "Open Smile";
       };
       "org/gnome/shell" = {
         enabled-extensions = [
