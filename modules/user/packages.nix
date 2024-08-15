@@ -75,6 +75,7 @@ in
       spotify
 
       # Video
+      mpv
       vlc
 
       # Development
@@ -166,7 +167,6 @@ in
       # Packages that are useful without a full DE
       baobab
       gnome.gnome-software
-      mpv
       networkmanagerapplet
       pavucontrol
       sxiv
