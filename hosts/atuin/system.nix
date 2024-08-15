@@ -43,7 +43,6 @@
       userName = "vojta";
       hostName = "atuin";
       cpuType = "intel";
-      hyprland = false;
     };
     boot.luks = {
       enable = true;

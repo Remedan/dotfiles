@@ -56,12 +56,10 @@ in
         emacs.enable = mkDefault true;
         mpd.enable = mkDefault true;
         fonts.enable = mkDefault true;
-        zathura.enable = mkDefault true;
         gtk.enable = mkDefault true;
         ssh.enable = mkDefault true;
         git.enable = mkDefault true;
         japanese.enable = mkDefault true;
-        hyprland.enable = mkDefault true;
         gnome.enable = mkDefault true;
         virt-manager.enable = mkDefault true;
         gpg.enable = mkDefault true;

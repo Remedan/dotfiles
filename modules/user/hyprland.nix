@@ -55,6 +55,7 @@ in
       waybar.enable = mkDefault true;
       swaync.enable = mkDefault true;
       fuzzel.enable = mkDefault true;
+      zathura.enable = mkDefault true;
     };
     services.hyprpaper = {
       enable = true;
