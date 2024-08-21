@@ -16,7 +16,7 @@ in
       noto-fonts-emoji
       open-sans
       source-han-sans
-      nerdfonts
+      (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" "IosevkaTermSlab" ]; })
     ];
     xdg.configFile."fontconfig/conf.d/20-no-embedded-bitmap.conf".text = ''
       <?xml version="1.0" encoding="UTF-8"?>
