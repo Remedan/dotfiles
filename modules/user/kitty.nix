@@ -8,7 +8,7 @@ in
     enable = mkEnableOption "Kitty";
     colorscheme = mkOption {
       type = types.str;
-      default = config.user-modules.common.colorscheme;
+      default = "Argonaut";
     };
   };
 

@@ -12,7 +12,7 @@ in
     };
     colorscheme = mkOption {
       type = types.str;
-      default = config.user-modules.common.colorscheme;
+      default = "doom-one";
     };
   };
   config = mkIf cfg.enable {
