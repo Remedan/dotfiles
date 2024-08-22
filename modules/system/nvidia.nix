@@ -29,6 +29,9 @@ in
       modesetting.enable = true;
 
       # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+      # Enable this if you have graphical corruption issues or application crashes after waking
+      # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
+      # of just the bare essentials.
       powerManagement.enable = false;
       # Fine-grained power management. Turns off GPU when not in use.
       # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -42,7 +45,8 @@ in
       # accessible via `nvidia-settings`.
       nvidiaSettings = true;
 
-      # Optionally, you may need to select the appropriate driver version for your specific GPU.
+      # Select the driver version
+      # https://wiki.nixos.org/wiki/Nvidia#Determining_the_correct_driver_version
       package = config.boot.kernelPackages.nvidiaPackages.${cfg.driverVersion};
     };
   };

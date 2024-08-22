@@ -16,10 +16,7 @@ in
           location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
         }
       ];
-      packages = [
-        "com.adamcake.Bolt"
-        "org.gnome.Polari"
-      ];
+      packages = [ ];
     };
   };
 }

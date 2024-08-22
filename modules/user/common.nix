@@ -29,7 +29,7 @@ in
         keyboard = {
           layout = "us,cz(qwerty)";
           options = [
-            "grp:alt_shift_toggle"
+            "grp:win_space_toggle"
             "caps:escape"
           ];
         };
@@ -38,15 +38,7 @@ in
       xdg.userDirs.enable = true;
       nix = {
         package = pkgs.nix;
-        settings = {
-          experimental-features = [ "nix-command" "flakes" ];
-          extra-substituters = [
-            "https://nixpkgs-python.cachix.org"
-          ];
-          extra-trusted-public-keys = [
-            "nixpkgs-python.cachix.org-1:hxjI7pFxTyuTHn2NkvWCrAUcNZLNS3ZAvfYNuYifcEU="
-          ];
-        };
+        settings.experimental-features = [ "nix-command" "flakes" ];
       };
       programs.nix-index.enable = true;
       user-modules = {

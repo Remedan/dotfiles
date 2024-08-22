@@ -10,6 +10,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; ([
       dconf-editor
+      dconf2nix
       gnome-pomodoro
       gnome-tweaks
       smile

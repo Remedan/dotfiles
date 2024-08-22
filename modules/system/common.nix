@@ -38,14 +38,14 @@ in
       intel.updateMicrocode = cfg.cpuType == "intel";
     };
 
-    # CPU power management gui
-    services.cpupower-gui.enable = true;
-
     # Firmware upgrades
     services.fwupd.enable = true;
 
     # Enable periodic SSD trim
     services.fstrim.enable = true;
+
+    # Regularly scrub btrfs filesystems
+    services.btrfs.autoScrub.enable = true;
 
     # Networking
     networking = {
@@ -245,9 +245,6 @@ in
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
     '';
-
-    # Regularly scrub btrfs filesystems
-    services.btrfs.autoScrub.enable = true;
 
     # Gaming
     programs.steam.enable = true;

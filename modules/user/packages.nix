@@ -10,10 +10,6 @@ in
       type = types.bool;
       default = config.user-modules.hyprland.enable;
     };
-    categories.emulators = mkOption {
-      type = types.bool;
-      default = false;
-    };
   };
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfreePredicate = pkg: elem (lib.getName pkg) [
@@ -49,7 +45,6 @@ in
 
       # Extra
       btrfs-assistant
-      dconf2nix
       ghostscript
       gparted
       imagemagick
@@ -58,7 +53,6 @@ in
       ncdu
       neofetch
       nmap
-      obs-studio
       openvpn
       pwgen
       uhk-agent
@@ -76,10 +70,8 @@ in
 
       # Video
       mpv
-      vlc
 
       # Development
-      awscli2
       bfg-repo-cleaner
       bruno
       direnv
@@ -89,9 +81,7 @@ in
       jq
       nix-direnv
       postgresql
-      quickemu
       tig
-      xxd
 
       # Python
       poetry
@@ -117,7 +107,6 @@ in
       winbox
 
       # Internet
-      birdtray
       chromium
       deluge
       filezilla
@@ -130,9 +119,6 @@ in
       # Compatibility
       appimage-run
       bottles
-      lutris
-      wineWowPackages.stable
-      winetricks
 
       # Messaging
       element-desktop
@@ -141,7 +127,6 @@ in
 
       # Graphics
       blender
-      freecad
       gimp
       openscad
       prusa-slicer
@@ -150,38 +135,23 @@ in
       obsidian
 
       # Games
-      brogue-ce
-      crawl
-      dosbox
-      fish-fillets-ng
       gargoyle
       gnome.aisleriot
       gnome.gnome-mines
       gzdoom
       ifm
-      openttd
       prismlauncher # Minecraft
       scummvm
-      wesnoth
     ] ++ optionals cfg.categories.noDesktopEnvironment [
       # Packages that are useful without a full DE
       baobab
+      birdtray
       gnome.gnome-software
       networkmanagerapplet
       pavucontrol
       sxiv
       udiskie
       xsane
-    ] ++ optionals cfg.categories.emulators [
-      # Console Emulators
-      desmume
-      pcsx2
-      rpcs3
-      (retroarch.override {
-        cores = with libretro; [
-          bsnes
-        ];
-      })
     ];
   };
 }
