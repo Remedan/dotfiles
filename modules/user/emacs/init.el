@@ -1,4 +1,6 @@
+;;
 ;; Base config
+;;
 
 ;; Disable GUI
 (tool-bar-mode -1)
@@ -16,7 +18,7 @@
 ;; Enable column indicator
 (setq column-number-mode t)
 
-;; Always show mathing parentheses
+;; Always highlight matching parentheses
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
@@ -24,19 +26,17 @@
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
 
-;; Always insert final newline
+;; Always insert the final newline (for posix compliance)
 (setq require-final-newline t)
 
 ;; Set scratch buffer to Org Mode and disable message
 (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message nil)
 
-;; Backups
+;; Change backup and autosave location
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backup" user-emacs-directory)))
       backup-by-copying t)
-
-;; Autosave
 (setq auto-save-file-name-transforms
       `((".*" ,(expand-file-name "autosave" user-emacs-directory) t)))
 
@@ -45,11 +45,6 @@
 (unless (file-exists-p custom-file)
   (write-region "" nil custom-file))
 (load custom-file)
-
-;; Extra config
-(let ((extra-file (expand-file-name "extra.el" user-emacs-directory)))
-  (when (file-exists-p extra-file)
-    (load extra-file)))
 
 ;; Org
 (setq org-agenda-files (list "~/Documents/Org")
@@ -63,7 +58,9 @@
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
 
+;;
 ;; Packages
+;;
 
 ;; Set up straight.el
 (defvar bootstrap-version)
@@ -244,9 +241,6 @@
 (use-package ranger
   :config (setq ranger-show-literal nil))
 
-;; ChatGPT
-(use-package gptel)
-
 ;; direnv
 (use-package direnv
   :config (direnv-mode))
@@ -286,7 +280,9 @@
   :config
   (editorconfig-mode 1))
 
+;;
 ;; Language-specific
+;;
 
 ;; LSP
 (use-package lsp-mode
