@@ -246,6 +246,12 @@ in
     programs.steam.enable = true;
     programs.gamemode.enable = true;
 
+    # Local LLMs
+    services.ollama = {
+      enable = true;
+      acceleration = mkIf config.system-modules.nvidia.enable "cuda";
+    };
+
     # Custom Modules
     system-modules.snapper.enable = mkDefault true;
   };
