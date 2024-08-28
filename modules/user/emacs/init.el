@@ -22,7 +22,6 @@
 
 ;; Use 4 spaces for indentation
 (setq-default indent-tabs-mode nil)
-(setq tab-stop-list (number-sequence 4 120 4))
 (setq tab-width 4)
 
 ;; Always insert final newline
