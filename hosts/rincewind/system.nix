@@ -43,7 +43,6 @@
       userName = "remedan";
       hostName = "rincewind";
       cpuType = "intel";
-      tailscale = true;
     };
     boot.luks = {
       enable = true;

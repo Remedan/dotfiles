@@ -15,10 +15,6 @@ in
       type = with types; nullOr (enum [ "amd" "intel" ]);
       default = null;
     };
-    tailscale = mkOption {
-      type = types.bool;
-      default = false;
-    };
     hyprland = mkOption {
       type = types.bool;
       default = false;
@@ -249,9 +245,6 @@ in
     # Gaming
     programs.steam.enable = true;
     programs.gamemode.enable = true;
-
-    # Extra services
-    services.tailscale.enable = cfg.tailscale;
 
     # Custom Modules
     system-modules.snapper.enable = mkDefault true;

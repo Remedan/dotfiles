@@ -70,7 +70,6 @@
       userName = "remedan";
       hostName = "weatherwax";
       cpuType = "amd";
-      tailscale = true;
     };
     nvidia.enable = true;
     nix-ld = {
