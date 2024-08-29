@@ -255,6 +255,14 @@ in
       enable = true;
       acceleration = mkIf config.system-modules.nvidia.enable "cuda";
     };
+    services.open-webui = {
+      enable = true;
+      environment = {
+        OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
+        # Disable authentication
+        WEBUI_AUTH = "False";
+      };
+    };
 
     # Custom Modules
     system-modules.snapper.enable = mkDefault true;
