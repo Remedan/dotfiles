@@ -135,9 +135,9 @@ in
       obsidian
 
       # Games
+      aisleriot
       gargoyle
-      gnome.aisleriot
-      gnome.gnome-mines
+      gnome-mines
       gzdoom
       ifm
       prismlauncher # Minecraft
