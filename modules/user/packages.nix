@@ -58,6 +58,7 @@ in
       uhk-agent
       usbutils
       ventoy
+      wireguard-tools
       wl-clipboard
       yubikey-manager
 
