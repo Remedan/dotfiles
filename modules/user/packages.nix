@@ -52,6 +52,7 @@ in
       magic-wormhole
       ncdu
       neofetch
+      nix-tree
       nmap
       openvpn
       pwgen
