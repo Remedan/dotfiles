@@ -37,6 +37,7 @@ in
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
         ];
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -47,12 +48,17 @@ in
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         binding = "<Super>Return";
         command = "kitty";
-        name = "Open Terminal";
+        name = "Terminal";
       };
       "org/gnome/settings-daemon/plugins/media-keysg/custom-keybindings/custom2" = {
         binding = "<Super>period";
         command = "smile";
-        name = "Open Smile";
+        name = "Smile";
+      };
+      "org/gnome/settings-daemon/plugins/media-keysg/custom-keybindings/custom3" = {
+        binding = "<Super>e";
+        command = "emacsclient -c";
+        name = "Emacs";
       };
       "org/gnome/shell" = {
         enabled-extensions = [
