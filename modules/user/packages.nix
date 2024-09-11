@@ -101,12 +101,14 @@ in
       leiningen
 
       # Infrastructure
+      iperf
       k9s
       krew
       kubectl
       remmina
       terraform
       winbox
+      wireshark
 
       # Internet
       chromium
@@ -135,6 +137,9 @@ in
 
       # Notes
       obsidian
+
+      # Books
+      calibre
 
       # Games
       aisleriot
