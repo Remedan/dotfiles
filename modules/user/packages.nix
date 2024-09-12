@@ -123,6 +123,7 @@ in
       # Compatibility
       appimage-run
       bottles
+      distrobox
 
       # Messaging
       element-desktop
