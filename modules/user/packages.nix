@@ -133,6 +133,7 @@ in
       # Graphics
       blender
       gimp
+      inkscape
       openscad
       prusa-slicer
 
