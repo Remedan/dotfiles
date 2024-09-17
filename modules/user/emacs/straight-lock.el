@@ -36,6 +36,7 @@
  ("git-gutter" . "9beaed9e45f92ab0527f54dbf5fb241b84e7821d")
  ("gnu-elpa-mirror" . "4654b388ea470965f5e7c6c2e166b4c6b09855da")
  ("goto-chg" . "72f556524b88e9d30dc7fc5b0dc32078c166fda7")
+ ("gptel" . "17f39f6a8144496252eacc012ef7f1d6a2ac883a")
  ("haskell-mode" . "c9dbfdc3ba79afab4a6fcd10fe8606039e4faacc")
  ("hcl-mode" . "37f2cb1bf6fb51fbf99d4fac256298fcd6d1dd24")
  ("helm" . "2d6718ef0938ad193a98b60534cd5170b2a1eabd")

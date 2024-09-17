@@ -281,6 +281,17 @@
   :config
   (editorconfig-mode 1))
 
+;; LLM Integration
+(use-package gptel
+  :config
+  (setq
+   gptel-default-mode #'markdown-mode
+   gptel-model "llama3.1:8b"
+   gptel-backend (gptel-make-ollama "Ollama"
+                   :host "localhost:11434"
+                   :stream t
+                   :models '("llama3.1:8b"))))
+
 ;;
 ;; Language-specific
 ;;
