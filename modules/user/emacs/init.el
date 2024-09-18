@@ -306,9 +306,6 @@
   :config
   (setq lsp-signature-auto-activate nil
         lsp-ui-doc-enable nil)
-  (lsp-register-custom-settings
-   '(("pyls.plugins.pyls_mypy.enabled" t t)
-     ("pyls.plugins.pyls_mypy.live_mode" nil t)))
   :commands lsp)
 
 (use-package lsp-ui

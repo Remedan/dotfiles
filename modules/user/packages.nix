@@ -89,7 +89,6 @@ in
       poetry
       python3
       ruff
-      ruff-lsp
 
       # Rust
       rustup
