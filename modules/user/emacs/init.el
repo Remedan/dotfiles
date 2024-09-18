@@ -87,10 +87,12 @@
 ;; The theme is set in default.el which is managed by home-manager
 (use-package doom-themes)
 (use-package catppuccin-theme)
-(load-theme (intern (cond ((string= colorscheme "selenized-dark") "doom-solarized-dark")
-                          ((string= colorscheme "gruvbox-dark") "doom-gruvbox")
-                          ((string= colorscheme "dracula") "doom-dracula")
-                          (t colorscheme)))
+(load-theme (intern
+             (pcase colorscheme
+               ("selenized-dark" "doom-solarized-dark")
+               ("gruvbox-dark" "doom-gruvbox")
+               ("dracula" "doom-dracula")
+               (_ colorscheme)))
             :no-confirm)
 
 ;; Undo Tree
@@ -299,7 +301,6 @@
 ;; LSP
 (use-package lsp-mode
   :hook
-  (python-mode . lsp)
   (lsp-mode . lsp-enable-which-key-integration)
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -315,6 +316,7 @@
   :commands helm-lsp-workspace-symbol)
 
 ;; Python
+(add-hook 'python-mode-hook #'lsp)
 (use-package poetry)
 
 ;; SLIME
@@ -331,23 +333,26 @@
 
 ;; Clojure
 (use-package clojure-mode
-  :hook ((clojure-mode . lsp)
-         (clojurescript-mode . lsp)
-         (clojurec-mode . lsp)))
+  :hook
+  (clojure-mode . lsp)
+  (clojurescript-mode . lsp)
+  (clojurec-mode . lsp))
 (use-package cider)
 (use-package flycheck-joker)
 
 ;; Haskell
 (use-package haskell-mode)
-(add-hook 'haskell-mode-hook #'lsp)
-(add-hook 'haskell-literate-mode-hook #'lsp)
-(add-to-list 'exec-path "~/.ghcup/bin")
+(use-package lsp-haskell
+  :hook
+  (haskell-mode . lsp)
+  (haskell-literate-mode . lsp))
 
 ;; YAML
 (use-package yaml-mode
-  :hook (yaml-mode . (lambda ()
-                       (setup-prog-mode)
-                       (mixed-pitch-mode 0))))
+  :hook
+  (yaml-mode . (lambda ()
+                 (setup-prog-mode)
+                 (mixed-pitch-mode 0))))
 
 ;; Dockerfile
 (use-package dockerfile-mode)

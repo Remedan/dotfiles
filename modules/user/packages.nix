@@ -99,6 +99,9 @@ in
       # Clojure
       leiningen
 
+      # Haskell
+      haskell-language-server
+
       # Infrastructure
       iperf
       k9s
