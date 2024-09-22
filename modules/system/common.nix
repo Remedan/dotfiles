@@ -264,6 +264,9 @@ in
       };
     };
 
+    # Trezor
+    services.trezord.enable = true;
+
     # Custom Modules
     system-modules.snapper.enable = mkDefault true;
   };

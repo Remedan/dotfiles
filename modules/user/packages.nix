@@ -22,6 +22,7 @@ in
       "steam-original"
       "steam-run"
       "terraform"
+      "trezor-suite"
       "uhk-agent"
       "winbox"
     ];
@@ -56,6 +57,8 @@ in
       nmap
       openvpn
       pwgen
+      trezor-suite
+      trezorctl
       uhk-agent
       usbutils
       ventoy
@@ -130,6 +133,7 @@ in
       # Messaging
       element-desktop
       slack
+      telegram-desktop
       vesktop # Discord
 
       # Graphics
