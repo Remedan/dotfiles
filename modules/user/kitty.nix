@@ -19,7 +19,7 @@ in
         name = "Iosevka Term";
         size = 11;
       };
-      theme =
+      themeFile =
         let
           themeNames = {
             selenized-dark = "Solarized Dark";
