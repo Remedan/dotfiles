@@ -19,6 +19,8 @@ in
       bluetooth-battery-meter
       caffeine
       dash-to-dock
+      gsconnect
+      search-light
       smile-complementary-extension
       tiling-assistant
     ]);
@@ -71,12 +73,19 @@ in
           "smile-extension@mijorus.it"
           "system-monitor@gnome-shell-extensions.gcampax.github.com"
           "tiling-assistant@leleat-on-github"
+          "search-light@icedman.github.com"
+          "gsconnect@andyholmes.github.io"
         ];
       };
       "org/gnome/mutter" = {
         dynamic-workspaces = true;
         edge-tiling = true;
         experimental-features = [ "scale-monitor-framebuffer" ];
+      };
+      "org/gnome/shell/extensions/search-light" = {
+        background-color = lib.hm.gvariant.mkTuple [ 0.0 0.0 0.0 0.6 ];
+        border-radius = 3.0;
+        shortcut-search = [ "<Super>d" ];
       };
     };
   };
