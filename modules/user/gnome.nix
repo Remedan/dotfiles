@@ -8,21 +8,33 @@ in
     enable = mkEnableOption "Gnome";
   };
   config = mkIf cfg.enable {
-    home.packages = with pkgs; ([
+    programs.gnome-shell = {
+      enable = true;
+      extensions = with pkgs.gnomeExtensions; [
+        {
+          package = pkgs.gnome-shell-extensions;
+          id = "drive-menu@gnome-shell-extensions.gcampax.github.com";
+        }
+        {
+          package = pkgs.gnome-shell-extensions;
+          id = "system-monitor@gnome-shell-extensions.gcampax.github.com";
+        }
+        { package = appindicator; }
+        { package = bluetooth-battery-meter; }
+        { package = caffeine; }
+        { package = dash-to-dock; }
+        { package = gsconnect; }
+        { package = search-light; }
+        { package = smile-complementary-extension; }
+        { package = tiling-assistant; }
+      ];
+    };
+    home.packages = with pkgs; [
       dconf-editor
       dconf2nix
       gnome-tweaks
       smile
-    ]) ++ (with pkgs.gnomeExtensions; [
-      appindicator
-      bluetooth-battery-meter
-      caffeine
-      dash-to-dock
-      gsconnect
-      search-light
-      smile-complementary-extension
-      tiling-assistant
-    ]);
+    ];
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
@@ -60,20 +72,6 @@ in
         binding = "<Super>e";
         command = "emacsclient -c";
         name = "Emacs";
-      };
-      "org/gnome/shell" = {
-        enabled-extensions = [
-          "Bluetooth-Battery-Meter@maniacx.github.com"
-          "appindicatorsupport@rgcjonas.gmail.com"
-          "caffeine@patapon.info"
-          "dash-to-dock@micxgx.gmail.com"
-          "drive-menu@gnome-shell-extensions.gcampax.github.com"
-          "smile-extension@mijorus.it"
-          "system-monitor@gnome-shell-extensions.gcampax.github.com"
-          "tiling-assistant@leleat-on-github"
-          "search-light@icedman.github.com"
-          "gsconnect@andyholmes.github.io"
-        ];
       };
       "org/gnome/mutter" = {
         dynamic-workspaces = true;
