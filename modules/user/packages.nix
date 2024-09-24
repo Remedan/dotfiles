@@ -47,6 +47,7 @@ in
       # Extra
       btrfs-assistant
       ghostscript
+      gnome-solanum
       gparted
       imagemagick
       lm_sensors
