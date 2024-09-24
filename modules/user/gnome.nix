@@ -11,7 +11,6 @@ in
     home.packages = with pkgs; ([
       dconf-editor
       dconf2nix
-      gnome-pomodoro
       gnome-tweaks
       smile
     ]) ++ (with pkgs.gnomeExtensions; [
@@ -69,7 +68,6 @@ in
           "caffeine@patapon.info"
           "dash-to-dock@micxgx.gmail.com"
           "drive-menu@gnome-shell-extensions.gcampax.github.com"
-          "pomodoro@arun.codito.in"
           "smile-extension@mijorus.it"
           "system-monitor@gnome-shell-extensions.gcampax.github.com"
           "tiling-assistant@leleat-on-github"
