@@ -46,12 +46,7 @@ in
         focus-mode = "mouse";
       };
       "org/gnome/settings-daemon/plugins/media-keys" = {
-        custom-keybindings = [
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
-        ];
+        custom-keybindings = genList (n: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom${toString n}/") 5;
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Shift><Control>space";
@@ -72,6 +67,11 @@ in
         binding = "<Super>e";
         command = "emacsclient -c";
         name = "Emacs";
+      };
+      "org/gnome/settings-daemon/plugins/media-keysg/custom-keybindings/custom4" = {
+        binding = "<Shift><Super>e";
+        command = "emacsclient -ce '(calc)'";
+        name = "Emacs Calc";
       };
       "org/gnome/mutter" = {
         dynamic-workspaces = true;
