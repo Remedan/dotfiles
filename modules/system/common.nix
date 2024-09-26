@@ -150,6 +150,7 @@ in
         "scanner"
         "lp"
         "video"
+        "adbusers"
       ];
       shell = pkgs.zsh;
       openssh.authorizedKeys.keys = [
@@ -272,6 +273,9 @@ in
 
     # Trezor
     services.trezord.enable = true;
+
+    # Android
+    programs.adb.enable = true;
 
     # Custom Modules
     system-modules.snapper.enable = mkDefault true;
