@@ -75,6 +75,7 @@ in
       spotify
 
       # Video
+      ffmpeg
       mpv
 
       # Development
