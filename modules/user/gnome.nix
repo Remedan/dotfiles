@@ -83,6 +83,10 @@ in
         border-radius = 3.0;
         shortcut-search = [ "<Super>d" ];
       };
+      "org/gnome/gnome-system-monitor" = {
+        # Don't divide cpu usage by cpu count
+        solaris-mode = false;
+      };
     };
   };
 }
