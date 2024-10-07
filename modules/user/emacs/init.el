@@ -22,6 +22,10 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
+;; Show keyboard shortcut hints
+(setq which-key-idle-delay 0.0)
+(which-key-mode 1)
+
 ;; Use 4 spaces for indentation
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
@@ -186,10 +190,6 @@
 ;; Flycheck
 (use-package flycheck
   :init (global-flycheck-mode))
-
-;; Which Key
-(use-package which-key
-  :config (which-key-mode))
 
 ;; Tree-sitter
 (use-package tree-sitter)
