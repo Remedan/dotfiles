@@ -233,7 +233,7 @@ in
     # Polkit
     # https://wiki.nixos.org/wiki/Polkit#Authentication_agents
     security.polkit.enable = true;
-    systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    systemd.user.services.polkit-gnome-authentication-agent-1 = mkIf cfg.hyprland {
       description = "polkit-gnome-authentication-agent-1";
       wantedBy = [ "graphical-session.target" ];
       wants = [ "graphical-session.target" ];
