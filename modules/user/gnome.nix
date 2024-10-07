@@ -70,7 +70,7 @@ in
       };
       "org/gnome/settings-daemon/plugins/media-keysg/custom-keybindings/custom4" = {
         binding = "<Shift><Super>e";
-        command = "emacsclient -ce '(calc)'";
+        command = "emacsclient -ce '(full-calc)'";
         name = "Emacs Calc";
       };
       "org/gnome/mutter" = {
