@@ -81,8 +81,10 @@ in
       # Development
       bfg-repo-cleaner
       bruno
+      cmake
       direnv
       dive
+      gcc
       git-crypt
       jetbrains-toolbox
       jq
