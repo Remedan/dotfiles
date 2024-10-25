@@ -21,6 +21,7 @@ in
       "steam"
       "steam-original"
       "steam-run"
+      "steam-unwrapped"
       "terraform"
       "trezor-suite"
       "uhk-agent"
