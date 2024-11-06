@@ -72,9 +72,6 @@
       cpuType = "amd";
     };
     nvidia.enable = true;
-    nix-ld = {
-      enable = true;
-      extraLibraries = true;
-    };
+    nix-ld.enable = true;
   };
 }

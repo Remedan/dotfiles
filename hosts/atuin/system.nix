@@ -48,9 +48,6 @@
       enable = true;
       uuid = "170faa4b-61ec-4f4a-ad31-9ccd58eeff6a";
     };
-    nix-ld = {
-      enable = true;
-      extraLibraries = true;
-    };
+    nix-ld.enable = true;
   };
 }
