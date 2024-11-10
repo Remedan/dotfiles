@@ -87,6 +87,7 @@ in
       dive
       gcc
       git-crypt
+      godot_4
       jetbrains-toolbox
       jq
       nix-direnv
