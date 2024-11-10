@@ -142,8 +142,7 @@ in
       vesktop # Discord
 
       # Graphics
-      # TODO: Re-enable blener when it gets fixed https://github.com/NixOS/nixpkgs/issues/353961
-      # blender
+      blender
       gimp
       inkscape
       openscad
