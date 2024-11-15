@@ -43,6 +43,7 @@ in
       rsync
       steam-run
       tmux
+      traceroute
       unzip
 
       # Extra
