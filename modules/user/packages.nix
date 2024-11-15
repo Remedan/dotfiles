@@ -78,6 +78,7 @@ in
       # Video
       ffmpeg
       mpv
+      obs-studio
 
       # Development
       bfg-repo-cleaner
