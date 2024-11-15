@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.system-modules.boot;
@@ -23,6 +23,11 @@ in
 
         # Plymouth boot splash screen
         plymouth.enable = true;
+
+        # There appears to be a bug in the kernel causing audio issues.
+        # Should be fixed in 6.10, using latest until a fixed version becomes default.
+        # https://github.com/NixOS/nixpkgs/issues/330685#issuecomment-2270936333
+        kernelPackages = pkgs.linuxPackages_latest;
       }
       (mkIf (!cfg.luks.enable) {
         loader.systemd-boot.enable = true;
