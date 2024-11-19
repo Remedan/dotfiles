@@ -50,4 +50,7 @@
     };
     nix-ld.enable = true;
   };
+
+  # Additional services
+  services.teamviewer.enable = true;
 }

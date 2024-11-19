@@ -196,6 +196,7 @@ in
       "steam-original"
       "steam-run"
       "steam-unwrapped"
+      "teamviewer"
       "uhk-agent"
       "uhk-udev-rules"
     ];
