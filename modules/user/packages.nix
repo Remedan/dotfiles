@@ -122,7 +122,7 @@ in
       kubectl
       remmina
       terraform
-      winbox
+      winbox4
       wireshark
 
       # Internet
