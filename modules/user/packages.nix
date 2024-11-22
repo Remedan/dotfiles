@@ -59,6 +59,8 @@ in
       nix-tree
       nmap
       openvpn
+      progress
+      pv
       pwgen
       trezor-suite
       trezorctl
