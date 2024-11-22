@@ -23,7 +23,7 @@ in
 
   config = {
     # https://wiki.nixos.org/wiki/FAQ/When_do_I_update_stateVersion
-    system.stateVersion = "24.05";
+    system.stateVersion = "24.11";
 
     # Install common non-free firmware
     hardware.enableRedistributableFirmware = true;
@@ -112,15 +112,14 @@ in
     # Scanning
     hardware.sane.enable = true;
 
-    # Enable sound with pipewire.
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
+    # Enable sound with pipewire
     services.pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    security.rtkit.enable = true;
 
     # Enable bluetooth
     hardware.bluetooth.enable = true;
