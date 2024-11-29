@@ -25,6 +25,7 @@ in
       "terraform"
       "trezor-suite"
       "uhk-agent"
+      "vscode"
       "winbox"
     ];
     home.packages = with pkgs; [
@@ -97,6 +98,7 @@ in
       nix-direnv
       postgresql
       tig
+      vscode
 
       # Python
       poetry
