@@ -11,12 +11,14 @@ in
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
       iosevka-bin
-      source-code-pro
-      source-sans-pro
+      nerd-fonts.iosevka
+      nerd-fonts.iosevka-term
+      nerd-fonts.iosevka-term-slab
       noto-fonts-emoji
       open-sans
+      source-code-pro
       source-han-sans
-      (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" "IosevkaTermSlab" ]; })
+      source-sans-pro
     ];
     xdg.configFile."fontconfig/conf.d/20-no-embedded-bitmap.conf".text = ''
       <?xml version="1.0" encoding="UTF-8"?>
