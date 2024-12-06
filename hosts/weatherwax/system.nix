@@ -71,7 +71,11 @@
       hostName = "weatherwax";
       cpuType = "amd";
     };
-    nvidia.enable = true;
+    nvidia = {
+      enable = true;
+      # Stable is currently broken with kernel 6.12
+      driverVersion = "beta";
+    };
     nix-ld.enable = true;
   };
 }
