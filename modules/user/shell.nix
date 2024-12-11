@@ -28,6 +28,9 @@ in
     programs.zsh = {
       enable = true;
       autosuggestion.enable = true;
+      initExtra = ''
+        compdef kubecolor=kubectl
+      '';
       oh-my-zsh = {
         enable = true;
         plugins = [
@@ -55,6 +58,10 @@ in
           format = "[$symbol$context( \\($namespace\\))]($style)";
         };
       };
+    };
+    programs.kubecolor = {
+      enable = true;
+      enableAlias = true;
     };
   };
 }
