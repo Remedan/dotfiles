@@ -44,6 +44,7 @@ in
       };
       "org/gnome/desktop/wm/preferences" = {
         focus-mode = "mouse";
+        resize-with-right-button = true;
       };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = genList (n: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom${toString n}/") 5;
