@@ -43,6 +43,7 @@ in
 
     # Since the Emacs pgtk packages sets the wmclass to "emacs" (with lower-case e) we need to create
     # a new .desktop file that has a matching StartupWMCLass for Gnome to recognize the window.
+    # This also enables us to add the Calculator action.
     # Mostly taken from: https://github.com/nix-community/home-manager/blob/master/modules/services/emacs.nix#L19
     xdg.desktopEntries = {
       emacsclient = {
@@ -53,6 +54,11 @@ in
         genericName = "Text Editor";
         mimeType = [ "text/english" "text/plain" "text/x-makefile" "text/x-c++hdr" "text/x-c++src" "text/x-chdr" "text/x-csrc" "text/x-java" "text/x-moc" "text/x-pascal" "text/x-tcl" "text/x-tex" "application/x-shellscript" "text/x-c" "text/x-c++" ];
         categories = [ "Development" "TextEditor" ];
+        actions = {
+          "Calculator" = {
+            exec = "${config.programs.emacs.package}/bin/emacsclient -ce \"(full-calc)\"";
+          };
+        };
         settings = {
           Keywords = "Text;Editor";
           StartupWMClass = "emacs";
