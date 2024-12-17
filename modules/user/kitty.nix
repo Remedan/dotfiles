@@ -32,6 +32,7 @@ in
         tab_bar_edge = "top";
         tab_bar_style = "powerline";
         tab_powerline_style = "slanted";
+        enable_audio_bell = false;
       };
     };
     home.shellAliases = {
