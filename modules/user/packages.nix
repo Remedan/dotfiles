@@ -95,6 +95,7 @@ in
       godot_4
       jetbrains-toolbox
       jq
+      minikube
       nix-direnv
       postgresql
       tig
