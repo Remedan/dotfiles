@@ -26,6 +26,7 @@ in
         { package = gsconnect; }
         { package = search-light; }
         { package = smile-complementary-extension; }
+        { package = solaar-extension; }
         { package = tiling-assistant; }
       ];
     };
