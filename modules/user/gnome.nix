@@ -88,6 +88,7 @@ in
       "org/gnome/gnome-system-monitor" = {
         # Don't divide cpu usage by cpu count
         solaris-mode = false;
+        show-whose-processes = "all";
       };
     };
   };
