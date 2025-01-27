@@ -58,19 +58,31 @@ in
 
     time.timeZone = "Europe/Prague";
 
-    # Set language to English but formats to Czech
-    i18n.defaultLocale = "en_US.UTF-8";
-    i18n.extraLocaleSettings = {
-      LC_ADDRESS = "cs_CZ.UTF-8";
-      LC_IDENTIFICATION = "cs_CZ.UTF-8";
-      LC_MEASUREMENT = "cs_CZ.UTF-8";
-      LC_MONETARY = "cs_CZ.UTF-8";
-      LC_NAME = "cs_CZ.UTF-8";
-      LC_NUMERIC = "cs_CZ.UTF-8";
-      LC_PAPER = "cs_CZ.UTF-8";
-      LC_TELEPHONE = "cs_CZ.UTF-8";
-      LC_TIME = "cs_CZ.UTF-8";
-    };
+    i18n = let
+      # Set language to English but formats to Czech
+      locale = "en_US.UTF-8";
+      format = "cs_CZ.UTF-8";
+    in
+      {
+        defaultLocale = locale;
+        extraLocaleSettings = {
+          LC_ADDRESS = format;
+          LC_IDENTIFICATION = format;
+          LC_MEASUREMENT = format;
+          LC_MONETARY = format;
+          LC_NAME = format;
+          LC_NUMERIC = format;
+          LC_PAPER = format;
+          LC_TELEPHONE = format;
+          LC_TIME = format;
+        };
+        inputMethod = {
+          enable = true;
+          type = "ibus";
+          # Enable Japanese input
+          ibus.engines = with pkgs.ibus-engines; [ anthy mozc ];
+        };
+      };
 
     # Enable the X11 windowing system.
     services.xserver = {

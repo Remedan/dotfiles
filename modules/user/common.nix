@@ -51,7 +51,6 @@ in
         gtk.enable = mkDefault true;
         ssh.enable = mkDefault true;
         git.enable = mkDefault true;
-        japanese.enable = mkDefault true;
         gnome.enable = mkDefault true;
         virt-manager.enable = mkDefault true;
         gpg.enable = mkDefault true;
