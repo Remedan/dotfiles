@@ -22,6 +22,9 @@ in
         memory-usage = true;
         network-traffic = true;
       };
+      "org/virt-manager/virt-manager/virt-manager" = {
+        xmleditor-enabled = true;
+      };
     };
   };
 }
