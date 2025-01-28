@@ -142,6 +142,7 @@ in
       appimage-run
       bottles
       distrobox
+      quickemu
 
       # Messaging
       element-desktop
