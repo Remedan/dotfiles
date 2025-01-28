@@ -18,6 +18,9 @@
 ;; Enable column indicator
 (setq column-number-mode t)
 
+;; Enable the default window moving bindings (shift + arrow keys)
+(windmove-default-keybindings)
+
 ;; Always highlight matching parentheses
 (show-paren-mode 1)
 (setq show-paren-delay 0)
