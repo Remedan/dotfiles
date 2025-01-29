@@ -105,6 +105,7 @@ in
       poetry
       python3
       ruff
+      uv
 
       # Rust
       rustup
