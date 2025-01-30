@@ -12,7 +12,7 @@ in
     };
     colorscheme = mkOption {
       type = types.str;
-      default = "doom-one";
+      default = "doom-gruvbox";
     };
   };
   config = mkIf cfg.enable {
