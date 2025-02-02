@@ -59,6 +59,7 @@ in
       neofetch
       nix-tree
       nmap
+      ntfs3g
       openvpn
       progress
       pv
