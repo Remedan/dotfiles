@@ -145,6 +145,7 @@ in
       bottles
       distrobox
       quickemu
+      quickgui
 
       # Messaging
       element-desktop
