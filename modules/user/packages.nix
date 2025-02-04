@@ -48,6 +48,7 @@ in
       unzip
 
       # Extra
+      btop
       btrfs-assistant
       ghostscript
       gnome-solanum
