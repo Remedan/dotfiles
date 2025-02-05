@@ -10,21 +10,36 @@ in
       type = types.bool;
       default = pkgs.stdenv.isLinux;
     };
+    doom = mkOption {
+      type = types.bool;
+      default = false;
+    };
     colorscheme = mkOption {
       type = types.str;
       default = "doom-gruvbox";
     };
   };
   config = mkIf cfg.enable {
-    xdg.configFile = {
-      "emacs/init.el".source = ./init.el;
-      "emacs/straight/versions/default.el".source = ./straight-lock.el;
-      "emacs/sakamoto.png".source = ./sakamoto.png;
+    xdg.configFile = if cfg.doom then {
+      "doom/init.el".source = ./doom/init.el;
+      "doom/config.el".source = ./doom/config.el;
+      "doom/packages.el".source = ./doom/packages.el;
+    } else {
+      "emacs/init.el".source = ./vanilla/init.el;
+      "emacs/straight/versions/default.el".source = ./vanilla/straight-lock.el;
+      "emacs/sakamoto.png".source = ./vanilla/sakamoto.png;
       "emacs/early-init.el".text = ''
         (setq package-enable-at-startup nil)
         (setq colorscheme "${cfg.colorscheme}")
       '';
     };
+    home.packages = mkIf cfg.doom [
+      (pkgs.writeShellScriptBin "doom-sync" ''
+        home-manager switch
+        ~/.config/emacs/bin/doom sync
+        systemctl --user restart emacs
+      '')
+    ];
     programs.emacs = {
       enable = true;
       package = pkgs.emacs30-pgtk;
