@@ -12,7 +12,7 @@ in
     };
     doom = mkOption {
       type = types.bool;
-      default = false;
+      default = true;
     };
     colorscheme = mkOption {
       type = types.str;
