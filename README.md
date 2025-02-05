@@ -12,6 +12,13 @@ Clone this repo to `~/.config/home-manager` and then run:
 nix --extra-experimental-features 'nix-command flakes' run home-manager/master -- switch
 ```
 
+[Install Doom Emacs](https://github.com/doomemacs/doomemacs?tab=readme-ov-file#install):
+
+```bash
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install
+```
+
 ## Building a new Home Manager configuration
 
 ```bash
