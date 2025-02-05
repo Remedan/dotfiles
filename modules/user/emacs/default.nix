@@ -44,7 +44,7 @@ in
       enable = true;
       package = pkgs.emacs30-pgtk;
       extraPackages = epkgs: with epkgs; [
-        vterm
+        vterm # This way we don't have to build vterm's compiled component
       ];
     };
     services.emacs = {
