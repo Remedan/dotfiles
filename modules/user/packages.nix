@@ -54,6 +54,7 @@ in
       gnome-solanum
       gparted
       imagemagick
+      ispell
       lm_sensors
       magic-wormhole
       ncdu
