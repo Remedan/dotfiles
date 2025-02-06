@@ -94,6 +94,7 @@ in
       direnv
       dive
       gcc
+      gdb
       git-crypt
       godot_4
       jetbrains-toolbox
