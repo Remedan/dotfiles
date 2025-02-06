@@ -49,5 +49,4 @@
 ;; (unpin! t)
 
 
-;; Nix
 (package! nix-mode)
