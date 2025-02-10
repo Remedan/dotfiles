@@ -12,9 +12,11 @@ in
     };
   };
   config = mkIf cfg.enable {
+    home.shellAliases.lmstudio-wayland = "lmstudio --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
     nixpkgs.config.allowUnfreePredicate = pkg: elem (lib.getName pkg) [
       "1password"
       "jetbrains-toolbox"
+      "lmstudio"
       "obsidian"
       "slack"
       "spotify"
@@ -142,6 +144,9 @@ in
 
       # Office
       libreoffice
+
+      # AI
+      lmstudio
 
       # Compatibility
       appimage-run
