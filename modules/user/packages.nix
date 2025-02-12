@@ -124,12 +124,6 @@ in
       # Common Lisp
       sbcl
 
-      # Clojure
-      leiningen
-
-      # Haskell
-      haskell-language-server
-
       # Infrastructure
       k9s
       krew
