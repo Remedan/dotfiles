@@ -33,7 +33,6 @@ in
     home.packages = with pkgs; [
       # Core
       bat
-      dig
       file
       fzf
       gnupg
@@ -46,8 +45,16 @@ in
       rsync
       steam-run
       tmux
-      traceroute
       unzip
+
+      # Networking
+      dig
+      ethtool
+      iperf
+      nmap
+      tcpdump
+      traceroute
+      wireguard-tools
 
       # Extra
       btop
@@ -63,9 +70,7 @@ in
       ncdu
       neofetch
       nix-tree
-      nmap
       ntfs3g
-      openvpn
       progress
       pv
       pwgen
@@ -74,7 +79,6 @@ in
       uhk-agent
       usbutils
       ventoy
-      wireguard-tools
       wl-clipboard
       yubikey-manager
 
@@ -127,7 +131,6 @@ in
       haskell-language-server
 
       # Infrastructure
-      iperf
       k9s
       krew
       kubectl
