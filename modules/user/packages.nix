@@ -52,6 +52,7 @@ in
       # Extra
       btop
       btrfs-assistant
+      fd
       ghostscript
       gnome-solanum
       gparted
