@@ -11,6 +11,7 @@ in
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
       iosevka-bin
+      nerd-fonts.symbols-only
       nerd-fonts.iosevka
       nerd-fonts.iosevka-term
       nerd-fonts.iosevka-term-slab
