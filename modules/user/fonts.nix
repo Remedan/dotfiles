@@ -14,6 +14,7 @@ in
       eb-garamond
       fira
       fira-code
+      inter
       iosevka-bin
       jetbrains-mono
       merriweather
