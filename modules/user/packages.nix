@@ -135,6 +135,7 @@ in
 
       # Internet
       chromium
+      datovka
       deluge
       filezilla
       firefox
