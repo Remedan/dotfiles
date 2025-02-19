@@ -10,16 +10,26 @@ in
   config = mkIf cfg.enable {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
+      dejavu_fonts
+      eb-garamond
+      fira
+      fira-code
       iosevka-bin
+      jetbrains-mono
+      merriweather
+      merriweather-sans
+      montserrat
       nerd-fonts.symbols-only
-      nerd-fonts.iosevka
-      nerd-fonts.iosevka-term
-      nerd-fonts.iosevka-term-slab
+      noto-fonts
       noto-fonts-emoji
       open-sans
+      raleway
+      roboto
       source-code-pro
       source-han-sans
-      source-sans-pro
+      source-han-serif
+      source-sans
+      source-serif
     ];
     xdg.configFile."fontconfig/conf.d/20-no-embedded-bitmap.conf".text = ''
       <?xml version="1.0" encoding="UTF-8"?>
