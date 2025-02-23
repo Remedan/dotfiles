@@ -123,6 +123,7 @@ in
 
       # Common Lisp
       sbcl
+      sbclPackages.agnostic-lizard
 
       # Infrastructure
       k9s
