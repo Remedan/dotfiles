@@ -242,6 +242,7 @@ in
     };
     virtualisation.libvirtd.enable = true;
     programs.virt-manager.enable = true;
+    virtualisation.spiceUSBRedirection.enable = true;
 
     # Polkit
     # https://wiki.nixos.org/wiki/Polkit#Authentication_agents
