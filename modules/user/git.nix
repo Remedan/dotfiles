@@ -22,23 +22,57 @@ in
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-      lfs.enable = true;
-      extraConfig = {
-        push.autoSetupRemote = true;
-        init.defaultBranch = "main";
-
-        gpg = {
-          format = "ssh";
-          ssh.program = "${pkgs._1password-gui}/bin/op-ssh-sign";
-          ssh.allowedSignersFile = "~/.config/git/allowed_signers";
-        };
-      };
 
       userName = cfg.userName;
       userEmail = cfg.userEmail;
 
       signing.signByDefault = true;
       signing.key = cfg.signingKey;
+
+      lfs.enable = true;
+
+      extraConfig = {
+        help.autocorrect = "prompt";
+        init.defaultBranch = "main";
+        column.ui = "auto";
+        branch.sort = "-committerdate";
+        tag.sort = "version:refname";
+        diff = {
+          algorithm = "histogram";
+          colorMoved = "plain";
+          mnemonicPrefix = true;
+          renames = true;
+        };
+        fetch = {
+          prune = true;
+          pruneTags = true;
+          all = true;
+        };
+        pull = {
+          rebase = true;
+        };
+        push = {
+          autoSetupRemote = true;
+          followTags = true;
+        };
+        merge = {
+          conflictstyle = "zdiff3";
+        };
+        rebase = {
+          autoSquash = true;
+          autoStash = true;
+          updateRefs = true;
+        };
+        rerere = {
+          enabled = true;
+          autocomplete = true;
+        };
+        gpg = {
+          format = "ssh";
+          ssh.program = "${pkgs._1password-gui}/bin/op-ssh-sign";
+          ssh.allowedSignersFile = "~/.config/git/allowed_signers";
+        };
+      };
     };
     xdg.configFile."git/allowed_signers".text = cfg.userEmail + " " + cfg.signingKey;
   };
