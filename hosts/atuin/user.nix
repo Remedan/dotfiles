@@ -7,5 +7,6 @@
   user-modules = {
     common.hidpi = true;
     git.enable = false;
+    nodejs.enable = true;
   };
 }
