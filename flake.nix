@@ -51,7 +51,6 @@
         inherit system;
         modules = [
           ./hosts/atuin/system.nix
-          ./secrets/atuin-system.nix
           nixos-hardware.nixosModules.dell-latitude-5520
         ] ++ import ./modules/system;
       };
