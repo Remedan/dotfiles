@@ -99,6 +99,12 @@ in
     programs.hyprland.enable = cfg.hyprland;
     security.pam.services.hyprlock = mkIf cfg.hyprland { };
 
+    # Add the option to open a directory in Kitty to Nautilus
+    programs.nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "kitty";
+    };
+
     # XDG Desktop Portal
     services.dbus.enable = true;
     xdg.portal.enable = true;
