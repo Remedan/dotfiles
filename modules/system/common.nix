@@ -115,7 +115,7 @@ in
       drivers = with pkgs; [
         gutenprint
         gutenprintBin
-        # canon-cups-ufr2 TODO Currently broken: https://github.com/NixOS/nixpkgs/issues/380572
+        canon-cups-ufr2
         cnijfilter2
       ];
     };
