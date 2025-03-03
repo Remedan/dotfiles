@@ -10,30 +10,14 @@ in
       type = types.bool;
       default = pkgs.stdenv.isLinux;
     };
-    doom = mkOption {
-      type = types.bool;
-      default = true;
-    };
-    colorscheme = mkOption {
-      type = types.str;
-      default = "doom-gruvbox";
-    };
   };
   config = mkIf cfg.enable {
-    xdg.configFile = if cfg.doom then {
+    xdg.configFile = {
       "doom/init.el".source = ./doom/init.el;
       "doom/config.el".source = ./doom/config.el;
       "doom/packages.el".source = ./doom/packages.el;
-    } else {
-      "emacs/init.el".source = ./vanilla/init.el;
-      "emacs/straight/versions/default.el".source = ./vanilla/straight-lock.el;
-      "emacs/sakamoto.png".source = ./vanilla/sakamoto.png;
-      "emacs/early-init.el".text = ''
-        (setq package-enable-at-startup nil)
-        (setq colorscheme "${cfg.colorscheme}")
-      '';
     };
-    home.packages = mkIf cfg.doom [
+    home.packages = [
       (pkgs.writeShellScriptBin "doom-sync" ''
         home-manager switch
         ~/.config/emacs/bin/doom sync
