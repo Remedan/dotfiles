@@ -37,6 +37,12 @@ in
       smile
     ];
     dconf.settings = {
+      "org/gnome/desktop/input-sources" = with lib.gvariant; {
+        mru-sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "ibus" "anthy" ]) (mkTuple [ "xkb" "cz+qwerty" ]) ];
+        per-window = true;
+        sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "cz+qwerty" ]) (mkTuple [ "ibus" "anthy" ]) ];
+        xkb-options = [ "caps:escape_shifted_capslock" ];
+      };
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
       };
@@ -79,6 +85,14 @@ in
         dynamic-workspaces = true;
         edge-tiling = true;
         experimental-features = [ "scale-monitor-framebuffer" ];
+      };
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        apply-custom-theme = true;
+        click-action = "minimize";
+        dock-fixed = true;
+        dock-position = "LEFT";
+        extend-height = true;
+        scroll-action = "cycle-windows";
       };
       "org/gnome/shell/extensions/search-light" = {
         background-color = lib.hm.gvariant.mkTuple [ 0.0 0.0 0.0 0.6 ];

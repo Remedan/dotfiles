@@ -30,7 +30,7 @@ in
           layout = "us,cz(qwerty)";
           options = [
             "grp:win_space_toggle"
-            "caps:escape"
+            "caps:escape_shifted_capslock"
           ];
         };
       };
