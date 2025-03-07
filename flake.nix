@@ -62,5 +62,20 @@
           nix-flatpak.homeManagerModules.nix-flatpak
         ] ++ import ./modules/user;
       };
+
+      # Testing VM
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/nixos/system.nix
+        ] ++ import ./modules/system;
+      };
+      homeConfigurations."remedan@nixos" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          (import ./hosts/nixos/user.nix)
+          nix-flatpak.homeManagerModules.nix-flatpak
+        ] ++ import ./modules/user;
+      };
     };
 }
