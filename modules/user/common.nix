@@ -1,27 +1,6 @@
 { config, lib, pkgs, ... }:
 with lib;
-let
-  cfg = config.user-modules.common;
-in
 {
-  options.user-modules.common = {
-    colorscheme = mkOption {
-      type = types.str;
-      default = "gruvbox-dark";
-    };
-    terminal = mkOption {
-      type = types.str;
-      default = "kitty";
-    };
-    browser = mkOption {
-      type = types.str;
-      default = "firefox";
-    };
-    hidpi = mkOption {
-      type = types.bool;
-      default = false;
-    };
-  };
   config = mkMerge [
     {
       home = {

@@ -6,10 +6,6 @@ in
 {
   options.user-modules.packages = {
     enable = mkEnableOption "packages";
-    categories.noDesktopEnvironment = mkOption {
-      type = types.bool;
-      default = config.user-modules.hyprland.enable;
-    };
   };
   config = mkIf cfg.enable {
     home.shellAliases.lmstudio-wayland = "lmstudio --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
@@ -182,16 +178,6 @@ in
       ifm
       prismlauncher # Minecraft
       scummvm
-    ] ++ optionals cfg.categories.noDesktopEnvironment [
-      # Packages that are useful without a full DE
-      baobab
-      birdtray
-      gnome.gnome-software
-      networkmanagerapplet
-      pavucontrol
-      sxiv
-      udiskie
-      xsane
     ];
   };
 }

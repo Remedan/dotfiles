@@ -15,10 +15,6 @@ in
       type = with types; nullOr (enum [ "amd" "intel" ]);
       default = null;
     };
-    hyprland = mkOption {
-      type = types.bool;
-      default = false;
-    };
   };
 
   config = {
@@ -58,11 +54,12 @@ in
 
     time.timeZone = "Europe/Prague";
 
-    i18n = let
-      # Set language to English but formats to Czech
-      locale = "en_US.UTF-8";
-      format = "cs_CZ.UTF-8";
-    in
+    i18n =
+      let
+        # Set language to English but formats to Czech
+        locale = "en_US.UTF-8";
+        format = "cs_CZ.UTF-8";
+      in
       {
         defaultLocale = locale;
         extraLocaleSettings = {
@@ -96,18 +93,12 @@ in
         variant = "";
       };
     };
-    programs.hyprland.enable = cfg.hyprland;
-    security.pam.services.hyprlock = mkIf cfg.hyprland { };
 
     # Add the option to open a directory in Kitty to Nautilus
     programs.nautilus-open-any-terminal = {
       enable = true;
       terminal = "kitty";
     };
-
-    # XDG Desktop Portal
-    services.dbus.enable = true;
-    xdg.portal.enable = true;
 
     # Printing
     services.printing = {
@@ -142,7 +133,6 @@ in
     # Enable bluetooth
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
-    services.blueman.enable = cfg.hyprland;
 
     # SSH Server
     services.openssh = {
@@ -176,7 +166,15 @@ in
     };
 
     nix = {
-      settings.trusted-users = [ "root" cfg.userName ];
+      settings = {
+        trusted-users = [ "root" cfg.userName ];
+        substituters = [
+          "https://nix-community.cachix.org"
+        ];
+        trusted-public-keys = [
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        ];
+      };
       optimise.automatic = true;
       gc = {
         automatic = true;
@@ -221,9 +219,6 @@ in
     # Flatpak
     services.flatpak.enable = true;
 
-    # Gnome Keyring
-    services.gnome.gnome-keyring.enable = true;
-
     # Enable Logitech devices support and Solaar
     hardware.logitech.wireless.enable = true;
     hardware.logitech.wireless.enableGraphical = true;
@@ -251,27 +246,7 @@ in
     virtualisation.spiceUSBRedirection.enable = true;
 
     # Polkit
-    # https://wiki.nixos.org/wiki/Polkit#Authentication_agents
     security.polkit.enable = true;
-    systemd.user.services.polkit-gnome-authentication-agent-1 = mkIf cfg.hyprland {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-
-    # Udev rules for SwayOSD
-    services.udev.extraRules = ''
-      ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
-      ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
-    '';
 
     # Gaming
     programs.steam.enable = true;
