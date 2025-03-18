@@ -259,7 +259,7 @@ in
     };
 
     # Trezor
-    # services.trezord.enable = true; TODO Broken package
+    services.trezord.enable = true;
 
     # Android
     programs.adb.enable = true;
