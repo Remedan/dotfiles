@@ -70,8 +70,8 @@ in
       progress
       pv
       pwgen
-      trezor-suite
-      trezorctl
+      # trezor-suite TODO Broken package
+      # trezorctl TODO Broken package
       uhk-agent
       usbutils
       ventoy
