@@ -26,7 +26,7 @@ in
     ];
     programs.emacs = {
       enable = true;
-      package = pkgs.emacs30-pgtk;
+      package = pkgs.emacs-pgtk; # The pgtk version has native Wayland support
       extraPackages = epkgs: with epkgs; [
         vterm # This way we don't have to build vterm's compiled component
       ];
